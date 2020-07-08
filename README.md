@@ -1,1 +1,1 @@
-# webliero
+This repository contains my own works regarding an online version of classic MS-DOS freeware game called LIERO made by Joosa Riekkinen and released in 1998. It contains my own mods (currently one - "Fun Roo Mod") made to this game and some maps. Enjoy!
