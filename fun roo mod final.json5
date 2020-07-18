@@ -2286,7 +2286,7 @@
       bounceFriction: 0.8,
       timeToExplo: 0,
       timeToExploV: 0,
-      hitDamage: 2,
+      hitDamage: 5,
       bloodOnHit: 80,
       startFrame: 223,
       numFrames: 0,
