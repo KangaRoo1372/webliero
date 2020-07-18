@@ -30,7 +30,7 @@ I. New weapons:
 
 11) shockwave bomb - a bomb which creates a kind of shockwave after the explosion. The shockwave does some damage to worms, but do not destroy the ground.
 
-12) Balrog's whip - a narrow yellow ray with which you can catch your opponent like for a lasso. That is, it does some damage and instead of pushing the opponent, it pulls him strongly towards the one who shoots.
+12) Balrog's whip - a narrow yellow ray with which you can catch your opponent like for a lasso. That is, it does some damage and instead of pushing the opponent, it pulls him strongly towards the one who shoots. The name refers to a powerful demon from Tolkien's "Lord of the Rings" book - Balrog, whose weapon was a fiery magic whip (which he used to grab Gandalf and take him to the abyss - "RUN, YOU FOOLS!" scene :D).
 
 13) hot steam - as the name suggests, it ejects a cloud of hot steam for some time that burns worms and deals damage to them.
 
@@ -39,6 +39,8 @@ I. New weapons:
 15) railgun - it shoots a very fast, golden beam of energy that deals a lot of damage on hit. Similar to rifle actually.
 
 16) corpse slasher - a kind of easter egg weapon actually. It is actually mini rockets, with the difference that there are fewer bullets (7) which, after hitting the target, eject poisonous worm corpses.
+
+17) szarnywirk's magic drone - a missile-type weapon (cuz it looks like MISSILE and you can control the bullet, but it flies much slower than missile). The drone - while floating - shoots smaller bullets (like in minigun, but less amount) automatically in one direction, which you can change by changing the bullet's position in the air. It has "Szarnywirk" in its name, as a tribute to another user (with a nickname Szarnywirk) who actually invented this weapon (I only made some changes) and agreed to share it to my mod (thanks dude!).
 
 II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk):
 
