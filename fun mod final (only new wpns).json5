@@ -268,7 +268,7 @@
        laserBeam: false,
        launchSound: 5,
        playReloadSound: false,
-       name: "SZARNYWIRK'S MAGIC DRONE ™"
+       name: "SZARNYWIRK'S DRONE ™"
     },
 //    {
 //      parts: 1,
