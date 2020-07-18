@@ -822,13 +822,13 @@
       name: "KAMIKAZE"
     },
     {
-      parts: 2,
+      parts: 3,
       bulletType: 36,
       bulletSpeed: 2,
       bulletSpeedInherit: 0,
       distribution: 0,
       recoil: 0.3,
-      ammo: 2,
+      ammo: 1,
       delay: 0,
       loadingTime: 240,
       leaveShells: 1,
