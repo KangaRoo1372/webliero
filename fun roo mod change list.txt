@@ -46,13 +46,15 @@ II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk)
 
 1) laser - changed the colour from red to yellow, changed the name into "solar beam" and added some splinters after hit.
 
-2) throw knife - changed the name into "tomahawk", changed the delay from 5 to 0, changed bullet speed from 3.5 to 3.7, changed hit damage from 24 to 18 and made it not stick the walls but falls down the ground.
+2) throw knife - changed the name to "tomahawk", changed the delay from 5 to 0, changed bullet speed from 3.5 to 3.7, changed hit damage from 24 to 18 and made it not stick the walls but falls down the ground.
 
 3) dynamite (explosives) - changed the name into "firecracker", changed recoil from 0 to 0.1 and changed loading time from 200 to 300.
 
-4) missile - changed name into "fiery missile" and added some fire trail to the bullet to make it looks more effective.
+4) missile - changed name to "fiery missile" and added some fire trail to the bullet to make it looks more effective.
 
-I also made more changes to other old weapons (like bouncy gauss gun etc.), generally to make aoe weapons weaker and "aiming" weapons stronger. If you like to, I will make a list of full changes.
+5) gauss gun - renamed to "coil gun",  made the bullet bounce and added some extra damage.
+
+I also made more changes to other old weapons (like less particles in cluster pod and spikes etc.), generally to make aoe weapons weaker and "aiming" weapons stronger. If you like to, I will make a list of full changes.
 
 III. Weapons removed:
 
