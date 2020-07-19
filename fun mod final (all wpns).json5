@@ -708,9 +708,9 @@
       name: "FIERY MISSILE"
     },
     {
-      parts: 1,
+      parts: 3,
       bulletType: 45,
-      bulletSpeed: 7,
+      bulletSpeed: 4,
       bulletSpeedInherit: 0,
       distribution: 0,
       recoil: 0,
@@ -2647,7 +2647,7 @@
       bounceFriction: 0.8,
       timeToExplo: 0,
       timeToExploV: 0,
-      hitDamage: 10,
+      hitDamage: 4,
       bloodOnHit: 2,
       startFrame: -1,
       numFrames: 0,
@@ -2659,7 +2659,7 @@
       splinterColour: 13,
       splinterType: 2,
       splinterScatter: 0,
-      objTrailType: 4,
+      objTrailType: 35,
       objTrailDelay: 1,
       partTrailType: 0,
       partTrailObj: -1,
@@ -4451,6 +4451,20 @@
       shake: 0,
       flash: 0,
       dirtEffect: -1
+    },
+    { // blaster sid35
+      startSound: -1,
+      numSounds: 0,
+      animDelay: 4,
+      startFrame: 102,
+      numFrames: 1,
+      detectRange: 0,
+      damage: 0,
+      blowAway: 0,
+      shadow: true,
+      shake: 0,
+      flash: 0,
+      dirtEffect: 5
     },
   ],
   textures: [
