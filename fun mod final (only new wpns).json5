@@ -2307,7 +2307,7 @@
     },
     { // railgun wid36
       detectDistance: 1,
-      blowAway: 0.4,
+      blowAway: 1.2,
       gravity: 0,
       exploSound: -1,
       addSpeed: 0,
