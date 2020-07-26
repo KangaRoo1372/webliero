@@ -786,7 +786,7 @@
     {
       parts: 4,
       bulletType: 39,
-      bulletSpeed: 2,
+      bulletSpeed: 2.5,
       bulletSpeedInherit: 0,
       distribution: 0,
       recoil: 0.9,
@@ -2450,8 +2450,8 @@
       splinterColour: 67,
       splinterType: 17,
       splinterScatter: 0,
-      objTrailType: -1,
-      objTrailDelay: 0,
+      objTrailType: 15,
+      objTrailDelay: 1,
       partTrailType: 0,
       partTrailObj: -1,
       partTrailDelay: 0,
@@ -2834,7 +2834,7 @@
       objTrailDelay: 15,
       partTrailType: 1,
       partTrailObj: 38,
-      partTrailDelay: 15,
+      partTrailDelay: 30,
       speed: 5
     },
     { // ectoplasm wid50
