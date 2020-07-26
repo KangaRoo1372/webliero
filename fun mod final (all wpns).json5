@@ -4614,7 +4614,7 @@
       dirtEffect: 5
     },
     { // ectoplasm sid36
-      startSound: 9,
+      startSound: 4,
       numSounds: 4,
       animDelay: 2,
       startFrame: 52,
