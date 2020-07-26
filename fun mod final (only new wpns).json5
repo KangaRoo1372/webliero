@@ -4617,7 +4617,7 @@
       startSound: 4,
       numSounds: 4,
       animDelay: 2,
-      startFrame: 52,
+      startFrame: 51,
       numFrames: 1,
       detectRange: 0,
       damage: 0,
