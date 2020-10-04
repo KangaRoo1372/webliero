@@ -56,6 +56,8 @@ II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk)
 
 5) gauss gun - renamed to "coil gun",  made the bullet bounce and added some extra damage.
 
+6) acid fan - made its particles invisible (sic!) to make this weapon even more tricky, renamed into "miasma blower" and changed loading time from 300 to 250.
+
 I also made more changes to other old weapons (like less particles in cluster pod and spikes etc.), generally to make aoe weapons weaker and "aiming" weapons stronger. If you like to, I will make a list of full changes.
 
 III. Weapons removed:
