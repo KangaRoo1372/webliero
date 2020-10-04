@@ -238,7 +238,7 @@
       bulletSpeed: 1,
       bulletSpeedInherit: 0,
       distribution: 0,
-      recoil: 0.3,
+      recoil: 0.09,
       ammo: 8,
       delay: 6,
       loadingTime: 440,
@@ -906,7 +906,7 @@
       recoil: 0.03,
       ammo: 160,
       delay: 0,
-      loadingTime: 200,
+      loadingTime: 250,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -914,7 +914,7 @@
       laserBeam: false,
       launchSound: -1,
       playReloadSound: false,
-      name: "ACID FAN"
+      name: "MIASMA BLOWER"
     },
     {
       parts: 1,
@@ -1680,7 +1680,7 @@
       timeToExploV: 10,
       hitDamage: 1,
       bloodOnHit: 2,
-      startFrame: -1,
+      startFrame: 79,
       numFrames: 0,
       loopAnim: false,
       shotType: 0,
