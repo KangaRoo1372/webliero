@@ -1,6 +1,6 @@
 Hi Fellows!
 
-Generally, my webliero fun mod is based on 3 types of changes which are generally related to weapon settings (I didn't change gravity or other main "physics" parameters of the gameplay - I used settings from promode rerevisited, except for some things regarding blood, rope and bonuses - see information below). These types are:
+Generally, my webliero fun mod is based on 3 types of changes which are generally related to weapon settings (I didn't change gravity or other main "physics" parameters of the gameplay and used promode rerevisited original settings, except for some things regarding blood, rope and bonuses - see information below). These types are:
 
 a) new weapons created;
 b) some changes made to old weapons;
