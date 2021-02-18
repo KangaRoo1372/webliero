@@ -62,6 +62,12 @@ I also made more changes to other old weapons (like less particles in cluster po
 
 III. Weapons removed:
 
-actually, I removed only 1 weapon from the original promode rerevisited: winchester (it was replaced by BLASTER, however it's quite different). There is also one weapon removed comparing to original promode revisited, i.e. crackfield - but it was Scharnvirk who removed it, not me; as I mentioned before, my mod was based on Scharnvirk's rere version, so it also contains acid fan added and dynamite (FIRECRACKER in my mod) instead of grenade.
+actually, I removed only 1 weapon from the original promode rerevisited: winchester (it was replaced by BLASTER, however it's quite different). There is also one weapon removed comparing to original promode revisited, i.e. crackfield - but it was Scharnvirk who removed it, not me; as I mentioned before, my mod was based on Scharnvirk's rere version, so it also contains acid fan (MIASMA BLOWER in my mod) and dynamite (FIRECRACKER in my mod) instead of grenade.
+
+IV. Other changes:
+
+a) rope colour changed;
+b) blood first stage colour changed;
+c) made bonuses bounce.
 
 **Roo**
