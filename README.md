@@ -4,4 +4,6 @@ To use the mod, run webliero in your browser, create your own room, then open th
 
 As you can see, I uploaded 2 versions of my mod: first one containing all weapons (i.e. both new ones made by me and old ones from promode rerevisited), and the second one containing only new weapons made by me (the old ones are hidden by using //).
 
-txt file "fun roo mod change list" contains description of the most significant changes I made in my mod, comparing to original one promode rerevisited version
+txt file "fun roo mod change list" contains description of the most significant changes I made in my mod, comparing to original one promode rerevisited version.
+
+I also created some custom maps for webliero - if you are interested, you can find them here: https://gitlab.com/webliero/webliero-maps/-/tree/master/kangaroo
