@@ -336,7 +336,7 @@
      "recoil": 0.2453334,
      "ammo": 1,
      "delay": 0,
-     "loadingTime": 470,
+     "loadingTime": 240,
      "leaveShells": 0,
      "leaveShellDelay": 1,
      "fireCone": 0,
@@ -803,7 +803,7 @@
       name: "WURM'S CRIPPLE BULLET ®"
     },
     {
-      parts: 3,
+      parts: 4,
       bulletType: 40,
       bulletSpeed: 2,
       bulletSpeedInherit: 0.5882352941176471,
@@ -1164,7 +1164,7 @@
       bounce: 0.6,
       bounceFriction: 0.7,
       timeToExplo: 45,
-      timeToExploV: 15,
+      timeToExploV: 5,
       hitDamage: 0,
       bloodOnHit: 0,
       startFrame: 215,
