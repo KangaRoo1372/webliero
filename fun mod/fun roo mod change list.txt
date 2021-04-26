@@ -8,25 +8,25 @@ c) some weapons removed.
 
 I. New weapons:
 
-1) wurm's cripple bullet - a bazooka-shaped bullet, which - after hitting the target - splatters into dirt that "freezes" the opponent for some time; the opponent have only some time to dig the dirt and escape from the trap, because the dirt explodes and does many damage. Ammo: 2 in the clip. It has "Wurm" in its name, as a tribute to another user (with a nickname Wurm) who was the originator of this weapon (I made his idea come true!)
+1) wurm's cripple bullet - a bazooka-shaped bullet, which - after hitting the target - splatters into dirt that "freezes" the opponent for some time; the opponent have only some time to dig the dirt and escape from the trap, because the dirt explodes and does many damage. Ammo: 2 in the clip. It has "Wurm" in its name, as a tribute to another user (with a nickname Wurm) who was the originator of this weapon (I made his idea come true!).
 
 2) kamikaze - I think I do not have to explain how it works :) the user dies immediately, but also a napalm trail is created which takes some damage around in a big area (that can kill opponent).
 
-3) blaster - a weapon used by droids in Star Wars, i.e. the pistol which shoots a kind of laser-beam bullets, that are very fast. Ammo: 15 in the clip.
+3) blaster - a weapon used by droids in Star Wars, i.e. the pistol which shoots a kind of laser-beam bullets, that are very fast. Ammo: 12 in the clip.
 
 4) dragon flies - you throw a mine-shaped bomb (which pretends to be an egg :P), that explodes after some time; after the explosion, two fire balls (each one has a fiery tail) "hatch" from the bomb (so that I wrote the bomb pretends to be an egg), called "dragon flies". These dragon flies float around the map for a short time in a random way, doing damage to anyone who touches them (so you can say they "bite" :P).
 
 5) kienzan - a kind of energetic circular saw that appears around the user, doing damage to anyone who is in the range of it. The name refers to "Dragon Ball" anime series (kienzan is a kikoha used by Kuririn-san).
 
-6) andre's magnetic shield - it creates a kind of square-shaped (don't ask me why it is not round!) energetic barrier around the user. This barrier can bounce almost all enemy's shots (except for rifle actually). It has "Andre" in its name, as a tribute to another user (with a nickname And_re) who helped me developing this weapon (thanks dude!)
+6) andre's magnetic shield - it creates a kind of square-shaped (don't ask me why it is not round!) energetic barrier around the user. This barrier can bounce almost all enemy's shots (except for rifle actually). It has "Andre" in its name, as a tribute to another user (with a nickname And_re) who helped me developing this weapon (thanks dude!).
 
 7) nuclear rain - it creates golden rain on a big area which falls down to the ground and does damage to anyone within its range.
 
 8) senzu bean - a special one healing weapon. It restores your hp to the maximum level if used. It can be used only once per single life (the loading time is actually 99999999, so it is almost impossible to load it again during one match). The name refers to "Dragon Ball" anime series also.
 
-9) regeneration - another healing weapon, which also can be used once per singe life. The difference between regeneration and senzu bean, is that regeneration restores hp not for instance (like senzu), but slowly, approximately 0.5 hp per one milisec.
+9) regeneration - another healing weapon, which also can be used once per singe life. The difference between regeneration and senzu bean, is that regeneration restores hp not for instance (like senzu), but slowly, approximately 0.5 hp per one frame.
 
-10) doppelgaenger - actually, it is booby trap, but converted so that now it looks like blue worm (sic!) that moves when bouncing on the map. The doppel also throws a mini-nuke shaped bombs, which are not "real" mini nukes (they do only a little damage) - only to distract the opponents.
+10) doppelgaenger - actually, it is booby trap, but converted so that now it looks like blue worm (sic!) that moves when bouncing on the map. The doppel also throws grenades from time to time (to make more dmg and to distract the opponents).
 
 11) shockwave bomb - a bomb which creates a kind of shockwave after the explosion. The shockwave does some damage to worms, but do not destroy the ground.
 
