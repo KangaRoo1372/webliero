@@ -1,5 +1,9 @@
 Hi Fellows!
 
+As you can see, I uploaded 2 versions of my mod: first one containing all weapons (i.e. both new ones made by me and old ones from promode rerevisited), and the second one containing only new weapons made by me (the old ones are hidden by using //). 
+
+Here is the description of the most significant changes I made in my mod, comparing to original one promode rerevisited version.
+
 Generally, my webliero fun mod is based on 3 types of changes which are generally related to weapon settings (I didn't change gravity or other main "physics" parameters of the gameplay and used promode rerevisited original settings, except for some things regarding blood, rope and bonuses - see information below). These types are:
 
 a) new weapons created;
