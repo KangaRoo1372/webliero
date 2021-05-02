@@ -1013,7 +1013,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // so chidan wid13 (unused)
+    { // kakusan kikoho wid13
       detectDistance: 1,
       blowAway: 0,
       gravity: -0.25,
