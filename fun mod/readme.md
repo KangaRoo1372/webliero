@@ -71,7 +71,9 @@ actually, I removed only 1 weapon from the original promode rerevisited: winches
 IV. Other changes:
 
 a) rope colour changed;
+
 b) blood first stage colour changed;
+
 c) made bonuses bounce.
 
 **Roo**
