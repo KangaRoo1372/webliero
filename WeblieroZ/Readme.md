@@ -42,10 +42,12 @@ WeblieroZ (a.k.a. Dragon Ball Z Liero Mod) - as the name suggests, this mod is i
 
 21) Kick
 
-23) Power Up
+22) Power Up
 
-24) Big Bang Attack
+23) Big Bang Attack
 
-25) Senzu Bean
+24) Senzu Bean
+
+25) Kakusan Kikoho
 
 **Roo**
