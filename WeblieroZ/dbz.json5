@@ -157,6 +157,25 @@
       name: "POWER UP"
     },
     {
+       parts: 1,
+       bulletType: 21,
+       bulletSpeed: 1.5,
+       bulletSpeedInherit: 0.6666667,
+       distribution: 0.49998474,
+       recoil: 0,
+       ammo: 3,
+       delay: 50,
+       loadingTime: 1000,
+       leaveShells: 0,
+       leaveShellDelay: 1,
+       fireCone: 0,
+       laserSight: false,
+       laserBeam: false,
+       launchSound: 23,
+       playReloadSound: true,
+       name: "GHOST KAMIKAZE ATTACK"
+    },     
+    {
       parts: 1,
       bulletType: 5,
       bulletSpeed: 0.1,
@@ -220,12 +239,12 @@
       bulletSpeedInherit: 1,
       distribution: 0.0000152587890625,
       recoil: 0,
-      ammo: 100,
+      ammo: 5,
       delay: 0,
-      loadingTime: 360,
+      loadingTime: 220,
       leaveShells: 0,
       leaveShellDelay: 1,
-      fireCone: 10,
+      fireCone: 0,
       laserSight: false,
       laserBeam: false,
       launchSound: 24,
@@ -1279,45 +1298,45 @@
       partTrailDelay: 0,
       speed: 355
     },
-    { // kiai wid21 (unused)
-      "detectDistance": 0,
-      "blowAway": 0.3,
-      "gravity": 0,
-      "exploSound": -1,
-      "addSpeed": 0,
-      "distribution": 8,
-      "multSpeed": 1,
-      "createOnExp": 27,
-      "dirtEffect": -1,
-      "wormExplode": false,
-      "explGround": true,
-      "wormCollide": true,
-      "collideWithObjects": true,
-      "affectByExplosions": false,
-      "bounce": 0,
-      "bounceFriction": 0.8,
-      "timeToExplo": 1,
-      "timeToExploV": 0,
-      "hitDamage": 0,
-      "bloodOnHit": 0,
-      "startFrame": -1,
-      "numFrames": 0,
-      "loopAnim": false,
-      "shotType": 0,
-      "repeat": 2,
-      "colorBullets": 25,
-      "splinterAmount": 0,
-      "splinterColour": 0,
-      "splinterType": -1,
-      "splinterScatter": 0,
-      "objTrailType": -1,
-      "objTrailDelay": 0,
-      "partTrailType": 0,
-      "partTrailObj": -1,
-      "partTrailDelay": 0,
-      "speed": 180
+    { // ghost attack wid21
+      detectDistance: 2,
+      blowAway: 0.1,
+      gravity: 0.015258789,
+      exploSound: 13,
+      addSpeed: 0,
+      distribution: 0.49998474,
+      multSpeed: 1,
+      createOnExp: 0,
+      dirtEffect: 1,
+      wormExplode: true,
+      explGround: false,
+      wormCollide: true,
+      collideWithObjects: false,
+      affectByExplosions: true,
+      bounce: 0.3,
+      bounceFriction: 0.8,
+      timeToExplo: 1200,
+      timeToExploV: 0,
+      hitDamage: 40,
+      bloodOnHit: 0,
+      startFrame: -1,
+      numFrames: 0,
+      loopAnim: false,
+      shotType: 3,
+      repeat: 1,
+      colorBullets: 0,
+      splinterAmount: 10,
+      splinterColour: 0,
+      splinterType: 15,
+      splinterScatter: 0,
+      objTrailType: 7,
+      objTrailDelay: 1,
+      partTrailType: 0,
+      partTrailObj: -1,
+      partTrailDelay: 1,
+      speed: 150
     },
-    { // saibamen wid22
+    { // saibaman seed wid22
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.0252587890625,
@@ -2343,11 +2362,11 @@
       timeToExplo: 70,
       timeToExploV: 60
     },
-    { // kiaiho nid24
+    { // kiaiho splinter nid24
       detectDistance: 0,
       gravity: 0,
       speed: 5,
-      speedV: 0.05,
+      speedV: 0,
       distribution: 0.030517578125,
       blowAway: 0.5,
       bounce: 0,
@@ -2356,7 +2375,7 @@
       explGround: false,
       wormDestroy: true,
       bloodOnHit: 5,
-      startFrame: 15,
+      startFrame: 79,
       numFrames: 0,
       drawOnMap: false,
       colorBullets: 43,
@@ -2368,9 +2387,9 @@
       splinterType: -1,
       bloodTrail: false,
       bloodTrailDelay: 0,
-      leaveObj: -1,
-      leaveObjDelay: 0,
-      timeToExplo: 5,
+      leaveObj: 5,
+      leaveObjDelay: 2,
+      timeToExplo: 8,
       timeToExploV: 0
     },
     { // new missile explosion nid25
@@ -2583,7 +2602,7 @@
       timeToExplo: 8,
       timeToExploV: 0
     },
-    {   // genki dama splinter nid32
+    { // genki dama splinter nid32
       detectDistance: 1,
       gravity: 0,
       speed: 3,
@@ -2613,7 +2632,7 @@
       timeToExplo: 45,
       timeToExploV: 0
     },
-    { // final explosion nid33
+    { // final explosion splinter nid33
       detectDistance: 0,
       gravity: 0,
       speed: 3,
@@ -2643,7 +2662,7 @@
       timeToExplo: 15,
       timeToExploV: 0
     },
-    { // saibaman nid34
+    { // saibaman guys nid34
       detectDistance: 2,
       gravity: 0.01068115234375,
       speed: 2,
@@ -2823,7 +2842,7 @@
       timeToExplo: 3,
       timeToExploV: 3
     },
-    { // kamehame trail nid40
+    { // kamehameha trail nid40
       detectDistance: 0,
       gravity: 0,
       speed: 1,
@@ -2853,7 +2872,7 @@
       timeToExplo: 2,
       timeToExploV: 0
     },
-    { // kaioken nid41 (unused)
+    { // kaioken test nid41 (unused)
        detectDistance: 0,
       gravity: 0,
       speed: 4,
@@ -3063,7 +3082,7 @@
       timeToExplo: 10,
       timeToExploV: 0
     },
-    { // kienzan nid48
+    { // kienzan parttrail nid48
       detectDistance: 0,
       gravity: 0,
       speed: 3,
@@ -3393,7 +3412,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // final explosion sid17
+    { // final explosion objtrail sid17
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3533,7 +3552,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // kiaieffect sid27 (unused)
+    { // kiai-ho visual effect sid27 (unused)
         startSound: -1,
         numSounds: 0,
         animDelay: 1,
@@ -3701,21 +3720,21 @@
       flash: 0,
       dirtEffect: -1
     },
-    { //bukujutsu test3 sid39 (unused)
-        startSound: -1,
-        numSounds: 0,
-        animDelay: 2,
-        startFrame: 249,
-        numFrames: 0,
-        detectRange: 10,
-        damage: 0,
-        blowAway: 0,
-        shadow: true,
-        shake: 3,
-        flash: 6,
-        dirtEffect: 2
-      },
-      { //bukujutsu test4 sid40 (unused)
+    { // bukujutsu test3 sid39 (unused)
+      startSound: -1,
+      numSounds: 0,
+      animDelay: 2,
+      startFrame: 249,
+      numFrames: 0,
+      detectRange: 10,
+      damage: 0,
+      blowAway: 0,
+      shadow: true,
+      shake: 3,
+      flash: 6,
+      dirtEffect: 2
+     },
+     { //bukujutsu test4 sid40 (unused)
         startSound: -1,
         numSounds: 0,
         animDelay: 1,
@@ -3743,19 +3762,19 @@
       flash: 0,
       dirtEffect: -1
      },
-     { // taiyoken sid42
-        startSound: -1,
-        numSounds: 0,
-        animDelay: 1,
-        startFrame: 100,
-        numFrames: 3,
-        detectRange: 25,
-        damage: 0,
-        blowAway: 0,
-        shadow: true,
-        shake: 0,
-        flash: 0,
-        dirtEffect: 2
+     { // taiyoken visual sid42
+      startSound: -1,
+      numSounds: 0,
+      animDelay: 1,
+      startFrame: 100,
+      numFrames: 3,
+      detectRange: 25,
+      damage: 0,
+      blowAway: 0,
+      shadow: true,
+      shake: 0,
+      flash: 0,
+      dirtEffect: 2
      },
      { // final explosion suicide effect sid43
       startSound: 9,
@@ -3772,32 +3791,32 @@
       dirtEffect: 0
      },
      { // fireball trail sid44
-        startSound: -1,
-        numSounds: 0,
-        animDelay: 1,
-        startFrame: 40,
-        numFrames: 4,
-        detectRange: 0,
-        damage: 0,
-        blowAway: 0,
-        shadow: true,
-        shake: 0,
-        flash: 0,
-        dirtEffect: 2
+      startSound: -1,
+      numSounds: 0,
+      animDelay: 1,
+      startFrame: 40,
+      numFrames: 4,
+      detectRange: 0,
+      damage: 0,
+      blowAway: 0,
+      shadow: true,
+      shake: 0,
+      flash: 0,
+      dirtEffect: 2
      },
-     { // ki no baria sid45
-        startSound: -1,
-        numSounds: 0,
-        animDelay: 1,
-        startFrame: 91,
-        numFrames: 4,
-        detectRange: 0,
-        damage: 0,
-        blowAway: 0,
-        shadow: true,
-        shake: 0,
-        flash: 0,
-        dirtEffect: -1
+     { // ki no baria visual effect sid45
+       startSound: -1,
+       numSounds: 0,
+       animDelay: 1,
+       startFrame: 91,
+       numFrames: 4,
+       detectRange: 0,
+       damage: 0,
+       blowAway: 0,
+       shadow: true,
+       shake: 0,
+       flash: 0,
+       dirtEffect: -1
       },
       { // final flash objtrail sid46
       startSound: 9,
