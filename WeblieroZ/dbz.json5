@@ -502,7 +502,7 @@
       parts: 1,
       bulletType: 23,
       bulletSpeed: 4,
-      bulletSpeedInherit: 1,
+      bulletSpeedInherit: 0,
       distribution: 0,
       recoil: -20,
       ammo: 1,
@@ -1203,7 +1203,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { //kiaiho wid18
+    { // kiaiho wid18
         detectDistance: -5,
         blowAway: 0,
         gravity: 0,
@@ -1241,7 +1241,7 @@
         partTrailDelay: 0,
         speed: 100
     },
-    { //big bang attack wid19
+    { // big bang attack wid19
         detectDistance: 1,
         blowAway: 0,
         gravity: 0,
@@ -1431,7 +1431,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // renzoku wid24
+    { // renzoku energy dan wid24
       detectDistance: 1,
       blowAway: 0.1,
       gravity: 0,
@@ -1583,7 +1583,7 @@
         partTrailDelay: 0,
         speed: 300
       },
-      { //kinobaria wid28
+      { //ki no baria wid28
         detectDistance: -5,
         blowAway: 2,
         gravity: 0,
@@ -1638,7 +1638,7 @@
       affectByExplosions: false,
       bounce: 0,
       bounceFriction: 0,
-      timeToExplo: 65045,
+      timeToExplo: 0,
       timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 0,
@@ -1781,7 +1781,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // mortar splinter final nid4
+    { // mortar splinter final nid4 (unused)
       detectDistance: 1,
       gravity: 0.01068115234375,
       speed: 4,
@@ -1811,7 +1811,7 @@
       timeToExplo: 16,
       timeToExploV: 12
     },
-    { // high damage bullet splinter nid5
+    { // high damage bullet splinter nid5 (unused)
       detectDistance: 1,
       gravity: 0.01068115234375,
       speed: 4,
@@ -1841,7 +1841,7 @@
       timeToExplo: 18,
       timeToExploV: 5
     },
-    { // nid6
+    { // blood nid6
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 0.75,
@@ -1901,7 +1901,7 @@
       timeToExplo: 4000,
       timeToExploV: 1000
     },
-    { // clusterpart nid8
+    { // clusterpart nid8 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2.2,
@@ -1931,7 +1931,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // tupolev bomb nid9
+    { // tupolev bomb nid9 (unused)
       detectDistance: 0,
       gravity: 0.0152587890625,
       speed: 2,
@@ -1961,7 +1961,7 @@
       timeToExplo: 200,
       timeToExploV: 50
     },
-    { // tupolev bomb nid10
+    { // tupolev bomb nid10 (unused)
       detectDistance: 1,
       gravity: 0.030517578125,
       speed: 1.8,
@@ -1991,7 +1991,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // mininuke part nid11
+    { // mininuke part nid11 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2,
@@ -2021,7 +2021,7 @@
       timeToExplo: 80,
       timeToExploV: 20
     },
-    { // napalm trail nid12
+    { // napalm trail nid12 (unused)
       detectDistance: 0,
       gravity: 0.0152587890625,
       speed: 1.5,
@@ -2051,7 +2051,7 @@
       timeToExplo: 10,
       timeToExploV: 10
     },
-    { // cripple nid13
+    { // cripple nid13 (unused)
       detectDistance: 0,
       gravity: 1,
       speed: 3,
@@ -2081,7 +2081,7 @@
       timeToExplo: 1,
       timeToExploV: 0
     },
-    { // banana nid14
+    { // banana nid14 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2.2,
@@ -2111,7 +2111,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // new bazooka explosion nid15
+    { // explosion delayer nid15
       detectDistance: 0,
       gravity: 0,
       speed: 3,
@@ -2141,7 +2141,7 @@
       timeToExplo: 5,
       timeToExploV: 0
     },
-    { // new bazooka smoke nid16
+    { // new bazooka smoke nid16 (unused)
       detectDistance: 1,
       gravity: -0.05,
       speed: 0,
@@ -2201,7 +2201,7 @@
       timeToExplo: 20,
       timeToExploV: 10
     },
-    { // light banana nid18
+    { // light banana nid18 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2.2,
@@ -2231,7 +2231,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // mortar splinter #1 nid19
+    { // mortar splinter #1 nid19 (unused)
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 4,
@@ -2261,7 +2261,7 @@
       timeToExplo: 10,
       timeToExploV: 0
     },
-    { // mortar splinter #2 nid20
+    { // mortar splinter #2 nid20 (unused)
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 1,
@@ -2291,7 +2291,7 @@
       timeToExplo: 5,
       timeToExploV: 0
     },
-    { // mortar splinter delayer nid21
+    { // mortar splinter delayer nid21 (unused)
       detectDistance: 0,
       gravity: 0,
       speed: 1,
@@ -2321,7 +2321,7 @@
       timeToExplo: 5,
       timeToExploV: 2
     },
-    { // nid22
+    { // grasshopper nid22 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -2351,7 +2351,7 @@
       timeToExplo: 70,
       timeToExploV: 60
     },
-    { // nid23
+    { // grasshopper nid23 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -2411,7 +2411,7 @@
       timeToExplo: 8,
       timeToExploV: 0
     },
-    { // new missile explosion nid25
+    { // new missile explosion nid25 (unused)
       detectDistance: 0,
       gravity: 0,
       speed: 3,
@@ -2441,7 +2441,7 @@
       timeToExplo: 40,
       timeToExploV: 0
     },
-    { // flamer hot smoke nid26
+    { // flamer hot smoke nid26 (unused)
       detectDistance: 1,
       gravity: -0.05,
       speed: 0,
@@ -2471,7 +2471,7 @@
       timeToExplo: 15,
       timeToExploV: 10
     },
-    { // grenade explosion nid27
+    { // smoke delayer nid27
       detectDistance: 0,
       gravity: 0,
       speed: 3,
@@ -2591,7 +2591,7 @@
       timeToExplo: 3,
       timeToExploV: 0
     },
-    { //bigbangattack nid31
+    { //big bang attack nid31
       detectDistance: 0,
       gravity: 0,
       speed: 4,
@@ -2801,7 +2801,7 @@
       timeToExplo: 2,
       timeToExploV: 0
     },
-    { // burningattack trail nid38
+    { // burning attack trail nid38
       detectDistance: 0,
       gravity: 0,
       speed: 3,
@@ -3263,7 +3263,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // sid5
+    { // kiai ho objtrail sid5
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3277,7 +3277,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // burningattack parttrail sid6
+    { // burning attack parttrail sid6
       startSound: -1,
       numSounds: 0,
       animDelay: 1,
@@ -3305,7 +3305,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // sid8
+    { // small explosion silent sid8
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3319,7 +3319,7 @@
       flash: 0,
       dirtEffect: 2
     },
-    { // sid9
+    { // very small explosion silent sid9
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3333,7 +3333,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // sid10
+    { // medium explosion smaller sid10
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3347,7 +3347,7 @@
       flash: 3,
       dirtEffect: 8
     },
-    { // sid11 (unused)
+    { // large explosion smaller sid11
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3361,7 +3361,7 @@
       flash: 6,
       dirtEffect: 1
     },
-    { // sid12
+    { // large explosion even smaller sid12
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3375,7 +3375,7 @@
       flash: 5,
       dirtEffect: 1
     },
-    { // sid13
+    { // undefined sid13
       startSound: -1,
       numSounds: 0,
       animDelay: 0,
@@ -3487,7 +3487,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // lightning trail sid21
+    { // lightning trail sid21 (unused)
       startSound: -1,
       numSounds: 0,
       animDelay: 3,
@@ -3501,7 +3501,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // mortar kick sid22
+    { // mortar kick sid22 (unused)
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3515,7 +3515,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // proxy mine aoe explosion sid23
+    { // proxy mine aoe explosion sid23 (unused)
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3725,7 +3725,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // kamehameha parttrail sid38 (unused)
+    { // kamehameha parttrail sid38
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3739,7 +3739,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // bukujutsu test3 sid39 (unused)
+    { // bukujutsu test1 sid39 (unused)
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3753,7 +3753,7 @@
       flash: 6,
       dirtEffect: 2
      },
-     { //bukujutsu test4 sid40 (unused)
+     { //bukujutsu test2 sid40 (unused)
         startSound: -1,
         numSounds: 0,
         animDelay: 1,
@@ -3893,7 +3893,7 @@
       flash: 0,
       dirtEffect: -1
      },
-     { // genki dama visual sid50
+     { // genki dama visual effect sid50
       startSound: -1,
       numSounds: 0,
       animDelay: 1,
