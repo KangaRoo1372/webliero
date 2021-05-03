@@ -42,120 +42,6 @@
     hBonusReloadOnly: true
   },
   weapons: [
- //   {
- //     parts: 15,
- //     bulletType: 0,
- //     bulletSpeed: 4,
- //    bulletSpeedInherit: 0.2298850574712644,
- //    distribution: 0.25,
- //     recoil: 0.65,
- //     ammo: 8,
- //     delay: 28,
- //     loadingTime: 300,
- //     leaveShells: 1,
- //     leaveShellDelay: 28,
- //     fireCone: 9,
- //     laserSight: false,
- //     laserBeam: false,
- //     launchSound: 0,
- //     playReloadSound: true,
- //     name: "AUTO SHOTGUN"
- //   },
- //   {
- //     parts: 1,
- //     bulletType: 1,
- //     bulletSpeed: 4,
- //     bulletSpeedInherit: 0.2040816326530612,
- //     distribution: 0.0457763671875,
- //     recoil: 0.06,
- //     ammo: 55,
- //     delay: 3,
- //     loadingTime: 310,
- //     leaveShells: 2,
- //     leaveShellDelay: 1,
- //     fireCone: 6,
- //     laserSight: false,
- //     laserBeam: false,
- //     launchSound: 1,
- //     playReloadSound: true,
- //     name: "CHAINGUN"
- //   },
- //   {
- //     parts: 1,
- //     bulletType: 2,
- //     bulletSpeed: 4,
- //     bulletSpeedInherit: 0,
- //     distribution: 0,
- //     recoil: 0.8,
- //     ammo: 1,
- //     delay: 5,
- //     loadingTime: 280,
- //     leaveShells: 1,
- //     leaveShellDelay: 1,
- //     fireCone: 8,
- //     laserSight: true,
- //     laserBeam: false,
- //     launchSound: 13,
- //     playReloadSound: true,
- //     name: "RIFLE"
- //   },
- //   {
- //     parts: 1,
- //     bulletType: 3,
- //     bulletSpeed: 2.6,
- //     bulletSpeedInherit: 0.3846153846153846,
- //     distribution: 0,
- //     recoil: 0.5,
- //     ammo: 3,
- //     delay: 50,
- //     loadingTime: 330,
- //     leaveShells: 0,
- //     leaveShellDelay: 1,
- //     fireCone: 9,
- //     laserSight: false,
- //     laserBeam: false,
- //     launchSound: 3,
- //     playReloadSound: true,
- //     name: "BAZOOKA"
- //   },
- //   {
- //     parts: 1,
- //     bulletType: 4,
- //     bulletSpeed: 1.4,
- //     bulletSpeedInherit: 0,
- //     distribution: 0,
- //     recoil: 0,
- //     ammo: 60,
- //     delay: 0,
- //     loadingTime: 380,
- //     leaveShells: 0,
- //     leaveShellDelay: 1,
- //     fireCone: 5,
- //     laserSight: false,
- //     laserBeam: false,
- //     launchSound: 29,
- //     playReloadSound: true,
- //     name: "LIGHTNING GUN"
- //   },
- //   {
- //     parts: 1,
- //     bulletType: 5,
- //     bulletSpeed: 5,
- //     bulletSpeedInherit: 0,
- //     distribution: 0.2288818359375,
- //     recoil: 0,
- //     ammo: 75,
- //     delay: 0,
- //     loadingTime: 380,
- //     leaveShells: 0,
- //     leaveShellDelay: 1,
- //     fireCone: 0,
- //     laserSight: false,
- //     laserBeam: false,
- //     launchSound: 29,
- //     playReloadSound: true,
- //     name: "SOLAR SCORCH"
- //   },
     {
       parts: 1,
       bulletType: 44,
@@ -175,25 +61,6 @@
       playReloadSound: false,
       name: "NUCLEAR RAIN"
     },
- //   {
- //     parts: 2,
- //     bulletType: 8,
- //     bulletSpeed: 2.1,
- //     bulletSpeedInherit: 0.47619047619047616,
- //     distribution: 0.030517578125,
- //     recoil: 0.15,
- //     ammo: 7,
- //     delay: 11,
- //     loadingTime: 380,
- //     leaveShells: 0,
- //     leaveShellDelay: 1,
- //     fireCone: 8,
- //     laserSight: false,
- //     laserBeam: false,
- //     launchSound: 6,
- //     playReloadSound: true,
- //     name: "DOOMSDAY"
- //   },
     {
       parts: 1,
       bulletType: 43,
@@ -213,25 +80,6 @@
       playReloadSound: false,
       name: "BUZZ SAW"
     },
- //   {
- //     parts: 3,
- //     bulletType: 9,
- //     bulletSpeed: 1.65,
- //     bulletSpeedInherit: 0.3,
- //     distribution: 0.152587890625,
- //     recoil: 0,
- //     ammo: 50,
- //     delay: 1,
- //     loadingTime: 330,
- //     leaveShells: 0,
- //     leaveShellDelay: 1,
- //     fireCone: 20,
- //     laserSight: false,
- //     laserBeam: false,
- //     launchSound: -1,
- //     playReloadSound: true,
- //     name: "FLAMER"
- //  },
    {
       parts: 1,
       bulletType: 50,
@@ -270,25 +118,6 @@
       playReloadSound: false,
       name: "HEALING POTION"
     },
-//    {
-//      parts: 1,
-//      bulletType: 10,
-//      bulletSpeed: 3,
-//      bulletSpeedInherit: 0.3333333333333333,
-//      distribution: 0.000152587890625,
-//      recoil: 0.4,
-//      ammo: 4,
-//      delay: 10,
-//      loadingTime: 400,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 0,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 4,
-//      playReloadSound: true,
-//      name: "GRN LAUNCHER"
-//    },
 //    {
 //     parts: 1,
 //      bulletType: 12,
@@ -346,44 +175,6 @@
      "playReloadSound": false,
      "name": "SHOCKWAVE BOMB"
     },
-//    {
-//     parts: 1,
-//      bulletType: 13,
-//      bulletSpeed: 0.45,
-//      bulletSpeedInherit: 0,
-//      distribution: 0.00762939453125,
-//      recoil: 1,
-//      ammo: 1,
-//      delay: 50,
-//      loadingTime: 450,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 10,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 4,
-//      playReloadSound: false,
-//      name: "MORTAR"
-//    },
-//    {
-//      parts: 1,
-//      bulletType: 14,
-//      bulletSpeed: 3,
-//      bulletSpeedInherit: 0.28169014084507044,
-//      distribution: 0.091552734375,
-//      recoil: 0.09,
-//      ammo: 80,
-//      delay: 0,
-//      loadingTime: 340,
-//      leaveShells: 4,
-//      leaveShellDelay: 5,
-//      fireCone: 6,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 1,
-//      playReloadSound: true,
-//      name: "MINIGUN"
-//    },
     {
       parts: 1,
       bulletType: 24,
@@ -403,43 +194,24 @@
       playReloadSound: false,
       name: "BALROG'S WHIP"
     },
-//    {
-//      parts: 18,
-//      bulletType: 15,
-//      bulletSpeed: 1.4,
-//      bulletSpeedInherit: 0.7142857142857143,
-//      distribution: 0.4999847412109375,
-//      recoil: 0.2,
-//      ammo: 1,
-//      delay: 0,
-//      loadingTime: 440,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 0,
-//     laserSight: false,
-//      laserBeam: false,
-//      launchSound: 5,
-//      playReloadSound: false,
-//      name: "CLUSTER POD"
-//    },
     {
-      "parts": 70,
-      "bulletType": 46,
-      "bulletSpeed": 1.5,
-      "bulletSpeedInherit": 1,
-      "distribution": 0,
-      "recoil": 0,
-      "ammo": 100,
-      "delay": 0,
-      "loadingTime": 600,
-      "leaveShells": 0,
-      "leaveShellDelay": 1,
-      "fireCone": 0,
-      "laserSight": false,
-      "laserBeam": false,
-      "launchSound": 29,
-      "playReloadSound": false,
-      "name": "ANDRE'S MAGNETIC SHIELD ©"
+      parts: 70,
+      bulletType: 46,
+      bulletSpeed: 1.5,
+      bulletSpeedInherit: 1,
+      distribution: 0,
+      recoil: 0,
+      ammo: 100,
+      delay: 0,
+      loadingTime: 600,
+      leaveShells: 0,
+      leaveShellDelay: 1,
+      fireCone: 0,
+      laserSight: false,
+      laserBeam: false,
+      launchSound: 29,
+      playReloadSound: false,
+      name: "ANDRE'S MAGNETIC SHIELD ©"
     },
     {
       parts: 3,
@@ -460,25 +232,6 @@
       playReloadSound: true,
       name: "HOT STEAM"
     },
-//    {
-//      parts: 48,
-//      bulletType: 16,
-//      bulletSpeed: 3,
-//      bulletSpeedInherit: 0.2225,
-//      distribution: 1,
-//      recoil: 1.2,
-//      ammo: 2,
-//      delay: 20,
-//      loadingTime: 330,
-//      leaveShells: 1,
-//      leaveShellDelay: 28,
-//      fireCone: 10,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 0,
-//      playReloadSound: true,
-//      name: "SUPER SHOTGUN"
-//    },
     {
       parts: 1,
       bulletType: 17,
@@ -517,25 +270,6 @@
       playReloadSound: false,
       name: "DRAGON FLIES"
     },
-//    {
-//      parts: 4,
-//      bulletType: 18,
-//      bulletSpeed: 3,
-//      bulletSpeedInherit: 0.3333333333333333,
-//      distribution: 0.30517578125,
-//      recoil: 2.3,
-//      ammo: 1,
-//      delay: 0,
-//      loadingTime: 380,
-//      leaveShells: 4,
-//      leaveShellDelay: 1,
-//      fireCone: 6,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 11,
-//      playReloadSound: true,
-//      name: "CHIQUITA GUN"
-//    },
     {
       parts: 1,
       bulletType: 42,
@@ -555,82 +289,6 @@
       playReloadSound: true,
       name: "TOXIC SMOKE"
     },
-//    {
-//      "parts": 3,
-//      "bulletType": 20,
-//      "bulletSpeed": 5,
-//      "bulletSpeedInherit": 0.2,
-//      "distribution": 0.4199847412109375,
-//      "recoil": 0.35,
-//      "ammo": 2,
-//      "delay": 60,
-//      "loadingTime": 400,
-//      "leaveShells": 0,
-//      "leaveShellDelay": 1,
-//      "fireCone": 10,
-//      "laserSight": false,
-//      "laserBeam": false,
-//      "launchSound": 3,
-//      "playReloadSound": true,
-//      "name": "INCENDIATOR"
-//    },
-//    {
-//      parts: 1,
-//      bulletType: 21,
-//      bulletSpeed: 3.5,
-//      bulletSpeedInherit: 0.3333333333333333,
-//      distribution: 0,
-//      recoil: 0.35,
-//      ammo: 2,
-//      delay: 90,
-//      loadingTime: 480,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 0,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 6,
-//      playReloadSound: true,
-//      name: "ZIMM"
-//    },
-//    {
-//      parts: 1,
-//      bulletType: 22,
-//      bulletSpeed: 1.8,
-//      bulletSpeedInherit: 0.5555555555555556,
-//      distribution: 0.1983642578125,
-//      recoil: 0.3,
-//      ammo: 2,
-//      delay: 30,
-//      loadingTime: 450,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 0,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 5,
-//      playReloadSound: false,
-//      name: "MINI NUKE"
-//    },
-//    {
-//      parts: 1,
-//      bulletType: 26,
-//      bulletSpeed: 5.1,
-//      bulletSpeedInherit: 0,
-//      distribution: 0.004119873046875,
-//      recoil: 0.6,
-//      ammo: 8,
-//      delay: 20,
-//      loadingTime: 510,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 4,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 9,
-//      playReloadSound: true,
-//      name: "FLAK CANNON"
-//    },
     {
       parts: 1,
       bulletType: 28,
@@ -650,44 +308,6 @@
       playReloadSound: true,
       name: "SOLAR BEAM"
     },
-//    {
-//      parts: 6,
-//      bulletType: 29,
-//      bulletSpeed: 1.1,
-//      bulletSpeedInherit: 0.9090909090909091,
-//      distribution: 0.3662109375,
-//      recoil: 0.1,
-//      ammo: 1,
-//      delay: 0,
-//      loadingTime: 450,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 0,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 5,
-//      playReloadSound: false,
-//      name: "SPIKEBALLS"
-//    },
-//    {
-//      parts: 1,
-//      bulletType: 31,
-//      bulletSpeed: 2,
-//      bulletSpeedInherit: 0.5,
-//      distribution: 0,
-//      recoil: 0.2,
-//      ammo: 1,
-//      delay: 20,
-//      loadingTime: 400,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 7,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 3,
-//      playReloadSound: true,
-//      name: "TUPOLEV"
-//    },
     {
       parts: 1,
       bulletType: 32,
@@ -726,44 +346,6 @@
       playReloadSound: true,
       name: "BLASTER"
     },
-//    {
-//      parts: 2,
-//      bulletType: 37,
-//      bulletSpeed: 2.75,
-//      bulletSpeedInherit: 0.15,
-//      distribution: 0.04,
-//      recoil: 0,
-//      ammo: 6,
-//      delay: 18,
-//      loadingTime: 217,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 0,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 2,
-//      playReloadSound: true,
-//      name: "DARTGUN"
-//    },
-//    {
-//      parts: 3,
-//      bulletType: 38,
-//      bulletSpeed: 2.5,
-//      bulletSpeedInherit: 0.31746031746031744,
-//      distribution: 0.2,
-//      recoil: 0.06,
-//      ammo: 36,
-//      delay: 5,
-//      loadingTime: 375,
-//      leaveShells: 2,
-//      leaveShellDelay: 1,
-//      fireCone: 6,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 28,
-//      playReloadSound: true,
-//      name: "SCATTERGUN"
-//    },
     {
       parts: 4,
       bulletType: 39,
@@ -916,9 +498,28 @@
       playReloadSound: false,
       name: "REGENERATION"
     },
+    {
+      parts: 1,
+      bulletType: 33,
+      bulletSpeed: 3,
+      bulletSpeedInherit: 0,
+      distribution: 0.0152587890625,
+      recoil: 0,
+      ammo: 1,
+      delay: 0,
+      loadingTime: 600,
+      leaveShells: 0,
+      leaveShellDelay: 1,
+      fireCone: 0,
+      laserSight: false,
+      laserBeam: false,
+      launchSound: 15,
+      playReloadSound: true,
+      name: "PULSAR"
+    },
   ],
   wObjects: [
-    { // auto shotgun wid0
+    { // auto shotgun wid0 (unused)
       detectDistance: 1,
       blowAway: 0.01,
       gravity: 0.005068115234375,
@@ -956,7 +557,7 @@
       partTrailDelay: 0,
       speed: 435
     },
-    { // chaingun wid1
+    { // chaingun wid1 (unused)
       detectDistance: 1,
       blowAway: 0.05,
       gravity: 0.0042724609375,
@@ -994,7 +595,7 @@
       partTrailDelay: 0,
       speed: 490
     },
-    { // rifle wid2
+    { // rifle wid2 (unused)
       detectDistance: 1,
       blowAway: 0.6,
       gravity: 0.00030517578125,
@@ -1032,7 +633,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // bazooka wid3
+    { // bazooka wid3 (unused)
       detectDistance: 2,
       blowAway: 0,
       gravity: 0,
@@ -1070,7 +671,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // lightning gun wid4
+    { // lightning gun wid4 (unused)
       detectDistance: 1,
       blowAway: 0.12,
       gravity: 0,
@@ -1108,7 +709,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // solar scorch wid5
+    { // solar scorch wid5 (unused)
       detectDistance: 0,
       blowAway: 0,
       gravity: 0,
@@ -1146,7 +747,7 @@
       partTrailDelay: 0,
       speed: 500
      },
-     { // shockwavebomb wid6
+     { // shockwave bomb wid6
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.0152587890625,
@@ -1222,7 +823,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // doomsday wid8
+    { // doomsday wid8 (unused)
       detectDistance: 1,
       blowAway: 0.15,
       gravity: 0,
@@ -1260,7 +861,7 @@
       partTrailDelay: 0,
       speed: 210
     },
-    { // flamethrower wid9
+    { // flamethrower wid9 (unused)
       detectDistance: 2,
       blowAway: 0,
       gravity: -0.003814697265625,
@@ -1298,7 +899,7 @@
       partTrailDelay: 0,
       speed: 165
     },
-    { // grnlauncher wid10
+    { // grnlauncher wid10 (unused)
       detectDistance: 1,
       blowAway: 0.3,
       gravity: 0.01983642578125,
@@ -1336,7 +937,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // cripple wid11
+    { // cripple bullet wid11
       detectDistance: 2,
       blowAway: 0,
       gravity: 0,
@@ -1374,7 +975,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // proxymine wid12
+    { // proxy mine wid12 (unused)
       detectDistance: 8,
       blowAway: 0.22,
       gravity: 0,
@@ -1412,7 +1013,7 @@
       partTrailDelay: 0,
       speed: 200
     },
-    { // mortar wid13
+    { // mortar wid13 (unused)
       detectDistance: 3,
       blowAway: 0.1,
       gravity: 0.00091552734375,
@@ -1450,7 +1051,7 @@
       partTrailDelay: 0,
       speed: 45
     },
-    { // minigun wid14
+    { // minigun wid14 (unused)
       detectDistance: 0,
       blowAway: 0.05,
       gravity: 0.00762939453125,
@@ -1488,7 +1089,7 @@
       partTrailDelay: 0,
       speed: 355
     },
-    { // clusterpod wid15
+    { // clusterpod wid15 (unused)
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.01983642578125,
@@ -1526,7 +1127,7 @@
       partTrailDelay: 0,
       speed: 140
     },
-    { // supershotgun wid16
+    { // supershotgun wid16 (unused)
       detectDistance: 1,
       blowAway: 0.015,
       gravity: 0.005,
@@ -1602,7 +1203,7 @@
       partTrailDelay: 0,
       speed: 350
     },
-    { // chiquitagun wid18
+    { // chiquitagun wid18 (unused)
       detectDistance: 0,
       blowAway: 0.15,
       gravity: 0.000152587890625,
@@ -1640,7 +1241,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // acid fan wid19
+    { // miasma blower wid19
       detectDistance: 1,
       blowAway: 0.3,
       gravity: 0,
@@ -1678,7 +1279,7 @@
       partTrailDelay: 0,
       speed: 180
     },
-    { // incendiator wid20
+    { // incendiator wid20 (unused)
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.01,
@@ -1716,7 +1317,7 @@
       partTrailDelay: 4,
       speed: 500
     },
-    { // zimm wid21
+    { // zimm wid21 (unused)
       detectDistance: 1,
       blowAway: 0,
       gravity: 0,
@@ -1754,7 +1355,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // mininuke wid22
+    { // mininuke wid22 (unused)
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.0152587890625,
@@ -1830,7 +1431,7 @@
       partTrailDelay: 0,
       speed: 180
     },
-    { // whip wid24
+    { // balrog's whip wid24
       detectDistance: 1,
       blowAway: -0.8,
       gravity: 0,
@@ -1868,7 +1469,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // hovercrack wid25
+    { // hovercrack wid25 (unused)
       detectDistance: 0,
       blowAway: 0,
       gravity: 0,
@@ -1906,7 +1507,7 @@
       partTrailDelay: 1,
       speed: 300
     },
-    { // flak wid26
+    { // flak cannon wid26 (unused)
       detectDistance: 2,
       blowAway: 0.2,
       gravity: 0.0030517578125,
@@ -1944,7 +1545,7 @@
       partTrailDelay: 0,
       speed: 510
     },
-    { // bouncylarpa wid27
+    { // bouncylarpa wid27 (unused)
       detectDistance: 1,
       blowAway: 0.4,
       gravity: 0.0030517578125,
@@ -1982,7 +1583,7 @@
       partTrailDelay: 4,
       speed: 220
     },
-    { // solarbeam wid28
+    { // solar beam wid28
       detectDistance: 0,
       blowAway: 0,
       gravity: 0,
@@ -2020,7 +1621,7 @@
       partTrailDelay: 0,
       speed: 100
     },
-    { // spikeballs wid29
+    { // spikeballs wid29 (unused)
       detectDistance: 2,
       blowAway: 0.2,
       gravity: 0.0152587890625,
@@ -2096,7 +1697,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // tupolev wid31
+    { // tupolev wid31 (unused)
       detectDistance: 1,
       blowAway: 0.22,
       gravity: 0,
@@ -2134,7 +1735,7 @@
       partTrailDelay: 10,
       speed: 200
     },
-    { // missile wid32
+    { // fiery missile wid32
       detectDistance: 1,
       blowAway: 0,
       gravity: 0,
@@ -2172,43 +1773,43 @@
       partTrailDelay: 1,
       speed: 230
     },
-    { // chiquitabomb wid33
-      detectDistance: 0,
-      blowAway: 0,
-      gravity: 0.01983642578125,
+    { // pulsar wid33
+      detectDistance: 1,
+      blowAway: 0.247662,
+      gravity: -0.0005,
       exploSound: -1,
       addSpeed: 0,
-      distribution: 0.1068115234375,
+      distribution: 0,
       multSpeed: 1,
-      createOnExp: 0,
+      createOnExp: 16,
       dirtEffect: -1,
       wormExplode: false,
       explGround: false,
       wormCollide: false,
       collideWithObjects: false,
-      affectByExplosions: true,
-      bounce: 0.4,
-      bounceFriction: 0.8,
-      timeToExplo: 110,
-      timeToExploV: 10,
+      affectByExplosions: false,
+      bounce: 1,
+      bounceFriction: 1,
+      timeToExplo: 1200,
+      timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 0,
-      startFrame: 215,
-      numFrames: 3,
+      startFrame: 79,
+      numFrames: 0,
       loopAnim: true,
       shotType: 0,
       repeat: 1,
       colorBullets: 0,
-      splinterAmount: 22,
-      splinterColour: 0,
-      splinterType: 14,
+      splinterAmount: 0,
+      splinterColour: 66,
+      splinterType: -1,
       splinterScatter: 0,
       objTrailType: -1,
       objTrailDelay: 0,
       partTrailType: 0,
-      partTrailObj: -1,
-      partTrailDelay: 0,
-      speed: 170
+      partTrailObj: 42,
+      partTrailDelay: 1,
+      speed: 0
     },
     { // doppelganger wid34
       detectDistance: 4,
@@ -2248,7 +1849,7 @@
       partTrailDelay: 400,
       speed: 100
     },
-    { //slasher wid35
+    { // corpse slasher wid35
       detectDistance: 1,
       blowAway: 0.0000001,
       gravity: 0,
@@ -2324,7 +1925,7 @@
       partTrailDelay: 1,
       speed: 480
     },
-    { // dartgun wid37
+    { // dartgun wid37 (unused)
       detectDistance: 1,
       blowAway: 0.3,
       gravity: 0.0,
@@ -2362,7 +1963,7 @@
       partTrailDelay: 0,
       speed: 350
     },
-    { // scattergun wid38
+    { // scattergun wid38 (unused)
       detectDistance: 0,
       blowAway: 0.05,
       gravity: 0.01068115234375,
@@ -2400,7 +2001,7 @@
       partTrailDelay: 0,
       speed: 315
     },
-    { // gaussgun wid39
+    { // coil gun wid39
       detectDistance: 1,
       blowAway: 0.2,
       gravity: 0,
@@ -2476,7 +2077,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // steam wid41
+    { // hot steam wid41
       detectDistance: 2,
       blowAway: 0,
       gravity: -0.003814697265625,
@@ -2514,7 +2115,7 @@
       partTrailDelay: 0,
       speed: 165
     },
-    { // toxicsmoke wid42
+    { // toxic smoke wid42
       detectDistance: 0,
       blowAway: 0,
       gravity: -0.003814697265625,
@@ -2552,7 +2153,7 @@
       partTrailDelay: 0,
       speed: 165
     },
-    { //buzz saw wid43
+    { // buzz saw wid43
         detectDistance: -5,
         blowAway: 0,
         gravity: 0,
@@ -2590,7 +2191,7 @@
         partTrailDelay: 0,
         speed: 100
     },
-    { //nuclearrain wid44
+    { // nuclear rain wid44
         detectDistance: 0,
         blowAway: 0,
         gravity: -0.720703125,
@@ -2667,44 +2268,44 @@
       speed: 355
     },
     { // magnetic shield wid46
-      "detectDistance": -4,
-      "blowAway": 0.3,
-      "gravity": 0,
-      "exploSound": -1,
-      "addSpeed": 0,
-      "distribution": 8,
-      "multSpeed": 1,
-      "createOnExp": 27,
-      "dirtEffect": -1,
-      "wormExplode": false,
-      "explGround": true,
-      "wormCollide": true,
-      "collideWithObjects": true,
-      "affectByExplosions": false,
-      "bounce": 0,
-      "bounceFriction": 0.8,
-      "timeToExplo": 1,
-      "timeToExploV": 1,
-      "hitDamage": 0,
-      "bloodOnHit": 0,
-      "startFrame": -1,
-      "numFrames": 0,
-      "loopAnim": false,
-      "shotType": 0,
-      "repeat": 2,
-      "colorBullets": 25,
-      "splinterAmount": 0,
-      "splinterColour": 0,
-      "splinterType": -1,
-      "splinterScatter": 0,
-      "objTrailType": -1,
-      "objTrailDelay": 0,
-      "partTrailType": 0,
-      "partTrailObj": -1,
-      "partTrailDelay": 0,
-      "speed": 180
+      detectDistance: -4,
+      blowAway: 0.3,
+      gravity: 0,
+      exploSound: -1,
+      addSpeed: 0,
+      distribution: 8,
+      multSpeed: 1,
+      createOnExp: 27,
+      dirtEffect: -1,
+      wormExplode: false,
+      explGround: true,
+      wormCollide: true,
+      collideWithObjects: true,
+      affectByExplosions: false,
+      bounce: 0,
+      bounceFriction: 0.8,
+      timeToExplo: 1,
+      timeToExploV: 1,
+      hitDamage: 0,
+      bloodOnHit: 0,
+      startFrame: -1,
+      numFrames: 0,
+      loopAnim: false,
+      shotType: 0,
+      repeat: 2,
+      colorBullets: 25,
+      splinterAmount: 0,
+      splinterColour: 0,
+      splinterType: -1,
+      splinterScatter: 0,
+      objTrailType: -1,
+      objTrailDelay: 0,
+      partTrailType: 0,
+      partTrailObj: -1,
+      partTrailDelay: 0,
+      speed: 180
     },
-    { // dragon wid47
+    { // dragon flies wid47
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.0252587890625,
@@ -2780,7 +2381,7 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // drone wid49
+    { // drone wid49 (unused)
       detectDistance: 3,
       blowAway: 6,
       gravity: 0,
@@ -2818,7 +2419,7 @@
       partTrailDelay: 20,
       speed: 5
     },
-    { // ectoplasm wid50
+    { // ectoplasm gun wid50
       detectDistance: 1,
       blowAway: 0,
       gravity: 0,
@@ -3038,7 +2639,7 @@
       timeToExplo: 18,
       timeToExploV: 5
     },
-    { // nid6
+    { // blood nid6
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 0.75,
@@ -3248,7 +2849,7 @@
       timeToExplo: 40,
       timeToExploV: 10
     },
-    { // cripple nid13
+    { // cripple bullet stage1 nid13
       detectDistance: 0,
       gravity: 1,
       speed: 3,
@@ -3518,7 +3119,7 @@
       timeToExplo: 5,
       timeToExploV: 2
     },
-    { // nid22
+    { // grasshopper nid22
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -3548,7 +3149,7 @@
       timeToExplo: 70,
       timeToExploV: 60
     },
-    { // nid23
+    { // grasshopper nid23
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -3728,7 +3329,7 @@
       timeToExplo: 30,
       timeToExploV: 15
     },
-    { // cripple explosion nid29
+    { // cripple bullet explosion delayer nid29
       detectDistance: 0,
       gravity: 0,
       speed: 0,
@@ -3788,7 +3389,7 @@
       timeToExplo: 8000,
       timeToExploV: 2000
     },
-    { //nuclearrain nid31
+    { // nuclear rain nid31
       detectDistance: 1,
       gravity: 0.0368115234375,
       speed: 1.6,
@@ -3818,7 +3419,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // dragon part2 nid32
+    { // dragon flies part2 nid32
       detectDistance: 2,
       gravity: 0.01068115234375,
       speed: 4,
@@ -3848,7 +3449,7 @@
       timeToExplo: 150,
       timeToExploV: 0
     },
-    { // shockwave nid33
+    { // shockwave bomb nid33
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 4,
@@ -3878,7 +3479,7 @@
       timeToExplo: 10,
       timeToExploV: 0
     },
-    { // dragon nid34
+    { // dragon flies part1 nid34
       detectDistance: 2,
       gravity: 0.01068115234375,
       speed: 4,
@@ -3908,7 +3509,7 @@
       timeToExplo: 150,
       timeToExploV: 0
     },
-    { // cripple dirt clean nid35
+    { // cripple bullet dirt cleaner nid35
       detectDistance: 0,
       gravity: 0.0152587890625,
       speed: 1.5,
@@ -3968,7 +3569,7 @@
       timeToExplo: 2,
       timeToExploV: 2
     },
-    { // doppel shooting nid37
+    { // doppelgaenger shooting nid37
       detectDistance: 0,
       gravity: 0.009,
       speed: 2,
@@ -4028,7 +3629,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // ectoplasm nid39
+    { // ectoplasm gun nid39
       detectDistance: 3,
       gravity: 0.01068115234375,
       speed: 1,
@@ -4118,6 +3719,36 @@
       timeToExplo: 30,
       timeToExploV: 15
     },
+    { // pulsar trail nid42
+      detectDistance: 1000,
+      blowAway: 0.247662,
+      gravity: -0.01,
+      speed: 0,
+      speedV: 0,
+      distribution: 0,
+      bounce: 0,
+      hitDamage: 0.0001,
+      wormExplode: false,
+      explGround: false,
+      wormDestroy: false,
+      bloodOnHit: 1,
+      startFrame: 79,
+      numFrames: 0,
+      drawOnMap: false,
+      colorBullets: 67,
+      createOnExp: -1,
+      affectByExplosions: false,
+      dirtEffect: -1,
+      splinterAmount: 0,
+      splinterColour: 0,
+      splinterType: -1,
+      bloodTrail: false,
+      bloodTrailDelay: 0,
+      leaveObj: -1,
+      leaveObjDelay: 0,
+      timeToExplo: 2,
+      timeToExploV: 0
+    },
   ],
   sObjects: [
     { // large explosion sid0
@@ -4190,7 +3821,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // sid5
+    { // nuke smoke sid5
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -4218,7 +3849,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // sid7
+    { // teleport flash sid7
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -4232,7 +3863,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // sid8
+    { // small explosion silent sid8
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -4246,7 +3877,7 @@
       flash: 0,
       dirtEffect: 2
     },
-    { // sid9
+    { // very small explosion silent sid9
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -4260,7 +3891,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // sid10
+    { // medium explosion smaller sid10
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -4274,7 +3905,7 @@
       flash: 3,
       dirtEffect: 8
     },
-    { // doppel sid11
+    { // doppelgaenger explosion sid11
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -4288,7 +3919,7 @@
       flash: 6,
       dirtEffect: 1
     },
-    { // sid12
+    { // large explosion even smaller sid12
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -4302,7 +3933,7 @@
       flash: 5,
       dirtEffect: 1
     },
-    { // sid13
+    { // undefined sid13
       startSound: -1,
       numSounds: 0,
       animDelay: 0,
@@ -4358,7 +3989,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // gauss explosion sid17
+    { // coil gun explosion sid17
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -4414,7 +4045,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // lightning trail sid21
+    { // lightning gun trail sid21
       startSound: -1,
       numSounds: 0,
       animDelay: 1,
@@ -4470,7 +4101,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // cripple explo sid25
+    { // cripple bullet explosion sid25
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -4484,7 +4115,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // nuclearrain sid26
+    { // nuclear rain objtrail sid26
       startSound: -1,
       numSounds: 0,
       animDelay: 4,
@@ -4498,7 +4129,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // shieldeffect sid27
+    { // magnetic shield effect sid27
         startSound: -1,
         numSounds: 0,
         animDelay: 1,
@@ -4512,7 +4143,7 @@
         flash: 0,
         dirtEffect: -1
      },
-     { // cripple final clean sid28
+     { // cripple bullet final dirt clean sid28
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -4582,7 +4213,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // dronestar sid33
+    { // drone objtrail sid33
       startSound: -1,
       numSounds: 0,
       animDelay: 8,
@@ -4596,7 +4227,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // railgun trail new sid34
+    { // railgun bullet trail new sid34
       startSound: -1,
       numSounds: 0,
       animDelay: 3,
@@ -4624,7 +4255,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // ectoplasm trail sid36
+    { // ectoplasm gun bullet trail sid36
       startSound: 4,
       numSounds: 4,
       animDelay: 2,
@@ -4638,7 +4269,7 @@
       flash: 4,
       dirtEffect: 5
     },
-    { // ectoplasm 2 sid37
+    { // ectoplasm gun dirt generator sid37
       startSound: -1,
       numSounds: 0,
       animDelay: 0,
