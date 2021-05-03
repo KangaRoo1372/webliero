@@ -118,25 +118,6 @@
       playReloadSound: false,
       name: "HEALING POTION"
     },
-//    {
-//     parts: 1,
-//      bulletType: 12,
-//      bulletSpeed: 4,
-//      bulletSpeedInherit: 0.5,
-//      distribution: 0.0152587890625,
-//      recoil: 0.2,
-//      ammo: 1,
-//      delay: 20,
-//      loadingTime: 400,
-//      leaveShells: 0,
-//      leaveShellDelay: 1,
-//      fireCone: 0,
-//      laserSight: false,
-//      laserBeam: false,
-//      launchSound: 5,
-//      playReloadSound: true,
-//      name: "PROXY MINE"
-//    },
     {
       parts: 1,
       bulletType: 34,
@@ -157,23 +138,23 @@
       name: "DOPPELGAENGER"
     },
     {
-     "parts": 1,
-     "bulletType": 6,
-     "bulletSpeed": 2,
-     "bulletSpeedInherit": 1,
-     "distribution": 0.1220703125,
-     "recoil": 0.2453334,
-     "ammo": 1,
-     "delay": 0,
-     "loadingTime": 240,
-     "leaveShells": 0,
-     "leaveShellDelay": 1,
-     "fireCone": 0,
-     "laserSight": false,
-     "laserBeam": false,
-     "launchSound": 5,
-     "playReloadSound": false,
-     "name": "SHOCKWAVE BOMB"
+     parts: 1,
+     bulletType: 6,
+     bulletSpeed: 2,
+     bulletSpeedInherit: 1,
+     distribution: 0.1220703125,
+     recoil: 0.2453334,
+     ammo: 1,
+     delay: 0,
+     loadingTime: 240,
+     leaveShells: 0,
+     leaveShellDelay: 1,
+     fireCone: 0,
+     laserSight: false,
+     laserBeam: false,
+     launchSound: 5,
+     playReloadSound: false,
+     name: "SHOCKWAVE BOMB"
     },
     {
       parts: 1,
@@ -1796,7 +1777,7 @@
       bloodOnHit: 0,
       startFrame: 79,
       numFrames: 0,
-      loopAnim: true,
+      loopAnim: false,
       shotType: 0,
       repeat: 1,
       colorBullets: 0,
@@ -2729,7 +2710,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // tupolev bomb nid9
+    { // tupolev bomb nid9 (unused)
       detectDistance: 0,
       gravity: 0.0152587890625,
       speed: 2,
@@ -2759,7 +2740,7 @@
       timeToExplo: 200,
       timeToExploV: 50
     },
-    { // tupolev bomb nid10
+    { // tupolev bomb nid10 (unused)
       detectDistance: 1,
       gravity: 0.030517578125,
       speed: 1.8,
@@ -2789,7 +2770,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // mininuke part nid11
+    { // mininuke part nid11 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2,
@@ -2879,7 +2860,7 @@
       timeToExplo: 1,
       timeToExploV: 0
     },
-    { // banana nid14
+    { // banana nid14 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2.2,
@@ -2999,7 +2980,7 @@
       timeToExplo: 20,
       timeToExploV: 10
     },
-    { // light banana nid18
+    { // light banana nid18 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2.2,
@@ -3029,7 +3010,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // mortar splinter #1 nid19
+    { // mortar splinter #1 nid19 (unused)
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 4,
@@ -3059,7 +3040,7 @@
       timeToExplo: 10,
       timeToExploV: 0
     },
-    { // mortar splinter #2 nid20
+    { // mortar splinter #2 nid20 (unused)
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 1,
@@ -3089,7 +3070,7 @@
       timeToExplo: 5,
       timeToExploV: 0
     },
-    { // mortar splinter delayer nid21
+    { // mortar splinter delayer nid21 (unused)
       detectDistance: 0,
       gravity: 0,
       speed: 1,
@@ -3119,7 +3100,7 @@
       timeToExplo: 5,
       timeToExploV: 2
     },
-    { // grasshopper nid22
+    { // grasshopper #6 nid22 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -3149,7 +3130,7 @@
       timeToExplo: 70,
       timeToExploV: 60
     },
-    { // grasshopper nid23
+    { // grasshopper #7 nid23 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -3239,7 +3220,7 @@
       timeToExplo: 2,
       timeToExploV: 2
     },
-    { // flamer hot smoke nid26
+    { // flamer hot smoke nid26 (unused)
       detectDistance: 1,
       gravity: -0.05,
       speed: 0,
@@ -3599,7 +3580,7 @@
       timeToExplo: 45,
       timeToExploV: 5
     },
-    { // drone bullet nid38
+    { // drone bullet nid38 (unused)
       detectDistance: 0,
       gravity: 0.009,
       speed: 0,
@@ -3719,7 +3700,7 @@
       timeToExplo: 30,
       timeToExploV: 15
     },
-    { // pulsar trail nid42
+    { // pulsar nid42
       detectDistance: 1000,
       blowAway: 0.247662,
       gravity: -0.01,
@@ -4129,7 +4110,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // magnetic shield effect sid27
+    { // magnetic shield visual effect sid27
         startSound: -1,
         numSounds: 0,
         animDelay: 1,
@@ -4213,7 +4194,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // drone objtrail sid33
+    { // dronestar sid33 (unused)
       startSound: -1,
       numSounds: 0,
       animDelay: 8,
@@ -4227,7 +4208,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // railgun bullet trail new sid34
+    { // railgun new objtrail sid34
       startSound: -1,
       numSounds: 0,
       animDelay: 3,
@@ -4241,7 +4222,7 @@
       flash: 0,
       dirtEffect: 1
     },
-    { // blaster sid35
+    { // blaster objtrail sid35
       startSound: -1,
       numSounds: 0,
       animDelay: 4,
