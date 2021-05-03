@@ -20,13 +20,13 @@ I. New weapons:
 
 4) dragon flies - you throw a mine-shaped bomb (which pretends to be an egg :P), that explodes after some time; after the explosion, two fire balls (each one has a fiery tail) "hatch" from the bomb (so that I wrote the bomb pretends to be an egg), called "dragon flies". These dragon flies float around the map for a short time in a random way, doing damage to anyone who touches them (so you can say they "bite" :P).
 
-5) kienzan - a kind of energetic circular saw that appears around the user, doing damage to anyone who is in the range of it. The name refers to "Dragon Ball" anime series (kienzan is a kikoha used by Kuririn-san).
+5) buzz saw - a kind of energetic circular saw that appears around the user, doing damage to anyone who is in the range of it.
 
 6) andre's magnetic shield - it creates a kind of square-shaped (don't ask me why it is not round!) energetic barrier around the user. This barrier can bounce almost all enemy's shots (except for rifle actually). It has "Andre" in its name, as a tribute to another user (with a nickname And_re) who helped me developing this weapon (thanks dude!).
 
 7) nuclear rain - it creates golden rain on a big area which falls down to the ground and does damage to anyone within its range.
 
-8) senzu bean - a special one healing weapon. It restores your hp to the maximum level if used. It can be used only once per single life (the loading time is actually 99999999, so it is almost impossible to load it again during one match). The name refers to "Dragon Ball" anime series also.
+8) healing potion - a special one healing weapon. It restores your hp to the maximum level if used. It can be used only once per single life (the loading time is actually 99999999, so it is almost impossible to load it again during one match).
 
 9) regeneration - another healing weapon, which also can be used once per singe life. The difference between regeneration and senzu bean, is that regeneration restores hp not for instance (like senzu), but slowly, approximately 0.5 hp per one frame.
 
@@ -44,7 +44,7 @@ I. New weapons:
 
 16) corpse slasher - a kind of easter egg weapon actually. It is actually mini rockets, with the difference that there are fewer bullets (7) which, after hitting the target, eject poisonous worm corpses.
 
-17) szarnywirk's drone - a missile-type weapon (cuz it looks like MISSILE and you can control the bullet, but it flies much slower than missile). The drone - while floating - shoots smaller bullets (like in minigun, but less amount) automatically in one direction, which you can change by changing the bullet's position in the air. It has "Szarnywirk" in its name, as a tribute to another user (with a nickname Szarnywirk) who actually invented this weapon (I only made some changes) and agreed to share it to my mod (thanks dude!). NOTE: REMOVED IN THE LATEST VERSION OF THE MOD.
+17) pulsar
 
 18) ectoplasm gun - a weapon similar to blaster, i.e. shoots a kind of laser-beam bullets which are very fast. The difference is that every bullet is rotten green-coloured, the weapon shoots faster (faster projectiles) and there is shorter time distance between each shoot (8 bullets in the clip). The main thing is that splinters look like green dots - like ectoplasm.
 
