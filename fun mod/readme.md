@@ -44,7 +44,7 @@ I. New weapons:
 
 16) corpse slasher - a kind of easter egg weapon actually. It is actually mini rockets, with the difference that there are fewer bullets (7) which, after hitting the target, eject poisonous worm corpses.
 
-17) pulsar
+17) pulsar - another easter egg weapon. Currently invisible bullet which "changes gravity" on the map during some time, i.e. pushing worms in random directions so that it's hard to move, aim or shoot freely.
 
 18) ectoplasm gun - a weapon similar to blaster, i.e. shoots a kind of laser-beam bullets which are very fast. The difference is that every bullet is rotten green-coloured, the weapon shoots faster (faster projectiles) and there is shorter time distance between each shoot (8 bullets in the clip). The main thing is that splinters look like green dots - like ectoplasm.
 
