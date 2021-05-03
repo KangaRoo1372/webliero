@@ -4054,7 +4054,7 @@
       speedV: 0,
       distribution: 0.60517578125,
       blowAway: 0,
-      bounce: 0,
+      bounce: 0.2,
       hitDamage: 0.1,
       wormExplode: false,
       explGround: false,
@@ -4072,8 +4072,8 @@
       splinterType: -1,
       bloodTrail: false,
       bloodTrailDelay: 0,
-      leaveObj: 37,
-      leaveObjDelay: 10,
+      leaveObj: -1,
+      leaveObjDelay: 0,
       timeToExplo: 360,
       timeToExploV: 0
     },
@@ -4687,7 +4687,7 @@
       flash: 4,
       dirtEffect: 5
     },
-    { // ectoplasm gun dirt generator sid37
+    { // greendirt generator sid37 (unused)
       startSound: -1,
       numSounds: 0,
       animDelay: 0,
