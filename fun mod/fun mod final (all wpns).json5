@@ -211,7 +211,7 @@
       laserBeam: false,
       launchSound: 24,
       playReloadSound: false,
-      name: "KIENZAN"
+      name: "BUZZ SAW"
     },
     {
       parts: 3,
@@ -249,7 +249,7 @@
       laserBeam: false,
       launchSound: 18,
       playReloadSound: false,
-      name: "SENZU BEAN"
+      name: "HEALING POTION"
     },
     {
       parts: 1,
@@ -1184,7 +1184,7 @@
       partTrailDelay: 0,
       speed: 95
     },
-    { // senzubean wid7
+    { // healing potion wid7
       detectDistance: -4,
       blowAway: 0,
       gravity: 0,
@@ -2552,7 +2552,7 @@
       partTrailDelay: 0,
       speed: 165
     },
-    { //kienzan wid43
+    { //buzz saw wid43
         detectDistance: -5,
         blowAway: 0,
         gravity: 0,
@@ -3578,7 +3578,7 @@
       timeToExplo: 70,
       timeToExploV: 60
     },
-    { // kienzan nid24
+    { // buzz saw nid24
       detectDistance: 0,
       gravity: 0,
       speed: 5,
@@ -4540,7 +4540,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // senzubean sid30
+    { // healing potion sid30
       startSound: -1,
       numSounds: 0,
       animDelay: 1,
