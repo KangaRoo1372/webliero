@@ -1747,8 +1747,8 @@
       splinterColour: 66,
       splinterType: 25,
       splinterScatter: 0,
-      objTrailType: 3,
-      objTrailDelay: 4,
+      objTrailType: 29,
+      objTrailDelay: 1,
       partTrailType: 0,
       partTrailObj: 36,
       partTrailDelay: 1,
@@ -4150,7 +4150,7 @@
       shadow: true,
       shake: 0,
       flash: 0,
-      dirtEffect: -1
+      dirtEffect: 0
     },
     { // healing potion sid30
       startSound: -1,
