@@ -434,7 +434,7 @@
       loadingTime: 800,
       leaveShells: 0,
       leaveShellDelay: 1,
-      fireCone: 30,
+      fireCone: 0,
       laserSight: false,
       laserBeam: false,
       launchSound: 15,
@@ -1546,7 +1546,7 @@
       speed: 400
     },
     { // fireball wid27
-        detectDistance: 35,
+        detectDistance: 55,
         blowAway: 0,
         gravity: -0.720703125,
         exploSound: -1,
@@ -1562,7 +1562,7 @@
         affectByExplosions: false,
         bounce: 0,
         bounceFriction: 1,
-        timeToExplo: 10,
+        timeToExplo: 1,
         timeToExploV: 0,
         hitDamage: 0,
         bloodOnHit: 0,
