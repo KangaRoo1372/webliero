@@ -56,7 +56,7 @@ II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk)
 
 3) dynamite (explosives) - changed the name into "firecracker", changed recoil from 0 to 0.1, change part amount from 3 to 4 and changed loading time from 200 to 300.
 
-4) missile - changed name to "fiery missile" and added some fire trail to the bullet to make it looks more effective.
+4) missile - changed name to "fiery missile" and added some fire trail to the bullet to make it look more effective and to make it pass through dirt.
 
 5) gauss gun - renamed to "coil gun",  made the bullet bounce and added some extra damage.
 
