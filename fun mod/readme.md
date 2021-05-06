@@ -38,7 +38,7 @@ I. New weapons:
 
 13) hot steam - as the name suggests, it ejects a cloud of hot steam for some time that burns worms and deals damage to them.
 
-14) toxic smoke - a weapon similar to hot steam, except that instead of steam, toxic smoke rises: P the difference is that the smoke inflicts damage slower than hot steam and bounces off obstacles (in contrast to steam, with which you can, for example, dig the ground)
+14) toxic smoke - a weapon similar to hot steam, except that instead of steam, toxic smoke rises :P the difference is that the smoke inflicts damage slower than hot steam and bounces off obstacles (in contrast to steam, with which you can, for example, dig the ground) and - what is more significant - it shoots backwards (from behind the worm).
 
 15) railgun - it shoots a very fast, golden beam of energy that deals a lot of damage on hit. Similar to rifle actually.
 
@@ -52,7 +52,9 @@ I. New weapons:
 
 20) bouncy trap - another booby-trap style weapon. It shoots a bouncy bullet which looks like health pack. The bullet explodes after some time (or on worm touch also) and then creates a fire circle (which disappears after some time). If the worm was trapped inside the fire circle, he can escape from the trap - but he will take some damage in such situation. So, the trapped worm has a choice: try to escape from the trap (but therefore he can be even killed by fire), or wait until the fire vanishes.
 
-21) spirit ball - it creates a big energy sphere in the air which does a lot of damage to everyone who is within its range. The sphere lasts as long as you shoot (however it has limited ammo of course) and you can "move" the sphere in the air with changing the crosshair position. 
+21) spirit ball - it creates a big energy sphere in the air which does a lot of damage to everyone who is within its range. The sphere lasts as long as you shoot (however it has limited ammo of course) and you can "move" the sphere in the air with changing the crosshair position.
+
+22) deadly poo - another kind of easter egg weapon, however it's pretty powerful. It throws a brown round-shaped bullet (which pretends to look like a poo) with gives off some toxic smoke, and explodes when touching the ground.
 
 II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk):
 
