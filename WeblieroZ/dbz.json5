@@ -2968,7 +2968,7 @@
         numFrames: 3,
         drawOnMap: false,
         colorBullets: 0,
-        createOnExp: 45,
+        createOnExp: -1,
         affectByExplosions: false,
         dirtEffect: 6,
         splinterAmount: 3,
