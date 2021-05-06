@@ -28,26 +28,26 @@ WeblieroZ (a.k.a. Dragon Ball Z Liero Mod) - as the name suggests, this mod is i
 
 14) Bukujutsu - a ki technique to lift one’s body into the air and fly.
 
-15) Kiai-Ho
+15) Kiai-Ho - a technique which affects the air around with ki to produce powerful shockwaves in order to push back the opponent.
 
-16) Kienzan
+16) Kienzan - uses ki force to create flat circular shape reminiscent of a sharp disc which can be controlled by the user.
 
-17) Taiyoken
+17) Taiyoken - a deffensive technique which creates white light flashes to blind the opponents for some time.
 
-18) Ki No Baria
+18) Ki No Baria - another defensive technique used to generate an energy shield around the user to protect him from attacks.
 
-19) Final Explosion
+19) Final Explosion - unleashes gigantic circle of fire, killing the user and inflicting big damage to his target and the surroundings.
 
-20) Punch
+20) Punch - a melee used in close combat.
 
-21) Kick
+21) Kick - a melee used in close combat.
 
-22) Power Up
+22) Power Up - a technique used to gather ki and increase one's power level (in this mod it is used to restore hp points).
 
-23) Big Bang Attack
+23) Big Bang Attack - launches a ki blast which flies very fast and proceeds to detonate in a massive explosion.
 
-24) Senzu Bean
+24) Senzu Bean - when eaten, the consumer's energy and physical health are restored to their fullest level.
 
-25) Kakusan Kikoho
+25) Kakusan Kikoho -  an energy sphere fired up which blast into the air and splits into smaller ki spheres that falls down the ground.
 
 **Roo**
