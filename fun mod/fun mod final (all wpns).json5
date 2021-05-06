@@ -954,6 +954,25 @@
       playReloadSound: true,
       name: "PULSAR"
     },
+    {
+       parts: 1,
+       bulletType: 49,
+       bulletSpeed: 4,
+       bulletSpeedInherit: 0,
+       distribution: 0,
+       recoil: 0.2,
+       ammo: 1,
+       delay: 0,
+       loadingTime: 1000,
+       leaveShells: 0,
+       leaveShellDelay: 0,
+       fireCone: 0,
+       laserSight: false,
+       laserBeam: false,
+       launchSound: 5,
+       playReloadSound: false,
+       name: "KILLER DRONE"
+    },
   ],
   wObjects: [
     { // auto shotgun wid0
@@ -1982,7 +2001,7 @@
       partTrailDelay: 0,
       speed: 510
     },
-    { // bouncylarpa wid27
+    { // bouncylarpa wid27 (unused)
       detectDistance: 1,
       blowAway: 0.4,
       gravity: 0.0030517578125,
@@ -2818,26 +2837,26 @@
       partTrailDelay: 0,
       speed: 0
     },
-    { // drone wid49 (unused)
-      detectDistance: 3,
-      blowAway: 6,
+    { // killer drone wid49
+      detectDistance: -1,
+      blowAway: 12,
       gravity: 0,
       exploSound: -1,
       addSpeed: 100,
       distribution: 1,
       multSpeed: 1,
-      createOnExp: 2,
+      createOnExp: 1,
       dirtEffect: -1,
-      wormExplode: true,
-      explGround: true,
-      wormCollide: true,
+      wormExplode: false,
+      explGround: false,
+      wormCollide: false,
       collideWithObjects: true,
       affectByExplosions: true,
       bounce: 0,
       bounceFriction: 0.8,
-      timeToExplo: 1200,
+      timeToExplo: 1000,
       timeToExploV: 0,
-      hitDamage: 20,
+      hitDamage: 0,
       bloodOnHit: 30,
       startFrame: 110,
       numFrames: 0,
@@ -2853,7 +2872,7 @@
       objTrailDelay: 15,
       partTrailType: 1,
       partTrailObj: 38,
-      partTrailDelay: 20,
+      partTrailDelay: 15,
       speed: 5
     },
     { // ectoplasm gun wid50
@@ -4036,15 +4055,15 @@
       timeToExplo: 45,
       timeToExploV: 5
     },
-    { // drone bullet nid38 (unused)
+    { // drone bullet nid38
       detectDistance: 0,
       gravity: 0.009,
       speed: 0,
       speedV: 0,
-      distribution: 0.00,
+      distribution: 0,
       blowAway: 0.1,
       bounce: 0,
-      hitDamage: 15,
+      hitDamage: 10,
       wormExplode: false,
       explGround: true,
       wormDestroy: true,
@@ -4650,7 +4669,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // dronestar sid33 (unused)
+    { // drone objtrail sid33
       startSound: -1,
       numSounds: 0,
       animDelay: 8,
