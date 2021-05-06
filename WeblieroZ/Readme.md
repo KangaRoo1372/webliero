@@ -12,21 +12,21 @@ WeblieroZ (a.k.a. Dragon Ball Z Liero Mod) - as the name suggests, this mod is i
 
 6) Burning Attack - another ki energy wave. Trunk's special attack.
 
-7) Genki Dama
+7) Genki Dama - a powerful energy sphere which can be thrown in any directions. Explodes on ground touch. One of the strongest ki manipulation technique in DB series.
 
-8) Renzoku Energy Dan
+8) Renzoku Energy Dan -  a combination of many energy waves, much more powerful than the average ki blasts, and fired at a very rapid rate.
 
-9) Chi Blast
+9) Chi Blast - formed and discharged small portions of single ki blast.
 
-10) Saibaiman
+10) Saibaiman - green creatures that grow from a planted seed. They bounce through the map and explode after some time or on worm touch.
 
-11) Ghost Kamikaze Attack
+11) Ghost Kamikaze Attack - flying ghosts created by the user's ki which resembles the worm. They explode after some time or on worm touch.
 
-12) Fireball
+12) Fireball - a powerful sphere of fire which is being created in the air.
 
-13) Kaioken
+13) Kaioken - a ki technique which increases user's speed, enabling the user to inflict serious damage to opponents.
 
-14) Bukujutsu
+14) Bukujutsu - a ki technique to lift one’s body into the air and fly.
 
 15) Kiai-Ho
 
