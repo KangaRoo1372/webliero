@@ -52,6 +52,8 @@ I. New weapons:
 
 20) bouncy trap - another booby-trap style weapon. It shoots a bouncy bullet which looks like health pack. The bullet explodes after some time (or on worm touch also) and then creates a fire circle (which disappears after some time). If the worm was trapped inside the fire circle, he can escape from the trap - but he will take some damage in such situation. So, the trapped worm has a choice: try to escape from the trap (but therefore he can be even killed by fire), or wait until the fire vanishes.
 
+21) spirit ball - it creates a big energy sphere in the air which does a lot of damage to everyone who is within its range. The sphere lasts as long as you shoot (however it has limited ammo of course) and you can "move" the sphere in the air with changing the crosshair position. 
+
 II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk):
 
 1) laser - changed the colour from red to yellow, changed the name into "solar beam" and added some splinters after hit.
