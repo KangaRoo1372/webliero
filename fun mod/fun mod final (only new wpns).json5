@@ -25,8 +25,8 @@
     aimMaxAngle: 1.5707963267948966,
     aimMinAngle: -1.521708941582556,
     nrAdjustVel: 1.5,
-    nrColourBegin: 24,
-    nrColourEnd: 90,
+    nrColourBegin: 56,
+    nrColourEnd: 70,
     bonusExplodeRisk: 100,
     bonusHealthVar: 20,
     bonusMinHealth: 10,
@@ -292,7 +292,7 @@
     {
       parts: 1,
       bulletType: 42,
-      bulletSpeed: 1.65,
+      bulletSpeed: -1.65,
       bulletSpeedInherit: 0.3,
       distribution: 0.152587890625,
       recoil: 0,
@@ -2173,7 +2173,7 @@
       speed: 165
     },
     { // toxic smoke wid42
-      detectDistance: 0,
+      detectDistance: -10,
       blowAway: 0,
       gravity: -0.003814697265625,
       exploSound: -1,
