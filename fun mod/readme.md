@@ -48,6 +48,10 @@ I. New weapons:
 
 18) ectoplasm gun - a weapon similar to blaster, i.e. shoots a kind of laser-beam bullets which are very fast. The difference is that every bullet is rotten green-coloured, the weapon shoots faster (faster projectiles) and there is shorter time distance between each shoot (8 bullets in the clip). The main thing is that splinters look like green dots - like ectoplasm.
 
+19) killer drone - a missile-type weapon (cuz it looks like MISSILE and you can control the bullet, but it flies much slower than missile). The drone - while floating - shoots small round bullets automatically in one direction, which you can change by changing the bullet's position in the air. The weapon was ported from "doom mod" created by Szarnywirk who invented this weapon (I only made some changes) and agreed to share it to my mod (thanks dude!).
+
+20) bouncy trap - another booby-trap style weapon. It shoots a bouncy bullet which looks like health pack. The bullet explodes after some time (or on worm touch also) and then creates a fire circle (which disappears after some time). If the worm was trapped inside the fire circle, he can escape from the trap - but he will take some damage in such situation. So, the trapped worm has a choice: try to escape from the trap (but therefore he can be even killed by fire), or wait until the fire vanishes.
+
 II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk):
 
 1) laser - changed the colour from red to yellow, changed the name into "solar beam" and added some splinters after hit.
