@@ -4402,55 +4402,55 @@
      },
   ],
   textures: [
-    {
+    {  // dirteffect 0 - big dirt cleaning
       nDrawBack: true,
       mFrame: 0,
       sFrame: 73,
       rFrame: 2
     },
-    {
+    {  // dirteffect 1 - medium dirt cleaning
       nDrawBack: true,
       mFrame: 1,
       sFrame: 73,
       rFrame: 2
     },
-    {
+    {  // dirteffect 2 - small dirt cleaning
       nDrawBack: true,
       mFrame: 2,
       sFrame: 73,
       rFrame: 2
     },
-    {
+    {  // dirteffect 3 - medium dirt cleaning
       nDrawBack: true,
       mFrame: 37,
       sFrame: 73,
       rFrame: 2
     },
-    {
+    {  // dirteffect 4 - brown dirt creating
       nDrawBack: false,
       mFrame: 0,
       sFrame: 87,
       rFrame: 2
     },
-    {
+    {  // dirteffect 5 - small dirt cleaning
       nDrawBack: true,
       mFrame: 39,
       sFrame: 73,
       rFrame: 2
     },
-    {
+    {  // dirteffect 6 - green dirt creating
       nDrawBack: false,
       mFrame: 38,
       sFrame: 82,
       rFrame: 2
     },
-    {
+    {  // dirteffect 7 - worm digging
       nDrawBack: true,
       mFrame: 99,
       sFrame: 73,
       rFrame: 2
     },
-    {
+    {  // dirteffect 8 - medium dirt cleaning
       nDrawBack: true,
       mFrame: 37,
       sFrame: 73,
