@@ -1,6 +1,8 @@
 Hi Fellows!
 
-As you can see, I uploaded 2 versions of my mod: first one containing all weapons (i.e. both new ones made by me and old ones from promode rerevisited), and the second one containing only new weapons made by me (the old ones are hidden by using //). 
+Roo Fun Mod was made using sprites taken from liero promode final mod (you can also download the sprite file from this repository - file "sprites.wlsprt").
+
+As you can see, I uploaded 2 versions of my mod (i.e. two versions of json file): first one containing all weapons (i.e. new weapons made by me and old original weapons from promode rerevisited), and the second one containing only new weapons made by me (the old ones are hidden by using //). 
 
 Here is the description of the most significant changes I made in my mod, comparing to original one promode rerevisited version.
 
