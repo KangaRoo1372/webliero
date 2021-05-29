@@ -444,7 +444,7 @@
     {
       parts: 1,
       bulletType: 29,
-      bulletSpeed: 0.0035,
+      bulletSpeed: 0.035,
       bulletSpeedInherit: 0,
       distribution: 0,
       recoil: 0,
@@ -1646,7 +1646,7 @@
       numFrames: 0,
       loopAnim: false,
       shotType: 0,
-      repeat: 160,
+      repeat: 16,
       colorBullets: 0,
       splinterAmount: 220,
       splinterColour: 66,
@@ -3174,8 +3174,8 @@
       explGround: false,
       wormDestroy: false,
       bloodOnHit: 0,
-      startFrame: -1,
-      numFrames: 0,
+      startFrame: 100,
+      numFrames: 3,
       drawOnMap: false,
       colorBullets: 68,
       createOnExp: 50,
@@ -3186,10 +3186,10 @@
       splinterType: -1,
       bloodTrail: false,
       bloodTrailDelay: 0,
-      leaveObj: -1,
-      leaveObjDelay: 0,
+      leaveObj: 50,
+      leaveObjDelay: 1,
       timeToExplo: 7,
-      timeToExploV: 7
+      timeToExploV: 0
       },
   ],
   sObjects: [
