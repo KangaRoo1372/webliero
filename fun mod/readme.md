@@ -50,13 +50,11 @@ I. New weapons:
 
 18) ectoplasm gun - a weapon similar to blaster, i.e. shoots a kind of laser-beam bullets which are very fast. The difference is that every bullet is rotten green-coloured, the weapon shoots faster (faster projectiles) and there is shorter time distance between each shoot (8 bullets in the clip). The main thing is that splinters look like green dots - like ectoplasm.
 
-19) killer drone - a missile-type weapon (cuz it looks like MISSILE and you can control the bullet, but it flies much slower than missile). The drone - while floating - shoots small round bullets automatically in one direction, which you can change by changing the bullet's position in the air. The weapon was ported from "doom mod" created by Szarnywirk who invented this weapon (I only made some changes) and agreed to share it to my mod (thanks dude!).
+19) bouncy trap - another booby-trap style weapon. It shoots a bouncy bullet which looks like health pack. The bullet explodes after some time (or on worm touch also) and then creates a fire circle (which disappears after some time). If the worm was trapped inside the fire circle, he can escape from the trap - but he will take some damage in such situation. So, the trapped worm has a choice: try to escape from the trap (but therefore he can be even killed by fire), or wait until the fire vanishes.
 
-20) bouncy trap - another booby-trap style weapon. It shoots a bouncy bullet which looks like health pack. The bullet explodes after some time (or on worm touch also) and then creates a fire circle (which disappears after some time). If the worm was trapped inside the fire circle, he can escape from the trap - but he will take some damage in such situation. So, the trapped worm has a choice: try to escape from the trap (but therefore he can be even killed by fire), or wait until the fire vanishes.
+20) spirit ball - it creates a big energy sphere in the air which does a lot of damage to everyone who is within its range. The sphere lasts as long as you shoot (however it has limited ammo of course) and you can "move" the sphere in the air with changing the crosshair position.
 
-21) spirit ball - it creates a big energy sphere in the air which does a lot of damage to everyone who is within its range. The sphere lasts as long as you shoot (however it has limited ammo of course) and you can "move" the sphere in the air with changing the crosshair position.
-
-22) deadly poo - another kind of easter egg weapon, however it's pretty powerful. It throws a brown round-shaped bullet (which pretends to look like a poo) with gives off some toxic smoke, and explodes when touching the ground.
+21) deadly poo - another kind of easter egg weapon, however it's pretty powerful. It throws a brown round-shaped bullet (which pretends to look like a poo) with gives off some toxic smoke, and explodes when touching the ground.
 
 II. Changes made to old weapons (comparing to rerevisited version by Scharnvirk):
 
