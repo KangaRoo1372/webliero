@@ -992,25 +992,6 @@
       playReloadSound: true,
       name: "PULSAR"
     },
-    {
-       parts: 1,
-       bulletType: 49,
-       bulletSpeed: 4,
-       bulletSpeedInherit: 0,
-       distribution: 0,
-       recoil: 0.2,
-       ammo: 1,
-       delay: 0,
-       loadingTime: 1000,
-       leaveShells: 0,
-       leaveShellDelay: 0,
-       fireCone: 0,
-       laserSight: false,
-       laserBeam: false,
-       launchSound: 5,
-       playReloadSound: false,
-       name: "KILLER DRONE"
-    },
   ],
   wObjects: [
     { // auto shotgun wid0
