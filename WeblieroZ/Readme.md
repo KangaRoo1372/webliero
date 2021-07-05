@@ -1,4 +1,4 @@
-WeblieroZ (a.k.a. Dragon Ball Z Liero Mod) - as the name suggests, this mod is inspired by the Dragon Ball Z anime. In this mod I created numerous new weapons, the description of which can be found below (note: under construction). In addition to weapons, the physics of the worm has changed a bit. The mod is based on the promode final sprites (with two exceptions - SSJ golden hair has been added to the worm sprites and health boxes have been changed into dragon balls), but I plan to create an alternative version of this mod based on my own sprites.
+WeblieroZ (a.k.a. Dragon Ball Z Liero Mod) - as the name suggests, this mod is inspired by the Dragon Ball Z anime. In this mod I created numerous new weapons, the description of which can be found below. In addition to weapons, the physics of the worm has changed a bit. The mod is based on the promode final sprites (with two exceptions - SSJ golden hair has been added to the worm sprites and health boxes have been changed into dragon balls), but I plan to create an alternative version of this mod based on my own sprites.
 
 1) Kamehameha - a powerful ki energy wave. One of the most powerful energy beams in DBZ saga. Son Goku's signature technique.
 
@@ -46,7 +46,7 @@ WeblieroZ (a.k.a. Dragon Ball Z Liero Mod) - as the name suggests, this mod is i
 
 23) Big Bang Attack - launches a ki blast which flies very fast and proceeds to detonate in a massive explosion.
 
-24) Senzu Bean - when eaten, the consumer's energy and physical health are restored to their fullest level.
+24) Senzu Bean - when eaten, the consumer's energy and physical health is restored (in this mod it is used to restore hp points).
 
 25) Kakusan Kikoho -  an energy sphere fired up which blast into the air and splits into smaller ki spheres that falls down the ground.
 
