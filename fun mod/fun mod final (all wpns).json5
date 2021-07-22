@@ -2368,7 +2368,7 @@
       gravity: 0,
       exploSound: -1,
       addSpeed: 0,
-      distribution: 0.02,
+      distribution: 0,
       multSpeed: 1,
       createOnExp: 10,
       dirtEffect: 1,
