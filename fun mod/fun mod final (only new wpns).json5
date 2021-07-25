@@ -1918,7 +1918,7 @@
       splinterColour: 0,
       splinterType: 30,
       splinterScatter: 0,
-      objTrailType: 6,
+      objTrailType: 13,
       objTrailDelay: 2,
       partTrailType: 0,
       partTrailObj: -1,
@@ -3684,7 +3684,7 @@
       splinterType: -1,
       bloodTrail: false,
       bloodTrailDelay: 0,
-      leaveObj: 6,
+      leaveObj: 13,
       leaveObjDelay: 2,
       timeToExplo: 20,
       timeToExploV: 10
@@ -3714,7 +3714,7 @@
       splinterType: -1,
       bloodTrail: false,
       bloodTrailDelay: 0,
-      leaveObj: 6,
+      leaveObj: 13,
       leaveObjDelay: 1,
       timeToExplo: 30,
       timeToExploV: 15
@@ -3865,10 +3865,10 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // minicocket trail sid6
+    { // mini rocket trail sid6
       startSound: -1,
       numSounds: 0,
-      animDelay: 1,
+      animDelay: 2,
       startFrame: 76,
       numFrames: 2,
       detectRange: 0,
@@ -3963,16 +3963,16 @@
       flash: 5,
       dirtEffect: 1
     },
-    { // undefined sid13
+    { // shining pixel sid13
       startSound: -1,
       numSounds: 0,
-      animDelay: 0,
-      startFrame: 0,
-      numFrames: 0,
+      animDelay: 1,
+      startFrame: 76,
+      numFrames: 2,
       detectRange: 0,
       damage: 0,
-      blowAway: 1.0039215087890625,
-      shadow: false,
+      blowAway: 0,
+      shadow: true,
       shake: 0,
       flash: 0,
       dirtEffect: -1
