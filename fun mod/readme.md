@@ -1,6 +1,6 @@
 Hi Fellows!
 
-Roo Fun Mod was made using sprites taken from liero promode final mod (you can also download the sprite file from this repository - file "sprites.wlsprt").
+Roo Fun Mod is generally based on Scharnvirk's Promode ReRevisited (version 1.2.0). The mod was made using sprites taken from liero promode final mod (you can also download the sprite file from this repository - file "sprites.wlsprt").
 
 As you can see, I uploaded 2 versions of my mod (i.e. two versions of json file): first one containing all weapons (i.e. new weapons made by me and old original weapons from promode rerevisited), and the second one containing only new weapons made by me.
 
