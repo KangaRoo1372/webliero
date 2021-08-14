@@ -2,7 +2,7 @@ Hi Fellows!
 
 Roo Fun Mod is generally based on Scharnvirk's Promode ReRevisited (version 1.2.0). The mod was made using sprites taken from liero promode final mod (you can also download the sprite file from this repository - file "sprites.wlsprt").
 
-As you can see, I uploaded 2 versions of my mod (i.e. two versions of json file): first one containing all weapons (i.e. new weapons made by me and old original weapons from promode rerevisited), and the second one containing only new weapons made by me.
+As you can see, I uploaded 2 versions of my mod (i.e. two json files): first one (named "all.json5") containing all weapons (i.e. new weapons made by me and old original weapons from promode rerevisited), and the second one (named "new.json5") containing only new weapons made by me.
 
 Here is the description of the most significant changes I made in my mod, comparing to original one promode rerevisited version.
 
