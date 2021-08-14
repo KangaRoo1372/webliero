@@ -1,4 +1,4 @@
-Liero Xmass 2020 Mod - this mod is a special Christmas 2020 edition of Scharnvirk's Promode ReRevisited mod (version 1.3.1). The mod is mainly based on a fun xmas theme sprite change (the worms are wearing nice santa claus hats) + some changes regarding blood, which now is white and acts... as snow (sic! sounds terrible, but beliece me, it was really the only way to make snow in webliero). There are also some changes regarding weapons of which the description is below.
+Liero Xmass 2020 Mod - this mod is a special Christmas 2020 edition of Scharnvirk's Promode ReRevisited mod (version 1.3.1). The mod is mainly based on a fun xmas theme sprite change (the worms are wearing nice santa claus hats) + some changes regarding blood, which now is white and acts... as snow (sic! sounds terrible, but believe me, it was really the only way to make snow in webliero). There are also some changes regarding weapons of which the description is below.
 
 A/ Added weapons:
 1. DEADLY GIFT - maybe it looks beautiful, but you'd better not touch and unpack it!
