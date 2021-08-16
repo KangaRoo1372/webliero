@@ -10,7 +10,7 @@ So, after further tests, I accidentaly found how to make such weapon (i.e. which
 
 Then, a nice guy called dsds saw my works and hit upon a brilliant idea...
 
-What if we could make a mod ONLY with such weapons intentionally? What if we make a mod, which aim will be not to kill others, but to... BUILD?
+What if we could make a mod with ONLY such weapons intentionally? What if we make a mod, which aim will be not to kill others, but to... BUILD?
 
 LIKE IN MINECRAFT? (using special bricks)
 
@@ -20,6 +20,6 @@ THE BUILDER MOD.
 
 So, as I wrote above, the purpose of the game in this mod is to build something (using special weapons), or strictly speaking - to draw a map that you can then play on. You have a lot of nice different bricks which you can use to do that. You have also some other nice stuff, like e.g. pencil, paint brush, line marker... and if you get trapped in your own bricks, you can just use "suicide" to respawn...
 
-...or just use special ERASER to remove (sic!) your drawings.
+...or just use special ERASER to remove your drawings (yeh, maybe it sounds crazy but it is possible to make a weapon in Liero which can be used to remove rock or special rock).
 
 As I wrote above, the originator of this mod was dsds who also made all sprites for this mod. I collaborated with him, i.e. helped him make some weapons. The mod is still being developed and dsds is the person who is a supervisor over this mod. That's why I will not upload it here. But you can find it here: https://gitlab.com/webliero/webliero-mods/-/tree/master/kangaroo%2Bdsds/buildingame. Currently there is also a dedicated room (24h) hosted on webliero with this mod loaded & soem special scripting (ofc powered by dsds). Enjoy!
