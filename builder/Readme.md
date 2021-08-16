@@ -6,7 +6,7 @@ But have you ever thought how those two weapons actually work? These weapons are
 
 So, after some tests, I found out how those weapons actually work (that was not that hard though). Then I wondered: if it is possible to create some DIRT on the map - maybe it is also possible to create some SOLID material (i.e. rock or special rock) on the map in that way?
 
-So, after further tests, I accidentaly found how to make such weapon. My idea was to use it to "trap" enemies inside sth like rock prison. But let's be clear - that was stupid idea (after some time, especially when such weapon was overused, the map was totally filled with rock and it was impossible to play).
+So, after further tests, I accidentaly found how to make such weapon (i.e. which work like dirtball, but creates rock on the map instead of dirt). My idea was to use such weapon to "trap" enemies inside something pretending to be a rock prison. But let's be clear - that was stupid idea (after some time, especially when such weapon was overused, the map was totally filled with rock and it was impossible to play).
 
 Then, a nice guy called dsds saw my works and hit upon a brilliant idea...
 
