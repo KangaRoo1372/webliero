@@ -14,12 +14,12 @@ What if we could make a mod ONLY with such weapons intentionally? What if we mak
 
 LIKE IN MINECRAFT? (using special bricks)
 
-...and this is how the first ever non-aggressive mod was created.
+...and this is how the first ever non-aggressive (web)liero mod was created.
 
 THE BUILDER MOD.
 
 So, as I wrote above, the purpose of the game in this mod is to build something (using special weapons), or strictly speaking - to draw a map that you can then play on. You have a lot of nice different bricks which you can use to do that. You have also some other nice stuff, like e.g. pencil, paint brush, line marker... and if you get trapped in your own bricks, you can just use "suicide" to respawn...
 
-... or just use special ERASER to remove (sic!) your drawings.
+...or just use special ERASER to remove (sic!) your drawings.
 
-As I wrote above, the originator of this mod was dsds who also made all sprites for this mod. I collaborated with him, i.e. helped him amek some weapons. The mod is still being developed and dsds is the person who is a supervisor over this mod. That's why I will not upload it here. But you can find it here: https://gitlab.com/webliero/webliero-mods/-/tree/master/kangaroo%2Bdsds/buildingame. Currently there is also a dedicated room (24h) hosted on webliero with this mod loaded & soem special scripting (ofc powered by dsds). Enjoy!
+As I wrote above, the originator of this mod was dsds who also made all sprites for this mod. I collaborated with him, i.e. helped him make some weapons. The mod is still being developed and dsds is the person who is a supervisor over this mod. That's why I will not upload it here. But you can find it here: https://gitlab.com/webliero/webliero-mods/-/tree/master/kangaroo%2Bdsds/buildingame. Currently there is also a dedicated room (24h) hosted on webliero with this mod loaded & soem special scripting (ofc powered by dsds). Enjoy!
