@@ -1,8 +1,6 @@
-/Under construction/
-
 If you are a true Liero lover, then for sure you remember two most annoying weapons in classic Liero: DIRTBALL and GREENBALL.
 
-But have you ever thought how those two weapons actually work? These weapons are totally different from all other weapons - since they were the only two weapons which were used not to kill other worms & destroy the dirt, but to CREATE something on the map...
+But have you ever thought how those two weapons actually work? These weapons are totally different from all other weapons - since they are the only two weapons which are used not to kill other worms & destroy the dirt, but to CREATE something on the map...
 
 So, after some tests, I found out how those weapons actually work (that was not that hard though). Then I wondered: if it is possible to create some DIRT on the map - maybe it is also possible to create some SOLID material (i.e. rock or special rock) on the map in that way?
 
