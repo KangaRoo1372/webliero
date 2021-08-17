@@ -7,14 +7,19 @@ b) weapon changes (the list of weapons below - current version of the mod: 0.6).
 Generally, the mod contains 3 types of weapons:
 
 a) attack weapons (PANZERFAUST, RAILGUN, SOLAR FLAME);
+
 b) finishers (PLASMA SHOTGUN, MACHINE GUN, LASER CUTTER, FLAMETHROWER);
+
 c) defense weapons (DIRT SHIELD, MAGNETIC FIELD);
+
 d) bombs (UZUMAKI, NAPALM, CLUSTER BOMB).
 
 The main ideas of the mod was:
 
 a) to make some weapons passing through walls (in order to prevent defensive playstyle - u cannot now just hide behind the wall since you can get killed);
+
 b) to make very powerful bombs (mostly instagib) and pretty powerful (but not instagib) attack weapons;
+
 c) to make two different types of defense weapons which work in different way (i.e. one shield protects from some weapons, and the second shield protects from another weapons).
 
 List of all weapons and their description is below:
