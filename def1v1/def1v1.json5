@@ -102,8 +102,8 @@
     {
       parts: 2,
       bulletType: 3,
-      bulletSpeed: 4,
-      bulletSpeedInherit: 0.1,
+      bulletSpeed: 4.2,
+      bulletSpeedInherit: 0.2,
       distribution: 0.3,
       recoil: 0.35,
       ammo: 1,
@@ -387,7 +387,7 @@
       speed: 180
     },
     { // solar flame wid3
-      detectDistance: 0,
+      detectDistance: 6,
       blowAway: 0,
       gravity: 0.01,
       exploSound: -1,
