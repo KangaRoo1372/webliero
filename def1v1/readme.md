@@ -2,7 +2,7 @@ Def ReRevisited (1v1 version) - a long time ago (in a galaxy far, far away... :P
 
 a) main "physics" parameters of the gameplay (part "constans" - I used liero promode rerevisited original settings);
 
-b) weapon changes (the list of weapons below - current version of the mod: 0.6).
+b) weapon changes (the list of weapons below - current version of the mod: 0.7).
 
 Generally, the mod contains 3 types of weapons:
 
