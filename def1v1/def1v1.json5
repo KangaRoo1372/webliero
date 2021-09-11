@@ -428,7 +428,7 @@
       detectDistance: 2,
       blowAway: 0,
       gravity: 0.0452587890625,
-      exploSound: 4,
+      exploSound: 12,
       addSpeed: 0,
       distribution: 0.030517578125,
       multSpeed: 1,
