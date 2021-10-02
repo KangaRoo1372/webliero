@@ -22,7 +22,7 @@ I. New weapons:
 
 4) dragon flies - you throw a mine-shaped bomb (which pretends to be an egg :P), that explodes after some time; after the explosion, two fire balls (each one has a fiery tail) "hatch" from the bomb (so that I wrote the bomb pretends to be an egg), called "dragon flies". These dragon flies float around the map for a short time in a random way, doing damage to anyone who touches them (so you can say they "bite" :P).
 
-5) buzz saw - a kind of energetic circular saw that appears around the user, doing damage to anyone who is in the range of it.
+5) energy disc - a kind of big energy disc that appears around the user, doing damage to anyone who is in the range of it.
 
 6) andre's magnetic shield - it creates a kind of square-shaped (don't ask me why it is not round!) energetic barrier around the user. This barrier can bounce almost all enemy's shots (except for rifle actually). It has "Andre" in its name, as a tribute to another user (with a nickname And_re) who helped me developing this weapon (thanks dude!).
 
