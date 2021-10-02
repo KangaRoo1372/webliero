@@ -211,7 +211,7 @@
       laserBeam: false,
       launchSound: 24,
       playReloadSound: false,
-      name: "BUZZ SAW"
+      name: "ENERGY DISC"
     },
     {
       parts: 3,
@@ -2628,7 +2628,7 @@
       partTrailDelay: 0,
       speed: 165
     },
-    { // buzz saw wid43
+    { // energy disc wid43
         detectDistance: -5,
         blowAway: 0,
         gravity: 0,
@@ -3558,7 +3558,7 @@
     },
     { // bouncy trap flames nid22
       detectDistance: 1,
-      gravity: -1,
+      gravity: 0,
       speed: 0,
       speedV: 0,
       distribution: 0,
@@ -3616,7 +3616,7 @@
       timeToExplo: 1,
       timeToExploV: 0
     },
-    { // buzz saw nid24
+    { // energy disc nid24
       detectDistance: 0,
       gravity: 0,
       speed: 5,
