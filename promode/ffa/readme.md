@@ -17,7 +17,6 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |createonexp: 22,       |    createonexp: 27,
 |splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
 |splinterType: 21,      |    splinterType: 4,
-
 |---------------------- | ------------------------
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE"
@@ -31,7 +30,6 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |bloodOnHit: 6,         |    bloodOnHit: 8,
 |timeToExplo: 12,       |    timeToExplo: 15,
 |timeToExploV: 5        |    timeToExploV: 7
-
 |---------------------- | ------------------------
 |***weapon***           |
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
