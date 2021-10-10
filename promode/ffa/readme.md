@@ -1,4 +1,4 @@
-# PROMODE (Re)ReReVisited (a.k.a. KDP New Ffa Promode)
+# PROMODE (Re)ReReVisited (a.k.a. KDP New Promode ffa edition)
 
 Hi guys!
 
