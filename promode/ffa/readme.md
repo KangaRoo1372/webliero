@@ -12,12 +12,12 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |***weapon***           
 |name: "MORTAR"         |   name: "MORTAR"
 |loadingTime: 360,      |   loadingTime: 300,
-|***wobject***          |
+|***wobject***          
 |blowaway: 0,           |    blowaway: 0.1,   // mortar pulling effect removed
 |createonexp: 22,       |    createonexp: 27,
 |splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
 |splinterType: 21,      |    splinterType: 4,
-|***weapon***           |
+|***weapon***           
 |name: "GRENADE"        |    name: "GRENADE"
 |loadingTime: 250,      |    loadingTime: 200,
 |***wobject***
@@ -36,29 +36,26 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |hitDamage: 3,          |    hitDamage: 4,
 |timeToExplo: 12,       |    timeToExplo: 15,
 |timeToExploV: 5        |    timeToExploV: 7
-
-33. ***weapon***
-34. name: "WINCHESTER"         name: "WINCHESTER"
-35. loadingTime: 320,          loadingTime: 400,
-36. delay: 20,                 delay: 22,
-37. ***wobject***
-38. blowAway: 0.2,             blowAway: 0.7,
-
-40. ***weapon***
-41. name: "GRN LAUNCHER"       name: "GRN LAUNCHER"  // under construction
-42. bulletSpeed: 3.5,          bulletSpeed: 3,
-43. loadingTime: 380,          loadingTime: 400,
-44. ***wobject***
-45. blowAway: 0.05,            blowAway: 0.3,
-46. gravity: 0.04983642578125, gravity: 0.01983642578125,
-47. bounce: 0.5,               bounce: 0.4,
-48. hitDamage: 6,              hitDamage: 4,
-49. timeToExplo: 130,          timeToExplo: 140,
- 
-51. ***weapon***
-52. name: "FLAMER"             name: "FLAMER"
-53. fireCone: 4,               fireCone: 20,
-54. launchSound: 12,           launchSound: -1,
+|***weapon***
+|name: "WINCHESTER"     |    name: "WINCHESTER"
+|loadingTime: 320,      |    loadingTime: 400,
+|delay: 20,             |    delay: 22,
+|***wobject***
+|blowAway: 0.2,         |    blowAway: 0.7,
+|***weapon***
+|name: "GRN LAUNCHER"   |    name: "GRN LAUNCHER"  // under construction
+|bulletSpeed: 3.5,      |    bulletSpeed: 3,
+|loadingTime: 380,      |    loadingTime: 400,
+|***wobject***
+|blowAway: 0.05,        |    blowAway: 0.3,
+|gravity: 0.04983642578125,| gravity: 0.01983642578125,
+|bounce: 0.5,           |    bounce: 0.4,
+|hitDamage: 6,          |    hitDamage: 4,
+|timeToExplo: 130,      |    timeToExplo: 140,
+|***weapon***
+|name: "FLAMER"         |    name: "FLAMER"
+|fireCone: 4,           |    fireCone: 20,
+|launchSound: 12,       |    launchSound: -1,
  
 56. ***weapon***
 57. name: "RIFLE"              name: "RIFLE"
