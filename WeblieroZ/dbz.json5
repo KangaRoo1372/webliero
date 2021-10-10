@@ -1265,7 +1265,7 @@
         startFrame: 39,
         numFrames: 0,
         loopAnim: false,
-        shotType: 1,
+        shotType: 0,
         repeat: 4,
         colorBullets: 67,
         splinterAmount: 15,
