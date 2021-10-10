@@ -7,17 +7,17 @@ As you read in the previous readme file, you can find here my version of Weblier
 Basically, all changes I made - comparing to Promode ReRevisited original settings - refer only to some weapons (the gravity or other main "physics" parameters of the gameplay, which you can find in part "contants" and "textures", remains unchanged). Here you can find the full list of aforementioned changes:
 
 
-1. NEW SETTINGS               ORIGINAL SETTINGS
-2. ------------------------   ------------------------
-3. ***weapon***
-4. name: "MORTAR"             name: "MORTAR"
-5. loadingTime: 360,          loadingTime: 300,
-6. ***wobject***
-7. blowaway: 0,               blowaway: 0.1,   // mortar pulling effect removed
-8. createonexp: 22,           createonexp: 27,
-9. splinterAmount: 20,        splinterAmount: 120,  // mortar splinter delayer
-10. splinterType: 21,          splinterType: 4,
-
+|  NEW SETTINGS         |      ORIGINAL SETTINGS
+|---------------------- |   ------------------------
+|***weapon***           
+|name: "MORTAR"         |   name: "MORTAR"
+|loadingTime: 360,      |   loadingTime: 300,
+|***wobject***
+|blowaway: 0,           |    blowaway: 0.1,   // mortar pulling effect removed
+|createonexp: 22,       |    createonexp: 27,
+|splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
+|splinterType: 21,      |    splinterType: 4,
+|-----------------------|---------------------------
 12. ***weapon***
 13. name: "GRENADE"            name: "GRENADE"
 14. loadingTime: 250,          loadingTime: 200,
