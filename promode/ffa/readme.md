@@ -95,8 +95,13 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |name: "MISSILE"        |    name: "MISSILE"
 |loadingTime: 420,      |    loadingTime: 480,
 |***weapon***
-|name: "PROXY MINE"     | name: "PROXY MINE"
+|name: "PROXY MINE"     |    name: "PROXY MINE"
+|***wobject***
+|detectDistance: 6,     |    detectdistance: 8,
 |***sobject***
-|detectDistance: 21,    | detectDistance: 26,
+|detectDistance: 21,    |    detectDistance: 26,
+|***weapon***
+|name: "GAUSS GUN"      |    name: "GAUSS GUN"
+|loadingTime: 380,      |    loadingTime: 400,
 
 ***roo***
