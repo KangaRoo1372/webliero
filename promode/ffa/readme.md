@@ -18,8 +18,8 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
 |splinterType: 21,      |    splinterType: 4,
 
-
-|***weapon***
+|---------------------- | ------------------------
+|***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE"
 |loadingTime: 250,      |    loadingTime: 200,
 |***wobject***
@@ -32,13 +32,14 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |timeToExplo: 12,       |    timeToExplo: 15,
 |timeToExploV: 5        |    timeToExploV: 7
 
-25. ***weapon***
-26. name: "FLAK CANNON"        name: "FLAK CANNON"
-27. loadingTime: 480,          loadingTime: 510,
-28. ***nobject***
-29. hitDamage: 3,              hitDamage: 4,
-30. timeToExplo: 12,           timeToExplo: 15,
-31. timeToExploV: 5            timeToExploV: 7
+|---------------------- | ------------------------
+|***weapon***           |
+|name: "FLAK CANNON"    |    name: "FLAK CANNON"
+|loadingTime: 480,      |    loadingTime: 510,
+|***nobject***
+|hitDamage: 3,          |    hitDamage: 4,
+|timeToExplo: 12,       |    timeToExplo: 15,
+|timeToExploV: 5        |    timeToExploV: 7
 
 33. ***weapon***
 34. name: "WINCHESTER"         name: "WINCHESTER"
