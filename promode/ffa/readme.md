@@ -8,28 +8,29 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 
 
 |  NEW SETTINGS         |      ORIGINAL SETTINGS
-|----------------------  ------------------------
-|***weapon***           
+|---------------------- | ------------------------
+|***weapon***           |
 |name: "MORTAR"         |   name: "MORTAR"
 |loadingTime: 360,      |   loadingTime: 300,
-|***wobject***
+|***wobject***          |
 |blowaway: 0,           |    blowaway: 0.1,   // mortar pulling effect removed
 |createonexp: 22,       |    createonexp: 27,
 |splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
 |splinterType: 21,      |    splinterType: 4,
 
-12. ***weapon***
-13. name: "GRENADE"            name: "GRENADE"
-14. loadingTime: 250,          loadingTime: 200,
-15. ***wobject***
-16. splinterType: 5,           splinterType: 4,
-17. ***nobject***
-18. speed: 4,                  speed: 4.5,
-19. speedV: 3,                 speedV: 3.5,
-20. hitDamage: 3,              hitDamage: 4.2
-21. bloodOnHit: 6,             bloodOnHit: 8,
-22. timeToExplo: 12,           timeToExplo: 15,
-23. timeToExploV: 5            timeToExploV: 7
+
+|***weapon***
+|name: "GRENADE"        |    name: "GRENADE"
+|loadingTime: 250,      |    loadingTime: 200,
+|***wobject***
+|splinterType: 5,       |    splinterType: 4,
+|***nobject***
+|speed: 4,              |    speed: 4.5,
+|speedV: 3,             |    speedV: 3.5,
+|hitDamage: 3,          |    hitDamage: 4.2
+|bloodOnHit: 6,         |    bloodOnHit: 8,
+|timeToExplo: 12,       |    timeToExplo: 15,
+|timeToExploV: 5        |    timeToExploV: 7
 
 25. ***weapon***
 26. name: "FLAK CANNON"        name: "FLAK CANNON"
