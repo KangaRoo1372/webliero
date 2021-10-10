@@ -43,7 +43,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |***wobject***
 |blowAway: 0.2,         |    blowAway: 0.7,
 |***weapon***
-|name: "GRN LAUNCHER"   |    name: "GRN LAUNCHER"  // under construction
+|name: "GRN LAUNCHER"   |    name: "GRN LAUNCHER"
 |bulletSpeed: 3.5,      |    bulletSpeed: 3,
 |loadingTime: 380,      |    loadingTime: 400,
 |***wobject***
@@ -56,50 +56,40 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |name: "FLAMER"         |    name: "FLAMER"
 |fireCone: 4,           |    fireCone: 20,
 |launchSound: 12,       |    launchSound: -1,
- 
-56. ***weapon***
-57. name: "RIFLE"              name: "RIFLE"
-58. loadingTime: 250,          loadingTime: 280,
-59. *wobject***
-60. hitDamage: 34,             hitDamage: 32, // make rifle great again!
-
-62. ***weapon***
-63. name: "ACID FAN"           name: "ACID FAN"
-64. ammo: 150,                 ammo: 140,
-65. loadingTime: 275,          loadingTime: 300,
- 
-67. ***weapon***
-68. name: "CHAINGUN"           name: "CHAINGUN"
-69. loadingTime: 350,          loadingTime: 299,
-70. fireCone: 2,               fireCone: 6,
- 
-72. ***weapon***
-73. name: "SCATTERGUN"         name: "SCATTERGUN"
-74. loadingTime: 370,          loadingTime: 375,
-75. fireCone: 2,               fireCone: 6,
-
-77. ***weapon***
-78. name: "MINIGUN"            name: "MINIGUM"
-79. loadingTime: 330,          loadingTime: 360,
- 
-81. ***weapon***
-82. name: "DARTGUN"            name: "DARTGUN"
-83. loadingTime: 280,          loadingTime: 217,  // it was absurdly low...
-
-85. ***weapon***
-86. name: "LASER"              name: "LASER"
-87. launchSound: 27,           launchSound: -1,
-
-89. ***weapon***
-90. name: "MINI NUKE"          name: "MINI NUKE"
-91. delay: 45,                 delay: 30,
- 
-93. ***weapon***
-94. name: "ZIMM"               name: "ZIMM"
-95. loadingTime: 500,          loadingTime: 540,
-
-97. ***weapon***
-98. name: "MISSILE"            name: "MISSILE"
-99. loadingTime: 420,          loadingTime: 480,
+|***weapon***
+|name: "RIFLE"          |    name: "RIFLE"
+|loadingTime: 250,      |    loadingTime: 280,
+|*wobject***
+|hitDamage: 34,         |    hitDamage: 32, // make rifle great again!
+|***weapon***
+|name: "ACID FAN"       |    name: "ACID FAN"
+|ammo: 150,             |    ammo: 140,
+|loadingTime: 275,      |    loadingTime: 300,
+|***weapon***
+|name: "CHAINGUN"       |    name: "CHAINGUN"
+|loadingTime: 350,      |    loadingTime: 299,
+|fireCone: 2,           |    fireCone: 6,
+|***weapon***
+|name: "SCATTERGUN"     |    name: "SCATTERGUN"
+|loadingTime: 370,      |    loadingTime: 375,
+|fireCone: 2,           |    fireCone: 6,
+|***weapon***
+|name: "MINIGUN"        |    name: "MINIGUM"
+|loadingTime: 330,      |    loadingTime: 360,
+|***weapon***
+|name: "DARTGUN"        |    name: "DARTGUN"
+|loadingTime: 280,      |   loadingTime: 217,  // it was absurdly low...
+|***weapon***
+|name: "LASER"          |    name: "LASER"
+|launchSound: 27,       |    launchSound: -1,
+|***weapon***
+|"MINI NUKE"            |    name: "MINI NUKE"
+|delay: 45,             |    delay: 30,
+|***weapon***
+|name: "ZIMM"           |    name: "ZIMM"
+|loadingTime: 500,      |    loadingTime: 540,
+|***weapon***
+|name: "MISSILE"        |    name: "MISSILE"
+|loadingTime: 420,      |    loadingTime: 480,
 
 ***roo***
