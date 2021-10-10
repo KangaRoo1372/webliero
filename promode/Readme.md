@@ -8,7 +8,7 @@ Although he had named his TC "final", further several changes were made by other
 
 Liero Promode ReRevisited was based on Liero Promode TC (specifically on "Liero Promode Revisited" - one of the aforementioned Liero Promode Final conversions), adjusted for WebLiero. As we can read it the official README, "less spammy weapons, less particles and quick movement are the main features".
 
-Since the official release, jerrac - after many tests - made several changes in his mod, to make it even better. Currently, the official version is 1.3.2 BETA, which can be found here: https://gitlab.com/webliero/webliero-mods/-/tree/master/ReRevisited.
+Since the official release, jerrac - after many tests - made several changes in his mod, to make it even better. Currently, the official version is 1.3.2 BETA, which can be found [here](https://gitlab.com/webliero/webliero-mods/-/tree/master/ReRevisited).
 
 However, the history likes to repeat itself... as in the past, when later conversions of promode final were created by various people who were not its creator - promode rerevisited is now being developed by various people.
 
