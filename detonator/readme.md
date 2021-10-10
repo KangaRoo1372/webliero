@@ -14,4 +14,4 @@ So, I used wid34 to make a weapon (called REMOTE BOMB), which doesn't explode on
 
 Since the wobject 34 creates only one sobject on explosion when it is "detonated", I had to use bigger sprites for its explosion (credits: big thanks to dsds who gave me this idea!). Currently, I used sprites taken from Daro's WA mod for that case.
 
-***roo**
+***roo***
