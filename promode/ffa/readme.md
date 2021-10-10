@@ -61,7 +61,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |launchSound: 12,       |    launchSound: -1,
 |***weapon***
 |name: "RIFLE"          |    name: "RIFLE"
-|loadingTime: 250,      |    loadingTime: 280,
+|loadingTime: 280,      |    loadingTime: 250,
 |*wobject***
 |hitDamage: 34,         |    hitDamage: 32,
 |***weapon***
