@@ -8,7 +8,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 
 
 |  NEW SETTINGS         |      ORIGINAL SETTINGS
-|---------------------- |   ------------------------
+|----------------------  ------------------------
 |***weapon***           
 |name: "MORTAR"         |   name: "MORTAR"
 |loadingTime: 360,      |   loadingTime: 300,
@@ -17,7 +17,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |createonexp: 22,       |    createonexp: 27,
 |splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
 |splinterType: 21,      |    splinterType: 4,
-|-----------------------|---------------------------
+
 12. ***weapon***
 13. name: "GRENADE"            name: "GRENADE"
 14. loadingTime: 250,          loadingTime: 200,
