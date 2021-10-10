@@ -17,6 +17,9 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |createonexp: 22,       |    createonexp: 27,
 |splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
 |splinterType: 21,      |    splinterType: 4,
+|***sobject***
+|detectRange: 18        |    detectRange: 20
+|damage: 45             |    damage: 60
 |***weapon***           
 |name: "GRENADE"        |    name: "GRENADE"
 |loadingTime: 250,      |    loadingTime: 200,
@@ -91,5 +94,9 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |***weapon***
 |name: "MISSILE"        |    name: "MISSILE"
 |loadingTime: 420,      |    loadingTime: 480,
+|***weapon***
+|name: "PROXY MINE"     | name: "PROXY MINE"
+|***sobject***
+|detectDistance: 21,    | detectDistance: 26,
 
 ***roo***
