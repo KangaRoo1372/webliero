@@ -13,9 +13,9 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |name: "MORTAR"         |   name: "MORTAR"
 |loadingTime: 360,      |   loadingTime: 300,
 |***wobject***          
-|blowaway: 0,           |    blowaway: 0.1,   // mortar pulling effect removed
+|blowaway: 0,           |    blowaway: 0.1,
 |createonexp: 22,       |    createonexp: 27,
-|splinterAmount: 20,    |    splinterAmount: 120,  // mortar splinter delayer
+|splinterAmount: 20,    |    splinterAmount: 120,
 |splinterType: 21,      |    splinterType: 4,
 |***sobject***
 |detectRange: 18        |    detectRange: 20
@@ -63,7 +63,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |name: "RIFLE"          |    name: "RIFLE"
 |loadingTime: 250,      |    loadingTime: 280,
 |*wobject***
-|hitDamage: 34,         |    hitDamage: 32, // make rifle great again!
+|hitDamage: 34,         |    hitDamage: 32,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
@@ -81,7 +81,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |loadingTime: 330,      |    loadingTime: 360,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
-|loadingTime: 280,      |   loadingTime: 217,  // it was absurdly low...
+|loadingTime: 280,      |   loadingTime: 217,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
 |launchSound: 27,       |    launchSound: -1,
