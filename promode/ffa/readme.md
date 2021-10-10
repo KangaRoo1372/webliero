@@ -62,7 +62,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |***weapon***
 |name: "RIFLE"          |    name: "RIFLE"
 |loadingTime: 280,      |    loadingTime: 250,
-|*wobject***
+|***wobject***
 |hitDamage: 34,         |    hitDamage: 32,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
