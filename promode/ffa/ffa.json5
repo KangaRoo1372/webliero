@@ -209,7 +209,7 @@
       fireCone: 4,
       laserSight: false,
       laserBeam: false,
-      launchSound: 12,   // 7,
+      launchSound: 12,
       playReloadSound: true,
       name: "FLAMER"
     },
@@ -564,7 +564,7 @@
       recoil: 0.9,
       ammo: 1,
       delay: 5,
-      loadingTime: 400,
+      loadingTime: 380,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 10,
