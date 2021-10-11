@@ -88,6 +88,7 @@ Basically, all changes I made - comparing to Promode ReRevisited original settin
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |delay: 45,             |    delay: 30,
+|loadingTime: 480,      |    loadingTime: 450,
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
