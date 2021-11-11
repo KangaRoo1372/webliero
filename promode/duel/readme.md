@@ -6,9 +6,9 @@ As you read in the previous readme file, you can find here my version of Weblier
 
 Basically, all changes I made - comparing to Promode ReRevisited original settings - refer only to some weapons (the gravity or other main "physics" parameters of the gameplay, which you can find in part "contants" and "textures", remains unchanged).
 
-Firstly, only two weapons were changed: PROXY MINE and SUPER SHOTGUN. After many months of observations of the duels played at Promode Rerevisited, it turned out that these two weapons are the most abused by players. That was actually quite understandable - they turned out to be very strong and easy to use. For this reason, I have significantly remodeled these two weapons, nerfing them a lot.
+In the first version of this mod, only two weapons were changed: PROXY MINE and SUPER SHOTGUN. After many months of observations of the duels played with Promode Rerevisited mod, it turned out that these two weapons are the most abused by players. That was actually quite understandable - they turned out to be too op (very strong and easy to use). For this reason, I have significantly remodeled these two weapons, nerfing them a lot.
 
-Unfortunately, most players did not like these changes, especially SUPER SHOTGUN - I reduced the ammo count from 2 to 1. For this reason, some people said that SUPER SHOTGUN had completely lost its spirit. Therefore, two alternative versions of this weapon were created - hence in this repo you can find two json files that differ from each other only within this one weapon. So, duel1.json5 has got SUPER SHOTGUN with 1 ammo and duel2.json with 2 rounds. You can see the list of changes made to SUPER SHOTGUN below (also showing how it looked in original Promode ReRevisited v. 1.3.2.):
+Unfortunately, most players did not like these changes, especially SUPER SHOTGUN - I reduced ammo ammount from 2 to 1. For this reason, some people said that SUPER SHOTGUN had completely lost its spirit. Therefore, two alternative versions of this weapon were created - hence in this repo you can find two json files that differ from each other only by this one weapon. So, duel1.json5 has got SUPER SHOTGUN with 1 ammo and duel2.json with 2 rounds. You can see the list of changes made to SUPER SHOTGUN below (also showing how it looked in original Promode ReRevisited 1.3.2.):
 
 
 |  DUEL 1               |      DUEL 2               |     ORIGINAL SETTINGS  |
@@ -72,7 +72,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |***wobject***
-|distribution: 0.3,     |    distribution: 0.2,
+|distribution: 0.2,     |    distribution: 0.3,
 |***nobject***
 |damage: 2,             |    damage: 1,
 |***weapon***
