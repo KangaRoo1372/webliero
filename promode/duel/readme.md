@@ -109,6 +109,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
 |ammo: 180,             |    ammo: 60,
+|***weapon***
+|name: "INCENDIATOR"    |    name: "INCENDIATOR"
+|loadingTime: 450,      |    loadingTime: 400,
 
 
 ***roo***
