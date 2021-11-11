@@ -70,6 +70,12 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***wobject***
 |timetoExplo: 30,       |    timeToExplo: 25,
 |***weapon***
+|name: "CLUSTER POD"    |    name: "CLUSTER POD"
+|***wobject***
+|distribution: 0.3,     |    distribution: 0.2,
+|***nobject***
+|damage: 2,             |    damage: 1,
+|***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
 |loadingTime: 275,      |    loadingTime: 300,
