@@ -4,7 +4,7 @@ Hi guys!
 
 As you read in the previous readme file, you can find here my version of Webliero Promode ReRevisited Mod, reworked to make it suitable for FFA (free for all) games. The mod is based on the latest version of original Promode ReRevisited, i.e. 1.3.2. BETA. It is also recommended to use original Promode ReRevisited sprites while playing this mod (you can find the wlsprt file in the [official Promode ReRevisited repository on gitlab](https://gitlab.com/webliero/webliero-mods/-/tree/master/ReRevisited)).
 
-Basically, all changes I made - comparing to Promode ReRevisited original settings - refer only to some weapons (the gravity or other main "physics" parameters of the gameplay, which you can find in "contants" and "textures", remain unchanged). The most significant changes were made to MORTAR, GRENADE, MINI NUKE, FLAK CANNON, DARTGUN and PROXY MINE, because those weapons were just too op and oversuded on ffa.
+Basically, all changes I made - comparing to Promode ReRevisited original settings - refer only to some weapons (the gravity or other main "physics" parameters of the gameplay, which you can find in "contants" and "textures", remain unchanged). The most significant changes were made to MORTAR, GRENADE, MINI NUKE, FLAK CANNON, DARTGUN and PROXY MINE, because those weapons were just too op and overused on ffa.
 
 Here you can find the full list of aforementioned changes:
 
