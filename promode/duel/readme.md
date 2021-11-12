@@ -112,6 +112,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "INCENDIATOR"    |    name: "INCENDIATOR"
 |loadingTime: 450,      |    loadingTime: 400,
+|***weapon***
+|name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
+|loadingTime: 360,      |    loadingTime: 400,
 
 
 ***roo***
