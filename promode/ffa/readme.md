@@ -107,5 +107,8 @@ Here you can find the full list of aforementioned changes:
 |***weapon***
 |name: "GAUSS GUN"      |    name: "GAUSS GUN"
 |loadingTime: 380,      |    loadingTime: 400,
+|***weapon***
+|name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
+|loadingTime: 360,      |    loadingTime: 400,
 
 ***roo***
