@@ -30,7 +30,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "PROXY MINE"     |    name: "PROXY MINE"
 |loadingTime: 430,      |    loadingTime: 400,
 |***wobject***
-|multSpeed: 0.95,       |    multSpeed: 0.98,
+|multSpeed: 0.94,       |    multSpeed: 0.98,
 |***sobject***
 |damage: 35,            |    damage: 50,
 |***weapon***
