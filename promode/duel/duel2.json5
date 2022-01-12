@@ -1071,7 +1071,7 @@
       speed: 220
     },
     { // proxymine wid12
-      detectDistance: 8,
+      detectDistance: 6,
       blowAway: 0.22,
       gravity: 0,
       exploSound: -1,
@@ -1087,7 +1087,7 @@
       affectByExplosions: true,
       bounce: 0.5,
       bounceFriction: 0.8,
-      timeToExplo: 250,
+      timeToExplo: 280,
       timeToExploV: 20,
       hitDamage: 0,
       bloodOnHit: 18,
