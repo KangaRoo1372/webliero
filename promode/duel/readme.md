@@ -17,7 +17,7 @@ Unfortunately, most players did not like these changes, especially SUPER SHOTGUN
 |name: "SUPER SHOTGUN"  | name: "SUPER SHOTGUN"     | name: "SUPER SHOTGUN"  |
 |***wobject***          |                           |                        |
 |ammo: 1,               | ammo: 2,                  | ammo: 2,               |
-|delay: 0,              | delay: 80,                | delay: 20,             |
+|delay: 0,              | delay: 60,                | delay: 20,             |
 |loadingTime: 320,      | loadingTime: 450,         | loadingTime: 400,      |
 
 
@@ -31,6 +31,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 430,      |    loadingTime: 400,
 |***wobject***
 |multSpeed: 0.94,       |    multSpeed: 0.98,
+|detectDistance: 6,     |    detectDistance: 8,
+|timeToExplo: 280,      |    timeToExplo: 250,
 |***sobject***
 |damage: 35,            |    damage: 50,
 |***weapon***
