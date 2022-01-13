@@ -64,6 +64,23 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bounce: 0.5,           |    bounce: 0.4,
 |hitDamage: 8,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
+|***weapon***           |
+|name: "GRENADE"        |    name: "GRENADE",
+|loadingTime: 270,      |    loadingTime: 200,
+|***nobject***
+|speed: 4,              |    speed: 4.5,
+|speedV: 3,             |    speedV: 3.5,
+|hitDamage: 3.5,        |    hitDamage: 4.2,
+|timeToExplo: 12,       |    timeToExplo: 15,
+|timeToExploV: 5        |    timeToExploV: 7
+|***weapon***           |
+|name: "MORTAR"         |    name: "MORTAR",
+|***nobject***
+|speed: 4,              |    speed: 4.5,
+|speedV: 3,             |    speedV: 3.5,
+|hitDamage: 3.5,        |    hitDamage: 4.2,
+|timeToExplo: 12,       |    timeToExplo: 15,
+|timeToExploV: 5        |    timeToExploV: 7
 |***weapon***
 |name: "FLAMER"         |    name: "FLAMER"
 |ammo: 60,              |    ammo: 50,
