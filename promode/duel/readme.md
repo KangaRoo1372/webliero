@@ -66,7 +66,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
-|loadingTime: 270,      |    loadingTime: 200,
+|loadingTime: 250,      |    loadingTime: 200,
 |***nobject***
 |speed: 4,              |    speed: 4.5,
 |speedV: 3,             |    speedV: 3.5,
