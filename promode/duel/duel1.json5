@@ -2340,11 +2340,11 @@
       distribution: 0.030517578125,
       blowAway: 0.05,
       bounce: 0,
-      hitDamage: 4.2,
+      hitDamage: 4,
       wormExplode: false,
       explGround: true,
       wormDestroy: true,
-      bloodOnHit: 8,
+      bloodOnHit: 6,
       startFrame: 0,
       numFrames: 0,
       drawOnMap: false,
@@ -2359,7 +2359,7 @@
       bloodTrailDelay: 0,
       leaveObj: -1,
       leaveObjDelay: 0,
-      timeToExplo: 12,
+      timeToExplo: 13,
       timeToExploV: 5
     },
     { // high damage bullet splinter nid5
