@@ -99,6 +99,7 @@ Here you can find the full list of aforementioned changes:
 |name: "PROXY MINE"     |    name: "PROXY MINE"
 |***wobject***
 |detectDistance: 6,     |    detectdistance: 8,
+|mutlSpeed: 0.94,       |    multSpeed: 0.98,
 |***sobject***
 |detectDistance: 21,    |    detectDistance: 26,
 |damage: 45,            |    damage: 50,
