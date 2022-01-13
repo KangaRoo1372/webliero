@@ -25,12 +25,10 @@ Here you can find the full list of aforementioned changes:
 |***weapon***           
 |name: "GRENADE"        |    name: "GRENADE"
 |loadingTime: 250,      |    loadingTime: 200,
-|***wobject***
-|splinterType: 5,       |    splinterType: 4,
 |***nobject***
 |speed: 4,              |    speed: 4.5,
 |speedV: 3,             |    speedV: 3.5,
-|hitDamage: 3,          |    hitDamage: 4.2
+|hitDamage: 2,          |    hitDamage: 4.2
 |bloodOnHit: 6,         |    bloodOnHit: 8,
 |timeToExplo: 12,       |    timeToExplo: 15,
 |timeToExploV: 5        |    timeToExploV: 7
@@ -39,8 +37,8 @@ Here you can find the full list of aforementioned changes:
 |loadingTime: 480,      |    loadingTime: 510,
 |***nobject***
 |hitDamage: 3,          |    hitDamage: 4,
-|timeToExplo: 12,       |    timeToExplo: 15,
-|timeToExploV: 5        |    timeToExploV: 7
+|timeToExplo: 12,       |    timeToExplo: 18,
+|timeToExploV: 5        |    timeToExploV: 5
 |***weapon***
 |name: "WINCHESTER"     |    name: "WINCHESTER"
 |loadingTime: 320,      |    loadingTime: 400,
