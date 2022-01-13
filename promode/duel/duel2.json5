@@ -583,7 +583,7 @@
       recoil: 0,
       ammo: 1,
       delay: 0,
-      loadingTime: 200,
+      loadingTime: 270,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -2335,12 +2335,12 @@
     { // grenade splinter nid4
       detectDistance: 1,
       gravity: 0.01068115234375,
-      speed: 4.5,
-      speedV: 3.5,
+      speed: 4,
+      speedV: 3,
       distribution: 0.030517578125,
       blowAway: 0.05,
       bounce: 0,
-      hitDamage: 4.2,
+      hitDamage: 3.5,
       wormExplode: false,
       explGround: true,
       wormDestroy: true,
@@ -2359,8 +2359,8 @@
       bloodTrailDelay: 0,
       leaveObj: -1,
       leaveObjDelay: 0,
-      timeToExplo: 15,
-      timeToExploV: 7
+      timeToExplo: 12,
+      timeToExploV: 5
     },
     { // high damage bullet splinter nid5
       detectDistance: 1,
