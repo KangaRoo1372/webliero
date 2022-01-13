@@ -1077,7 +1077,7 @@
       exploSound: -1,
       addSpeed: 0,
       distribution: 0.0152587890625,
-      multSpeed: 0.98,
+      multSpeed: 0.94,
       createOnExp: 23,
       dirtEffect: 0,
       wormExplode: true,
