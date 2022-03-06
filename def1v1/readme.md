@@ -2,17 +2,17 @@ Def ReRevisited (1v1 version) - a long time ago (in a galaxy far, far away... :P
 
 a) main "physics" parameters of the gameplay (part "constans" - I used liero promode rerevisited original settings);
 
-b) weapon changes (the list of weapons below - current version of the mod: 0.7).
+b) weapon changes (see the list of weapons with their description below).
 
 Generally, the mod contains 3 types of weapons:
 
-a) attack weapons (PANZERFAUST, RAILGUN, SOLAR FLAME);
+a) attack weapons (PANZERFAUST, RAILGUN, SOLAR FLAME, MISSILE, ZIMM);
 
 b) finishers (PLASMA SHOTGUN, MACHINE GUN, LASER CUTTER, FLAMETHROWER);
 
 c) defense weapons (DIRT SHIELD, MAGNETIC FIELD);
 
-d) bombs (UZUMAKI, NAPALM, CLUSTER BOMB).
+d) bombs (UZUMAKI, NAPALM, CLUSTER BOMB, MORTAR).
 
 The main ideas of the mod was:
 
@@ -36,3 +36,8 @@ List of all weapons and their description is below:
 10. NAPALM - this weapon was taken directly from Liero Promode Final, but it was buffed a lot (more dmg added + it now explodes on worm touch too).
 11. DIRT SHIELD -this weapon was taken directly from Kami's "dtk 1v1" mod (SHIELD), but slightly changed (0 loading time).
 12. MAGNETIC FIELD - this weapon was taken directly from my "Roo Fun Mod" (ANDRE'S MAGNETIC SHIELD), but slightly changed (0 loading time).
+13. MISSILE - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg added).
+14. MORTAR - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was changed a little bit to adjust it to this mod.
+15. ZIMM - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg added, multspeed >1).
+
+-- current version of the mod: 1.0 --
