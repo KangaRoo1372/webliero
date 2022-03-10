@@ -41,7 +41,7 @@ Here you can find the full list of aforementioned changes:
 |timeToExploV: 5        |    timeToExploV: 5
 |***weapon***
 |name: "WINCHESTER"     |    name: "WINCHESTER"
-|loadingTime: 320,      |    loadingTime: 400,
+|loadingTime: 340,      |    loadingTime: 400,
 |delay: 20,             |    delay: 22,
 |***wobject***
 |blowAway: 0.2,         |    blowAway: 0.7,
@@ -64,10 +64,6 @@ Here you can find the full list of aforementioned changes:
 |loadingTime: 280,      |    loadingTime: 250,
 |***wobject***
 |hitDamage: 34,         |    hitDamage: 32,
-|***weapon***
-|name: "ACID FAN"       |    name: "ACID FAN"
-|ammo: 150,             |    ammo: 140,
-|loadingTime: 275,      |    loadingTime: 300,
 |***weapon***
 |name: "CHAINGUN"       |    name: "CHAINGUN"
 |loadingTime: 350,      |    loadingTime: 299,
@@ -99,7 +95,7 @@ Here you can find the full list of aforementioned changes:
 |name: "PROXY MINE"     |    name: "PROXY MINE"
 |***wobject***
 |detectDistance: 6,     |    detectdistance: 8,
-|mutlSpeed: 0.94,       |    multSpeed: 0.98,
+|mutlSpeed: 0.95,       |    multSpeed: 0.98,
 |***sobject***
 |detectDistance: 21,    |    detectDistance: 26,
 |damage: 45,            |    damage: 50,
