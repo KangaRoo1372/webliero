@@ -30,10 +30,11 @@ Here you can find the full list of aforementioned changes:
 |launchSound: -1,       |    launchSound: 27,
 |***wobject***
 |colorBullets: 244,     |    colorBullets: 104,
+|***weapon***
 |name: "GRENADE"        |    name: "GRENADE"
 |bulletType: 36,        |    bulletType: 40,
 
-List of new weapons:
+List of new weapons (NOTE: under construction):
 
 1. BOUNCY MINES
 2. LASER PISTOL
