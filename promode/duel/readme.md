@@ -91,9 +91,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***wobject***
 |timetoExplo: 30,       |    timeToExplo: 25,
 |***weapon***
+|name: "AUTO SHOTGUN"   |    name: "AUTO SHOTGUN"
+|ammo: 10,              |    ammo: 8,
+|delay: 25,             |    delay: 28,
+|***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
-|***wobject***
-|distribution: 0.2,     |    distribution: 0.3,
 |***nobject***
 |damage: 2,             |    damage: 1,
 |***weapon***
