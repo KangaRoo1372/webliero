@@ -42,7 +42,7 @@ List of new weapons (note - under construction):
 4. UZI
 5. COIL GUN
 6. FIRECRACKERS
-7. CRIPPLE BULLET
+7. NAPALM
 8. SHOCKWAVE BOMB
 9. DIRT SHIELD
 10. MAGNETIC FIELD
