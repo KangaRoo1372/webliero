@@ -290,7 +290,7 @@
       name: "MINIGUN"
     },
     {
-      parts: 20,
+      parts: 22,
       bulletType: 15,
       bulletSpeed: 1.4,
       bulletSpeedInherit: 0.7142857142857143,
@@ -1827,7 +1827,7 @@
       objTrailDelay: 5,
       partTrailType: 1,
       partTrailObj: 10,
-      partTrailDelay: 10,
+      partTrailDelay: 8,
       speed: 200
     },
     { // missile wid32
@@ -2520,7 +2520,7 @@
       distribution: 0.10517578125,
       blowAway: 0.15,
       bounce: 0,
-      hitDamage: 3,
+      hitDamage: 5,
       wormExplode: true,
       explGround: true,
       wormDestroy: true,
