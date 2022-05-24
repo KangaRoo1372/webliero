@@ -96,8 +96,15 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |delay: 25,             |    delay: 28,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
+|parts: 22,             |    parts: 20,
 |***nobject***
 |damage: 2,             |    damage: 1,
+|***weapon***
+|name: "TUPOLEV"        |    name: "TUPOLEV"
+|***wobject***
+|partTrailDelay: 8,     |    partTrailDelay: 10,
+|***nobject***
+|damage: 5,             |    damage: 3,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
