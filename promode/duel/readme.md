@@ -32,11 +32,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
-|timeToExplo: 280,      |    timeToExplo: 250,
+|timeToExplo: 300,      |    timeToExplo: 250,
 |***sobject***
 |damage: 35,            |    damage: 50,
 |***weapon***
-|name: "DOOMSDAY"       |    name: "DOOMSDAY"
+|name: "MINI ROCKETS"   |    name: "DOOMSDAY"
 |bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
 |ammo: 12,              |    ammo: 8,
 |delay: 8,              |    delay: 11,
@@ -122,9 +122,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 330,      |    loadingTime: 360,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
-|loadingTime: 230,      |    loadingTime: 217,
-|ammo: 7,               |    ammo: 6,
+|loadingTime: 320,      |    loadingTime: 217,
+|bulletSpeed: 3,        |    bulletSpeed: 2.75,
+|delay: 12,             |    delay: 18,
 |***wobject***
+|hitDamage: 8,          |    hitDamage: 9,
 |timetoExplo: 600,      |    timeToExplo: 300,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
@@ -136,6 +138,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
+|bulletSpeed: 3.2,      |    bulletSpeed: 3,
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
 |ammo: 180,             |    ammo: 60,
