@@ -1184,7 +1184,7 @@
       partTrailDelay: 0,
       speed: 355
     },
-    { // cluster pod wid15
+    { // clusterpod wid15
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.01983642578125,
@@ -2452,7 +2452,7 @@
       timeToExplo: 4000,
       timeToExploV: 1000
     },
-    { // cluster part nid8
+    { // clusterpart nid8
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 2.2,
