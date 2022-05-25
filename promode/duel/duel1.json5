@@ -526,7 +526,7 @@
       recoil: 0,
       ammo: 6,
       delay: 12,
-      loadingTime: 320,
+      loadingTime: 280,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
