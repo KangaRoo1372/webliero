@@ -125,7 +125,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 330,      |    loadingTime: 360,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
-|loadingTime: 320,      |    loadingTime: 217,
+|loadingTime: 280,      |    loadingTime: 217,
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
 |delay: 12,             |    delay: 18,
 |***wobject***
