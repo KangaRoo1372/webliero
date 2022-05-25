@@ -97,6 +97,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |parts: 22,             |    parts: 20,
+|ammo: 2,               |    ammo: 1,
+|delay: 40,             |    delay: 0,
+|loadingTime: 440,      |    loadingTime: 400, 
 |***nobject***
 |damage: 2,             |    damage: 1,
 |***weapon***
@@ -134,7 +137,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |launchSound: 27,       |    launchSound: -1,
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
-|loadingTime: 370,      |    loadingTime: 450,
+|loadingTime: 420,      |    loadingTime: 450,
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
