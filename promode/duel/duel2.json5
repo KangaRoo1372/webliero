@@ -192,7 +192,7 @@
       laserBeam: false,
       launchSound: 6,
       playReloadSound: true,
-      name: "DOOMSDAY"
+      name: "MINI ROCKETS"
     },
     {
       parts: 3,
@@ -387,7 +387,7 @@
     {
       parts: 1,
       bulletType: 21,
-      bulletSpeed: 3,
+      bulletSpeed: 3.2,
       bulletSpeedInherit: 0.3333333333333333,
       distribution: 0,
       recoil: 0.3,
@@ -520,13 +520,13 @@
     {
       parts: 2,
       bulletType: 37,
-      bulletSpeed: 2.75,
+      bulletSpeed: 3,
       bulletSpeedInherit: 0.15,
       distribution: 0.04,
       recoil: 0,
-      ammo: 7,
-      delay: 18,
-      loadingTime: 230,
+      ammo: 6,
+      delay: 12,
+      loadingTime: 320,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -918,7 +918,7 @@
       partTrailDelay: 0,
       speed: 250
     },
-    { // doomsday wid8
+    { // mini rockets wid8
       detectDistance: 1,
       blowAway: 0,
       gravity: 0,
@@ -1087,7 +1087,7 @@
       affectByExplosions: true,
       bounce: 0.5,
       bounceFriction: 0.8,
-      timeToExplo: 280,
+      timeToExplo: 300,
       timeToExploV: 20,
       hitDamage: 0,
       bloodOnHit: 18,
@@ -2039,7 +2039,7 @@
       bounceFriction: 0.8,
       timeToExplo: 600,
       timeToExploV: 0,
-      hitDamage: 9,
+      hitDamage: 8,
       bloodOnHit: 20,
       startFrame: 223,
       numFrames: 0,
@@ -3460,7 +3460,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // doomsday explosion sid29
+    { // mini rockets explosion sid29
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
