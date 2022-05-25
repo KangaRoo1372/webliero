@@ -296,9 +296,9 @@
       bulletSpeedInherit: 0.7142857142857143,
       distribution: 0.4999847412109375,
       recoil: 0,
-      ammo: 1,
-      delay: 0,
-      loadingTime: 400,
+      ammo: 2,
+      delay: 40,
+      loadingTime: 440,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -412,7 +412,7 @@
       recoil: 0.2,
       ammo: 2,
       delay: 30,
-      loadingTime: 370,
+      loadingTime: 420,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -1184,7 +1184,7 @@
       partTrailDelay: 0,
       speed: 355
     },
-    { // clusterpod wid15
+    { // cluster pod wid15
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.01983642578125,
