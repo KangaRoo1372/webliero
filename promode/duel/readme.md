@@ -144,7 +144,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bulletSpeed: 3.2,      |    bulletSpeed: 3,
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
-|ammo: 180,             |    ammo: 60,
+|ammo: 120,             |    ammo: 60,
 |***weapon***
 |name: "INCENDIATOR"    |    name: "INCENDIATOR"
 |loadingTime: 450,      |    loadingTime: 400,
