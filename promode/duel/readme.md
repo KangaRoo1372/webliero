@@ -18,7 +18,7 @@ Unfortunately, most players did not like these changes, especially SUPER SHOTGUN
 |***wobject***          |                           |                        |
 |ammo: 1,               | ammo: 2,                  | ammo: 2,               |
 |delay: 0,              | delay: 60,                | delay: 20,             |
-|loadingTime: 320,      | loadingTime: 450,         | loadingTime: 400,      |
+|loadingTime: 320,      | loadingTime: 420,         | loadingTime: 400,      |
 
 
 Lately, I made also further changes to many other weapons. Here you can find the full list of changes:
