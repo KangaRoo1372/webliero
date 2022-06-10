@@ -85,7 +85,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timeToExploV: 5        |    timeToExploV: 7
 |***weapon***
 |name: "FLAMER"         |    name: "FLAMER"
-|ammo: 60,              |    ammo: 50,
+|ammo: 70,              |    ammo: 50,
 |fireCone: 4,           |    fireCone: 20,
 |launchSound: 12,       |    launchSound: -1,
 |***wobject***
@@ -129,7 +129,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
 |delay: 12,             |    delay: 18,
 |***wobject***
-|hitDamage: 8,          |    hitDamage: 9,
+|hitDamage: 10,         |    hitDamage: 9,
 |timetoExplo: 600,      |    timeToExplo: 300,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
@@ -144,7 +144,19 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bulletSpeed: 3.2,      |    bulletSpeed: 3,
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
-|ammo: 120,             |    ammo: 60,
+|ammo: 140,             |    ammo: 60,
+|***wobject***
+|hitDamage: 2,          |    hitDamage: 1.8,
+|***weapon***
+|name: "SPIKEBALLS"     |    name: "SPIKEBALLS"
+|parts: 8,              |    parts: 7,
+|***wobject***
+|timeToExplo: 260,      |    timeToExplo: 230,
+|***weapon***
+|name: "FLAK CANNON"    |    name: "FLAK CANNON"
+|loadingTime: 480,      |    loadingTime: 510,
+|***wobject***
+|hitDamage: 18,         |    hitDamage: 15,
 |***weapon***
 |name: "INCENDIATOR"    |    name: "INCENDIATOR"
 |loadingTime: 450,      |    loadingTime: 400,
