@@ -100,11 +100,13 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |damage: 2,             |    damage: 1,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
+|bulletSpeed: 1.8,      |    bulletSpeed: 2,
 |***wobject***
 |timeToExplo: 0,        |    timeToExplo: 105,
 |partTrailDelay: 8,     |    partTrailDelay: 10,
 |***nobject***
 |damage: 5,             |    damage: 3,
+|gravity: 0.040517578125, |  gravity: 0.030517578125,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
@@ -134,9 +136,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 280,      |    loadingTime: 217,
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
 |delay: 12,             |    delay: 18,
-|ammo: 8,               |    ammo: 6,
 |***wobject***
 |timetoExplo: 400,      |    timeToExplo: 300,
+|hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
 |ammo: 150,             |    ammo: 140,
@@ -175,6 +177,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
 |loadingTime: 360,      |    loadingTime: 400,
 
-Special thanks to worms kami and Piotr for their ideas, insight and contributions in creating this version of the mod (some changes were directly taken or inspired by kami's version of Promode ReRevisited mod duel edition) ;)
+Special thanks to worms kami and Piotr for their ideas, insight and contributions in creating this version of the mod (some changes were directly taken or inspired by kami's version of Promode ReRevisited mod duel edition). Cheers guys! ;)
 
 ***roo***
