@@ -66,10 +66,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
-|loadingTime: 250,      |    loadingTime: 200,
+|loadingTime: 230,      |    loadingTime: 200,
 |***nobject***
-|speed: 4,              |    speed: 4.5,
-|speedV: 3,             |    speedV: 3.5,
 |hitDamage: 4,          |    hitDamage: 4.2,
 |bloodOnHit: 6,         |    bloodOnHit: 8,
 |timeToExplo: 13,       |    timeToExplo: 15,
@@ -77,8 +75,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***           |
 |name: "MORTAR"         |    name: "MORTAR",
 |***nobject***
-|speed: 4,              |    speed: 4.5,
-|speedV: 3,             |    speedV: 3.5,
 |hitDamage: 4,          |    hitDamage: 4.2,
 |bloodOnHit: 6,         |    bloodOnHit: 8,
 |timeToExplo: 13,       |    timeToExplo: 15,
@@ -116,20 +112,29 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "CHAINGUN"       |    name: "CHAINGUN"
 |loadingTime: 350,      |    loadingTime: 299,
 |fireCone: 2,           |    fireCone: 6,
+|***wobject***
+|hitDamage: 5,          |    hitDamage: 4,
+|bloodOnHit: 5,         |    bloodOnHit: 4,
 |***weapon***
 |name: "SCATTERGUN"     |    name: "SCATTERGUN"
 |loadingTime: 370,      |    loadingTime: 375,
 |fireCone: 2,           |    fireCone: 6,
+|ammo: 40,              |    ammo: 36,
+|***wobject***
+|hitDamage: 4,          |    hitDamage: 3,
 |***weapon***
 |name: "MINIGUN"        |    name: "MINIGUM"
 |loadingTime: 330,      |    loadingTime: 360,
+|***wobject***
+|hitDamage: 3,          |    hitDamage: 2,
+|bloodOnHit: 3,         |    hitDamage: 2,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
 |loadingTime: 280,      |    loadingTime: 217,
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
 |delay: 12,             |    delay: 18,
+|ammo: 8,               |    ammo: 6,
 |***wobject***
-|hitDamage: 10,         |    hitDamage: 9,
 |timetoExplo: 600,      |    timeToExplo: 300,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
