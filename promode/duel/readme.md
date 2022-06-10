@@ -175,6 +175,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
 |loadingTime: 360,      |    loadingTime: 400,
 
-Special thanks to worms kami and Piotr for their ideas, insight and contributions in creating this version of the mod :)
+Special thanks to worms kami and Piotr for their ideas, insight and contributions in creating this version of the mod (some changes were directly taken or inspired by kami's version of Promode ReRevisited mod duel edition) ;)
 
 ***roo***
