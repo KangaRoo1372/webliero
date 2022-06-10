@@ -101,6 +101,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |***wobject***
+|timeToExplo: 0,        |    timeToExplo: 105,
 |partTrailDelay: 8,     |    partTrailDelay: 10,
 |***nobject***
 |damage: 5,             |    damage: 3,
@@ -135,7 +136,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |delay: 12,             |    delay: 18,
 |ammo: 8,               |    ammo: 6,
 |***wobject***
-|timetoExplo: 600,      |    timeToExplo: 300,
+|timetoExplo: 400,      |    timeToExplo: 300,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
 |ammo: 150,             |    ammo: 140,
@@ -147,6 +148,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
 |bulletSpeed: 3.2,      |    bulletSpeed: 3,
+|delay: 60,             |    delay: 90,
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
 |ammo: 140,             |    ammo: 60,
@@ -162,6 +164,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 480,      |    loadingTime: 510,
 |***wobject***
 |hitDamage: 18,         |    hitDamage: 15,
+|***weapon***
+|name: "THROW KNIFE"    |    name: "THROW KNIFE"
+|***wobject***
+|hitDamage: 25,         |    hitDamage: 24,
 |***weapon***
 |name: "INCENDIATOR"    |    name: "INCENDIATOR"
 |loadingTime: 450,      |    loadingTime: 400,
