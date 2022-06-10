@@ -425,7 +425,7 @@
     {
       parts: 1,
       bulletType: 26,
-      bulletSpeed: 5.3,
+      bulletSpeed: 5.1,
       bulletSpeedInherit: 0,
       distribution: 0.004119873046875,
       recoil: 0.6,
@@ -482,7 +482,7 @@
     {
       parts: 1,
       bulletType: 31,
-      bulletSpeed: 2,
+      bulletSpeed: 1.8,
       bulletSpeedInherit: 0.5,
       distribution: 0,
       recoil: 0.2,
@@ -2514,7 +2514,7 @@
     },
     { // tupolev bomb nid10
       detectDistance: 1,
-      gravity: 0.030517578125,
+      gravity: 0.040517578125,
       speed: 1.8,
       speedV: 0.2,
       distribution: 0.10517578125,
