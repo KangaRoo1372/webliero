@@ -92,7 +92,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |delay: 25,             |    delay: 28,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
-|parts: 22,             |    parts: 20,
 |ammo: 2,               |    ammo: 1,
 |delay: 40,             |    delay: 0,
 |loadingTime: 440,      |    loadingTime: 400, 
@@ -149,8 +148,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
-|bulletSpeed: 3.2,      |    bulletSpeed: 3,
 |delay: 60,             |    delay: 90,
+|***wobject***
+|timeToExplo: 240,      |    timeToExplo: 140,
+|hitDamage: 50,         |    hitDamage: 49,
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
 |ammo: 140,             |    ammo: 60,
