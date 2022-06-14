@@ -100,7 +100,7 @@ Here you can find the full list of aforementioned changes:
 |detectDistance: 21,    |    detectDistance: 26,
 |damage: 45,            |    damage: 50,
 |***weapon***
-|name: "THROW KNIFE"
+|name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
 |***weapon***
 |name: "GAUSS GUN"      |    name: "GAUSS GUN"
