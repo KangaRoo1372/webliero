@@ -26,6 +26,18 @@ Here you can find the full list of aforementioned changes:
 |detectRange: 21,       |    detectRange: 18,
 |blowAway: 0.08,        |    blowAway: 0.04,
 |***weapon***
+|name: "DOOMSDAY"       |    name: "DOOMSDAY"
+|bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
+|ammo: 12,              |    ammo: 8,
+|delay: 8,              |    delay: 11,
+|loadingTime: 430,      |    loadingTime: 400,
+|fireCone: 4,           |    fireCone: 8,
+|***wobject***
+|blowAway: 0,           |   blowAway: 0.15,
+|createonExp: 22,       |   createonExp: 1,
+|***sobject***
+|blowAway: 0.015,       |   blowAway: 0.035,
+|***weapon***
 |name: "LASER"          |    name: "LASER"
 |launchSound: -1,       |    launchSound: 27,
 |***wobject***
