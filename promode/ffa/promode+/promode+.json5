@@ -343,7 +343,7 @@
       laserSight: false,
       laserBeam: false,
       launchSound: 5,
-      playReloadSound: true,
+      playReloadSound: false,
       name: "THROW KNIFE"
     },
     {
