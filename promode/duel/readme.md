@@ -169,6 +169,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 18,         |    hitDamage: 15,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
+|playReloadSound: false,|    playReloadSound: true,
 |***wobject***
 |hitDamage: 25,         |    hitDamage: 24,
 |***weapon***
