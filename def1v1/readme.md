@@ -36,8 +36,8 @@ List of all weapons and their description is below:
 10. NAPALM - this weapon was taken directly from Liero Promode Final, but it was buffed a lot (more dmg added + it now explodes on worm touch too).
 11. DIRT SHIELD -this weapon was taken directly from Kami's "dtk 1v1" mod (SHIELD), but slightly changed (0 loading time).
 12. MAGNETIC FIELD - this weapon was taken directly from my "Roo Fun Mod" (ANDRE'S MAGNETIC SHIELD), but slightly changed (0 loading time).
-13. MISSILE - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg added, less reload time).
+13. MISSILE - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time).
 14. MORTAR - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was changed a little bit to adjust it to this mod.
-15. ZIMM - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg added, less reload time, multspeed >1).
+15. ZIMM - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time & more).
 
--- current version of the mod: 1.0 --
+-- current version of the mod: 1.01 --
