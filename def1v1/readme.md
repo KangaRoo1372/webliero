@@ -38,6 +38,6 @@ List of all weapons and their description is below:
 12. MAGNETIC FIELD - this weapon was taken directly from my "Roo Fun Mod" (ANDRE'S MAGNETIC SHIELD), but slightly changed (0 loading time).
 13. MISSILE - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time).
 14. MORTAR - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was changed a little bit to adjust it to this mod.
-15. ZIMM - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time etc.).
+15. ZIMM - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time, less delay, more TimeToExplo).
 
--- current version of the mod: 1.05 --
+-- current version of the mod: 1.07 --
