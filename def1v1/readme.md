@@ -40,4 +40,4 @@ List of all weapons and their description is below:
 14. MORTAR - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was changed a little bit to adjust it to this mod.
 15. ZIMM - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time, less delay, more TimeToExplo).
 
--- current version of the mod: 1.07 --
+-- current version of the mod: 1.1 --
