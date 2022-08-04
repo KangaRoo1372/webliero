@@ -4,7 +4,7 @@ Hello my fellow Lieros!
 
 In this directory you can find my another version of Webliero Promode ReRevisited Mod, reworked to make it suitable for ffa. Generally, it is based on my KO New Promode ffa edition (which you can find in the previous folder), however I made few further changes in some weapons (listed below in the table - comparing to KO New Promode). What is more important though, I also added 10 new weapons, the description of which you can also find here.
 
-It is recommended to use original Promode ReRevisited sprites while playing this mod (you can find the wlsprt file in the [official Promode ReRevisited repository on gitlab](https://gitlab.com/webliero/webliero-mods/-/tree/master/ReRevisited)).
+It is recommended to use original Promode ReRevisited sprites while playing this mod (you can find the wlsprt file in the [official Promode ReRevisited repository on gitlab](https://gitlab.com/webliero/webliero-mods/-/tree/master/Jerac/ReRevisited)).
 
 Here you can find the full list of aforementioned changes:
 
