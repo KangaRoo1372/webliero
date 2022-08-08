@@ -28,7 +28,7 @@ Here you can find the full list of aforementioned changes:
 |***nobject***
 |speed: 4,              |    speed: 4.5,
 |speedV: 3,             |    speedV: 3.5,
-|hitDamage: 2,          |    hitDamage: 4.2
+|hitDamage: 3,          |    hitDamage: 4.2
 |bloodOnHit: 6,         |    bloodOnHit: 8,
 |timeToExplo: 12,       |    timeToExplo: 15,
 |timeToExploV: 5        |    timeToExploV: 7
