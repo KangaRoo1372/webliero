@@ -20,15 +20,15 @@ Here you can find the full list of aforementioned changes:
 |splinterAmount: 20,    |    splinterAmount: 120,
 |splinterType: 21,      |    splinterType: 4,
 |***sobject***
-|detectRange: 18        |    detectRange: 20
-|damage: 45             |    damage: 60
+|detectRange: 18,       |    detectRange: 20,
+|damage: 45,            |    damage: 60,
 |***weapon***           
 |name: "GRENADE"        |    name: "GRENADE"
 |loadingTime: 250,      |    loadingTime: 200,
 |***nobject***
 |speed: 4,              |    speed: 4.5,
 |speedV: 3,             |    speedV: 3.5,
-|hitDamage: 3,          |    hitDamage: 4.2
+|hitDamage: 3,          |    hitDamage: 4.2,
 |bloodOnHit: 6,         |    bloodOnHit: 8,
 |timeToExplo: 12,       |    timeToExplo: 15,
 |timeToExploV: 5        |    timeToExploV: 7
