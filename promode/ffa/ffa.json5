@@ -2204,7 +2204,7 @@
       timeToExplo: 8000,
       timeToExploV: 2000
     },
-    { // worm part nid1
+    { // worm part nid1 (unused)
       detectDistance: 0,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -2264,7 +2264,7 @@
       timeToExplo: 30,
       timeToExploV: 15
     },
-    { // small damage bullet splinter nid3
+    { // small damage bullet splinter nid3 (unused)
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 1.6,
@@ -2744,7 +2744,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // mortar splinter #1 nid19 (unused)
+    { // mortar splinter stage #1 nid19 (unused)
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 4,
@@ -2774,7 +2774,7 @@
       timeToExplo: 15,
       timeToExploV: 0
     },
-    { // mortar splinter #2 nid20 (unused)
+    { // mortar splinter stage #2 nid20 (unused)
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 1,
@@ -2826,7 +2826,7 @@
       dirtEffect: -1,
       splinterAmount: 10,
       splinterColour: 3,
-      splinterType: 28,
+      splinterType: 24,
       bloodTrail: false,
       bloodTrailDelay: 0,
       leaveObj: -1,
@@ -2894,26 +2894,26 @@
       timeToExplo: 70,
       timeToExploV: 60
     },
-    { // crackfield particle + marker nid24 (unused)
-      detectDistance: 0,
-      gravity: 0,
-      speed: 5,
-      speedV: 0.05,
+    { // mortar splinter final nid24
+      detectDistance: 1,
+      gravity: 0.01068115234375,
+      speed: 4,
+      speedV: 3,
       distribution: 0.030517578125,
-      blowAway: 0.03,
+      blowAway: 0.015,
       bounce: 0,
       hitDamage: 2,
-      wormExplode: true,
-      explGround: false,
+      wormExplode: false,
+      explGround: true,
       wormDestroy: true,
-      bloodOnHit: 5,
+      bloodOnHit: 8,
       startFrame: 0,
       numFrames: 0,
       drawOnMap: false,
-      colorBullets: 12,
-      createOnExp: 18,
+      colorBullets: 67,
+      createOnExp: -1,
       affectByExplosions: false,
-      dirtEffect: 2,
+      dirtEffect: -1,
       splinterAmount: 0,
       splinterColour: 0,
       splinterType: -1,
@@ -2921,8 +2921,8 @@
       bloodTrailDelay: 0,
       leaveObj: -1,
       leaveObjDelay: 0,
-      timeToExplo: 7,
-      timeToExploV: 0
+      timeToExplo: 10,
+      timeToExploV: 3
     },
     { // new missile explosion nid25
       detectDistance: 0,
@@ -2984,7 +2984,7 @@
       timeToExplo: 15,
       timeToExploV: 10
     },
-    { // grenade explosion nid27 (unused)
+    { // firecrackers explosion nid27 (unused)
       detectDistance: 0,
       gravity: 0,
       speed: 2,
@@ -3013,36 +3013,6 @@
       leaveObjDelay: 0,
       timeToExplo: 4,
       timeToExploV: 4
-    },
-    { // mortar splinter final nid28
-      detectDistance: 1,
-      gravity: 0.01068115234375,
-      speed: 4,
-      speedV: 3,
-      distribution: 0.030517578125,
-      blowAway: 0.015,
-      bounce: 0,
-      hitDamage: 2,
-      wormExplode: false,
-      explGround: true,
-      wormDestroy: true,
-      bloodOnHit: 8,
-      startFrame: 0,
-      numFrames: 0,
-      drawOnMap: false,
-      colorBullets: 67,
-      createOnExp: -1,
-      affectByExplosions: false,
-      dirtEffect: -1,
-      splinterAmount: 0,
-      splinterColour: 0,
-      splinterType: -1,
-      bloodTrail: false,
-      bloodTrailDelay: 0,
-      leaveObj: -1,
-      leaveObjDelay: 0,
-      timeToExplo: 10,
-      timeToExploV: 3
     },
   ],
   sObjects: [
@@ -3130,7 +3100,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // mini rocket trail sid6
+    { // doomsday trail sid6
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3228,7 +3198,7 @@
       flash: 5,
       dirtEffect: 1
     },
-    { // unused sid13
+    { // undefined sid13 (unused)
       startSound: -1,
       numSounds: 0,
       animDelay: 0,
@@ -3354,21 +3324,21 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // mortar main explosion sid22
+    { // doomsday new explosion sid22 (unused)
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
-      startFrame: 40,
-      numFrames: 15,
-      detectRange: 18,
-      damage: 45,
-      blowAway: 0.04,
+      startFrame: 45,
+      numFrames: 10,
+      detectRange: 14,
+      damage: 10,
+      blowAway: 0.015,
       shadow: true,
-      shake: 4,
-      flash: 8,
-      dirtEffect: 0
+      shake: 2,
+      flash: 4,
+      dirtEffect: 1
     },
-    { // proxy mine aoe explosion sid23
+    { // proxy mine + mortar aoe explosion sid23
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3376,7 +3346,7 @@
       numFrames: 15,
       detectRange: 21,
       damage: 45,
-      blowAway: 0.08,
+      blowAway: 0.04,
       shadow: true,
       shake: 4,
       flash: 8,
@@ -3433,20 +3403,6 @@
       detectRange: 25,
       damage: 30,
       blowAway: 0.1,
-      shadow: true,
-      shake: 4,
-      flash: 8,
-      dirtEffect: 0
-    },
-    { // mortar secondary explosion sid28
-      startSound: 9,
-      numSounds: 4,
-      animDelay: 2,
-      startFrame: 40,
-      numFrames: 15,
-      detectRange: 20,
-      damage: 20,
-      blowAway: 0.02,
       shadow: true,
       shake: 4,
       flash: 8,
