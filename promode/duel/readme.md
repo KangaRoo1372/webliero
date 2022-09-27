@@ -35,7 +35,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***sobject***
 |damage: 35,            |    damage: 50,
 |***weapon***
-|name: "MINI ROCKETS"   |    name: "DOOMSDAY"
+|name: "DOOMSDAY"       |    name: "DOOMSDAY"
 |bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
 |ammo: 12,              |    ammo: 8,
 |delay: 8,              |    delay: 11,
