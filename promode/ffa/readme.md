@@ -24,7 +24,7 @@ Here you can find the full list of aforementioned changes:
 |damage: 45,            |    damage: 60,
 |***weapon***           
 |name: "GRENADE"        |    name: "GRENADE"
-|loadingTime: 250,      |    loadingTime: 200,
+|loadingTime: 230,      |    loadingTime: 200,
 |***nobject***
 |speed: 4,              |    speed: 4.5,
 |speedV: 3,             |    speedV: 3.5,
@@ -36,7 +36,6 @@ Here you can find the full list of aforementioned changes:
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
 |loadingTime: 480,      |    loadingTime: 510,
 |***nobject***
-|hitDamage: 3,          |    hitDamage: 4,
 |timeToExplo: 12,       |    timeToExplo: 18,
 |timeToExploV: 5        |    timeToExploV: 5
 |***weapon***
@@ -53,7 +52,7 @@ Here you can find the full list of aforementioned changes:
 |blowAway: 0.05,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 6,          |    hitDamage: 4,
+|hitDamage: 5,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***
 |name: "FLAMER"         |    name: "FLAMER"
@@ -95,7 +94,6 @@ Here you can find the full list of aforementioned changes:
 |name: "PROXY MINE"     |    name: "PROXY MINE"
 |***wobject***
 |detectDistance: 6,     |    detectdistance: 8,
-|mutlSpeed: 0.95,       |    multSpeed: 0.98,
 |***sobject***
 |detectDistance: 21,    |    detectDistance: 26,
 |damage: 45,            |    damage: 50,
@@ -104,7 +102,7 @@ Here you can find the full list of aforementioned changes:
 |playReloadSound: false,|    playReloadSound: true,
 |***weapon***
 |name: "GAUSS GUN"      |    name: "GAUSS GUN"
-|loadingTime: 380,      |    loadingTime: 400,
+|loadingTime: 370,      |    loadingTime: 400,
 |***weapon***
 |name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
 |loadingTime: 360,      |    loadingTime: 400,
