@@ -3498,7 +3498,7 @@
       numFrames: 15,
       detectRange: 21,
       damage: 45,
-      blowAway: 0.08,
+      blowAway: 0.04,
       shadow: true,
       shake: 4,
       flash: 8,
