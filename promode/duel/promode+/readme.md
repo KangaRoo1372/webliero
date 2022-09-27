@@ -17,5 +17,6 @@ List of new weapons (note - under construction):
 7. COIL GUN
 8. FIRECRACKER
 9. NITROGLYCERINE GUN
+10. CRACKFIELD
 
 ***roo***
