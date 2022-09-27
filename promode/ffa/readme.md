@@ -97,6 +97,7 @@ Here you can find the full list of aforementioned changes:
 |***sobject***
 |detectDistance: 21,    |    detectDistance: 26,
 |damage: 45,            |    damage: 50,
+|blowAway: 0.04,        |    blowAway: 0.08,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
