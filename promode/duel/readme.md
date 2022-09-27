@@ -28,7 +28,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |---------------------- | ------------------------
 |***weapon***
 |name: "PROXY MINE"     |    name: "PROXY MINE"
-|loadingTime: 430,      |    loadingTime: 400,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
@@ -70,15 +69,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***nobject***
 |hitDamage: 4,          |    hitDamage: 4.2,
 |bloodOnHit: 6,         |    bloodOnHit: 8,
-|timeToExplo: 13,       |    timeToExplo: 15,
-|timeToExploV: 5        |    timeToExploV: 7
 |***weapon***           |
 |name: "MORTAR"         |    name: "MORTAR",
 |***nobject***
 |hitDamage: 4,          |    hitDamage: 4.2,
 |bloodOnHit: 6,         |    bloodOnHit: 8,
-|timeToExplo: 13,       |    timeToExplo: 15,
-|timeToExploV: 5        |    timeToExploV: 7
 |***weapon***
 |name: "FLAMER"         |    name: "FLAMER"
 |ammo: 60,              |    ammo: 50,
@@ -109,7 +104,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
-|loadingTime: 275,      |    loadingTime: 300,
 |***weapon***
 |name: "CHAINGUN"       |    name: "CHAINGUN"
 |loadingTime: 350,      |    loadingTime: 299,
@@ -167,6 +161,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 480,      |    loadingTime: 510,
 |***wobject***
 |hitDamage: 18,         |    hitDamage: 15,
+|***nobject***
+|bloodOnHit: 8,         |    bloodOnHit: 6,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
@@ -174,7 +170,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 25,         |    hitDamage: 24,
 |***weapon***
 |name: "INCENDIATOR"    |    name: "INCENDIATOR"
-|loadingTime: 450,      |    loadingTime: 400,
+|loadingTime: 430,      |    loadingTime: 400,
 |***weapon***
 |name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
 |loadingTime: 360,      |    loadingTime: 400,
