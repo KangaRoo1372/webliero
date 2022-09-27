@@ -192,7 +192,7 @@
       laserBeam: false,
       launchSound: 6,
       playReloadSound: true,
-      name: "MINI ROCKETS"
+      name: "DOOMSDAY"
     },
     {
       parts: 3,
@@ -918,7 +918,7 @@
       partTrailDelay: 0,
       speed: 250
     },
-    { // mini rockets wid8
+    { // doomsday wid8
       detectDistance: 1,
       blowAway: 0,
       gravity: 0,
@@ -3138,7 +3138,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // minicocket trail sid6
+    { // doomsday trail sid6
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3460,7 +3460,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // mini rockets explosion sid29
+    { // doomsday new explosion sid29
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
