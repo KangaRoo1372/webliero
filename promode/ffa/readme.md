@@ -20,7 +20,6 @@ Here you can find the full list of aforementioned changes:
 |splinterAmount: 20,    |    splinterAmount: 120,
 |splinterType: 21,      |    splinterType: 4,
 |***sobject***
-|detectRange: 18,       |    detectRange: 20,
 |damage: 45,            |    damage: 60,
 |***weapon***           
 |name: "GRENADE"        |    name: "GRENADE"
