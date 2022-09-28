@@ -842,7 +842,7 @@
       partTrailDelay: 0,
       speed: 500
     },
-    { // napalm wid6 (unused)
+    { // unused wid6
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.01983642578125,
@@ -1754,7 +1754,7 @@
       partTrailDelay: 0,
       speed: 110
     },
-    { // unused wid30
+    { // napalm wid30 (unused)
       detectDistance: 2,
       blowAway: 0,
       gravity: 0.0152587890625,
@@ -1944,7 +1944,7 @@
       partTrailDelay: 0,
       speed: 100
     },
-    { //unused wid35
+    { // grasshopper wid35 (unused)
       detectDistance: 1,
       blowAway: 0,
       gravity: 0.01678466796875,
@@ -1982,7 +1982,7 @@
       partTrailDelay: 0,
       speed: 190
     },
-    { // unused wid36
+    { // mini rockets wid36 (unused)
       detectDistance: 1,
       blowAway: 0.1,
       gravity: 0,
@@ -2564,7 +2564,7 @@
       timeToExplo: 40,
       timeToExploV: 10
     },
-    { // unused nid13
+    { // dirtball splinter nid13 (unused)
       detectDistance: 0,
       gravity: 0,
       speed: 4,
@@ -2834,7 +2834,7 @@
       timeToExplo: 5,
       timeToExploV: 2
     },
-    { // unused nid22
+    { // grasshopper #4 nid22 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -2864,7 +2864,7 @@
       timeToExplo: 70,
       timeToExploV: 60
     },
-    { // unused nid23
+    { // grasshopper #5 nid23 (unused)
       detectDistance: 1,
       gravity: 0.0152587890625,
       speed: 1.2,
@@ -2984,7 +2984,7 @@
       timeToExplo: 15,
       timeToExploV: 10
     },
-    { // firecrackers explosion nid27 (unused)
+    { // grenade explosion nid27 (unused)
       detectDistance: 0,
       gravity: 0,
       speed: 2,
@@ -3324,19 +3324,19 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // doomsday new explosion sid22 (unused)
+    { // mortar main explosion sid22 (unused)
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
-      startFrame: 45,
-      numFrames: 10,
-      detectRange: 14,
-      damage: 10,
-      blowAway: 0.015,
+      startFrame: 40,
+      numFrames: 15,
+      detectRange: 20,
+      damage: 60,
+      blowAway: 0.04,
       shadow: true,
-      shake: 2,
-      flash: 4,
-      dirtEffect: 1
+      shake: 4,
+      flash: 8,
+      dirtEffect: 0
     },
     { // proxy mine + mortar aoe explosion sid23
       startSound: 9,
