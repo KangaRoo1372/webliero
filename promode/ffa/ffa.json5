@@ -3344,7 +3344,7 @@
       animDelay: 2,
       startFrame: 40,
       numFrames: 15,
-      detectRange: 21,
+      detectRange: 20,
       damage: 45,
       blowAway: 0.04,
       shadow: true,
