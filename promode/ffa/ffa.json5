@@ -1116,7 +1116,7 @@
       addSpeed: 0,
       distribution: 0.00762939453125,
       multSpeed: 1,
-      createOnExp: 22,
+      createOnExp: 23,
       dirtEffect: 0,
       wormExplode: false,
       explGround: true,
