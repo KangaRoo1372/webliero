@@ -16,7 +16,7 @@ Here you can find the full list of aforementioned changes:
 |loadingTime: 360,      |   loadingTime: 300,
 |***wobject***          
 |blowaway: 0,           |    blowaway: 0.1,
-|createonexp: 22,       |    createonexp: 27,
+|createonexp: 23,       |    createonexp: 22,
 |splinterAmount: 20,    |    splinterAmount: 120,
 |splinterType: 21,      |    splinterType: 4,
 |***sobject***
