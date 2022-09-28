@@ -2286,7 +2286,7 @@
       partTrailDelay: 0,
       speed: 315
     },
-    { // gauss gun + coil gun explosion wid39
+    { // gauss gun wid39
       detectDistance: 1,
       blowAway: 0.2,
       gravity: 0,
@@ -2356,7 +2356,7 @@
       timeToExplo: 8000,
       timeToExploV: 2000
     },
-    { // worm part nid1
+    { // worm part nid1 (unused)
       detectDistance: 0,
       gravity: 0.0152587890625,
       speed: 1.2,
