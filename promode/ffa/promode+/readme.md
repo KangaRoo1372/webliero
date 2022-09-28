@@ -16,11 +16,10 @@ Here you can find the full list of changes (comparing to Promode ReRevisited ori
 |loadingTime: 360,      |   loadingTime: 300,
 |***wobject***          
 |blowaway: 0,           |    blowaway: 0.1,
-|createonexp: 22,       |    createonexp: 27,
+|createonexp: 23,       |    createonexp: 22,
 |splinterAmount: 20,    |    splinterAmount: 120,
 |splinterType: 21,      |    splinterType: 4,
 |***sobject***
-|detectRange: 18,       |    detectRange: 20,
 |damage: 45,            |    damage: 60,
 |***weapon***           
 |name: "GRENADE"        |    name: "GRENADE"
