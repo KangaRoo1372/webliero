@@ -18,7 +18,7 @@ Unfortunately, most players did not like these changes, especially SUPER SHOTGUN
 |***wobject***          |                           |                        |
 |ammo: 1,               | ammo: 2,                  | ammo: 2,               |
 |delay: 0,              | delay: 60,                | delay: 20,             |
-|loadingTime: 320,      | loadingTime: 420,         | loadingTime: 400,      |
+|loadingTime: 320,      | loadingTime: 400,         | loadingTime: 400,      |
 
 
 Lately, I made also further changes to many other weapons. Here you can find the full list of changes:
@@ -83,8 +83,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timetoExplo: 30,       |    timeToExplo: 25,
 |***weapon***
 |name: "AUTO SHOTGUN"   |    name: "AUTO SHOTGUN"
-|ammo: 10,              |    ammo: 8,
+|ammo: 4,              |    ammo: 8,
 |delay: 25,             |    delay: 28,
+|loadingTime: 250,      |    loadingTime: 400,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |ammo: 2,               |    ammo: 1,
@@ -155,7 +156,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "SPIKEBALLS"     |    name: "SPIKEBALLS"
 |parts: 8,              |    parts: 7,
 |***wobject***
-|timeToExplo: 260,      |    timeToExplo: 230,
+|timeToExplo: 400,      |    timeToExplo: 230,
+|bounce: 0.6,           |    bounce: 0.5,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
 |loadingTime: 480,      |    loadingTime: 510,
@@ -163,6 +165,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 18,         |    hitDamage: 15,
 |***nobject***
 |bloodOnHit: 8,         |    bloodOnHit: 6,
+|hitDamage: 5,          |    hitDamage: 4,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
