@@ -31,9 +31,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
-|timeToExplo: 300,      |    timeToExplo: 250,
+|timeToExplo: 330,      |    timeToExplo: 250,
+|blowAway: 0,           |    blowAway: 0.22,
 |***sobject***
 |damage: 35,            |    damage: 50,
+|blowAway: 0.05,        |    blowAway: 0.08,
 |***weapon***
 |name: "DOOMSDAY"       |    name: "DOOMSDAY"
 |bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
@@ -136,7 +138,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "LASER"          |    name: "LASER"
 |ammo: 150,             |    ammo: 140,
-|launchSound: 27,       |    launchSound: -1,
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |loadingTime: 420,      |    loadingTime: 450,
