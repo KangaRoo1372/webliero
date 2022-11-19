@@ -190,7 +190,7 @@
       fireCone: 0,
       laserSight: false,
       laserBeam: true,
-      launchSound: 27,
+      launchSound: -1,
       playReloadSound: true,
       name: "LASER"
     },
