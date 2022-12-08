@@ -39,9 +39,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "DOOMSDAY"       |    name: "DOOMSDAY"
 |bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
-|ammo: 12,              |    ammo: 8,
+|ammo: 10,              |    ammo: 8,
 |delay: 8,              |    delay: 11,
-|loadingTime: 380,      |    loadingTime: 400,
+|loadingTime: 440,      |    loadingTime: 400,
 |fireCone: 4,           |    fireCone: 8,
 |***wobject***
 |blowAway: 0,           |   blowAway: 0.15,
@@ -131,9 +131,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "DARTGUN"        |    name: "DARTGUN"
 |loadingTime: 280,      |    loadingTime: 217,
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
-|delay: 12,             |    delay: 18,
 |***wobject***
-|timetoExplo: 400,      |    timeToExplo: 300,
+|timetoExplo: 500,      |    timeToExplo: 300,
 |hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
