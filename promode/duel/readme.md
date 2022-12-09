@@ -99,7 +99,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |bulletSpeed: 1.8,      |    bulletSpeed: 2,
 |***wobject***
-|timeToExplo: 0,        |    timeToExplo: 105,
+|timeToExplo: 120,      |    timeToExplo: 105,
 |partTrailDelay: 8,     |    partTrailDelay: 10,
 |***nobject***
 |damage: 5,             |    damage: 3,
