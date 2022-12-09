@@ -1809,7 +1809,7 @@
       affectByExplosions: false,
       bounce: 0,
       bounceFriction: 0.8,
-      timeToExplo: 0,
+      timeToExplo: 120,
       timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 18,
