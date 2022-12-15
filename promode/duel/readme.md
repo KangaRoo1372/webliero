@@ -109,28 +109,28 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |ammo: 150,             |    ammo: 140,
 |***weapon***
 |name: "CHAINGUN"       |    name: "CHAINGUN"
-|loadingTime: 350,      |    loadingTime: 299,
+|loadingTime: 330,      |    loadingTime: 299,
 |fireCone: 2,           |    fireCone: 6,
 |***wobject***
 |hitDamage: 5,          |    hitDamage: 4,
 |bloodOnHit: 5,         |    bloodOnHit: 4,
 |***weapon***
 |name: "SCATTERGUN"     |    name: "SCATTERGUN"
-|loadingTime: 370,      |    loadingTime: 375,
+|loadingTime: 350,      |    loadingTime: 375,
 |fireCone: 2,           |    fireCone: 6,
 |ammo: 40,              |    ammo: 36,
 |***wobject***
 |hitDamage: 4,          |    hitDamage: 3,
 |***weapon***
 |name: "MINIGUN"        |    name: "MINIGUM"
-|loadingTime: 330,      |    loadingTime: 360,
-|***wobject***
-|hitDamage: 3,          |    hitDamage: 2,
-|bloodOnHit: 3,         |    hitDamage: 2,
+|loadingTime: 370,      |    loadingTime: 360,
+|parts: 2,              |    parts: 1,
+|ammo: 70,              |    ammo: 80,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
 |loadingTime: 280,      |    loadingTime: 217,
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
+|delay: 15,             |    delay: 18,
 |***wobject***
 |timetoExplo: 500,      |    timeToExplo: 300,
 |hitDamage: 10,         |    hitDamage: 9,
@@ -156,7 +156,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "SPIKEBALLS"     |    name: "SPIKEBALLS"
 |parts: 8,              |    parts: 7,
 |***wobject***
-|timeToExplo: 400,      |    timeToExplo: 230,
+|timeToExplo: 350,      |    timeToExplo: 230,
 |bounce: 0.6,           |    bounce: 0.5,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
