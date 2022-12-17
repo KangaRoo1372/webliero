@@ -34,7 +34,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timeToExplo: 330,      |    timeToExplo: 250,
 |blowAway: 0,           |    blowAway: 0.22,
 |***sobject***
-|damage: 35,            |    damage: 50,
+|damage: 40,            |    damage: 50,
 |blowAway: 0.05,        |    blowAway: 0.08,
 |***weapon***
 |name: "DOOMSDAY"       |    name: "DOOMSDAY"
@@ -140,6 +140,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |loadingTime: 420,      |    loadingTime: 450,
+|***wobject***
+|multSpeed: 1.01,       |    multSpeed: 1,
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
