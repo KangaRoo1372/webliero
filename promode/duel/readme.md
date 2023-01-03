@@ -111,9 +111,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "CHAINGUN"       |    name: "CHAINGUN"
 |loadingTime: 330,      |    loadingTime: 299,
 |fireCone: 2,           |    fireCone: 6,
-|***wobject***
-|hitDamage: 5,          |    hitDamage: 4,
-|bloodOnHit: 5,         |    bloodOnHit: 4,
 |***weapon***
 |name: "SCATTERGUN"     |    name: "SCATTERGUN"
 |loadingTime: 350,      |    loadingTime: 375,
@@ -125,7 +122,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "MINIGUN"        |    name: "MINIGUM"
 |loadingTime: 370,      |    loadingTime: 360,
 |parts: 2,              |    parts: 1,
-|ammo: 70,              |    ammo: 80,
+|ammo: 60,              |    ammo: 80,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
 |loadingTime: 280,      |    loadingTime: 217,
