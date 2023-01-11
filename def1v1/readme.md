@@ -12,7 +12,7 @@ b) finishers (PLASMA SHOTGUN, MACHINE GUN, LASER CUTTER, FLAMETHROWER);
 
 c) defense weapons (DIRT SHIELD, MAGNETIC FIELD);
 
-d) bombs (UZUMAKI, NAPALM, CLUSTER BOMB, MORTAR).
+d) bombs (UZUMAKI, NAPALM, GRENADE, MORTAR).
 
 The main ideas of the mod was:
 
@@ -31,13 +31,13 @@ List of all weapons and their description is below:
 5. FLAMETHROWER - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg added, shorter loading time).
 6. PLASMA SHOTGUN - it works similar to AUTO SHOTGUN taken form Liero Promode ReRevisited (version 1.3.2), but it was buffed a little bit + some visual effects added.
 7. LASER CUTTER - it works similar to normal LASER from Liero Promode Final, but the bullets can pass through walls, the laser beam is golden-coloured and its range is limited. A very useful weapon for finishing off the opponent when his hp level is low.
-8. CLUSTER BOMB - it works similar to GRENADE from Liero Promode ReRevisited (version 1.3.2), but buffed a little bit (more dmg added).
+8. GRENADE - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a little bit (more dmg added).
 9. UZUMAKI - this weapon was taken directly from Kami's "dtk 1v1" mod (which in turn was based on Daro's "def" mod), but slightly nerfed.
 10. NAPALM - this weapon was taken directly from Liero Promode Final, but it was buffed a lot (more dmg added + it now explodes on worm touch too).
-11. DIRT SHIELD -this weapon was taken directly from Kami's "dtk 1v1" mod (SHIELD), but slightly changed (0 loading time).
-12. MAGNETIC FIELD - this weapon was taken directly from my "Roo Fun Mod" (ANDRE'S MAGNETIC SHIELD), but slightly changed (0 loading time).
-13. MISSILE - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time).
+11. DIRT SHIELD -this weapon was taken directly from Kami's "dtk 1v1" mod (SHIELD), but slightly changed to adjust it to this mod.
+12. MAGNETIC FIELD - this weapon was taken directly from my "Roo Fun Mod" (ANDRE'S MAGNETIC SHIELD), but slightly changed to adjust it to this mod.
+13. MISSILE - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time, more ammo added).
 14. MORTAR - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was changed a little bit to adjust it to this mod.
 15. ZIMM - this weapon was taken directly from Liero Promode ReRevisited (version 1.3.2), but it was buffed a lot (more dmg, less reload time, less delay, more TimeToExplo).
 
--- current version of the mod: 1.1 --
+-- current version of the mod: 1.2 --
