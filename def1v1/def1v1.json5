@@ -89,7 +89,7 @@
       recoil: 0,
       ammo: 100,
       delay: 0,
-      loadingTime: 0,
+      loadingTime: 500,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -154,7 +154,7 @@
       laserBeam: false,
       launchSound: 5,
       playReloadSound: false,
-      name: "CLUSTER BOMB"
+      name: "GRENADE"
     },
     {
       parts: 1,
@@ -165,7 +165,7 @@
       recoil: 0,
       ammo: 110,
       delay: 1,
-      loadingTime: 0,
+      loadingTime: 480,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -259,7 +259,7 @@
       distribution: 1,
       recoil: 0.65,
       ammo: 10,
-      delay: 20,
+      delay: 15,
       loadingTime: 300,
       leaveShells: 1,
       leaveShellDelay: 20,
@@ -277,8 +277,8 @@
       bulletSpeedInherit: 0.4347826086956522,
       distribution: 0,
       recoil: 0.15,
-      ammo: 1,
-      delay: 0,
+      ammo: 3,
+      delay: 60,
       loadingTime: 420,
       leaveShells: 0,
       leaveShellDelay: 1,
@@ -519,7 +519,7 @@
       partTrailDelay: 1,
       speed: 188
     },
-    { // cluster bomb wid5
+    { // grenade wid5
       detectDistance: 0,
       blowAway: 0,
       gravity: 0.01983642578125,
@@ -878,7 +878,7 @@
       affectByExplosions: false,
       bounce: 1,
       bounceFriction: 1,
-      timeToExplo: 240,
+      timeToExplo: 280,
       timeToExploV: 0,
       hitDamage: 75,
       bloodOnHit: 15,
@@ -1021,7 +1021,7 @@
       timeToExplo: 1,
       timeToExploV: 0
     },
-    { // cluster bomb + mortar splinter nid4
+    { // grenade + mortar splinter nid4
       detectDistance: 1,
       gravity: 0.01068115234375,
       speed: 4.5,
@@ -1881,7 +1881,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // cluster bomb kick sid27
+    { // grenade kick sid27
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
