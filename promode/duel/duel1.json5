@@ -994,7 +994,7 @@
       partTrailDelay: 0,
       speed: 165
     },
-    { // grnlauncher wid10
+    { // grn launcher wid10
       detectDistance: 2,
       blowAway: 0.05,
       gravity: 0.04983642578125,
