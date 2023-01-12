@@ -28,6 +28,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |---------------------- | ------------------------
 |***weapon***
 |name: "PROXY MINE"     |    name: "PROXY MINE"
+|loadingTime: 370,      |    loadingTime: 400,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
@@ -68,6 +69,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
 |loadingTime: 230,      |    loadingTime: 200,
+|bulletType: 36,        |    bulletType: 40,
 |***nobject***
 |hitDamage: 4,          |    hitDamage: 4.2,
 |bloodOnHit: 6,         |    bloodOnHit: 8,
@@ -123,6 +125,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 370,      |    loadingTime: 360,
 |parts: 2,              |    parts: 1,
 |ammo: 60,              |    ammo: 80,
+|***wobject***
+|hitDamage: 1.5,        |    hitDamage: 2,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
 |loadingTime: 280,      |    loadingTime: 217,
@@ -139,12 +143,17 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 420,      |    loadingTime: 450,
 |***wobject***
 |multSpeed: 1.01,       |    multSpeed: 1,
+|TimeToExplo: 45,       |    timeToExplo: 50,
+|TimeToExploV: 5,       |    timeToExploV: 4,
+|***nobject***
+|bounce: 0.4,           |    bounce: 0.6,
+|TimeToExplo: 120,      |    TimeToExplo: 80,
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
 |delay: 60,             |    delay: 90,
 |***wobject***
-|timeToExplo: 240,      |    timeToExplo: 140,
+|timeToExplo: 270,      |    timeToExplo: 140,
 |hitDamage: 50,         |    hitDamage: 49,
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
