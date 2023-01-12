@@ -1429,7 +1429,7 @@
       affectByExplosions: false,
       bounce: 1,
       bounceFriction: 1,
-      timeToExplo: 240,
+      timeToExplo: 270,
       timeToExploV: 0,
       hitDamage: 50,
       bloodOnHit: 15,
