@@ -87,9 +87,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timetoExplo: 30,       |    timeToExplo: 25,
 |***weapon***
 |name: "AUTO SHOTGUN"   |    name: "AUTO SHOTGUN"
-|ammo: 4,              |    ammo: 8,
+|ammo: 4,               |    ammo: 8,
 |delay: 25,             |    delay: 28,
-|loadingTime: 250,      |    loadingTime: 400,
+|loadingTime: 280,      |    loadingTime: 400,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |ammo: 2,               |    ammo: 1,
@@ -129,9 +129,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 1.5,        |    hitDamage: 2,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
-|loadingTime: 280,      |    loadingTime: 217,
+|loadingTime: 320,      |    loadingTime: 217,
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
-|delay: 15,             |    delay: 18,
+|delay: 14,             |    delay: 18,
 |***wobject***
 |timetoExplo: 500,      |    timeToExplo: 300,
 |hitDamage: 10,         |    hitDamage: 9,
