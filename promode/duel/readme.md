@@ -64,7 +64,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |blowAway: 0.05,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 8,          |    hitDamage: 4,
+|hitDamage: 6,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
@@ -169,6 +169,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
 |loadingTime: 480,      |    loadingTime: 510,
+|ammo: 7,               |    ammo: 8,
 |***wobject***
 |hitDamage: 18,         |    hitDamage: 15,
 |***nobject***
