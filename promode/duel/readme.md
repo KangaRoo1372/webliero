@@ -59,12 +59,12 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "GRN LAUNCHER"   |    name: "GRN LAUNCHER"
 |bulletSpeed: 3.5,      |    bulletSpeed: 3,
 |loadingTime: 380,      |    loadingTime: 400,
-|ammo: 7,               |    ammo: 5,
+|ammo: 6,               |    ammo: 5,
 |***wobject***
 |blowAway: 0.05,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 6,          |    hitDamage: 4,
+|hitDamage: 5,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
@@ -170,11 +170,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
 |loadingTime: 480,      |    loadingTime: 510,
 |ammo: 7,               |    ammo: 8,
-|***wobject***
-|hitDamage: 18,         |    hitDamage: 15,
 |***nobject***
 |bloodOnHit: 8,         |    bloodOnHit: 6,
-|hitDamage: 5,          |    hitDamage: 4,
+|hitDamage: 4.5,        |    hitDamage: 4,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
