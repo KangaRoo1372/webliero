@@ -49,7 +49,7 @@ function convertToJsonString(data) {
           weaponCount++;
     const weaponParams = [];
     for (let paramName in weapon) {
-      if (paramName !== "bulletSpeed" && paramName !== "bulletType" && paramName !== "laserBeam" && paramName !== "distribution") {
+      if (paramName !== "bulletSpeed" && paramName !== "bulletType" && paramName !== "laserBeam" && paramName !== "distribution" && paramName !== "id" && paramName !== "reloadSound" && paramName !== "$$hashKey") {
         let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
         let paramValue = weapon[paramName];
 
@@ -101,7 +101,7 @@ let weaponIndex = weaponCount.toString();
 
       const wObjectParams = [];
       for (let paramName in wObject) {
-        if (paramName !== "id" && paramName !== "name" && paramName !== "bounceFriction" && paramName !== "repeat") {
+        if (paramName !== "id" && paramName !== "name" && paramName !== "bounceFriction" && paramName !== "repeat" && paramName !== "immutable" && paramName !== "fixed" && paramName !== "behavior" && paramName !== "platform" && paramName !== "detonable" && paramName !== "teamImmunity" && paramName !== "removeOnSObject" && paramName !== "platformWidth" && paramName !== "platformHeight" && paramName !== "platformVelocityAuto" && paramName !== "$$hashKey" && paramName !== "removeonsobject") {
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = wObject[paramName];
 
@@ -253,7 +253,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
           orderOCount++;
       const nObjectOParams = [];
       for (let paramName in nObject) {
-        if (paramName !== "id" && paramName !== "name") {
+        if (paramName !== "id" && paramName !== "name" && paramName !== "teamImmunity" && paramName !== "immutable" && paramName !== "$$hashKey") {
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = nObject[paramName];
 
@@ -391,7 +391,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
           orderSCount++;
       const sObjectSParams = [];
       for (let paramName in sObject) {
-        if (paramName !== "id" && paramName !== "name") {
+        if (paramName !== "id" && paramName !== "name" && paramName !== "$$hashKey") {
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = sObject[paramName];
 
