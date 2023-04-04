@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON to LWP Converter</title>
+	<script type="text/javascript" src="json5.min.js"></script>
+	<script type="text/javascript" src="converter.js"></script>
+</head>
+<body>
+	<h1>JSON to LWP Converter</h1>
+	<form>
+		<label for="jsonFile">Select JSON or JSON5 file to convert:</label>
+		<input type="file" id="jsonFile" accept=".json,.json5">
+                             <br>
+                             <br>
+                            <button type="button" onclick="convert()">Convert</button>
+	</form>
+	<p id="status"></p>
+	<a id="downloadLink" style="display: none">Download converted file</a>
+</body>
+</html>
