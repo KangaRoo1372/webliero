@@ -1,19 +1,15 @@
-**JSON to LWP Converter**
-
-by KangaRoo 
-
-version 0.45
+**JSON to LWP Converter by KangaRoo (version 0.45)**
 ---------------------------------------------------
 
-0. [LICENSE](#licence-)
-1. [INTRODUCTION](#introduction-)
-2. [HOW TO USE IT](#how-to-use-it-)
-3. [LIMITATIONS](#limitations-)
-4. [CREDITS](#credits-)
-5. [CHANGELOG](#changelog-)
-6. [CONTACT](#contact-)
+0. [LICENCE](#0-licence)
+1. [INTRODUCTION](#1-introduction)
+2. [HOW TO USE IT](#2-how-to-use-it)
+3. [LIMITATIONS](#3-limitations)
+4. [CREDITS](#4-credits)
+5. [CHANGELOG](#5-changelog)
+6. [CONTACT](#6-contact)
 
-## *0. LICENSE*
+## *0. LICENCE*
 
 JSON to LWP Converter is a FREEWARE program, which means you are free to distribute it, but you can't do it for cash or other valuables. You are not allowed to modify it and distribute as your own mod; you can use any extracted part of the code or even modify it on your own but with appropriate notification about its origin.
 
@@ -24,8 +20,11 @@ The program was created with help of [ChatGPT](https://openai.com/blog/chatgpt),
 JSON to LWP Converter is a simple program that converts WebLiero mods into Liero Weapon Plugins, written in HTML and JavaScript. The program contains 4 files:
 
 a) index.html (script used to display the "layout" of the program: name, buttons etc.)
+
 b) converter.js (main script of the program)
+
 c) json5.min.js (javascript library used to convert JSON5 files)
+
 d) readme.md (this file you're reading right now xD)
 
 **1.1 What Liero and WebLiero are?**
