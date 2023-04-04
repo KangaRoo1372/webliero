@@ -61,10 +61,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 380,      |    loadingTime: 400,
 |ammo: 6,               |    ammo: 5,
 |***wobject***
-|blowAway: 0.05,        |    blowAway: 0.3,
+|blowAway: 0.1,         |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 5,          |    hitDamage: 4,
+|hitDamage: 2,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
@@ -168,11 +168,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bounce: 0.6,           |    bounce: 0.5,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
-|loadingTime: 480,      |    loadingTime: 510,
+|loadingTime: 520,      |    loadingTime: 510,
 |ammo: 7,               |    ammo: 8,
 |***nobject***
 |bloodOnHit: 8,         |    bloodOnHit: 6,
-|hitDamage: 4.5,        |    hitDamage: 4,
+|hitDamage: 3,          |    hitDamage: 4,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
