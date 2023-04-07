@@ -2,6 +2,8 @@ function convert() {
   const fileInput = document.getElementById("jsonFile");
   const status = document.getElementById("status");
   const downloadLink = document.getElementById("downloadLink");
+  const result = document.getElementById("result");
+  const orderWA = document.getElementById("orderWA");
 
   if (!fileInput.files[0]) {
     status.textContent = "Please select a file";
@@ -10,11 +12,12 @@ function convert() {
 
   const fileReader = new FileReader();
   fileReader.onload = function () {
-    try {
+    try {      
       const data = JSON5.parse(fileReader.result);
-      const lwpString = convertToJsonString(data);
+      const lwpString = convertToJsonString(data, orderWA.checked);
       const blob = new Blob([lwpString], { type: "text/plain" });
       const url = URL.createObjectURL(blob);
+      result.textContent = lwpString;
       downloadLink.href = url;
       downloadLink.download = "converted.lwp";
       downloadLink.style.display = "block";
@@ -36,77 +39,71 @@ function convert() {
   }
 }
 
-function convertToJsonString(data) {
+function convertToJsonString(data, orderByWeaponName) {
   const lwpParams = [];
   const lwpOParams = [];
   const lwpSParams = [];
-  let weaponOrder = 0;
   let ObjectOrder = -1;
   let SObjectOrder = -1;
-  function sortNum (a, b) {return a - b;}
-  
-//  data.weapons.sort((a,b) => {
-//    if (a.name<b.name) return -1
-//    if (a.name>b.name) return 1
-//    return 0
-//  })
 
+  let weaponSorted = data.weapons.map((w,idx) => {return {name:w.name,idSwap:(idx+1)}; }).sort((a,b) => {
+    if (a.name<b.name) return -1
+    if (a.name>b.name) return 1
+    return 0
+  })
+
+  const ignoredWeaponProperties = ["bulletSpeed","bulletType","laserBeam", "distribution",  "id", "reloadSound", "$$hashKey"]
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
-          weaponOrder++;
     const weaponParams = [];
-    const weaponIndex = [];
     for (let paramName in weapon) {
-      if (paramName !== "bulletSpeed" && paramName !== "bulletType" && paramName !== "laserBeam" && paramName !== "distribution" && paramName !== "id" && paramName !== "reloadSound" && paramName !== "$$hashKey") {
+        if (ignoredWeaponProperties.includes(paramName)) {
+          continue;
+        }
         let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
         let paramValue = weapon[paramName];
 
-         if (lwpParamName === "BULLETSPEEDINHERIT") {
-              lwpParamName = "WORMAFFECT"
-              paramValue = paramValue > 0 ? 1 : 0;
-          }
+        if (lwpParamName === "BULLETSPEEDINHERIT") {
+            lwpParamName = "WORMAFFECT"
+            paramValue = paramValue > 0 ? 1 : 0;
+        }
 
-         if (lwpParamName === "RECOIL") {
-              lwpParamName = "RECOIL"
-              paramValue < 0 ? 0 : Math.floor(Math.abs(paramValue * 100));
-          }
+        if (lwpParamName === "RECOIL") {
+            lwpParamName = "RECOIL"
+            paramValue < 0 ? 0 : Math.floor(Math.abs(paramValue * 100));
+        }
 
-         if (lwpParamName === "LAUNCHSOUND") {
-              lwpParamName = "SOUNDLAUNCH"
-              paramValue = Math.floor(paramValue + 1);
-          }
+        if (lwpParamName === "LAUNCHSOUND") {
+            lwpParamName = "SOUNDLAUNCH"
+            paramValue = Math.floor(paramValue + 1);
+        }
 
-          if (lwpParamName === "PARTS") {
-              lwpParamName = "NUMOBJECTS";
-          }
+        if (lwpParamName === "PARTS") {
+            lwpParamName = "NUMOBJECTS";
+        }
 
-          if (lwpParamName === "DELAY") {
-              lwpParamName = "SHOTDELAY";
-          }
+        if (lwpParamName === "DELAY") {
+            lwpParamName = "SHOTDELAY";
+        }
 
-          if (lwpParamName === "PLAYRELOADSOUND") {
-              lwpParamName = "RELOADSOUND";
-          }
+        if (lwpParamName === "PLAYRELOADSOUND") {
+            lwpParamName = "RELOADSOUND";
+        }
 
         if (typeof paramValue === "boolean") {
           paramValue = paramValue ? "1" : "0";
-        } else if (typeof paramValue === "number") {
+        } 
+        if (typeof paramValue === "number") {
           paramValue = Math.floor(paramValue);
         }
 
         weaponParams.push(`${lwpParamName}:${paramValue}`);
-      }
-        let lwpParamName = paramName.toUpperCase();
-        let paramValue = weapon[paramName];
-            if (lwpParamName === "BULLETTYPE") {
-              paramValue = Math.floor(paramValue + 1)
-              weaponIndex.push(paramValue);
-            }
     }
-    weaponIndex.sort(sortNum);
 
+    const weaponIndex = parseInt(weapon.bulletType)+1;
+    const wO = orderByWeaponName?weaponSorted[i].idSwap:i+1;
     if (weaponParams.length > 0) {
-      lwpParams.push(`WEAPON:${weaponIndex.join(",")}\nORDER:${weaponOrder}\n${weaponParams.join("\n")}`);
+      lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${wO}\n${weaponParams.join("\n")}`);
     }
 
     if (i < data.wObjects.length) {
