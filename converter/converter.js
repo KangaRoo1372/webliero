@@ -43,6 +43,12 @@ function convertToJsonString(data) {
   let weaponCount = 0;
   let orderOCount = -1;
   let orderSCount = -1;
+  
+  data.weapons.sort((a,b) => {
+    if (a.name<b.name) return -1
+    if (a.name>b.name) return 1
+    return 0
+  })
 
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
