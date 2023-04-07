@@ -45,7 +45,12 @@ function convertToJsonString(data, orderByWeaponName) {
   const lwpSParams = [];
   let ObjectOrder = -1;
   let SObjectOrder = -1;
-  let weaponOrder = data.weapons.map((w) => w.name).sort()
+
+  let weaponSorted = data.weapons.map((w,idx) => {return {name:w.name,idSwap:(idx+1)}; }).sort((a,b) => {
+    if (a.name<b.name) return -1
+    if (a.name>b.name) return 1
+    return 0
+  })
 
   const ignoredWeaponProperties = ["bulletSpeed","bulletType","laserBeam", "distribution",  "id", "reloadSound", "$$hashKey"]
   for (let i = 0; i < data.weapons.length; i++) {
@@ -96,7 +101,7 @@ function convertToJsonString(data, orderByWeaponName) {
     }
 
     const weaponIndex = parseInt(weapon.bulletType)+1;
-    const wO = orderByWeaponName?weaponOrder.indexOf(weapon.name)+1:i+1;
+    const wO = orderByWeaponName?weaponSorted[i].idSwap:i+1;
     if (weaponParams.length > 0) {
       lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${wO}\n${weaponParams.join("\n")}`);
     }
