@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.46)**
+**JSON to LWP Converter by KangaRoo (current version: 0.47)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -91,6 +91,12 @@ Big thanks also goes to:
 - wgetch, Larcelo and Ophi (for testing & some ideas)
 
 ## *5. CHANGELOG*
+
+07.04.2023 - version 0.47
+- fix weapon index bug
+- changed the conversion factor for "recoil" property to prevent bugs
+- remove unnecessary toString() method
+- rename some variables & clean the code
 
 04.04.2023 - version 0.46
 - added [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) parameters to the "if" condition to exclude them in conversion
