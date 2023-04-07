@@ -83,7 +83,7 @@ To implement your .lwp file in Liero, you must activate it with [LieroM8](https:
 - there are some issues with some properties in special objects after implementing converted LWP file via LieroM8 (propably due to some bugs in LieroM8). Currently known bugs: wrong values of blowAway parameter in sobject1 (Large explosion), sobject3 (small explosion) and sobject4 (hellraider smoke). It is recommended to change them manually in LieroKit (somehow LieroM8 cannot do this... don't ask why)
 - the program also converts [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mods, however since WebLiero Extended uses some special parameters which changes the game & weapons logic significantly. That's why WL Extended mods would not work properly after conversion to Liero mods
 
-_*So, if you want to have no issues after converting your WL mod to LWP, then follow these instructions:*_
+**_So, if you want to have no issues after converting your WL mod to LWP, then follow these instructions:_**
 
 - set "laserBeam: true" only for wObject 28 (the other weapon must have this property value "false");
 - do not make a mod with more than 40 weapons, 24 nObjects and 14 sObjects;
@@ -112,7 +112,7 @@ Big thanks also goes to:
 
 ## *5. CHANGELOG*
 
-07.04.2023 - version 0.47 (thx dsds!)
+07.04.2023 - version 0.48 (thx dsds!)
 - fix weapon "order" bug
 - clean the code in converter.js file
 - improve "index.html" file (better layout + added new functions)
