@@ -40,20 +40,22 @@ function convertToJsonString(data) {
   const lwpParams = [];
   const lwpOParams = [];
   const lwpSParams = [];
-  let weaponCount = 0;
-  let orderOCount = -1;
-  let orderSCount = -1;
+  let weaponOrder = 0;
+  let ObjectOrder = -1;
+  let SObjectOrder = -1;
+  function sortNum (a, b) {return a - b;}
   
-  data.weapons.sort((a,b) => {
-    if (a.name<b.name) return -1
-    if (a.name>b.name) return 1
-    return 0
-  })
+//  data.weapons.sort((a,b) => {
+//    if (a.name<b.name) return -1
+//    if (a.name>b.name) return 1
+//    return 0
+//  })
 
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
-          weaponCount++;
+          weaponOrder++;
     const weaponParams = [];
+    const weaponIndex = [];
     for (let paramName in weapon) {
       if (paramName !== "bulletSpeed" && paramName !== "bulletType" && paramName !== "laserBeam" && paramName !== "distribution" && paramName !== "id" && paramName !== "reloadSound" && paramName !== "$$hashKey") {
         let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
@@ -66,7 +68,7 @@ function convertToJsonString(data) {
 
          if (lwpParamName === "RECOIL") {
               lwpParamName = "RECOIL"
-              paramValue < 0 ? 0 : Math.floor(paramValue * 100);
+              paramValue < 0 ? 0 : Math.floor(Math.abs(paramValue * 100));
           }
 
          if (lwpParamName === "LAUNCHSOUND") {
@@ -94,12 +96,17 @@ function convertToJsonString(data) {
 
         weaponParams.push(`${lwpParamName}:${paramValue}`);
       }
+        let lwpParamName = paramName.toUpperCase();
+        let paramValue = weapon[paramName];
+            if (lwpParamName === "BULLETTYPE") {
+              paramValue = Math.floor(paramValue + 1)
+              weaponIndex.push(paramValue);
+            }
     }
-
-let weaponIndex = weaponCount.toString();
+    weaponIndex.sort(sortNum);
 
     if (weaponParams.length > 0) {
-      lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${weaponIndex}\n${weaponParams.join("\n")}`);
+      lwpParams.push(`WEAPON:${weaponIndex.join(",")}\nORDER:${weaponOrder}\n${weaponParams.join("\n")}`);
     }
 
     if (i < data.wObjects.length) {
@@ -256,7 +263,7 @@ let weaponIndex = weaponCount.toString();
 }
 for (let i = 0; i < data.nObjects.length; i++) {
   const nObject = data.nObjects[i];
-          orderOCount++;
+          ObjectOrder++;
       const nObjectOParams = [];
       for (let paramName in nObject) {
         if (paramName !== "id" && paramName !== "name" && paramName !== "teamImmunity" && paramName !== "immutable" && paramName !== "$$hashKey") {
@@ -388,13 +395,13 @@ for (let i = 0; i < data.nObjects.length; i++) {
       }
 
       if (nObjectOParams.length > 0) {
-        lwpOParams.push(`OBJECT:${orderOCount}\n${nObjectOParams.join("\n")}\n`);
+        lwpOParams.push(`OBJECT:${ObjectOrder}\n${nObjectOParams.join("\n")}\n`);
       }
   }
 
 for (let i = 0; i < data.sObjects.length; i++) {
   const sObject = data.sObjects[i];
-          orderSCount++;
+          SObjectOrder++;
       const sObjectSParams = [];
       for (let paramName in sObject) {
         if (paramName !== "id" && paramName !== "name" && paramName !== "$$hashKey") {
@@ -453,7 +460,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
       }
 
       if (sObjectSParams.length > 0) {
-        lwpSParams.push(`SOBJECT:${orderSCount}\n${sObjectSParams.join("\n")}\n`);
+        lwpSParams.push(`SOBJECT:${SObjectOrder}\n${sObjectSParams.join("\n")}\n`);
       }
 }
    return `LIEROKIT:WEAPONPLUGIN\nPROMPT:This will activate the whole weapon list. Do you want to continue?\nOVERWRITE:1\n\n${lwpParams.join("\n")}\n${lwpOParams.join("\n")}\n${lwpSParams.join("\n")}`;
