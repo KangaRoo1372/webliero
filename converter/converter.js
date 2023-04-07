@@ -43,6 +43,7 @@ function convertToJsonString(data) {
   let weaponCount = 0;
   let orderOCount = -1;
   let orderSCount = -1;
+  let weaponOrder = data.weapons.map((w) => w.name).sort()
 
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
@@ -93,7 +94,7 @@ function convertToJsonString(data) {
 let weaponIndex = weaponCount.toString();
 
     if (weaponParams.length > 0) {
-      lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${weaponIndex}\n${weaponParams.join("\n")}`);
+      lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${weaponOrder.indexOf(weapon.name)+1}\n${weaponParams.join("\n")}`);
     }
 
     if (i < data.wObjects.length) {
