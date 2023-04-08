@@ -124,7 +124,7 @@ Big thanks also goes to:
 - rename some variables & clean the code
 
 04.04.2023 - version 0.46
-- added [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) parameters to the "if" condition to exclude them in conversion
+- added WebLiero Extended parameters to the "if" condition to exclude them in conversion
 
 04.04.2023 - version 0.45
 - added javascript library to support JSON5 files (thx dsds!)
