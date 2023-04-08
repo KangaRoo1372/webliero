@@ -101,9 +101,9 @@ function convertToJsonString(data, orderByWeaponName) {
     }
 
     const weaponIndex = parseInt(weapon.bulletType)+1;
-    const wO = orderByWeaponName?weaponSorted[i].idSwap:i+1;
+    const weaponOrder = orderByWeaponName?weaponSorted[i].idSwap:i+1;
     if (weaponParams.length > 0) {
-      lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${wO}\n${weaponParams.join("\n")}`);
+      lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${weaponOrder}\n${weaponParams.join("\n")}`);
     }
 
     if (i < data.wObjects.length) {
