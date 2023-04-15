@@ -46,12 +46,11 @@ Here you can find the full list of aforementioned changes:
 |***weapon***
 |name: "GRN LAUNCHER"   |    name: "GRN LAUNCHER"
 |bulletSpeed: 3.5,      |    bulletSpeed: 3,
-|loadingTime: 380,      |    loadingTime: 400,
 |***wobject***
-|blowAway: 0.05,        |    blowAway: 0.3,
+|blowAway: 0.15,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 5,          |    hitDamage: 4,
+|hitDamage: 3,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***
 |name: "FLAMER"         |    name: "FLAMER"
@@ -78,7 +77,10 @@ Here you can find the full list of aforementioned changes:
 |loadingTime: 280,      |   loadingTime: 217,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
-|launchSound: 27,       |    launchSound: -1,
+|ammo: 150,             |    ammo: 140,
+|***weapon***
+|name: "ACID FAN"       |    name: "ACID FAN"
+|ammo: 150,             |    ammo: 140,
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |delay: 45,             |    delay: 30,
