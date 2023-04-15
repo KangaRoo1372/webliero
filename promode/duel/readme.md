@@ -42,7 +42,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
 |ammo: 10,              |    ammo: 8,
 |delay: 8,              |    delay: 11,
-|loadingTime: 440,      |    loadingTime: 400,
 |fireCone: 4,           |    fireCone: 8,
 |***wobject***
 |blowAway: 0,           |   blowAway: 0.15,
@@ -61,10 +60,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 380,      |    loadingTime: 400,
 |ammo: 6,               |    ammo: 5,
 |***wobject***
-|blowAway: 0.1,         |    blowAway: 0.3,
+|blowAway: 0.15,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 2,          |    hitDamage: 4,
+|hitDamage: 3,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
@@ -178,9 +177,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |playReloadSound: false,|    playReloadSound: true,
 |***wobject***
 |hitDamage: 25,         |    hitDamage: 24,
-|***weapon***
-|name: "INCENDIATOR"    |    name: "INCENDIATOR"
-|loadingTime: 430,      |    loadingTime: 400,
 |***weapon***
 |name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
 |loadingTime: 360,      |    loadingTime: 400,
