@@ -57,7 +57,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "GRN LAUNCHER"   |    name: "GRN LAUNCHER"
 |bulletSpeed: 3.5,      |    bulletSpeed: 3,
-|loadingTime: 380,      |    loadingTime: 400,
 |ammo: 6,               |    ammo: 5,
 |***wobject***
 |blowAway: 0.15,        |    blowAway: 0.3,
@@ -167,11 +166,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bounce: 0.6,           |    bounce: 0.5,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
-|loadingTime: 520,      |    loadingTime: 510,
+|loadingTime: 500,      |    loadingTime: 510,
 |ammo: 7,               |    ammo: 8,
 |***nobject***
 |bloodOnHit: 8,         |    bloodOnHit: 6,
-|hitDamage: 3,          |    hitDamage: 4,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
