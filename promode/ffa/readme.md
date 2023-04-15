@@ -33,8 +33,9 @@ Here you can find the full list of aforementioned changes:
 |timeToExploV: 5        |    timeToExploV: 7
 |***weapon***           
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
-|loadingTime: 480,      |    loadingTime: 510,
+|loadingTime: 520,      |    loadingTime: 510,
 |***nobject***
+|hitDamage: 3,          |    hitDamage: 4,
 |timeToExplo: 12,       |    timeToExplo: 18,
 |timeToExploV: 5        |    timeToExploV: 5
 |***weapon***
