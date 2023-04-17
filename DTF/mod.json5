@@ -6984,6 +6984,7 @@
       leaveObjDelay: 0,
       timeToExplo: 5,
       timeToExploV: 0,
+      immutable: true
     },
     { // helicopter fragments nid78
       detectDistance: 0,
@@ -7014,6 +7015,7 @@
       leaveObjDelay: 5,
       timeToExplo: 0,
       timeToExploV: 0,
+      immutable: true
     },
   ],
   sObjects: [
@@ -8056,5 +8058,5 @@
   crossHairSprite: 153,
   name: "DTF",
   author: "roo, dsds, Ophi",
-  version: "27m"
+  version: "27n"
 }
