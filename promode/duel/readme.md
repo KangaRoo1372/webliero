@@ -131,7 +131,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bulletSpeed: 3,        |    bulletSpeed: 2.75,
 |delay: 14,             |    delay: 18,
 |***wobject***
-|timetoExplo: 500,      |    timeToExplo: 300,
+|timetoExplo: 600,      |    timeToExplo: 300,
 |hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
