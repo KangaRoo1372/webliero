@@ -2037,7 +2037,7 @@
       affectByExplosions: false,
       bounce: 0,
       bounceFriction: 0.8,
-      timeToExplo: 500,
+      timeToExplo: 600,
       timeToExploV: 0,
       hitDamage: 10,
       bloodOnHit: 20,
