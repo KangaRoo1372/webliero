@@ -113,7 +113,7 @@ Big thanks also goes to:
 - ZanderZ (for creating LieroM8)
 - Gliptic (for creating LieroKit and inventing Liero Weapon Plugin format)
 - dsds💚[ASS] (for some ideas, testing, adding JSON5 library to the program, fixing bugs and improving the converter a lot)
-- wgetch, Larcelo and Ophi (for testing & some ideas)
+- TimV (for some ideas, testing and finding some bugs to fix)
 
 ## *5. CHANGELOG*
 
