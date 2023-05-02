@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.48)**
+**JSON to LWP Converter by KangaRoo (current version: 0.49)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -116,6 +116,10 @@ Big thanks also goes to:
 - wgetch, Larcelo and Ophi (for testing & some ideas)
 
 ## *5. CHANGELOG*
+
+02.05.2023 - version 0.49
+- exclude one more WL Extended property (overlay) from conversion
+- clean some part of the code
 
 07.04.2023 - version 0.48 (thx dsds!)
 - fix weapon "order" bug
