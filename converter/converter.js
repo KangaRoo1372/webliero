@@ -263,7 +263,7 @@ function convertToJsonString(data, orderByWeaponName) {
         }
 
       if (wObjectParams.length > 0) {
-        lwpParams.push(`${wObjectParams.join("\r\n")}\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
+        lwpParams.push(`${wObjectParams.join("\r\n")}\r\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
       }
 }
 }
