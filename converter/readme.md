@@ -78,7 +78,7 @@ To implement your .lwp file in Liero, you must activate it with [LieroM8](https:
 
 - the program converts only "logic" part of the mod (JSON/JSON5 file); it does not convert sprites, so that might cause some unexpected effects in the game regarding how the objects look (especially when WebLiero mod contains more than 265 sprites)
 - original Liero has got fixed hardcoded amount of weapon objects (40), non-weapon objects (24) and special objects (14). The converter can convert WebLiero mods with more than 40 weapons etc., but such converted file will not be implemented into Liero properly
-- the only one known program with which you can activate converted LWP file is LieroM8 (the other popular Liero tool - LieroKit - somehow does not support LWP files created with this converter; I didn't check other Liero tools)
+- the recommended program with which you can activate converted LWP file is LieroM8 (it is also possible to do it with other popular Liero tool - LieroKit - however the converted file will not be implemented into Liero properly due to some differences between that two programs, especially regarding different object pointer value; I didn't check other Liero tools)
 - in WebLiero almost all properties can use rational numbers for their values (unlike in Liero where you can use only positive integers). That's why some WL weapons / objects would work differently after conversion to Liero
 - some object parameters in Liero are hardcoded and cannot be modified using even dedicated tools, i.e. they have either fixed values (e.g. repeat) or are assigned to only specific objects (e.g. laserBeam). In WebLiero though, all object parameters are fully moddable. This means that some WL weapons / objects would work differently after conversion to Liero
 - unlike in classic Liero, in WebLiero you can edit or modify dirt effects ("textures" array) in any way you want. This is another reason why some WL weapons / objects would work differently after conversion to Liero
@@ -116,6 +116,10 @@ Big thanks also goes to:
 - wgetch, Larcelo and Ophi (for testing & some ideas)
 
 ## *5. CHANGELOG*
+
+02.05.2023 - version 0.50 (thx TimV)
+- add proper names for loopAnim and leaveShellDelay parameters
+- change Unix end of lines into Windows/DOS type
 
 02.05.2023 - version 0.49
 - exclude one more WL Extended property (overlay) from conversion
