@@ -108,10 +108,12 @@ function convertToJsonString(data, orderByWeaponName) {
 
     if (i < data.wObjects.length) {
       const wObject = data.wObjects[i];
-
+      const ignoredWObjectProperties = ["id","name","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay"]
       const wObjectParams = [];
       for (let paramName in wObject) {
-        if (paramName !== "id" && paramName !== "name" && paramName !== "bounceFriction" && paramName !== "repeat" && paramName !== "immutable" && paramName !== "fixed" && paramName !== "behavior" && paramName !== "platform" && paramName !== "detonable" && paramName !== "teamImmunity" && paramName !== "removeOnSObject" && paramName !== "platformWidth" && paramName !== "platformHeight" && paramName !== "platformVelocityAuto" && paramName !== "$$hashKey" && paramName !== "removeonsobject") {
+        if (ignoredWObjectProperties.includes(paramName)) {
+          continue;
+        }
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = wObject[paramName];
 
@@ -248,10 +250,9 @@ function convertToJsonString(data, orderByWeaponName) {
           } else if (typeof paramValue === "number") {
             paramValue = Math.floor(paramValue);
           }
-
+      
           wObjectParams.push(`${lwpParamName}:${paramValue}`);
         }
-      }
 
       if (wObjectParams.length > 0) {
         lwpParams.push(`${wObjectParams.join("\n")}\nSHADOW:1\nSOUNDLOOP:0\n`);
