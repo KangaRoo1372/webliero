@@ -89,6 +89,10 @@ function convertToJsonString(data, orderByWeaponName) {
         if (lwpParamName === "PLAYRELOADSOUND") {
             lwpParamName = "RELOADSOUND";
         }
+      
+        if (lwpParamName === "LEAVESHELLDELAY") {
+            lwpParamName = "SHELLDELAY";
+        }
 
         if (typeof paramValue === "boolean") {
           paramValue = paramValue ? "1" : "0";
@@ -103,7 +107,7 @@ function convertToJsonString(data, orderByWeaponName) {
     const weaponIndex = parseInt(weapon.bulletType)+1;
     const weaponOrder = orderByWeaponName?weaponSorted[i].idSwap:i+1;
     if (weaponParams.length > 0) {
-      lwpParams.push(`WEAPON:${weaponIndex}\nORDER:${weaponOrder}\n${weaponParams.join("\n")}`);
+      lwpParams.push(`WEAPON:${weaponIndex}\r\nORDER:${weaponOrder}\r\n${weaponParams.join("\r\n")}`);
     }
 
     if (i < data.wObjects.length) {
@@ -205,6 +209,10 @@ function convertToJsonString(data, orderByWeaponName) {
           if (lwpParamName === "NUMFRAMES") {
               lwpParamName = "ANIMFRAMES";
           }
+        
+          if (lwpParamName === "LOOPANIM") {
+              lwpParamName = "ANIMLOOP";
+          }
 
           if (lwpParamName === "TIMETOEXPLO") {
               lwpParamName = "TIMETOEXPLODE"
@@ -255,7 +263,7 @@ function convertToJsonString(data, orderByWeaponName) {
         }
 
       if (wObjectParams.length > 0) {
-        lwpParams.push(`${wObjectParams.join("\n")}\nSHADOW:1\nSOUNDLOOP:0\n`);
+        lwpParams.push(`${wObjectParams.join("\r\n")}\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
       }
 }
 }
@@ -393,7 +401,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
       }
 
       if (nObjectOParams.length > 0) {
-        lwpOParams.push(`OBJECT:${ObjectOrder}\n${nObjectOParams.join("\n")}\n`);
+        lwpOParams.push(`OBJECT:${ObjectOrder}\r\n${nObjectOParams.join("\r\n")}\r\n`);
       }
   }
 
@@ -458,8 +466,8 @@ for (let i = 0; i < data.sObjects.length; i++) {
       }
 
       if (sObjectSParams.length > 0) {
-        lwpSParams.push(`SOBJECT:${SObjectOrder}\n${sObjectSParams.join("\n")}\n`);
+        lwpSParams.push(`SOBJECT:${SObjectOrder}\r\n${sObjectSParams.join("\r\n")}\r\n`);
       }
 }
-   return `LIEROKIT:WEAPONPLUGIN\nPROMPT:This will activate the whole weapon list. Do you want to continue?\nOVERWRITE:1\n\n${lwpParams.join("\n")}\n${lwpOParams.join("\n")}\n${lwpSParams.join("\n")}`;
+   return `LIEROKIT:WEAPONPLUGIN\r\nPROMPT:This will activate the whole weapon list. Do you want to continue?\r\nOVERWRITE:1\r\n\r\n${lwpParams.join("\r\n")}\r\n${lwpOParams.join("\r\n")}\r\n${lwpSParams.join("\r\n")}`;
 }
