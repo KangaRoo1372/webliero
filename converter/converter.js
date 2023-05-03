@@ -43,8 +43,8 @@ function convertToJsonString(data, orderByWeaponName) {
   const lwpParams = [];
   const lwpOParams = [];
   const lwpSParams = [];
-  let ObjectOrder = -1;
-  let SObjectOrder = -1;
+  let ObjectOrder = 0;
+  let SObjectOrder = 0;
 
   let weaponSorted = data.weapons.map((w,idx) => {return {name:w.name,idSwap:(idx+1)}; }).sort((a,b) => {
     if (a.name<b.name) return -1
