@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.50)**
+**JSON to LWP Converter by KangaRoo (current version: 0.51)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -78,7 +78,7 @@ To implement your .lwp file in Liero, you must activate it with Liero Stuff Acti
 - the program converts only "logic" part of the mod (JSON/JSON5 file); it does not convert sprites, so that might cause some unexpected effects in the game regarding how the objects look (especially when WebLiero mod contains more than 265 sprites)
 - original Liero has got fixed hardcoded amount of weapon objects (40), non-weapon objects (24) and special objects (14). The converter can convert WebLiero mods with more than 40 weapons etc., but such converted file will not be implemented into Liero properly
 - the recommended program with which you can activate converted LWP file is aforementioned Liero Stuff Activator. Theoretically, it is also possible with other Liero tools (i.e. LieroKit and LieroM8), however the converted file will not be implemented into Liero properly with those programs due to some differences, bugs & missing features (e.g. LieroKit does not process changes in special objects and LieroM8 processes them but with wrong or messed up values in some parameters)
-- in WebLiero almost all properties can use rational numbers for their values (unlike in Liero where you can use only positive integers). That's why some WL weapons / objects would work differently after conversion to Liero
+- in WebLiero, there are no restrictions regarding parameter values (unlike in Liero, where there are limits in this respect, resulting from the game's mechanics and code). For this reason, appropriate conversion factors have been included in the converter code (to prevent from potential errors after conversion and implementation of the LWP file), however, for this reason some WL weapons / objects would work differently after conversion to Liero
 - some object parameters in Liero are hardcoded and cannot be modified using even dedicated tools, i.e. they have either fixed values (e.g. repeat) or are assigned to only specific objects (e.g. laserBeam). In WebLiero though, all object parameters are fully moddable. This means that some WL weapons / objects would work differently after conversion to Liero
 - unlike in classic Liero, in WebLiero you can edit or modify dirt effects ("textures" array) in any way you want. This is another reason why some WL weapons / objects would work differently after conversion to Liero
 - in classic Liero, sprites were split into 3 categories: big sprites (16x16 size), medium sprites (7x7 size) and small sprites (4x4 size), whereas only "medium sprites" could be used as startFrame for weapon objects and non-weapon objects. In WebLiero though, you can choose any sprite you want as startFrame for weapon and non-weapon objects. That's why some weapons / objects would look and work differently after conversion to Liero
@@ -93,7 +93,7 @@ To implement your .lwp file in Liero, you must activate it with Liero Stuff Acti
 - for shotType: 4 = set "repeat": 1000 for wObject 28;
 - for shotType: 4 = set "repeat": 8 for any other wObjects;
 - do not set negative values for any properties (except for gravity);
-- do not set rational numbers as values for any properties (use only integers);
+- do not exceed the maximum limit values for int parameters (255, 32767 or 0.49);
 - do not modify "textures" array in any way;
 - use original spritesheet (or at least do not add more sprites to the spritesheet or make sprites bigger than their fixed size);
 - set only "medium sprites" (110-239) as startFrame for wObjects and nObjects;
@@ -113,6 +113,9 @@ Big thanks also goes to:
 - TimV (for some ideas, testing and finding some bugs to fix)
 
 ## *5. CHANGELOG*
+
+07.05.2023 - version 0.51
+- improve functions to recalculate values of some properties (to respect Liero limits)
 
 03.05.2023 - version 0.50 (thx TimV)
 - add proper names for loopAnim and leaveShellDelay parameters
