@@ -70,28 +70,46 @@ function convertToJsonString(data, orderByWeaponName) {
 
         if (lwpParamName === "RECOIL") {
             lwpParamName = "RECOIL"
-            paramValue < 0 ? 0 : Math.floor(Math.abs(paramValue * 100));
+            paramValue = paramValue >= 2.55 ? 255 : (paramValue <= -2.55 ? 255 : Math.floor(Math.abs(paramValue * 100)));
         }
 
         if (lwpParamName === "LAUNCHSOUND") {
             lwpParamName = "SOUNDLAUNCH"
-            paramValue = Math.floor(paramValue + 1);
+            paramValue =  paramValue <= 0 ? 0 : Math.floor(paramValue + 1);
         }
 
         if (lwpParamName === "PARTS") {
-            lwpParamName = "NUMOBJECTS";
+            lwpParamName = "NUMOBJECTS"
+            paramValue =  paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
         }
 
         if (lwpParamName === "DELAY") {
-            lwpParamName = "SHOTDELAY";
+            lwpParamName = "SHOTDELAY"
+            paramValue = paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
         }
 
         if (lwpParamName === "PLAYRELOADSOUND") {
             lwpParamName = "RELOADSOUND";
         }
+
+         if (lwpParamName === "LOADINGTIME") {
+            lwpParamName = "LOADINGTIME"
+            paramValue = paramValue <= 0 ? 0 : (paramValue > 32767 ? 32767 : paramValue);
+        }
+
+        if (lwpParamName === "FIRECONE") {
+            lwpParamName = "FIRECONE"
+            paramValue = paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+        }
       
         if (lwpParamName === "LEAVESHELLDELAY") {
-            lwpParamName = "SHELLDELAY";
+            lwpParamName = "SHELLDELAY"
+            paramValue = paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+        }
+
+        if (lwpParamName === "LEAVESHELLS") {
+            lwpParamName = "LEAVESHELLS"
+            paramValue = paramValue <= 0 ? 0 : (paramValue > 4 ? 4 : paramValue);
         }
 
         if (typeof paramValue === "boolean") {
@@ -146,23 +164,24 @@ function convertToJsonString(data, orderByWeaponName) {
               paramValue = Math.floor(paramValue + 1);
           }
 
-          if (lwpParamName === "STARTFRAME") {
+           if (lwpParamName === "STARTFRAME") {
               lwpParamName = "ANIMSFRAME"
-              paramValue = paramValue < 0 ? -1 : Math.floor(paramValue - 110);
+              paramValue = paramValue < 0 ? -1 : (paramValue < 110 ? 0 : Math.floor(paramValue - 110));
           }
 
          if (lwpParamName === "DETECTDISTANCE") {
               lwpParamName = "WORMDETECTRANGE"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
          if (lwpParamName === "BLOODONHIT") {
-              lwpParamName = "BLOOD";
+              lwpParamName = "BLOOD"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
           if (lwpParamName === "ADDSPEED") {
               lwpParamName = "ACCADD"
-              paramValue = Math.abs(paramValue);
+              paramValue = paramValue < -32767 ? 32767 : (paramValue > 32767 ? 32767 : Math.abs(paramValue));
           }
 
           if (lwpParamName === "SPLINTERCOLOUR") {
@@ -191,7 +210,8 @@ function convertToJsonString(data, orderByWeaponName) {
           }
 
           if (lwpParamName === "PARTTRAILDELAY") {
-              lwpParamName = "PTRAILDELAY";
+              lwpParamName = "PTRAILDELAY"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
          if (lwpParamName === "PARTTRAILTYPE") {
@@ -214,43 +234,55 @@ function convertToJsonString(data, orderByWeaponName) {
               lwpParamName = "ANIMLOOP";
           }
 
+          if (lwpParamName === "SPLINTERAMOUNT") {
+              lwpParamName = "SPLINTERAMOUNT"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+          }
+
           if (lwpParamName === "TIMETOEXPLO") {
               lwpParamName = "TIMETOEXPLODE"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 32767 ? 32767 : paramValue);
           }
 
           if (lwpParamName === "TIMETOEXPLOV") {
               lwpParamName = "TIMETOEXPLODEV"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 32767 ? 32767 : paramValue);
           }
 
          if (lwpParamName === "OBJTRAILDELAY") {
-              lwpParamName = "OTRAILDELAY";
+              lwpParamName = "OTRAILDELAY"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
           if (lwpParamName === "MULTSPEED") {
               lwpParamName = "ACCMULTIPLY"
-              paramValue = Math.floor(paramValue * 100);
+              paramValue = paramValue < -327.67 ? 32767 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
           }
 
          if (lwpParamName === "BOUNCE") {
               lwpParamName = "BOUNCE"
-              paramValue = paramValue < 0 ? 0 : Math.floor(paramValue * 100);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
+          }
+
+         if (lwpParamName === "HITDAMAGE") {
+              lwpParamName = "HITDAMAGE"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
          if (lwpParamName === "DISTRIBUTION") {
               lwpParamName = "DISTRIBUTION"
-              paramValue = Math.floor(Math.abs(paramValue * 65536));
+              paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? 32767 : Math.floor(Math.abs(paramValue * 65536)));
+
           }
 
           if (lwpParamName === "GRAVITY") {
               lwpParamName = "GRAVITY"
-              paramValue = Math.floor(paramValue * 65536);
+              paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32767 : Math.floor(paramValue * 65536));
           }
 
           if (lwpParamName === "BLOWAWAY") {
               lwpParamName = "BLOW"
-              paramValue = Math.floor(Math.abs(paramValue * 100));
+              paramValue = paramValue < -2.55 ? 255 : (paramValue > 2.55 ? 255 : Math.floor(Math.abs(paramValue * 100)));
           }
 
           if (typeof paramValue === "boolean") {
@@ -293,16 +325,17 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
           if (lwpParamName === "STARTFRAME") {
               lwpParamName = "ANIMSFRAME"
-              paramValue = paramValue <= 0 ? 0 : Math.floor(paramValue - 110);
+              paramValue = paramValue <= 0 ? 0 : (paramValue <= 110 ? 1 : Math.floor(paramValue - 110));
           }
 
          if (lwpParamName === "DETECTDISTANCE") {
               lwpParamName = "WORMDETECTRANGE"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
          if (lwpParamName === "BLOODONHIT") {
-              lwpParamName = "BLOOD";
+              lwpParamName = "BLOOD"
+              paramValue = paramValue >= 255 ? 255 : Math.floor(paramValue);
           }
 
           if (lwpParamName === "COLORBULLETS") {
@@ -333,18 +366,24 @@ for (let i = 0; i < data.nObjects.length; i++) {
               lwpParamName = "ANIMFRAMES";
           }
 
+          if (lwpParamName === "SPLINTERAMOUNT") {
+              lwpParamName = "SPLINTERAMOUNT"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+          }
+
           if (lwpParamName === "TIMETOEXPLO") {
               lwpParamName = "TIMETOEXPLODE"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 32767 ? 32767 : paramValue);
           }
 
           if (lwpParamName === "TIMETOEXPLOV") {
               lwpParamName = "TIMETOEXPLODEV"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 32767 ? 32767 : paramValue);
           }
 
           if (lwpParamName === "BLOODTRAILDELAY") {
-              lwpParamName = "BTRAILDELAY";
+              lwpParamName = "BTRAILDELAY"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
           if (lwpParamName === "BLOODTRAIL") {
@@ -357,37 +396,43 @@ for (let i = 0; i < data.nObjects.length; i++) {
           }
 
           if (lwpParamName === "LEAVEOBJDELAY") {
-              lwpParamName = "OTRAILDELAY";
+              lwpParamName = "OTRAILDELAY"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
          if (lwpParamName === "BOUNCE") {
               lwpParamName = "BOUNCE"
-              paramValue = paramValue < 0 ? 0 : Math.floor(paramValue * 100);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
           }
 
           if (lwpParamName === "SPEED") {
               lwpParamName = "SPEED"
-              paramValue = Math.floor(Math.abs(paramValue * 100));
+              paramValue = paramValue < -327.67 ? 32767 : (paramValue > 327.67 ? 32767 : Math.floor(Math.abs(paramValue * 100)));
           }
 
           if (lwpParamName === "SPEEDV") {
               lwpParamName = "SPEEDV"
-              paramValue = Math.floor(Math.abs(paramValue * 100));
+              paramValue = paramValue < -327.67 ? 32767 : (paramValue > 327.67 ? 32767 : Math.floor(Math.abs(paramValue * 100)));
           }
 
          if (lwpParamName === "DISTRIBUTION") {
               lwpParamName = "DISTRIBUTION"
-              paramValue = Math.floor(Math.abs(paramValue * 65536));
+              paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? 32767 : Math.floor(Math.abs(paramValue * 65536)));
           }
 
           if (lwpParamName === "GRAVITY") {
               lwpParamName = "GRAVITY"
-              paramValue = Math.floor(paramValue * 65536);
+              paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32767 : Math.floor(paramValue * 65536));
           }
 
           if (lwpParamName === "BLOWAWAY") {
               lwpParamName = "BLOW"
-              paramValue = Math.floor(Math.abs(paramValue * 100));
+              paramValue = paramValue < -2.55 ? 255 : (paramValue > 2.55 ? 255 : Math.floor(Math.abs(paramValue * 100)));
+          }
+
+          if (lwpParamName === "HITDAMAGE") {
+              lwpParamName = "HITDAMAGE"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (typeof paramValue === "boolean") {
@@ -420,29 +465,43 @@ for (let i = 0; i < data.sObjects.length; i++) {
           }
 
           if (lwpParamName === "STARTFRAME") {
-              lwpParamName = "ANIMSFRAME";
+              lwpParamName = "ANIMSFRAME"
+              paramValue = paramValue < 0 ? 0 : paramValue;
           }
 
          if (lwpParamName === "DETECTRANGE") {
               lwpParamName = "WORMDETECTRANGE"
-              paramValue = Math.abs(paramValue);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "NUMFRAMES") {
-              lwpParamName = "ANIMFRAMES";
+              lwpParamName = "ANIMFRAMES"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+          }
+
+          if (lwpParamName === "ANIMDELAY") {
+              lwpParamName = "ANIMDELAY"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "DAMAGE") {
-              lwpParamName = "HITDAMAGE";
-              paramValue = Math.abs(paramValue);
+              lwpParamName = "HITDAMAGE"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "SHAKE") {
-              lwpParamName = "EARTHQUAKE";
+              lwpParamName = "EARTHQUAKE"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+          }
+
+          if (lwpParamName === "FLASH") {
+              lwpParamName = "FLASH"
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
               if (lwpParamName === "NUMSOUNDS") {
-              lwpParamName = "NUMOFSOUNDS";
+              lwpParamName = "NUMOFSOUNDS"
+              paramValue = paramValue < 0 ? 0 : paramValue;
           }
 
           if (lwpParamName === "STARTSOUND") {
