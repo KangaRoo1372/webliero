@@ -241,7 +241,7 @@
       recoil: 0,
       ammo: 1,
       delay: 20,
-      loadingTime: 370,
+      loadingTime: 380,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 0,
@@ -279,7 +279,7 @@
       recoil: 0.06,
       ammo: 60,
       delay: 0,
-      loadingTime: 370,
+      loadingTime: 350,
       leaveShells: 4,
       leaveShellDelay: 1,
       fireCone: 6,
@@ -543,9 +543,9 @@
       bulletSpeedInherit: 0.31746031746031744,
       distribution: 0.2,
       recoil: 0.06,
-      ammo: 40,
+      ammo: 35,
       delay: 5,
-      loadingTime: 350,
+      loadingTime: 370,
       leaveShells: 2,
       leaveShellDelay: 1,
       fireCone: 2,
@@ -3307,7 +3307,7 @@
       startFrame: 40,
       numFrames: 15,
       detectRange: 26,
-      damage: 40,
+      damage: 45,
       blowAway: 0.05,
       shadow: true,
       shake: 4,
@@ -3466,5 +3466,6 @@
     171
   ],
   textSpritesStartIdx: 240,
-  crossHairSprite: 153
+  crossHairSprite: 153,
+  name: "Promode ReRevisited"
 }
