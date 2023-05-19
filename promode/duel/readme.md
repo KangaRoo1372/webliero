@@ -28,14 +28,14 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |---------------------- | ------------------------
 |***weapon***
 |name: "PROXY MINE"     |    name: "PROXY MINE"
-|loadingTime: 370,      |    loadingTime: 400,
+|loadingTime: 380,      |    loadingTime: 400,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
 |timeToExplo: 330,      |    timeToExplo: 250,
 |blowAway: 0,           |    blowAway: 0.22,
 |***sobject***
-|damage: 40,            |    damage: 50,
+|damage: 45,            |    damage: 50,
 |blowAway: 0.05,        |    blowAway: 0.08,
 |***weapon***
 |name: "DOOMSDAY"       |    name: "DOOMSDAY"
@@ -113,14 +113,14 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |fireCone: 2,           |    fireCone: 6,
 |***weapon***
 |name: "SCATTERGUN"     |    name: "SCATTERGUN"
-|loadingTime: 350,      |    loadingTime: 375,
+|loadingTime: 370,      |    loadingTime: 375,
 |fireCone: 2,           |    fireCone: 6,
-|ammo: 40,              |    ammo: 36,
+|ammo: 35,              |    ammo: 36,
 |***wobject***
 |hitDamage: 4,          |    hitDamage: 3,
 |***weapon***
 |name: "MINIGUN"        |    name: "MINIGUM"
-|loadingTime: 370,      |    loadingTime: 360,
+|loadingTime: 350,      |    loadingTime: 360,
 |parts: 2,              |    parts: 1,
 |ammo: 60,              |    ammo: 80,
 |***wobject***
