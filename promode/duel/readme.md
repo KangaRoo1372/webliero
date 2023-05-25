@@ -62,7 +62,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |blowAway: 0.15,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 3,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***           |
 |name: "GRENADE"        |    name: "GRENADE",
