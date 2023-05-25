@@ -2488,7 +2488,7 @@
       wormExplode: false,
       explGround: true,
       wormDestroy: true,
-      bloodOnHit: 6,
+      bloodOnHit: 8,
       startFrame: 0,
       numFrames: 0,
       drawOnMap: false,
