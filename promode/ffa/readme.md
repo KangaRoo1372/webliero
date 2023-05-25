@@ -33,9 +33,10 @@ Here you can find the full list of aforementioned changes:
 |timeToExploV: 5        |    timeToExploV: 7
 |***weapon***           
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
-|loadingTime: 520,      |    loadingTime: 510,
+|loadingTime: 500,      |    loadingTime: 510,
+|ammo: 7,               |    ammo: 8,
 |***nobject***
-|hitDamage: 3,          |    hitDamage: 4,
+|bloodOnHit: 8,         |    bloodOnHit: 6,
 |timeToExplo: 12,       |    timeToExplo: 18,
 |timeToExploV: 5        |    timeToExploV: 5
 |***weapon***
@@ -51,7 +52,6 @@ Here you can find the full list of aforementioned changes:
 |blowAway: 0.15,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
-|hitDamage: 3,          |    hitDamage: 4,
 |timeToExplo: 130,      |    timeToExplo: 140,
 |***weapon***
 |name: "FLAMER"         |    name: "FLAMER"
