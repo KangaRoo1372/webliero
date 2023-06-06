@@ -162,7 +162,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |parts: 8,              |    parts: 7,
 |***wobject***
 |timeToExplo: 350,      |    timeToExplo: 230,
-|bounce: 0.6,           |    bounce: 0.5,
+|hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
 |loadingTime: 500,      |    loadingTime: 510,
