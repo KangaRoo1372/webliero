@@ -1457,7 +1457,7 @@
       exploSound: 4,
       addSpeed: 0,
       distribution: 0.1983642578125,
-      multSpeed: 1.01,
+      multSpeed: 1,
       createOnExp: -1,
       dirtEffect: -1,
       wormExplode: false,
@@ -1799,7 +1799,7 @@
       exploSound: 12,
       addSpeed: 0,
       distribution: 0,
-      multSpeed: 1,
+      multSpeed: 1.01,
       createOnExp: 0,
       dirtEffect: -1,
       wormExplode: true,
@@ -1827,7 +1827,7 @@
       objTrailDelay: 5,
       partTrailType: 1,
       partTrailObj: 10,
-      partTrailDelay: 8,
+      partTrailDelay: 6,
       speed: 200
     },
     { // missile wid32
@@ -2438,7 +2438,7 @@
     },
     { // tupolev bomb nid10
       detectDistance: 1,
-      gravity: 0.040517578125,
+      gravity: 0.080517578125,
       speed: 1.8,
       speedV: 0.2,
       distribution: 0.10517578125,
@@ -2473,7 +2473,7 @@
       speedV: 1.2,
       distribution: 0.25,
       blowAway: 0.4,
-      bounce: 0.4,
+      bounce: 0.5,
       hitDamage: 1,
       wormExplode: true,
       explGround: false,
@@ -2493,7 +2493,7 @@
       bloodTrailDelay: 0,
       leaveObj: 5,
       leaveObjDelay: 5,
-      timeToExplo: 120,
+      timeToExplo: 140,
       timeToExploV: 20
     },
     { // incendiator flame nid12
