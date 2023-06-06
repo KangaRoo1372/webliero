@@ -98,11 +98,12 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |bulletSpeed: 1.8,      |    bulletSpeed: 2,
 |***wobject***
+|multSpeed: 1.01,       |    multSpeed: 1,
 |timeToExplo: 120,      |    timeToExplo: 105,
-|partTrailDelay: 8,     |    partTrailDelay: 10,
+|partTrailDelay: 6,     |    partTrailDelay: 10,
 |***nobject***
 |damage: 5,             |    damage: 3,
-|gravity: 0.040517578125, |  gravity: 0.030517578125,
+|gravity: 0.080517578125, |  gravity: 0.030517578125,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
@@ -139,12 +140,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |"MINI NUKE"            |    name: "MINI NUKE"
 |loadingTime: 420,      |    loadingTime: 450,
 |***wobject***
-|multSpeed: 1.01,       |    multSpeed: 1,
 |TimeToExplo: 45,       |    timeToExplo: 50,
 |TimeToExploV: 5,       |    timeToExploV: 4,
 |***nobject***
-|bounce: 0.4,           |    bounce: 0.6,
-|TimeToExplo: 120,      |    TimeToExplo: 80,
+|bounce: 0.5,           |    bounce: 0.6,
+|TimeToExplo: 140,      |    TimeToExplo: 80,
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
