@@ -2473,7 +2473,7 @@
       speedV: 1.2,
       distribution: 0.25,
       blowAway: 0.4,
-      bounce: 0.4,
+      bounce: 0.5,
       hitDamage: 1,
       wormExplode: true,
       explGround: false,
