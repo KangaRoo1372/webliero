@@ -103,7 +103,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |partTrailDelay: 6,     |    partTrailDelay: 10,
 |***nobject***
 |damage: 5,             |    damage: 3,
-|gravity: 0.080517578125, |  gravity: 0.030517578125,
+|gravity: 0.060517578125, |  gravity: 0.030517578125,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
@@ -143,7 +143,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |TimeToExplo: 45,       |    timeToExplo: 50,
 |TimeToExploV: 5,       |    timeToExploV: 4,
 |***nobject***
-|bounce: 0.5,           |    bounce: 0.6,
 |TimeToExplo: 140,      |    TimeToExplo: 80,
 |***weapon***
 |name: "ZIMM"           |    name: "ZIMM"
