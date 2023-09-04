@@ -14,6 +14,9 @@
 		<label for="orderWA">Order weapons alphabetically:</label>
 		<input type="checkbox" id="orderWA">
                              <br>
+		<label for="lieroM8Plugin">Make LieroM8 plugin:</label>
+		<input type="checkbox" id="lieroM8Plugin">
+                             <br>
                              <br>		
 
 		<button type="button" onclick="convert()">Convert</button>
@@ -21,5 +24,8 @@
 	<p id="status"></p>
 	<a id="downloadLink" style="display: none">Download converted file</a>
 	<textarea id="result" style="width: 50%; height: 100%; top: 0; position: fixed;left: 49%;"></textarea>
+	<p id="warning" style="color: red; display: none;">Warning - wrong amount of objects, converted file will not be implemented in Liero properly!</p>
+	<p id="warningext" style="color: orange; display: none;">Warning - Extended mod detected, some weapons might not work properly!</p>
+	<p id="warningsprites" style="color: purple; display: none;">Warning - spritesheet limit exceeded, some weapons might not work properly!</p>
 </body>
 </html>
