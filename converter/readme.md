@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.51)**
+**JSON to LWP Converter by KangaRoo (current version: 0.52)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -58,20 +58,31 @@ To use the converter, you must:
 - right-mouse click the "index.html" file and open it with Internet browser (e.g. Chrome or Firefox)
 - click the "browse file" button and choose the file from your HDD
 - mark the "order weapons alphabetically" option if you want to have weapons sorted alphabetically in the game menu after conversion (recommended)
+- you can mark the "Make LieroM8 plugin" option if you want to have converted LWP file compatible with LieroM8 (not recommended - see more explanations below)
 - click the "Convert" button
 - if the conversion is successful, you will see the message "Conversion successful!" and a download link (+ the converted file will appear on the print-preview window on the right side)
 - you can modify vaules of every property on the print-preview window manually, however such manual changes will not affect the converted file (so if you want to save your changes, you need to copy the whole content from the preview window and paste it into the empty .lwp file)
 - you can unmark the "order weapons alphabetically" option and click the "Convert" button again to generate converted file again, but in such case the weapons will not be sorted alphabetically by names in the game menu
+- if the converted file will not be implemented in Liero.exe properly due to some issues regarding differences between Liero and WebLiero (see more explanations below), there will be a special warning message printed: either about issues with spritesheet limits, or object amount, or [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mod properties
 - click the download link ("Download converted file"); the converted file will be saved on your HDD
-- if the conversion fails, you will see the message "Error converting file" (in some cases there will be no message printed; in that case, you can open the console by pressing F12 to check errors)
+- if the conversion fails, you will see the message "Error converting file :(" (in some cases there will be no message printed; in that case, you can open the console by pressing F12 to check errors)
 
-To implement your .lwp file in Liero, you must activate it with Liero Stuff Activator (which you can download from [Liero Hell Hole](https://liero.nl/)), that is:
+To implement your .lwp file in Liero, you must activate it with Liero Stuff Activator (which you can download from [Liero Hell Hole](https://liero.nl/download/1597/activate-dbx.zip)), that is:
 
 - make a back-up copy of your Liero.exe file (the converted file replaces all objects, even special objects)
 - put the converted file into your Liero folder
 - put the Liero Stuff Activator into your Liero folder and execute it
 - select your converted LWP file on the file list and press "Enter"
 - press "Y" key to select "yes" option on the pop-up window
+
+Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, you can use another tool to implement the converted file in Liero.exe, i.e. LieroM8 (which you can download from [Liero Hell Hole](https://liero.nl/download/286/lm8v192.zip) too), that is:
+
+- make a back-up copy of your Liero.exe file (the converted file replaces all objects, even special objects)
+- put the converted file into your Liero folder
+- open LieroM8.exe file
+- set your Liero path (select Liero.exe which you want to hack)
+- double-click your converted LWP file on the list in LieroM8
+- select "yes" option on the pop-up window
 
 ## *3. LIMITATIONS*
 
@@ -83,6 +94,7 @@ To implement your .lwp file in Liero, you must activate it with Liero Stuff Acti
 - unlike in classic Liero, in WebLiero you can edit or modify dirt effects ("textures" array) in any way you want. This is another reason why some WL weapons / objects would work differently after conversion to Liero
 - in classic Liero, sprites were split into 3 categories: big sprites (16x16 size), medium sprites (7x7 size) and small sprites (4x4 size), whereas only "medium sprites" could be used as startFrame for weapon objects and non-weapon objects. In WebLiero though, you can choose any sprite you want as startFrame for weapon and non-weapon objects. That's why some weapons / objects would look and work differently after conversion to Liero
 - the program also converts [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mods, however since WebLiero Extended uses some special parameters which changes the game & weapons logic significantly. That's why WL Extended mods would not work properly after conversion to Liero mods
+- there are some issues with some properties in special objects after implementing converted LWP file via LieroM8 (propably due to some bugs in LieroM8). Currently known bugs: wrong values of blowAway parameter in sobject1 (Large explosion) and sobject2 (medium explosion). It is recommended to change those values manually in [LieroKit](https://liero.nl/download/295/lierokit16b2.zip) after activating your converted file with LieroM8 (it is weird but you will have some issues if you try to change it manually in LieroM8)
 
 **_So, if you want to have no issues after converting your WL mod to LWP, then follow these instructions:_**
 
@@ -114,6 +126,11 @@ Big thanks also goes to:
 
 ## *5. CHANGELOG*
 
+04.09.2023 - version 0.52
+
+- add new checkbox option to make converted file compatible with LieroM8
+- add some warning messages displayed when converted mod will not be implemented properly in Liero.exe after conversion
+
 07.05.2023 - version 0.51
 - improve functions to recalculate values of some properties (to respect Liero limits)
 
@@ -134,7 +151,7 @@ Big thanks also goes to:
 07.04.2023 - version 0.47
 - fix weapon index bug
 - changed the conversion factor for "recoil" property to prevent bugs
-- remove unnecessary toString() method from weaponIdex variable
+- remove unnecessary toString() method from weaponIndex variable
 - rename some variables & clean the code
 
 04.04.2023 - version 0.46
@@ -167,7 +184,6 @@ Big thanks also goes to:
 ## *6. TODO*
 
 - add some sanity checks / console logs about errors etc.
-- add some warning messages displayed when WL mod will not be suitable to Liero.exe after conversion
 - add option to modify the converted file in the print-preview window & make it impact the converted file when downloading
 - full code review & clean it up
 
