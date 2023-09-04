@@ -4,6 +4,8 @@ function convert() {
   const downloadLink = document.getElementById("downloadLink");
   const result = document.getElementById("result");
   const orderWA = document.getElementById("orderWA");
+  const lieroM8Plugin = document.getElementById("lieroM8Plugin");
+  const warningElement = document.getElementById("warning");
 
   if (!fileInput.files[0]) {
     status.textContent = "Please select a file";
@@ -21,12 +23,15 @@ function convert() {
       downloadLink.href = url;
       downloadLink.download = "converted.lwp";
       downloadLink.style.display = "block";
-      status.textContent = "Conversion successful!";
-    } catch (error) {
-      console.error(error);
-      status.textContent = "Error converting file :(";
+      if (data.weapons.length != 40 || data.wObjects.length != 40 || data.nObjects.length != 24 || data.sObjects.length != 14) {
+      warningElement.style.display = "block";
     }
-  };
+    status.textContent = "Conversion successful!";
+  } catch (error) {
+    console.error(error);
+    status.textContent = "Error converting file :(";
+  }
+};
 
   const file = fileInput.files[0];
   const fileName = file.name;
@@ -43,8 +48,14 @@ function convertToJsonString(data, orderByWeaponName) {
   const lwpParams = [];
   const lwpOParams = [];
   const lwpSParams = [];
-  let ObjectOrder = 0;
-  let SObjectOrder = 0;
+  const warningExtended = document.getElementById("warningext");
+  const warningSpritesheet = document.getElementById("warningsprites");
+  let ObjectOrder = lieroM8Plugin.checked ? -1 : 0;
+  let SObjectOrder = lieroM8Plugin.checked ? -1 : 0;
+  let weaponCount = 0;
+  let wObjectCount = 0;
+  let objectCount = 0;
+  let sObjectCount = 0;
 
   let weaponSorted = data.weapons.map((w,idx) => {return {name:w.name,idSwap:(idx+1)}; }).sort((a,b) => {
     if (a.name<b.name) return -1
@@ -126,12 +137,19 @@ function convertToJsonString(data, orderByWeaponName) {
     const weaponOrder = orderByWeaponName?weaponSorted[i].idSwap:i+1;
     if (weaponParams.length > 0) {
       lwpParams.push(`WEAPON:${weaponIndex}\r\nORDER:${weaponOrder}\r\n${weaponParams.join("\r\n")}`);
+      weaponCount++;
     }
 
     if (i < data.wObjects.length) {
       const wObject = data.wObjects[i];
-      const ignoredWObjectProperties = ["id","name","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay"]
+      const ignoredWObjectProperties = ["id","name","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","behavior===undefined ? -1 : a"]
       const wObjectParams = [];
+      if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
+       warningExtended.style.display = "block";
+       }
+      if (wObject.startFrame>239) {
+       warningSpritesheet.style.display = "block";
+       }
       for (let paramName in wObject) {
         if (ignoredWObjectProperties.includes(paramName)) {
           continue;
@@ -159,22 +177,22 @@ function convertToJsonString(data, orderByWeaponName) {
             paramValue = Math.floor(paramValue + 1);
           }
 
-           if (lwpParamName === "OBJTRAILTYPE") {
+          if (lwpParamName === "OBJTRAILTYPE") {
               lwpParamName = "OTRAILTYPE";
               paramValue = Math.floor(paramValue + 1);
           }
 
-           if (lwpParamName === "STARTFRAME") {
+          if (lwpParamName === "STARTFRAME") {
               lwpParamName = "ANIMSFRAME"
               paramValue = paramValue < 0 ? -1 : (paramValue < 110 ? 0 : Math.floor(paramValue - 110));
           }
 
-         if (lwpParamName === "DETECTDISTANCE") {
+          if (lwpParamName === "DETECTDISTANCE") {
               lwpParamName = "WORMDETECTRANGE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
-         if (lwpParamName === "BLOODONHIT") {
+          if (lwpParamName === "BLOODONHIT") {
               lwpParamName = "BLOOD"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
@@ -188,11 +206,11 @@ function convertToJsonString(data, orderByWeaponName) {
               lwpParamName = "SPLINTERCOLOR";
           }
 
-         if (lwpParamName === "EXPLGROUND") {
+          if (lwpParamName === "EXPLGROUND") {
               lwpParamName = "GROUNDEXPLODE";
           }
 
-         if (lwpParamName === "COLLIDEWITHOBJECTS") {
+          if (lwpParamName === "COLLIDEWITHOBJECTS") {
               lwpParamName = "OBJECTCOLLIDE";
           }
 
@@ -214,11 +232,11 @@ function convertToJsonString(data, orderByWeaponName) {
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
-         if (lwpParamName === "PARTTRAILTYPE") {
+          if (lwpParamName === "PARTTRAILTYPE") {
               lwpParamName = "PTRAILTYPE";
           }
 
-         if (lwpParamName === "WORMCOLLIDE") {
+          if (lwpParamName === "WORMCOLLIDE") {
               lwpParamName = "WORMREMOVE";
           }
 
@@ -249,7 +267,7 @@ function convertToJsonString(data, orderByWeaponName) {
               paramValue = paramValue < 0 ? 0 : (paramValue > 32767 ? 32767 : paramValue);
           }
 
-         if (lwpParamName === "OBJTRAILDELAY") {
+          if (lwpParamName === "OBJTRAILDELAY") {
               lwpParamName = "OTRAILDELAY"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
@@ -259,17 +277,17 @@ function convertToJsonString(data, orderByWeaponName) {
               paramValue = paramValue < -327.67 ? 32767 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
           }
 
-         if (lwpParamName === "BOUNCE") {
+          if (lwpParamName === "BOUNCE") {
               lwpParamName = "BOUNCE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
           }
 
-         if (lwpParamName === "HITDAMAGE") {
+          if (lwpParamName === "HITDAMAGE") {
               lwpParamName = "HITDAMAGE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
-         if (lwpParamName === "DISTRIBUTION") {
+          if (lwpParamName === "DISTRIBUTION") {
               lwpParamName = "DISTRIBUTION"
               paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? 32767 : Math.floor(Math.abs(paramValue * 65536)));
 
@@ -296,6 +314,7 @@ function convertToJsonString(data, orderByWeaponName) {
 
       if (wObjectParams.length > 0) {
         lwpParams.push(`${wObjectParams.join("\r\n")}\r\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
+        wObjectCount++;
       }
 }
 }
@@ -303,12 +322,18 @@ for (let i = 0; i < data.nObjects.length; i++) {
   const nObject = data.nObjects[i];
           ObjectOrder++;
       const nObjectOParams = [];
+      if (nObject.immutable==true || nObject.teamImmunity>0) {
+       warningExtended.style.display = "block";
+      }
+      if (nObject.startFrame>239) {
+       warningSpritesheet.style.display = "block";
+      }
       for (let paramName in nObject) {
         if (paramName !== "id" && paramName !== "name" && paramName !== "teamImmunity" && paramName !== "immutable" && paramName !== "$$hashKey") {
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = nObject[paramName];
 
-           if (lwpParamName === "SPLINTERTYPE") {
+          if (lwpParamName === "SPLINTERTYPE") {
               lwpParamName = "SPLINTERTYPE";
               paramValue = Math.floor(paramValue + 1);
           }
@@ -328,12 +353,12 @@ for (let i = 0; i < data.nObjects.length; i++) {
               paramValue = paramValue <= 0 ? 0 : (paramValue <= 110 ? 1 : Math.floor(paramValue - 110));
           }
 
-         if (lwpParamName === "DETECTDISTANCE") {
+          if (lwpParamName === "DETECTDISTANCE") {
               lwpParamName = "WORMDETECTRANGE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
-         if (lwpParamName === "BLOODONHIT") {
+          if (lwpParamName === "BLOODONHIT") {
               lwpParamName = "BLOOD"
               paramValue = paramValue >= 255 ? 255 : Math.floor(paramValue);
           }
@@ -346,11 +371,11 @@ for (let i = 0; i < data.nObjects.length; i++) {
               lwpParamName = "SPLINTERCOLOR";
           }
 
-           if (lwpParamName === "DRAWONMAP") {
+          if (lwpParamName === "DRAWONMAP") {
               lwpParamName = "DRAWOBJECT";
           }
 
-         if (lwpParamName === "EXPLGROUND") {
+          if (lwpParamName === "EXPLGROUND") {
               lwpParamName = "GROUNDREMOVE";
           }
 
@@ -358,7 +383,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
               lwpParamName = "EXPLODEAFFECT";
           }
 
-         if (lwpParamName === "WORMDESTROY") {
+          if (lwpParamName === "WORMDESTROY") {
               lwpParamName = "WORMREMOVE";
           }
 
@@ -400,7 +425,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
           }
 
-         if (lwpParamName === "BOUNCE") {
+          if (lwpParamName === "BOUNCE") {
               lwpParamName = "BOUNCE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
           }
@@ -415,7 +440,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
               paramValue = paramValue < -327.67 ? 32767 : (paramValue > 327.67 ? 32767 : Math.floor(Math.abs(paramValue * 100)));
           }
 
-         if (lwpParamName === "DISTRIBUTION") {
+          if (lwpParamName === "DISTRIBUTION") {
               lwpParamName = "DISTRIBUTION"
               paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? 32767 : Math.floor(Math.abs(paramValue * 65536)));
           }
@@ -447,6 +472,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
       if (nObjectOParams.length > 0) {
         lwpOParams.push(`OBJECT:${ObjectOrder}\r\n${nObjectOParams.join("\r\n")}\r\n`);
+        objectCount++;
       }
   }
 
@@ -469,7 +495,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
               paramValue = paramValue < 0 ? 0 : paramValue;
           }
 
-         if (lwpParamName === "DETECTRANGE") {
+          if (lwpParamName === "DETECTRANGE") {
               lwpParamName = "WORMDETECTRANGE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
@@ -499,7 +525,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
-              if (lwpParamName === "NUMSOUNDS") {
+          if (lwpParamName === "NUMSOUNDS") {
               lwpParamName = "NUMOFSOUNDS"
               paramValue = paramValue < 0 ? 0 : paramValue;
           }
@@ -526,6 +552,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
 
       if (sObjectSParams.length > 0) {
         lwpSParams.push(`SOBJECT:${SObjectOrder}\r\n${sObjectSParams.join("\r\n")}\r\n`);
+        sObjectCount++;
       }
 }
    return `LIEROKIT:WEAPONPLUGIN\r\nPROMPT:This will activate the whole weapon list. Do you want to continue?\r\nOVERWRITE:1\r\n\r\n${lwpParams.join("\r\n")}\r\n${lwpOParams.join("\r\n")}\r\n${lwpSParams.join("\r\n")}`;
