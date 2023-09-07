@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.52)**
+**JSON to LWP Converter by KangaRoo (current version: 0.53)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -63,7 +63,7 @@ To use the converter, you must:
 - if the conversion is successful, you will see the message "Conversion successful!" and a download link (+ the converted file will appear on the print-preview window on the right side)
 - you can modify vaules of every property on the print-preview window manually, however such manual changes will not affect the converted file (so if you want to save your changes, you need to copy the whole content from the preview window and paste it into the empty .lwp file)
 - you can unmark the "order weapons alphabetically" option and click the "Convert" button again to generate converted file again, but in such case the weapons will not be sorted alphabetically by names in the game menu
-- if the converted file will not be implemented in Liero.exe properly due to some issues regarding differences between Liero and WebLiero (see more explanations below), there will be a special warning message printed: either about issues with spritesheet limits, or object amount, or [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mod properties
+- if the converted file will not be implemented in Liero.exe properly due to some issues regarding differences between Liero and WebLiero (see more explanations below), there will be a special warning message printed: either about issues with spritesheet limits, or object amount, or [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mod properties; what is more, the list of objects that use extended properties will be printed in the console so that you check and track it easily
 - click the download link ("Download converted file"); the converted file will be saved on your HDD
 - if the conversion fails, you will see the message "Error converting file :(" (in some cases there will be no message printed; in that case, you can open the console by pressing F12 to check errors)
 
@@ -95,6 +95,7 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - in classic Liero, sprites were split into 3 categories: big sprites (16x16 size), medium sprites (7x7 size) and small sprites (4x4 size), whereas only "medium sprites" could be used as startFrame for weapon objects and non-weapon objects. In WebLiero though, you can choose any sprite you want as startFrame for weapon and non-weapon objects. That's why some weapons / objects would look and work differently after conversion to Liero
 - the program also converts [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mods, however since WebLiero Extended uses some special parameters which changes the game & weapons logic significantly. That's why WL Extended mods would not work properly after conversion to Liero mods
 - there are some issues with some properties in special objects after implementing converted LWP file via LieroM8 (propably due to some bugs in LieroM8). Currently known bugs: wrong values of blowAway parameter in sobject1 (Large explosion) and sobject2 (medium explosion). It is recommended to change those values manually in [LieroKit](https://liero.nl/download/295/lierokit16b2.zip) after activating your converted file with LieroM8 (it is weird but you will have some issues if you try to change it manually in LieroM8)
+- mods in WebLiero work properly, even if the number of weapons and wObjects is different (e.g. when there are unused wObjects in the JSON file), as well as even if the order of weapons in the weapons array does not correspond to the order of wObjects in the wObjects array. This is because proper combination of weapons and wObjects parameters is done in WebLiero with bulletType parameter. Currently, the converter unfortunately does not detect that connection between weapon and wObject properties depending on the value of bulletType parameter. That's why some weapons might work differently after conversion
 
 **_So, if you want to have no issues after converting your WL mod to LWP, then follow these instructions:_**
 
@@ -109,7 +110,9 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - do not modify "textures" array in any way;
 - use original spritesheet (or at least do not add more sprites to the spritesheet or make sprites bigger than their fixed size);
 - set only "medium sprites" (110-239) as startFrame for wObjects and nObjects;
-- do not add any WebLiero Extended properties.
+- do not add any WebLiero Extended properties;
+- remove all dummy (unused) wObjects from the JSON file;
+- keep weapons and wObjects in in ascending order in the arrays.
 
 ## *4. CREDITS*
 
@@ -122,9 +125,15 @@ Big thanks also goes to:
 - ZanderZ (for creating LieroM8)
 - Gliptic (for creating LieroKit and inventing Liero Weapon Plugin format)
 - dsds💚[ASS] (for some ideas, testing, adding JSON5 library to the program, fixing bugs and improving the converter a lot)
-- TimV (for some ideas, testing and finding some bugs to fix)
+- TimV (for code review, testing, finding some bugs to fix and creating simple but great Liero Stuff Activator)
 
 ## *5. CHANGELOG*
+
+07.09.2023 - version 0.53
+
+- improve the function to calculate WEAPON & ORDER values
+- add the list (printed in the console) of wObjects & nObjects which use WebLiero Extended properties
+- improve functions to recalculate value of blowAway parameter in sObject array (to respect Liero limits)
 
 04.09.2023 - version 0.52
 
