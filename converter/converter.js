@@ -25,7 +25,7 @@ function convert() {
       downloadLink.style.display = "block";
       if (data.weapons.length != 40 || data.wObjects.length != 40 || data.nObjects.length != 24 || data.sObjects.length != 14) {
       warningElement.style.display = "block";
-    }
+    } else {warningElement.style.display = "none";}
     status.textContent = "Conversion successful!";
   } catch (error) {
     console.error(error);
@@ -50,22 +50,26 @@ function convertToJsonString(data, orderByWeaponName) {
   const lwpSParams = [];
   const warningExtended = document.getElementById("warningext");
   const warningSpritesheet = document.getElementById("warningsprites");
+  const warningMessedWObject = document.getElementById("warningobject");
   let ObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let SObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let weaponCount = 0;
   let wObjectCount = 0;
   let objectCount = 0;
   let sObjectCount = 0;
+  let extendedW = 0;
+  let extendedN = 0;
 
   let weaponSorted = data.weapons.map((w,idx) => {return {name:w.name,idSwap:(idx+1)}; }).sort((a,b) => {
-    if (a.name<b.name) return -1
-    if (a.name>b.name) return 1
-    return 0
-  })
-
+    if (a.name<b.name) return -1;
+    if (a.name>b.name) return 1;
+    return 0;
+  });
+  const bulletTypeMap = new Map();
   const ignoredWeaponProperties = ["bulletSpeed","bulletType","laserBeam", "distribution",  "id", "reloadSound", "$$hashKey"]
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
+    bulletTypeMap.set(weapon.bulletType, i);
     const weaponParams = [];
     for (let paramName in weapon) {
         if (ignoredWeaponProperties.includes(paramName)) {
@@ -133,8 +137,12 @@ function convertToJsonString(data, orderByWeaponName) {
         weaponParams.push(`${lwpParamName}:${paramValue}`);
     }
 
-    const weaponIndex = parseInt(weapon.bulletType)+1;
-    const weaponOrder = orderByWeaponName?weaponSorted[i].idSwap:i+1;
+    if (bulletTypeMap.has(weapon.bulletType)){
+    const weaponIndex = bulletTypeMap.get(weapon.bulletType) + 1;
+      const weaponOrder = orderByWeaponName
+        ? weaponSorted[weaponIndex - 1].idSwap
+        : weaponIndex;
+      
     if (weaponParams.length > 0) {
       lwpParams.push(`WEAPON:${weaponIndex}\r\nORDER:${weaponOrder}\r\n${weaponParams.join("\r\n")}`);
       weaponCount++;
@@ -146,10 +154,15 @@ function convertToJsonString(data, orderByWeaponName) {
       const wObjectParams = [];
       if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
        warningExtended.style.display = "block";
+       console.log("extended property detected in wobject " + weapon.name);
+       extendedW++;
        }
-      if (wObject.startFrame>239) {
-       warningSpritesheet.style.display = "block";
+        if (wObject.behavior<0 || wObject.detonable!=true || wObject.immutable!=true || wObject.fixed!=true || wObject.platform!=true || wObject.teamImmunity<=0 || wObject.removeOnSObject!=true || wObject.overlay!=true) {
+          if(extendedW==0 && extendedN==0) warningExtended.style.display = "none";
        }
+      if (wObject.startFrame>239) warningSpritesheet.style.display = "block";
+      if (wObject.startFrame<=239) warningSpritesheet.style.display = "none";
+      
       for (let paramName in wObject) {
         if (ignoredWObjectProperties.includes(paramName)) {
           continue;
@@ -316,18 +329,26 @@ function convertToJsonString(data, orderByWeaponName) {
         lwpParams.push(`${wObjectParams.join("\r\n")}\r\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
         wObjectCount++;
       }
+       if (data.wObjects.length!=data.weapons.length) warningMessedWObject.style.display = "block";
+       if (data.wObjects.length===data.weapons.length) warningMessedWObject.style.display = "none";
+}
 }
 }
 for (let i = 0; i < data.nObjects.length; i++) {
   const nObject = data.nObjects[i];
-          ObjectOrder++;
+      ObjectOrder++;
       const nObjectOParams = [];
       if (nObject.immutable==true || nObject.teamImmunity>0) {
        warningExtended.style.display = "block";
+       console.log("extended property detected in nobject " +nObject.name);
+       extendedN++;
       }
-      if (nObject.startFrame>239) {
-       warningSpritesheet.style.display = "block";
+      if (nObject.immutable!=true || nObject.teamImmunity<=0) {
+      if(extendedN==0 && extendedW==0) warningExtended.style.display = "none";
       }
+      if (nObject.startFrame>239) warningSpritesheet.style.display = "block";
+      if (nObject.startFrame<=239) warningSpritesheet.style.display = "none";
+  
       for (let paramName in nObject) {
         if (paramName !== "id" && paramName !== "name" && paramName !== "teamImmunity" && paramName !== "immutable" && paramName !== "$$hashKey") {
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
@@ -537,7 +558,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
 
           if (lwpParamName === "BLOWAWAY") {
               lwpParamName = "BLOW"
-              paramValue = Math.floor(Math.abs(paramValue * 65536));
+              paramValue = paramValue < -30517 ? -1999999999 : (paramValue > 30517 ? 1999999999 : Math.floor(paramValue * 65536));
           }
 
           if (typeof paramValue === "boolean") {
