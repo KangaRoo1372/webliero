@@ -112,7 +112,7 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - set only "medium sprites" (110-239) as startFrame for wObjects and nObjects;
 - do not add any WebLiero Extended properties;
 - remove all dummy (unused) wObjects from the JSON file;
-- keep weapons and wObjects in in ascending order in the arrays.
+- keep weapons and wObjects in ascending order in the arrays.
 
 ## *4. CREDITS*
 
@@ -192,6 +192,7 @@ Big thanks also goes to:
 
 ## *6. TODO*
 
+- implement function to combine weapon and wObjects properties depending on the value of bulletType parameter
 - add some sanity checks / console logs about errors etc.
 - add option to modify the converted file in the print-preview window & make it impact the converted file when downloading
 - full code review & clean it up
