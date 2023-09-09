@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.53)**
+**JSON to LWP Converter by KangaRoo (current version: 0.54)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -63,7 +63,7 @@ To use the converter, you must:
 - if the conversion is successful, you will see the message "Conversion successful!" and a download link (+ the converted file will appear on the print-preview window on the right side)
 - you can modify vaules of every property on the print-preview window manually, however such manual changes will not affect the converted file (so if you want to save your changes, you need to copy the whole content from the preview window and paste it into the empty .lwp file)
 - you can unmark the "order weapons alphabetically" option and click the "Convert" button again to generate converted file again, but in such case the weapons will not be sorted alphabetically by names in the game menu
-- if the converted file will not be implemented in Liero.exe properly due to some issues regarding differences between Liero and WebLiero (see more explanations below), there will be a special warning message printed: either about issues with spritesheet limits, or object amount, or [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mod properties; what is more, the list of objects that use extended properties will be printed in the console so that you check and track it easily
+- if the converted file will not be implemented in Liero.exe properly due to some issues regarding differences between Liero and WebLiero (see more explanations below), there will be a special warning message printed (either about issues with spritesheet limits, or object amount, or [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mod properties, or about issues with textures array limits); what is more, the list of objects that use extended properties / exceed textures or spritesheet limits, will be printed in the console, so that you check and track it easily
 - click the download link ("Download converted file"); the converted file will be saved on your HDD
 - if the conversion fails, you will see the message "Error converting file :(" (in some cases there will be no message printed; in that case, you can open the console by pressing F12 to check errors)
 
@@ -105,7 +105,7 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - for shotType: 0,1,2,3 = set "repeat": 1;
 - for shotType: 4 = set "repeat": 1000 for wObject 28;
 - for shotType: 4 = set "repeat": 8 for any other wObjects;
-- do not set negative values for any properties (except for gravity);
+- do not set negative values for any properties (except for gravity and blowAway in sObjects);
 - do not exceed the maximum limit values for int parameters (255, 32767 or 0.49);
 - do not modify "textures" array in any way;
 - use original spritesheet (or at least do not add more sprites to the spritesheet or make sprites bigger than their fixed size);
@@ -128,6 +128,14 @@ Big thanks also goes to:
 - TimV (for code review, testing, finding some bugs to fix and creating simple but great Liero Stuff Activator)
 
 ## *5. CHANGELOG*
+
+09.09.2023 - version 0.54
+
+- simplify the function to calculate values for WEAPON parameter
+- add more warning messages displayed when converted mod will not be implemented properly in Liero.exe after conversion
+- add the list (printed in the console) of wObjects and nObjects in which spritesheet limit is exceeded
+- add the list (printed in the console) of wObjects, nObjects and sObjects in which textures array (dirtEffects) limit is exceeded
+- improve functions to recalculate values of some properties (to respect Liero limits regarding negative values)
 
 07.09.2023 - version 0.53
 
