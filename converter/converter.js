@@ -98,7 +98,7 @@ function convertToJsonString(data, orderByWeaponName) {
 
         if (lwpParamName === "LAUNCHSOUND") {
             lwpParamName = "SOUNDLAUNCH"
-            paramValue =  paramValue <= 0 ? 0 : Math.floor(paramValue + 1);
+            paramValue =  paramValue < 0 ? 0 : Math.floor(paramValue + 1);
         }
 
         if (lwpParamName === "PARTS") {
@@ -210,8 +210,8 @@ function convertToJsonString(data, orderByWeaponName) {
           }
 
           if (lwpParamName === "DIRTEFFECT") {
-            lwpParamName = "MAPCHANGE";
-            paramValue = paramValue >8 ? 0 : Math.floor(paramValue + 1);
+              lwpParamName = "MAPCHANGE";
+              paramValue = paramValue > 8 ? 0 : Math.floor(paramValue + 1);
           }
 
           if (lwpParamName === "OBJTRAILTYPE") {
@@ -406,8 +406,8 @@ for (let i = 0; i < data.nObjects.length; i++) {
           }
 
           if (lwpParamName === "DIRTEFFECT") {
-            lwpParamName = "MAPCHANGE";
-            paramValue = paramValue >8 ? 0 : Math.floor(paramValue + 1);
+              lwpParamName = "MAPCHANGE";
+              paramValue = paramValue > 8 ? 0 : Math.floor(paramValue + 1);
           }
 
           if (lwpParamName === "STARTFRAME") {
@@ -556,8 +556,8 @@ for (let i = 0; i < data.sObjects.length; i++) {
           let paramValue = sObject[paramName];
 
           if (lwpParamName === "DIRTEFFECT") {
-            lwpParamName = "MAPCHANGE";
-            paramValue >8 ? 0 : Math.floor(paramValue + 1);
+              lwpParamName = "MAPCHANGE";
+              paramValue = paramValue > 8 ? 0 : Math.floor(paramValue + 1);
           }
 
           if (lwpParamName === "STARTFRAME") {
