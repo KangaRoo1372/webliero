@@ -67,7 +67,7 @@ warningTextures.style.display = "none";
 	
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
-    const ignoredWeaponProperties = ["bulletSpeed","bulletType","laserBeam","distribution","id","reloadSound","$$hashKey"];
+    const ignoredWeaponProperties = ["bulletType","laserBeam","distribution","id","reloadSound","$$hashKey"];
     weaponIndex++;
     const weaponParams = [];
     for (let paramName in weapon) {
@@ -80,6 +80,11 @@ warningTextures.style.display = "none";
         if (lwpParamName === "BULLETSPEEDINHERIT") {
             lwpParamName = "WORMAFFECT"
             paramValue = paramValue != 0 ? 1 : 0;
+        }
+
+        if (lwpParamName === "BULLETSPEED") {
+            lwpParamName = "SPEED"
+            paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
         }
 
         if (lwpParamName === "RECOIL") {
@@ -391,7 +396,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
 function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, lwpParams) {
         const i = wobjectId;
         const wObject = data.wObjects[i];
-        const ignoredWObjectProperties = ["id","name","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","behavior===undefined ? -1 : a"];
+        const ignoredWObjectProperties = ["id","name","speed","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","behavior===undefined ? -1 : a"];
         const wObjectParams = [];
         if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
          warningExtended.style.display = "block";
@@ -450,25 +455,21 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
                 lwpParamName = "WORMDETECTRANGE"
                 paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
-  
+
             if (lwpParamName === "BLOODONHIT") {
                 lwpParamName = "BLOOD"
                 paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
-  
+
             if (lwpParamName === "ADDSPEED") {
                 lwpParamName = "ACCADD"
                 paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
             }
-  
-            if (lwpParamName === "SPEED") {
-                paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
-            }
-  
+
             if (lwpParamName === "SPLINTERCOLOUR") {
                 lwpParamName = "SPLINTERCOLOR";
             }
-  
+
             if (lwpParamName === "EXPLGROUND") {
                 lwpParamName = "GROUNDEXPLODE";
             }
