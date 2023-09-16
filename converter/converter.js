@@ -66,9 +66,9 @@ warningSpritesheet.style.display = "none";
 warningTextures.style.display = "none";
 	
   for (let i = 0; i < data.weapons.length; i++) {
-    weaponIndex++;
     const weapon = data.weapons[i];
     const ignoredWeaponProperties = ["bulletSpeed","bulletType","laserBeam","distribution","id","reloadSound","$$hashKey"];
+    weaponIndex++;
     const weaponParams = [];
     for (let paramName in weapon) {
         if (ignoredWeaponProperties.includes(paramName)) {
@@ -307,8 +307,8 @@ for (let i = 0; i < data.sObjects.length; i++) {
   SObjectOrder++;
   const sObjectSParams = [];
       if (sObject.dirtEffect>8) {
-	      warningTextures.style.display = "block";
-	      console.log("textures array limit exceeded in sobject sid" + i);
+	warningTextures.style.display = "block";
+	console.log("textures array limit exceeded in sobject sid" + i);
       }
       for (let paramName in sObject) {
 
@@ -339,7 +339,6 @@ for (let i = 0; i < data.sObjects.length; i++) {
           }
 
           if (lwpParamName === "ANIMDELAY") {
-              lwpParamName = "ANIMDELAY"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
@@ -379,7 +378,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
           }
 
           sObjectSParams.push(`${lwpParamName}:${paramValue}`);
-	      
+
       }
 
       if (sObjectSParams.length > 0) {
