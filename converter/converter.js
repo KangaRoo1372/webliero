@@ -26,10 +26,10 @@ function convert() {
       if (data.weapons.length != 40 || data.wObjects.length != 40 || data.nObjects.length != 24 || data.sObjects.length != 14) {
       warningElement.style.display = "block";
     } else {warningElement.style.display = "none";}
-    status.textContent = "Conversion successful!";
-  } catch (error) {
-    console.error(error);
-    status.textContent = "Error converting file :(";
+      status.textContent = "Conversion successful!";
+    } catch (error) {
+      console.error(error);
+      status.textContent = "Error converting file :(";
   }
 };
 
@@ -50,34 +50,25 @@ function convertToJsonString(data, orderByWeaponName) {
   const lwpSParams = [];
   const warningExtended = document.getElementById("warningext");
   const warningSpritesheet = document.getElementById("warningsprites");
-  const warningMessedWObject = document.getElementById("warningobject");
   const warningTextures = document.getElementById("warningtextures");
   let ObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let SObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let weaponIndex = 0;
-  let weaponCount = 0;
-  let wObjectCount = 0;
-  let objectCount = 0;
-  let sObjectCount = 0;
-  let extendedW = 0;
-  let extendedN = 0;
-  let spritesW = 0;
-  let spritesN = 0;
-  let texturesW = 0;
-  let texturesN = 0;
-  let texturesS = 0;
 
   let weaponSorted = data.weapons.map((w,idx) => {return {name:w.name,idSwap:(idx+1)}; }).sort((a,b) => {
     if (a.name<b.name) return -1;
     if (a.name>b.name) return 1;
     return 0;
   });
-  // const bulletTypeMap = new Map();
-  const ignoredWeaponProperties = ["bulletSpeed","bulletType","laserBeam", "distribution",  "id", "reloadSound", "$$hashKey"]
+
+warningExtended.style.display = "none";
+warningSpritesheet.style.display = "none";
+warningTextures.style.display = "none";
+	
   for (let i = 0; i < data.weapons.length; i++) {
     weaponIndex++;
     const weapon = data.weapons[i];
-    // bulletTypeMap.set(weapon.bulletType, i);
+    const ignoredWeaponProperties = ["bulletSpeed","bulletType","laserBeam","distribution","id","reloadSound","$$hashKey"];
     const weaponParams = [];
     for (let paramName in weapon) {
         if (ignoredWeaponProperties.includes(paramName)) {
@@ -92,8 +83,8 @@ function convertToJsonString(data, orderByWeaponName) {
         }
 
         if (lwpParamName === "RECOIL") {
-            lwpParamName = "RECOIL"
-            paramValue = paramValue >= 2.55 ? 255 : (paramValue <= -2.55 ? 255 : Math.floor(Math.abs(paramValue * 100)));
+            paramValue = Math.floor(Math.abs(paramValue * 100));
+            if (paramValue>255) paramValue=255;
         }
 
         if (lwpParamName === "LAUNCHSOUND") {
@@ -103,17 +94,16 @@ function convertToJsonString(data, orderByWeaponName) {
 
         if (lwpParamName === "PARTS") {
             lwpParamName = "NUMOBJECTS"
-            paramValue =  paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+            paramValue =  paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "AMMO") {
-            lwpParamName = "AMMO"
-            paramValue =  paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+            paramValue =  paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "DELAY") {
             lwpParamName = "SHOTDELAY"
-            paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
+            paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "PLAYRELOADSOUND") {
@@ -121,23 +111,20 @@ function convertToJsonString(data, orderByWeaponName) {
         }
 
          if (lwpParamName === "LOADINGTIME") {
-            lwpParamName = "LOADINGTIME"
-            paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
+            paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "FIRECONE") {
-            lwpParamName = "FIRECONE"
-            paramValue = paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+            paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
       
         if (lwpParamName === "LEAVESHELLDELAY") {
             lwpParamName = "SHELLDELAY"
-            paramValue = paramValue <= 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+            paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "LEAVESHELLS") {
-            lwpParamName = "LEAVESHELLS"
-            paramValue = paramValue <= 0 ? 0 : (paramValue > 4 ? 4 : paramValue);
+            paramValue = paramValue < 0 ? 0 : (paramValue > 4 ? 4 : Math.floor(paramValue));
         }
 
         if (typeof paramValue === "boolean") {
@@ -150,279 +137,61 @@ function convertToJsonString(data, orderByWeaponName) {
         weaponParams.push(`${lwpParamName}:${paramValue}`);
     }
 
-    const weaponOrder = orderByWeaponName
-        ? weaponSorted[weaponIndex - 1].idSwap
-        : weaponIndex;
-      
-    if (weaponParams.length > 0) {
-      lwpParams.push(`WEAPON:${weaponIndex}\r\nORDER:${weaponOrder}\r\n${weaponParams.join("\r\n")}`);
-      weaponCount++;
+doTheWobject(weaponIndex, data, weapon.bulletType, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, lwpParams)
     }
 
-    if (i < data.wObjects.length) {
-      const wObject = data.wObjects[i];
-      const ignoredWObjectProperties = ["id","name","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","behavior===undefined ? -1 : a"]
-      const wObjectParams = [];
-      if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
-       warningExtended.style.display = "block";
-       console.log("extended property detected in wobject " + weapon.name);
-       extendedW++;
-      }
-      if (wObject.behavior<0 || wObject.detonable!=true || wObject.immutable!=true || wObject.fixed!=true || wObject.platform!=true || wObject.teamImmunity<=0 || wObject.removeOnSObject!=true || wObject.overlay!=true) {
-          if(extendedW==0 && extendedN==0) warningExtended.style.display = "none";
-      }
-      if (wObject.startFrame>239) {
-	        warningSpritesheet.style.display = "block";
-	        console.log("spritesheet limit exceeded in wobject " + weapon.name);
-          spritesW++;
-      }
-      if (wObject.startFrame<=239) {
-        if(spritesW==0 && spritesN==0) warningSpritesheet.style.display = "none";
-      }
-      if (wObject.dirtEffect>8) {
-	warningTextures.style.display = "block";
-	console.log("textures array limit exceeded in wobject " + weapon.name);
-               texturesW++;
-      }
-      if (wObject.dirtEffect<=8) {
-        if(texturesW==0 && texturesN==0 && texturesS==0) warningTextures.style.display = "none";
-      } 
-      for (let paramName in wObject) {
-        if (ignoredWObjectProperties.includes(paramName)) {
-          continue;
-        }
-          let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
-          let paramValue = wObject[paramName];
-
-          if (lwpParamName === "SPLINTERTYPE") {
-              lwpParamName = "SPLINTERTYPE";
-              paramValue = Math.floor(paramValue + 1);
-          }
-
-          if (lwpParamName === "CREATEONEXP") {
-              lwpParamName = "CREATEONHIT";
-              paramValue = Math.floor(paramValue + 1);
-          }
-
-          if (lwpParamName === "PARTTRAILOBJ") {
-              lwpParamName = "PTRAILPTYPE";
-              paramValue = Math.floor(paramValue + 1);
-          }
-
-          if (lwpParamName === "DIRTEFFECT") {
-              lwpParamName = "MAPCHANGE";
-              paramValue = paramValue > 8 ? 0 : Math.floor(paramValue + 1);
-          }
-
-          if (lwpParamName === "OBJTRAILTYPE") {
-              lwpParamName = "OTRAILTYPE";
-              paramValue = Math.floor(paramValue + 1);
-          }
-
-          if (lwpParamName === "STARTFRAME") {
-              lwpParamName = "ANIMSFRAME"
-              paramValue = paramValue < 0 ? -1 : (paramValue < 110 ? 0 : Math.floor(paramValue - 110));
-          }
-
-          if (lwpParamName === "DETECTDISTANCE") {
-              lwpParamName = "WORMDETECTRANGE"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
-          }
-
-          if (lwpParamName === "BLOODONHIT") {
-              lwpParamName = "BLOOD"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
-          }
-
-          if (lwpParamName === "ADDSPEED") {
-              lwpParamName = "ACCADD"
-              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
-          }
-
-          if (lwpParamName === "SPEED") {
-              lwpParamName = "SPEED"
-              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
-          }
-
-          if (lwpParamName === "SPLINTERCOLOUR") {
-              lwpParamName = "SPLINTERCOLOR";
-          }
-
-          if (lwpParamName === "EXPLGROUND") {
-              lwpParamName = "GROUNDEXPLODE";
-          }
-
-          if (lwpParamName === "COLLIDEWITHOBJECTS") {
-              lwpParamName = "OBJECTCOLLIDE";
-          }
-
-          if (lwpParamName === "AFFECTBYEXPLOSIONS") {
-              lwpParamName = "EXPLODEAFFECT";
-          }
-
-          if (lwpParamName === "COLORBULLETS") {
-              lwpParamName = "BULLETCOLOR";
-          }
-
-          if (lwpParamName === "EXPLOSOUND") {
-              lwpParamName = "SOUNDEXPLODE";
-              paramValue = Math.floor(paramValue + 1);
-          }
-
-          if (lwpParamName === "PARTTRAILDELAY") {
-              lwpParamName = "PTRAILDELAY"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
-          }
-
-          if (lwpParamName === "PARTTRAILTYPE") {
-              lwpParamName = "PTRAILTYPE";
-          }
-
-          if (lwpParamName === "WORMCOLLIDE") {
-              lwpParamName = "WORMREMOVE";
-          }
-
-          if (lwpParamName === "SPLINTERSCATTER") {
-              lwpParamName = "SPLINTERSTYPE";
-          }
-
-          if (lwpParamName === "NUMFRAMES") {
-              lwpParamName = "ANIMFRAMES";
-          }
-        
-          if (lwpParamName === "LOOPANIM") {
-              lwpParamName = "ANIMLOOP";
-          }
-
-          if (lwpParamName === "SPLINTERAMOUNT") {
-              lwpParamName = "SPLINTERAMOUNT"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
-          }
-
-          if (lwpParamName === "TIMETOEXPLO") {
-              lwpParamName = "TIMETOEXPLODE"
-              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
-          }
-
-          if (lwpParamName === "TIMETOEXPLOV") {
-              lwpParamName = "TIMETOEXPLODEV"
-              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
-          }
-
-          if (lwpParamName === "OBJTRAILDELAY") {
-              lwpParamName = "OTRAILDELAY"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
-          }
-
-          if (lwpParamName === "MULTSPEED") {
-              lwpParamName = "ACCMULTIPLY"
-              paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
-          }
-
-          if (lwpParamName === "BOUNCE") {
-              lwpParamName = "BOUNCE"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
-          }
-
-          if (lwpParamName === "HITDAMAGE") {
-              lwpParamName = "HITDAMAGE"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
-          }
-
-          if (lwpParamName === "DISTRIBUTION") {
-              lwpParamName = "DISTRIBUTION"
-              paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
-
-          }
-
-          if (lwpParamName === "GRAVITY") {
-              lwpParamName = "GRAVITY"
-              paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
-          }
-
-          if (lwpParamName === "BLOWAWAY") {
-              lwpParamName = "BLOW"
-              paramValue = paramValue < -2.55 ? 255 : (paramValue > 2.55 ? 255 : Math.floor(Math.abs(paramValue * 100)));
-          }
-
-          if (typeof paramValue === "boolean") {
-            paramValue = paramValue ? "1" : "0";
-          } else if (typeof paramValue === "number") {
-            paramValue = Math.floor(paramValue);
-          }
-      
-          wObjectParams.push(`${lwpParamName}:${paramValue}`);
-        }
-
-      if (wObjectParams.length > 0) {
-        lwpParams.push(`${wObjectParams.join("\r\n")}\r\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
-        wObjectCount++;
-      }
-      if (data.wObjects.length!=data.weapons.length) warningMessedWObject.style.display = "block";
-      if (data.wObjects.length===data.weapons.length) warningMessedWObject.style.display = "none";
-}
-}
 for (let i = 0; i < data.nObjects.length; i++) {
       const nObject = data.nObjects[i];
+      const ignoredNObjectProperties = ["id","name","teamImmunity","immutable","$$hashKey"];
       ObjectOrder++;
       const nObjectOParams = [];
       if (nObject.immutable==true || nObject.teamImmunity>0) {
        warningExtended.style.display = "block";
-       console.log("extended property detected in nobject " +nObject.name);
-       extendedN++;
-      }
-      if (nObject.immutable!=true || nObject.teamImmunity<=0) {
-        if(extendedN==0 && extendedW==0) warningExtended.style.display = "none";
+       console.log("extended property detected in nobject nid" + i);
       }
       if (nObject.startFrame>239) {
 	      warningSpritesheet.style.display = "block";
-	      console.log("spritesheet limit exceeded in nobject " + nObject.name);
-        spritesN++;
-      }
-      if (nObject.startFrame<=239) {
-	      if(spritesN==0 && spritesW==0) warningSpritesheet.style.display = "none";
+	      console.log("spritesheet limit exceeded in nobject nid" + i);
       }
       if (nObject.dirtEffect>8) {
 	      warningTextures.style.display = "block";
-	      console.log("textures array limit exceeded in nobject " + nObject.name);
-        texturesN++;
-      }
-      if (nObject.dirtEffect<=8) {
-	      if(texturesN==0 && texturesW==0 && texturesS==0) warningTextures.style.display = "none";
+	      console.log("textures array limit exceeded in nobject nid" + i);
       }
       for (let paramName in nObject) {
-        if (paramName !== "id" && paramName !== "name" && paramName !== "teamImmunity" && paramName !== "immutable" && paramName !== "$$hashKey") {
+
+	  if (ignoredNObjectProperties.includes(paramName)) {
+            continue;
+          }
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = nObject[paramName];
 
           if (lwpParamName === "SPLINTERTYPE") {
-              lwpParamName = "SPLINTERTYPE";
-              paramValue = Math.floor(paramValue + 1);
+              paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
           }
 
           if (lwpParamName === "CREATEONEXP") {
               lwpParamName = "CREATEONHIT";
-              paramValue = Math.floor(paramValue + 1);
+              paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
           }
 
           if (lwpParamName === "DIRTEFFECT") {
               lwpParamName = "MAPCHANGE";
-              paramValue = paramValue > 8 ? 0 : Math.floor(paramValue + 1);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
           }
 
           if (lwpParamName === "STARTFRAME") {
               lwpParamName = "ANIMSFRAME"
-              paramValue = paramValue <= 0 ? 0 : (paramValue <= 110 ? 1 : Math.floor(paramValue - 110));
+              paramValue = paramValue < 0 ? 0 : (paramValue < 110 ? 0 : (paramValue > 239 ? 0 : Math.floor(paramValue - 110)));
           }
 
           if (lwpParamName === "DETECTDISTANCE") {
               lwpParamName = "WORMDETECTRANGE"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "BLOODONHIT") {
               lwpParamName = "BLOOD"
-              paramValue = paramValue >= 255 ? 255 : Math.floor(paramValue);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "COLORBULLETS") {
@@ -451,26 +220,26 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
           if (lwpParamName === "NUMFRAMES") {
               lwpParamName = "ANIMFRAMES";
+	      paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "SPLINTERAMOUNT") {
-              lwpParamName = "SPLINTERAMOUNT"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "TIMETOEXPLO") {
               lwpParamName = "TIMETOEXPLODE"
-              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
+              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "TIMETOEXPLOV") {
               lwpParamName = "TIMETOEXPLODEV"
-              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : paramValue);
+              paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "BLOODTRAILDELAY") {
               lwpParamName = "BTRAILDELAY"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "BLOODTRAIL") {
@@ -479,46 +248,41 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
           if (lwpParamName === "LEAVEOBJ") {
               lwpParamName = "OTRAILTYPE";
-              paramValue = Math.floor(paramValue + 1);
+              paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
           }
 
           if (lwpParamName === "LEAVEOBJDELAY") {
               lwpParamName = "OTRAILDELAY"
-              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : paramValue);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "BOUNCE") {
-              lwpParamName = "BOUNCE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
           }
 
           if (lwpParamName === "SPEED") {
-              lwpParamName = "SPEED"
               paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
           }
 
           if (lwpParamName === "SPEEDV") {
-              lwpParamName = "SPEEDV"
               paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
           }
 
           if (lwpParamName === "DISTRIBUTION") {
-              lwpParamName = "DISTRIBUTION"
               paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
           }
 
           if (lwpParamName === "GRAVITY") {
-              lwpParamName = "GRAVITY"
               paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
           }
 
           if (lwpParamName === "BLOWAWAY") {
               lwpParamName = "BLOW"
-              paramValue = paramValue < -2.55 ? 255 : (paramValue > 2.55 ? 255 : Math.floor(Math.abs(paramValue * 100)));
+              paramValue = Math.floor(Math.abs(paramValue * 100));
+              if (paramValue>255) paramValue=255;
           }
 
           if (lwpParamName === "HITDAMAGE") {
-              lwpParamName = "HITDAMAGE"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
@@ -529,40 +293,39 @@ for (let i = 0; i < data.nObjects.length; i++) {
           }
 
           nObjectOParams.push(`${lwpParamName}:${paramValue}`);
-        }
+	      
       }
 
       if (nObjectOParams.length > 0) {
         lwpOParams.push(`OBJECT:${ObjectOrder}\r\n${nObjectOParams.join("\r\n")}\r\n`);
-        objectCount++;
       }
   }
 
 for (let i = 0; i < data.sObjects.length; i++) {
   const sObject = data.sObjects[i];
-          SObjectOrder++;
-      const sObjectSParams = [];
+  const ignoredSObjectProperties = ["id","name","$$hashKey"];
+  SObjectOrder++;
+  const sObjectSParams = [];
       if (sObject.dirtEffect>8) {
 	      warningTextures.style.display = "block";
-	      console.log("textures array limit exceeded in sobject " + sObject.name);
-        texturesS++;
-      }
-      if (sObject.dirtEffect<=8) {
-	      if(texturesS==0 && texturesN==0 && texturesW==0) warningTextures.style.display = "none";
+	      console.log("textures array limit exceeded in sobject sid" + i);
       }
       for (let paramName in sObject) {
-        if (paramName !== "id" && paramName !== "name" && paramName !== "$$hashKey") {
+
+	  if (ignoredSObjectProperties.includes(paramName)) {
+            continue;
+          }
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = sObject[paramName];
 
           if (lwpParamName === "DIRTEFFECT") {
               lwpParamName = "MAPCHANGE";
-              paramValue = paramValue > 8 ? 0 : Math.floor(paramValue + 1);
+              paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
           }
 
           if (lwpParamName === "STARTFRAME") {
               lwpParamName = "ANIMSFRAME"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 109 ? 0 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "DETECTRANGE") {
@@ -591,18 +354,17 @@ for (let i = 0; i < data.sObjects.length; i++) {
           }
 
           if (lwpParamName === "FLASH") {
-              lwpParamName = "FLASH"
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "NUMSOUNDS") {
               lwpParamName = "NUMOFSOUNDS"
-              paramValue = paramValue < 0 ? 0 : paramValue;
+              paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "STARTSOUND") {
               lwpParamName = "FIRSTSOUND";
-              paramValue = Math.floor(paramValue + 1);
+              paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
           }
 
           if (lwpParamName === "BLOWAWAY") {
@@ -617,13 +379,209 @@ for (let i = 0; i < data.sObjects.length; i++) {
           }
 
           sObjectSParams.push(`${lwpParamName}:${paramValue}`);
-        }
+	      
       }
 
       if (sObjectSParams.length > 0) {
         lwpSParams.push(`SOBJECT:${SObjectOrder}\r\n${sObjectSParams.join("\r\n")}\r\n`);
-        sObjectCount++;
       }
 }
    return `LIEROKIT:WEAPONPLUGIN\r\nPROMPT:This will activate the whole weapon list. Do you want to continue?\r\nOVERWRITE:1\r\n\r\n${lwpParams.join("\r\n")}\r\n${lwpOParams.join("\r\n")}\r\n${lwpSParams.join("\r\n")}`;
+}
+
+function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, lwpParams) {
+        const i = wobjectId;
+        const wObject = data.wObjects[i];
+        const ignoredWObjectProperties = ["id","name","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","behavior===undefined ? -1 : a"];
+        const wObjectParams = [];
+        if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
+         warningExtended.style.display = "block";
+         console.log("extended property detected in wobject wid" + i);
+         }
+        if (wObject.startFrame>239) {
+      warningSpritesheet.style.display = "block";
+      console.log("spritesheet limit exceeded in wobject wid" + i);
+        }
+        if (wObject.dirtEffect>8) {
+      warningTextures.style.display = "block";
+      console.log("textures array limit exceeded in wobject wid" + i);
+        }
+
+        for (let paramName in wObject) {
+          if (ignoredWObjectProperties.includes(paramName)) {
+            continue;
+          }
+            let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
+            let paramValue = wObject[paramName];
+
+            if (lwpParamName === "SHOTTYPE") {
+                paramValue = paramValue < 0 ? 0 : (paramValue > 4 ? 4 : Math.floor(paramValue));
+            }
+ 
+            if (lwpParamName === "SPLINTERTYPE") {
+                paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
+            }
+  
+            if (lwpParamName === "CREATEONEXP") {
+                lwpParamName = "CREATEONHIT";
+                paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
+            }
+  
+            if (lwpParamName === "PARTTRAILOBJ") {
+                lwpParamName = "PTRAILPTYPE";
+                paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
+            }
+  
+            if (lwpParamName === "DIRTEFFECT") {
+              lwpParamName = "MAPCHANGE";
+              paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
+            }
+  
+            if (lwpParamName === "OBJTRAILTYPE") {
+                lwpParamName = "OTRAILTYPE";
+                paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
+            }
+  
+            if (lwpParamName === "STARTFRAME") {
+                lwpParamName = "ANIMSFRAME"
+                paramValue = paramValue < 0 ? -1 : (paramValue < 110 ? 0 : (paramValue > 239 ? 0 : Math.floor(paramValue - 110)));
+            }
+  
+            if (lwpParamName === "DETECTDISTANCE") {
+                lwpParamName = "WORMDETECTRANGE"
+                paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "BLOODONHIT") {
+                lwpParamName = "BLOOD"
+                paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "ADDSPEED") {
+                lwpParamName = "ACCADD"
+                paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "SPEED") {
+                paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "SPLINTERCOLOUR") {
+                lwpParamName = "SPLINTERCOLOR";
+            }
+  
+            if (lwpParamName === "EXPLGROUND") {
+                lwpParamName = "GROUNDEXPLODE";
+            }
+  
+            if (lwpParamName === "COLLIDEWITHOBJECTS") {
+                lwpParamName = "OBJECTCOLLIDE";
+            }
+  
+            if (lwpParamName === "AFFECTBYEXPLOSIONS") {
+                lwpParamName = "EXPLODEAFFECT";
+            }
+  
+            if (lwpParamName === "COLORBULLETS") {
+                lwpParamName = "BULLETCOLOR";
+            }
+  
+            if (lwpParamName === "EXPLOSOUND") {
+                lwpParamName = "SOUNDEXPLODE";
+                paramValue = paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
+            }
+  
+            if (lwpParamName === "PARTTRAILDELAY") {
+                lwpParamName = "PTRAILDELAY"
+                paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "PARTTRAILTYPE") {
+                lwpParamName = "PTRAILTYPE";
+                paramValue = paramValue < 0 ? 0 : (paramValue > 1 ? 1 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "WORMCOLLIDE") {
+                lwpParamName = "WORMREMOVE";
+            }
+  
+            if (lwpParamName === "SPLINTERSCATTER") {
+                lwpParamName = "SPLINTERSTYPE";
+                paramValue = paramValue < 0 ? 0 : (paramValue > 1 ? 1 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "NUMFRAMES") {
+                lwpParamName = "ANIMFRAMES";
+      		paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+            }
+          
+            if (lwpParamName === "LOOPANIM") {
+                lwpParamName = "ANIMLOOP";
+            }
+  
+            if (lwpParamName === "SPLINTERAMOUNT") {
+                paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "TIMETOEXPLO") {
+                lwpParamName = "TIMETOEXPLODE"
+                paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "TIMETOEXPLOV") {
+                lwpParamName = "TIMETOEXPLODEV"
+                paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "OBJTRAILDELAY") {
+                lwpParamName = "OTRAILDELAY"
+                paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "MULTSPEED") {
+                lwpParamName = "ACCMULTIPLY"
+                paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
+            }
+  
+            if (lwpParamName === "BOUNCE") {
+                paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
+            }
+  
+            if (lwpParamName === "HITDAMAGE") {
+                paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+            }
+  
+            if (lwpParamName === "DISTRIBUTION") {
+                paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
+  
+            }
+  
+            if (lwpParamName === "GRAVITY") {
+                paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
+            }
+  
+            if (lwpParamName === "BLOWAWAY") {
+                lwpParamName = "BLOW"
+                paramValue = Math.floor(Math.abs(paramValue * 100));
+                if (paramValue>255) paramValue=255;
+            }
+  
+            if (typeof paramValue === "boolean") {
+              paramValue = paramValue ? "1" : "0";
+            } else if (typeof paramValue === "number") {
+              paramValue = Math.floor(paramValue);
+            }
+  
+            wObjectParams.push(`${lwpParamName}:${paramValue}`);
+  
+          }
+  
+        if (wObjectParams.length > 0) {
+       
+          const weaponOrder = orderByWeaponName
+          ? weaponSorted[weaponIndex - 1].idSwap
+          : weaponIndex;
+        
+          lwpParams.push(`WEAPON:${weaponIndex}\r\nORDER:${weaponOrder}\r\n${weaponParams.join("\r\n")}\r\n${wObjectParams.join("\r\n")}\r\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
+        } 
 }
