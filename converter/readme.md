@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.54)**
+**JSON to LWP Converter by KangaRoo (current version: 0.58)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -67,7 +67,7 @@ To use the converter, you must:
 - click the download link ("Download converted file"); the converted file will be saved on your HDD
 - if the conversion fails, you will see the message "Error converting file :(" (in some cases there will be no message printed; in that case, you can open the console by pressing F12 to check errors)
 
-To implement your .lwp file in Liero, you must activate it with Liero Stuff Activator (which you can download from [Liero Hell Hole](https://liero.nl/download/1597/activate-dbx.zip)), that is:
+To implement your .lwp file in Liero, you must activate it with [Liero Stuff Activator](https://liero.nl/download/1597/activate-dbx.zip), that is:
 
 - make a back-up copy of your Liero.exe file (the converted file replaces all objects, even special objects)
 - put the converted file into your Liero folder
@@ -75,7 +75,7 @@ To implement your .lwp file in Liero, you must activate it with Liero Stuff Acti
 - select your converted LWP file on the file list and press "Enter"
 - press "Y" key to select "yes" option on the pop-up window
 
-Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, you can use another tool to implement the converted file in Liero.exe, i.e. LieroM8 (which you can download from [Liero Hell Hole](https://liero.nl/download/286/lm8v192.zip) too), that is:
+Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, you can use another tool to implement the converted file in Liero.exe, i.e. [LieroM8](https://liero.nl/download/286/lm8v192.zip), that is:
 
 - make a back-up copy of your Liero.exe file (the converted file replaces all objects, even special objects)
 - put the converted file into your Liero folder
@@ -92,10 +92,10 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - in WebLiero, there are no restrictions regarding parameter values (unlike in Liero, where there are limits in this respect, resulting from the game's mechanics and code). For this reason, appropriate conversion factors have been included in the converter code (to prevent from potential errors after conversion and implementation of the LWP file), however, for this reason some WL weapons / objects would work differently after conversion to Liero
 - some object parameters in Liero are hardcoded and cannot be modified using even dedicated tools, i.e. they have either fixed values (e.g. repeat) or are assigned to only specific objects (e.g. laserBeam). In WebLiero though, all object parameters are fully moddable. This means that some WL weapons / objects would work differently after conversion to Liero
 - unlike in classic Liero, in WebLiero you can edit or modify dirt effects ("textures" array) in any way you want. This is another reason why some WL weapons / objects would work differently after conversion to Liero
-- in classic Liero, sprites were split into 3 categories: big sprites (16x16 size), medium sprites (7x7 size) and small sprites (4x4 size), whereas only "medium sprites" could be used as startFrame for weapon objects and non-weapon objects. In WebLiero though, you can choose any sprite you want as startFrame for weapon and non-weapon objects. That's why some weapons / objects would look and work differently after conversion to Liero
+- in classic Liero, sprites were split into 3 categories: big sprites (16x16 size), medium sprites (7x7 size) and small sprites (4x4 size), whereas only "medium sprites" could be used as startFrame for weapon objects and non-weapon objects (and only "big sprites" could be used as startFrame for special objects). In WebLiero though, you can choose any sprite you want as startFrame for all types of objects. That's why some weapons / objects would look and work differently after conversion to Liero
 - the program also converts [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mods, however since WebLiero Extended uses some special parameters which changes the game & weapons logic significantly. That's why WL Extended mods would not work properly after conversion to Liero mods
 - there are some issues with some properties in special objects after implementing converted LWP file via LieroM8 (propably due to some bugs in LieroM8). Currently known bugs: wrong values of blowAway parameter in sobject1 (Large explosion) and sobject2 (medium explosion). It is recommended to change those values manually in [LieroKit](https://liero.nl/download/295/lierokit16b2.zip) after activating your converted file with LieroM8 (it is weird but you will have some issues if you try to change it manually in LieroM8)
-- mods in WebLiero work properly, even if the number of weapons and wObjects is different (e.g. when there are unused wObjects in the JSON file), as well as even if the order of weapons in the weapons array does not correspond to the order of wObjects in the wObjects array. This is because proper combination of weapons and wObjects parameters is done in WebLiero with bulletType parameter. Currently, the converter unfortunately does not detect that connection between weapon and wObject properties depending on the value of bulletType parameter. That's why some weapons might work differently after conversion
+- mods in WebLiero work properly, even if the number of weapons and wObjects is different (e.g. when there are unused wObjects in the JSON file), as well as even if the order of weapons in the weapons array does not correspond to the order of wObjects in the wObjects array. This is because proper combination of weapons and wObjects parameters is done in WebLiero with bulletType parameter. The converter detect that connection between weapon and wObject properties depending on the value of bulletType parameter, so that all "dummy" (unused) wObjects will be removed during conversion to .lwp
 
 **_So, if you want to have no issues after converting your WL mod to LWP, then follow these instructions:_**
 
@@ -105,14 +105,14 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - for shotType: 0,1,2,3 = set "repeat": 1;
 - for shotType: 4 = set "repeat": 1000 for wObject 28;
 - for shotType: 4 = set "repeat": 8 for any other wObjects;
-- do not set negative values for any properties (except for gravity and blowAway in sObjects);
+- do not set negative values for hitDamage, recoil and blowAway (except for blowAway in sObjects) parameters;
 - do not exceed the maximum limit values for int parameters (255, 32767 or 0.49);
 - do not modify "textures" array in any way;
 - use original spritesheet (or at least do not add more sprites to the spritesheet or make sprites bigger than their fixed size);
 - set only "medium sprites" (110-239) as startFrame for wObjects and nObjects;
+- set only "big sprites" (0-109) as startFrame for sObjects;
 - do not add any WebLiero Extended properties;
-- remove all dummy (unused) wObjects from the JSON file;
-- keep weapons and wObjects in ascending order in the arrays.
+- remove all dummy (unused) wObjects/nObjects/sObjects from JSON file.
 
 ## *4. CREDITS*
 
@@ -128,6 +128,12 @@ Big thanks also goes to:
 - TimV (for code review, testing, finding some bugs to fix and creating simple but great Liero Stuff Activator)
 
 ## *5. CHANGELOG*
+
+16.09.2023 - version 0.58
+
+- fix the "missing weapons with multiple-referenced wObjects" bug (thx dsds again!)
+- improve the lists of wObjects, nObjects and sObjects printed in the console
+- improve functions to recalculate values of some properties again (sanity checks)
 
 09.09.2023 - version 0.54
 
@@ -200,7 +206,6 @@ Big thanks also goes to:
 
 ## *6. TODO*
 
-- implement function to combine weapon and wObjects properties depending on the value of bulletType parameter
 - add some sanity checks / console logs about errors etc.
 - add option to modify the converted file in the print-preview window & make it impact the converted file when downloading
 - full code review & clean it up
