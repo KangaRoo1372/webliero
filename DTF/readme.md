@@ -8,6 +8,6 @@ Big thanks to worm Ophi for his extended hacks (which allowed me to make many ep
 
 Note: this mod will not work properly in non-extended WebLiero, i.e. some weapons might work not as intended and also you will not hear any game sounds (due to custom soundpack used).
 
-Note: this is the last version of this mod without [behaviors](https://www.vgm-quiz.com/dev/webliero/extended-behaviors) (v. 27u). If you want to check the further version of the mod (with behaviors, more weapons and other additional cool features), [visit this page](https://gitlab.com/sylvodsds/webliero-extended-mods/-/tree/main/kangur/dtf).
+Note: this is the last version of this mod without [behaviors](https://www.vgm-quiz.com/dev/webliero/extended-behaviors) (v. 27v). If you want to check the further version of the mod (with behaviors, more weapons and other additional cool features), [visit this page](https://gitlab.com/sylvodsds/webliero-extended-mods/-/tree/main/kangur/dtf).
 
 _**roo**_
