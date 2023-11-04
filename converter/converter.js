@@ -315,6 +315,10 @@ for (let i = 0; i < data.sObjects.length; i++) {
 	warningTextures.style.display = "block";
 	console.log("textures array limit exceeded in sobject sid" + i);
       }
+      if (sObject.startFrame>109) {
+      warningSpritesheet.style.display = "block";
+      console.log("spritesheet limit exceeded in sobject sid" + i);
+      }
       for (let paramName in sObject) {
 
 	  if (ignoredSObjectProperties.includes(paramName)) {
