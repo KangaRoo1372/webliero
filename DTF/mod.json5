@@ -7893,7 +7893,7 @@
       numFrames: 5,
       detectRange: 0,
       damage: 0,
-      blowAway: 0.045776367,
+      blowAway: 0,
       shadow: true,
       shake: 1,
       flash: 0,
