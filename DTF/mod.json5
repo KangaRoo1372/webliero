@@ -476,7 +476,7 @@
       fireCone: 10,
       laserSight: false,
       laserBeam: false,
-      launchSound: 4,
+      launchSound: 52,
       playReloadSound: false,
       name: "MORTAR"
     },
@@ -2362,8 +2362,7 @@
       partTrailType: 0,
       partTrailObj: 55,
       partTrailDelay: 5,
-      speed: 230,
-      // removeOnSObject: true
+      speed: 230
     },
     { // chaingun wid17
       detectDistance: 1,
