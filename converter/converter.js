@@ -39,9 +39,7 @@ function convert() {
     fileReader.readAsText(file, "UTF-8");
   } else if (fileName.endsWith(".json")) {
     fileReader.readAsText(file, "UTF-8");
-  } else {
-    status.textContent = "Please select a JSON or JSON5 file";
-  }
+  } else {status.textContent = "Please select a JSON or JSON5 file";}
 }
 
 function convertToJsonString(data, orderByWeaponName) {
@@ -78,9 +76,7 @@ warningNegativeValue.style.display = "none";
         }
 
     for (let paramName in weapon) {
-        if (ignoredWeaponProperties.includes(paramName)) {
-          continue;
-        }
+        if (ignoredWeaponProperties.includes(paramName)) {continue;}
         let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
         let paramValue = weapon[paramName];
 
@@ -158,8 +154,8 @@ for (let i = 0; i < data.nObjects.length; i++) {
       ObjectOrder++;
       const nObjectOParams = [];
       if (nObject.immutable==true || nObject.teamImmunity>0) {
-       warningExtended.style.display = "block";
-       console.log("extended property detected in nObject nid" + i);
+	      warningExtended.style.display = "block";
+	      console.log("extended property detected in nObject nid" + i);
       }
       if (nObject.startFrame>239) {
 	      warningSpritesheet.style.display = "block";
@@ -170,14 +166,12 @@ for (let i = 0; i < data.nObjects.length; i++) {
 	      console.log("textures array limit exceeded in nObject nid" + i);
       }
       if (nObject.hitDamage<0) {
-        warningNegativeValue.style.display = "block";
-        console.log("negative hitDamage detected in nObject nid" + i);
+        	warningNegativeValue.style.display = "block";
+        	console.log("negative hitDamage detected in nObject nid" + i);
       }
-      for (let paramName in nObject) {
 
-	  if (ignoredNObjectProperties.includes(paramName)) {
-            continue;
-          }
+      for (let paramName in nObject) {
+	  if (ignoredNObjectProperties.includes(paramName)) {continue;}
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = nObject[paramName];
 
@@ -236,7 +230,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
           if (lwpParamName === "NUMFRAMES") {
               lwpParamName = "ANIMFRAMES";
-	          paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+	      paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "SPLINTERAMOUNT") {
@@ -336,10 +330,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
       }
 
       for (let paramName in sObject) {
-
-	  if (ignoredSObjectProperties.includes(paramName)) {
-            continue;
-          }
+	  if (ignoredSObjectProperties.includes(paramName)) {continue;}
           let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
           let paramValue = sObject[paramName];
 
@@ -420,7 +411,7 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
         const wObjectParams = [];
         if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
         warningExtended.style.display = "block";
-        console.log("extended property detected in wobject wid" + i);
+        console.log("extended property detected in wObject wid" + i);
         }
         if (wObject.startFrame>239) {
         warningSpritesheet.style.display = "block";
@@ -440,9 +431,7 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
         }
 
         for (let paramName in wObject) {
-          if (ignoredWObjectProperties.includes(paramName)) {
-            continue;
-          }
+          if (ignoredWObjectProperties.includes(paramName)) {continue;}
             let lwpParamName = paramName.toUpperCase().replace(/\s+/g, "_");
             let paramValue = wObject[paramName];
 
@@ -540,7 +529,7 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
   
             if (lwpParamName === "NUMFRAMES") {
                 lwpParamName = "ANIMFRAMES";
-      		    paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+      		paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
           
             if (lwpParamName === "LOOPANIM") {
