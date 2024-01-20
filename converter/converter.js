@@ -303,7 +303,6 @@ for (let i = 0; i < data.nObjects.length; i++) {
           }
 
           nObjectOParams.push(`${lwpParamName}:${paramValue}`);
-	      
       }
 
       if (nObjectOParams.length > 0) {
@@ -317,8 +316,8 @@ for (let i = 0; i < data.sObjects.length; i++) {
   SObjectOrder++;
   const sObjectSParams = [];
       if (sObject.dirtEffect>8) {
-	  warningTextures.style.display = "block";
-	  console.log("textures array limit exceeded in sObject sid" + i);
+      warningTextures.style.display = "block";
+      console.log("textures array limit exceeded in sObject sid" + i);
       }
       if (sObject.startFrame>109) {
       warningSpritesheet.style.display = "block";
@@ -394,7 +393,6 @@ for (let i = 0; i < data.sObjects.length; i++) {
           }
 
           sObjectSParams.push(`${lwpParamName}:${paramValue}`);
-
       }
 
       if (sObjectSParams.length > 0) {
@@ -590,7 +588,6 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             }
   
             wObjectParams.push(`${lwpParamName}:${paramValue}`);
-  
           }
   
         if (wObjectParams.length > 0) {
