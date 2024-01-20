@@ -51,6 +51,7 @@ function convertToJsonString(data, orderByWeaponName) {
   const warningExtended = document.getElementById("warningext");
   const warningSpritesheet = document.getElementById("warningsprites");
   const warningTextures = document.getElementById("warningtextures");
+  const warningNegativeValue = document.getElementById("warningnegative");
   let ObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let SObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let weaponIndex = 0;
@@ -64,12 +65,18 @@ function convertToJsonString(data, orderByWeaponName) {
 warningExtended.style.display = "none";
 warningSpritesheet.style.display = "none";
 warningTextures.style.display = "none";
-	
+warningNegativeValue.style.display = "none";
+
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
     const ignoredWeaponProperties = ["bulletType","laserBeam","distribution","id","reloadSound","$$hashKey"];
     weaponIndex++;
     const weaponParams = [];
+    if (weapon.recoil<0) {
+        warningNegativeValue.style.display = "block";
+        console.log("negative recoil detected in weapon " + weapon.name);
+        }
+
     for (let paramName in weapon) {
         if (ignoredWeaponProperties.includes(paramName)) {
           continue;
@@ -142,7 +149,7 @@ warningTextures.style.display = "none";
         weaponParams.push(`${lwpParamName}:${paramValue}`);
     }
 
-doTheWobject(weaponIndex, data, weapon.bulletType, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, lwpParams)
+doTheWobject(weaponIndex, data, weapon.bulletType, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, warningNegativeValue, lwpParams)
     }
 
 for (let i = 0; i < data.nObjects.length; i++) {
@@ -152,15 +159,19 @@ for (let i = 0; i < data.nObjects.length; i++) {
       const nObjectOParams = [];
       if (nObject.immutable==true || nObject.teamImmunity>0) {
        warningExtended.style.display = "block";
-       console.log("extended property detected in nobject nid" + i);
+       console.log("extended property detected in nObject nid" + i);
       }
       if (nObject.startFrame>239) {
 	      warningSpritesheet.style.display = "block";
-	      console.log("spritesheet limit exceeded in nobject nid" + i);
+	      console.log("spritesheet limit exceeded in nObject nid" + i);
       }
       if (nObject.dirtEffect>8) {
 	      warningTextures.style.display = "block";
-	      console.log("textures array limit exceeded in nobject nid" + i);
+	      console.log("textures array limit exceeded in nObject nid" + i);
+      }
+      if (nObject.hitDamage<0) {
+        warningNegativeValue.style.display = "block";
+        console.log("negative hitDamage detected in nObject nid" + i);
       }
       for (let paramName in nObject) {
 
@@ -225,7 +236,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
           if (lwpParamName === "NUMFRAMES") {
               lwpParamName = "ANIMFRAMES";
-	      paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+	          paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "SPLINTERAMOUNT") {
@@ -312,13 +323,18 @@ for (let i = 0; i < data.sObjects.length; i++) {
   SObjectOrder++;
   const sObjectSParams = [];
       if (sObject.dirtEffect>8) {
-	warningTextures.style.display = "block";
-	console.log("textures array limit exceeded in sobject sid" + i);
+	  warningTextures.style.display = "block";
+	  console.log("textures array limit exceeded in sObject sid" + i);
       }
       if (sObject.startFrame>109) {
       warningSpritesheet.style.display = "block";
-      console.log("spritesheet limit exceeded in sobject sid" + i);
+      console.log("spritesheet limit exceeded in sObject sid" + i);
       }
+      if (sObject.hitDamage<0) {
+      warningNegativeValue.style.display = "block";
+      console.log("negative hitDamage detected in sObject sid" + i);
+      }
+
       for (let paramName in sObject) {
 
 	  if (ignoredSObjectProperties.includes(paramName)) {
@@ -397,22 +413,30 @@ for (let i = 0; i < data.sObjects.length; i++) {
    return `LIEROKIT:WEAPONPLUGIN\r\nPROMPT:This will activate the whole weapon list. Do you want to continue?\r\nOVERWRITE:1\r\n\r\n${lwpParams.join("\r\n")}\r\n${lwpOParams.join("\r\n")}\r\n${lwpSParams.join("\r\n")}`;
 }
 
-function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, lwpParams) {
+function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, warningNegativeValue, lwpParams) {
         const i = wobjectId;
         const wObject = data.wObjects[i];
         const ignoredWObjectProperties = ["id","name","speed","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","behavior===undefined ? -1 : a"];
         const wObjectParams = [];
         if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
-         warningExtended.style.display = "block";
-         console.log("extended property detected in wobject wid" + i);
-         }
+        warningExtended.style.display = "block";
+        console.log("extended property detected in wobject wid" + i);
+        }
         if (wObject.startFrame>239) {
-      warningSpritesheet.style.display = "block";
-      console.log("spritesheet limit exceeded in wobject wid" + i);
+        warningSpritesheet.style.display = "block";
+        console.log("spritesheet limit exceeded in wObject wid" + i);
         }
         if (wObject.dirtEffect>8) {
-      warningTextures.style.display = "block";
-      console.log("textures array limit exceeded in wobject wid" + i);
+        warningTextures.style.display = "block";
+        console.log("textures array limit exceeded in wObject wid" + i);
+        }
+        if (wObject.hitDamage<0) {
+        warningNegativeValue.style.display = "block";
+        console.log("negative hitDamage detected in wObject wid" + i);
+        }
+        if (wObject.bounce<0) {
+        warningNegativeValue.style.display = "block";
+        console.log("negative bounce detected in wObject wid" + i);
         }
 
         for (let paramName in wObject) {
@@ -441,8 +465,8 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             }
   
             if (lwpParamName === "DIRTEFFECT") {
-              lwpParamName = "MAPCHANGE";
-              paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
+                lwpParamName = "MAPCHANGE";
+                paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
             }
   
             if (lwpParamName === "OBJTRAILTYPE") {
@@ -516,7 +540,7 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
   
             if (lwpParamName === "NUMFRAMES") {
                 lwpParamName = "ANIMFRAMES";
-      		paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+      		    paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
           
             if (lwpParamName === "LOOPANIM") {
