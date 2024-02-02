@@ -1773,7 +1773,7 @@
       affectByExplosions: true,
       bounce: 0.01,
       bounceFriction: 0.8,
-      timeToExplo: 25,
+      timeToExplo: 35,
       timeToExploV: 5,
       hitDamage: 1,
       bloodOnHit: 0,
@@ -3971,7 +3971,7 @@
       immutable: true
     },
     { // sacrifice wid59
-      detectDistance: -1,
+      detectDistance: -5,
       blowAway: 0,
       gravity: 0,
       exploSound: -1,
@@ -4829,7 +4829,7 @@
       affectByExplosions: true,
       bounce: 0,
       bounceFriction: 0.8,
-      timeToExplo: 1000,
+      timeToExplo: 600,
       timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 0,
@@ -7778,8 +7778,8 @@
       animDelay: 2,
       startFrame: 40,
       numFrames: 15,
-      detectRange: 35,
-      damage: 25,
+      detectRange: 30,
+      damage: 23,
       blowAway: 0.03,
       shadow: true,
       shake: 4,
@@ -8599,5 +8599,5 @@
   crossHairSprite: 153,
   name: "DTF",
   author: "roo, dsds, Ophi, Larcelo",
-  version: "27y"
+  version: "27z"
 }
