@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.60)**
+**JSON to LWP Converter by KangaRoo (current version: 0.61)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -59,11 +59,12 @@ To use the converter, you must:
 - click the "browse file" button and load the WebLiero mod (JSON/JSON5 file) from your HDD
 - mark the "order weapons alphabetically" option if you want to have weapons sorted alphabetically in the game menu after conversion (recommended)
 - you can mark the "Make LieroM8 plugin" option if you want to have converted LWP file compatible with LieroM8 (not recommended - see more explanations below)
+- you can mark the "Include signed recoil/blowAway/hitDamage/bounce hack" option if your mod uses negative values in those properties; in that case, appropriate conversion factors will be used to ensure the correct operation of such weapons in classic Liero (see more explanations below)
 - click the "Convert" button
 - if the conversion is successful, you will see the message "Conversion successful!" and a download link (+ the converted file will appear on the print-preview window on the right side)
 - you can modify vaules of every property on the print-preview window manually, however such manual changes will not affect the converted file (so if you want to save your changes, you need to copy the whole content from the preview window and paste it into the empty .lwp file, or just modify your .lwp file manually after downloading it)
 - you can unmark the "order weapons alphabetically" option and click the "Convert" button again to generate converted file again, but in such case the weapons will not be sorted alphabetically by names in the game menu
-- if the converted file will not be implemented in Liero.exe properly due to some issues regarding differences between Liero and WebLiero (see more explanations below), there will be a special warning message printed (either about issues with spritesheet limits, or object amount, or [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mod properties, or about issues with textures array limits); what is more, the list of objects that use extended properties / exceed textures or spritesheet limits, will be printed in the console, so that you check and track it easily
+- if the converted file will not be implemented in Liero.exe properly due to some issues regarding differences between Liero and WebLiero (see more explanations below), there will be a special warning message printed (either about issues with spritesheet limits, or object amount, or [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mod properties, or about issues with textures array limits, or about negative values in some properties); what is more, the list of objects that use extended properties, or exceed textures or spritesheet limits, or have negative values set for some properties, will be printed in the console, so that you check and track it easily
 - click the download link ("Download converted file"); the converted file will be saved on your HDD
 - if the conversion fails, you will see the message "Error converting file :(" (in some cases there will be no message printed; in that case, you can open the console by pressing F12 to check errors)
 
@@ -84,12 +85,17 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - double-click your converted LWP file on the file list in LieroM8 window
 - select "yes" option on the pop-up window
 
+Also, if you checked the "Include signed recoil/blowAway/hitDamage/bounce hack" option, you must activate proper hacks in Liero.exe file just after activating your LWP file. You can use [Lierohacker](https://liero.nl/download/290/lhacker.zip) for that case; with this program, you can activate hacks for recoil, blowAway and hitDamage, by making those parameters signed (two's complement method). If you want to activate signed bounce hack, you must do the following changes in the Liero.exe file:
+
+- 0x0000650F - Change to hex:98999090 (hex:30E431D2)
+- 0x000065DC - Change to hex:98999090 (hex:30E431D2)
+
 ## *3. LIMITATIONS*
 
 - the program converts only "logic" part of the mod (JSON/JSON5 file); it does not convert sprites, so that it might cause some unexpected effects in the game regarding how the objects look (especially when WebLiero mod contains more than 265 sprites)
 - original Liero has got fixed hardcoded amount of weapon objects (40), non-weapon objects (24) and special objects (14). The converter can convert WebLiero mods with more than 40 weapons etc., but such converted file will not be implemented in Liero properly
 - the recommended program with which you can activate converted LWP file is aforementioned Liero Stuff Activator. Theoretically, it is also possible with other Liero tools (i.e. LieroKit and LieroM8), however the converted file will not be implemented into Liero properly with those programs due to some differences, bugs & missing features (e.g. LieroKit does not process changes in special objects and LieroM8 processes them but with wrong or messed up values in some parameters - see more info below)
-- in WebLiero, there are no restrictions regarding parameter values (unlike in Liero, where there are limits in this respect, resulting from the game's mechanics and code). For this reason, appropriate conversion factors & sanity checks have been included in the converter code (to prevent from potential errors during conversion and implementation of the LWP file), however, for this reason some WebLiero weapons / objects would work differently after conversion to Liero
+- in WebLiero, there are no restrictions regarding parameter values and also all int properties can have negative values set, as well as decimal numbers, not only integers or natural numbers (unlike in Liero, where there are limits in this respect, resulting from the game's mechanics and code). For this reason, appropriate conversion factors & sanity checks have been included in the converter code (to prevent from potential errors during conversion and implementation of the LWP file), however, for this reason some WebLiero weapons / objects would work differently after conversion to Liero
 - some object parameters in Liero are hardcoded and cannot be modified using even dedicated tools, i.e. they have either fixed values (e.g. repeat) or are assigned to only specific objects (e.g. laserBeam). In WebLiero though, all object parameters are fully moddable. This means that some WebLiero weapons / objects would work differently after conversion to Liero
 - unlike in classic Liero, in WebLiero you can edit or modify dirt effects ("textures" array) in any way you want. This is another reason why some WebLiero weapons / objects would work differently after conversion to Liero
 - in classic Liero, sprites were split into 3 categories: big sprites (16x16 size), small sprites (7x7 size) and font sprites (4x4 size), whereas only "small sprites" could be used as startFrame for weapon objects and non-weapon objects (and only "big sprites" could be used as startFrame for special objects). In WebLiero though, you can choose any sprite you want as a startFrame for all types of objects. That's why some weapons / objects would look and work differently after conversion to Liero
@@ -104,7 +110,8 @@ Alternatively, if you marked the "Make LieroM8 plugin" option in the checkbox, y
 - for shotType: 0,1,2,3 = set "repeat": 1;
 - for shotType: 4 = set "repeat": 1000 for wObject 28;
 - for shotType: 4 = set "repeat": 8 for any other wObjects;
-- do not set negative values for hitDamage, recoil and blowAway (except for blowAway in sObjects) parameters;
+- do not set negative values for hitDamage, recoil, bounce and blowAway properties (unless you know how to hack Liero.exe to make those properties signed-type);
+- do not set negative values for any other "byte" (8 bit unsigned) type properties;
 - do not exceed the maximum limit values for int parameters (255, 32767 or 0.49);
 - do not modify "textures" array in any way;
 - use original spritesheet (or at least do not add more sprites to the spritesheet or make sprites bigger than their fixed size);
@@ -126,6 +133,10 @@ Big thanks also goes to:
 - TimV (for code review, testing, finding some bugs to fix and creating simple but great Liero Stuff Activator)
 
 ## *5. CHANGELOG*
+
+21.03.2024 - version 0.61
+
+- add new checkbox for signed blowAway/hitDamage/recoil/bounce hack
 
 20.01.2024 - version 0.60
 

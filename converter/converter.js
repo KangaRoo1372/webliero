@@ -6,6 +6,7 @@ function convert() {
   const orderWA = document.getElementById("orderWA");
   const lieroM8Plugin = document.getElementById("lieroM8Plugin");
   const warningElement = document.getElementById("warning");
+  const signedHack = document.getElementById("signedHack");
 
   if (!fileInput.files[0]) {
     status.textContent = "Please select a file";
@@ -91,8 +92,15 @@ warningNegativeValue.style.display = "none";
         }
 
         if (lwpParamName === "RECOIL") {
-            paramValue = Math.floor(Math.abs(paramValue * 100));
+            if(signedHack.checked) {
+	        paramValue = Math.floor(paramValue * 100);
+	        if (paramValue>127) paramValue=127;
+	        if (paramValue<0) paramValue+=256;
+	        if (paramValue<-128) paramValue=128;
+            } else {
+	        paramValue = Math.floor(Math.abs(paramValue * 100));
             if (paramValue>255) paramValue=255;
+	    }
         }
 
         if (lwpParamName === "LAUNCHSOUND") {
@@ -405,7 +413,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
 function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, warningNegativeValue, lwpParams) {
         const i = wobjectId;
         const wObject = data.wObjects[i];
-        const ignoredWObjectProperties = ["id","name","speed","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","behavior===undefined ? -1 : a"];
+        const ignoredWObjectProperties = ["id","name","speed","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","beacon","behavior===undefined ? -1 : a"];
         const wObjectParams = [];
         if (wObject.behavior>=0 || wObject.detonable==true || wObject.immutable==true || wObject.fixed==true || wObject.platform==true || wObject.teamImmunity>0 || wObject.removeOnSObject==true || wObject.overlay==true) {
         warningExtended.style.display = "block";
@@ -527,7 +535,7 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
   
             if (lwpParamName === "NUMFRAMES") {
                 lwpParamName = "ANIMFRAMES";
-      		paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+      		    paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
           
             if (lwpParamName === "LOOPANIM") {
@@ -559,11 +567,21 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             }
   
             if (lwpParamName === "BOUNCE") {
-                paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
+                if(signedHack.checked) {
+                paramValue = Math.floor(paramValue * 100);
+                if (paramValue>127) paramValue=127;
+                if (paramValue<0) paramValue+=256;
+	            if (paramValue<-128) paramValue=128;
+                } else paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
             }
   
             if (lwpParamName === "HITDAMAGE") {
-                paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+                if(signedHack.checked) {
+                paramValue = Math.floor(paramValue * 100);
+                if (paramValue>127) paramValue=127;
+                if (paramValue<0) paramValue+=256;
+                if (paramValue<-128) paramValue=128;
+                } else paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
   
             if (lwpParamName === "DISTRIBUTION") {
@@ -577,8 +595,15 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
   
             if (lwpParamName === "BLOWAWAY") {
                 lwpParamName = "BLOW"
-                paramValue = Math.floor(Math.abs(paramValue * 100));
-                if (paramValue>255) paramValue=255;
+                if(signedHack.checked) {
+	            paramValue = Math.floor(paramValue * 100);
+	            if (paramValue>127) paramValue=127;
+	            if (paramValue<0) paramValue+=256;
+	            if (paramValue<-128) paramValue=128;
+                } else {
+	            paramValue = Math.floor(Math.abs(paramValue * 100));
+            	if (paramValue>255) paramValue=255;
+	            }
             }
   
             if (typeof paramValue === "boolean") {
