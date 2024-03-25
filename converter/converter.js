@@ -571,13 +571,13 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
                 paramValue = Math.floor(paramValue * 100);
                 if (paramValue>127) paramValue=127;
                 if (paramValue<0) paramValue+=256;
-	            if (paramValue<-128) paramValue=128;
+	        if (paramValue<-128) paramValue=128;
                 } else paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
             }
   
             if (lwpParamName === "HITDAMAGE") {
                 if(signedHack.checked) {
-                paramValue = Math.floor(paramValue * 100);
+                paramValue = Math.floor(paramValue);
                 if (paramValue>127) paramValue=127;
                 if (paramValue<0) paramValue+=256;
                 if (paramValue<-128) paramValue=128;
