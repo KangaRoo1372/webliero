@@ -6747,14 +6747,14 @@
       immutable: true
     },
     { // protection anti-acid fan nid51
-      detectDistance: 0,
+      detectDistance: 35,
       gravity: 0,
       speed: 0,
       speedV: 0,
       distribution: 0,
       blowAway: 0,
       bounce: 0,
-      hitDamage: 0,
+      hitDamage: -0.035,
       wormExplode: false,
       explGround: false,
       wormDestroy: false,
