@@ -8,15 +8,15 @@ It is recommended to use original Promode ReRevisited sprites while playing this
 
 List of new weapons (note - under construction):
 
-1. MACHINE GUN
+1. PLASMA GUN
 2. ORB LAUNCHER
 3. RAILGUN
 4. SHOCKWAVE BOMB
 5. UZI
-6. LASER PISTOL
-7. COIL GUN
+6. BOMBING RAID
+7. AUTOCANNON
 8. FIRECRACKER
-9. NITROGLYCERINE GUN
-10. CRACKFIELD
+9. TORPEDO TUBE
+10. MINI ROCKETS
 
 ***roo***
