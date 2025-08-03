@@ -28,15 +28,15 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |---------------------- | ------------------------
 |***weapon***
 |name: "PROXY MINE"     |    name: "PROXY MINE"
-|loadingTime: 380,      |    loadingTime: 400,
+|loadingTime: 450,      |    loadingTime: 400,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
-|timeToExplo: 330,      |    timeToExplo: 250,
+|timeToExplo: 350,      |    timeToExplo: 250,
+|timeToExploV: 20,      |    timeToExploV: 0,
 |blowAway: 0,           |    blowAway: 0.22,
 |***sobject***
 |damage: 45,            |    damage: 50,
-|blowAway: 0.05,        |    blowAway: 0.08,
 |***weapon***
 |name: "DOOMSDAY"       |    name: "DOOMSDAY"
 |bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
@@ -45,13 +45,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |fireCone: 4,           |    fireCone: 8,
 |***wobject***
 |blowAway: 0,           |   blowAway: 0.15,
-|createonExp: 29,       |   createonExp: 1,
-|***sobject***
-|blowAway: 0.015,       |   blowAway: 0.035,
 |***weapon***
 |name: "WINCHESTER"     |    name: "WINCHESTER"
-|loadingTime: 340,      |    loadingTime: 400,
-|delay: 20,             |    delay: 22,
+|loadingTime: 380,      |    loadingTime: 400,
 |***wobject***
 |blowAway: 0.2,         |    blowAway: 0.7,
 |***weapon***
@@ -81,29 +77,25 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |fireCone: 4,           |    fireCone: 20,
 |launchSound: 12,       |    launchSound: -1,
 |***wobject***
-|timetoExplo: 30,       |    timeToExplo: 25,
+|timetoExplo: 35,       |    timeToExplo: 25,
 |***weapon***
 |name: "AUTO SHOTGUN"   |    name: "AUTO SHOTGUN"
 |ammo: 4,               |    ammo: 8,
 |delay: 25,             |    delay: 28,
-|loadingTime: 260,      |    loadingTime: 400,
+|loadingTime: 250,      |    loadingTime: 400,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |ammo: 2,               |    ammo: 1,
 |delay: 40,             |    delay: 0,
 |loadingTime: 440,      |    loadingTime: 400, 
-|***nobject***
-|damage: 2,             |    damage: 1,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
-|bulletSpeed: 1.8,      |    bulletSpeed: 2,
 |***wobject***
-|multSpeed: 1.01,       |    multSpeed: 1,
 |timeToExplo: 120,      |    timeToExplo: 105,
 |partTrailDelay: 6,     |    partTrailDelay: 10,
 |***nobject***
 |damage: 5,             |    damage: 3,
-|gravity: 0.060517578125, |  gravity: 0.030517578125,
+|gravity: 0.080517578125, |  gravity: 0.030517578125,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"
 |ammo: 150,             |    ammo: 140,
@@ -139,9 +131,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |loadingTime: 420,      |    loadingTime: 450,
-|***wobject***
-|TimeToExplo: 45,       |    timeToExplo: 50,
-|TimeToExploV: 5,       |    timeToExploV: 4,
 |***nobject***
 |TimeToExplo: 140,      |    TimeToExplo: 80,
 |***weapon***
@@ -164,8 +153,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
-|loadingTime: 500,      |    loadingTime: 510,
-|ammo: 7,               |    ammo: 8,
 |***nobject***
 |bloodOnHit: 8,         |    bloodOnHit: 6,
 |***weapon***
