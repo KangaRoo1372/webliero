@@ -33,7 +33,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
 |timeToExplo: 350,      |    timeToExplo: 250,
-|timeToExploV: 20,      |    timeToExploV: 0,
+|timeToExploV: 0,       |    timeToExploV: 20,
 |blowAway: 0,           |    blowAway: 0.22,
 |***sobject***
 |damage: 45,            |    damage: 50,
@@ -55,6 +55,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |bulletSpeed: 3.5,      |    bulletSpeed: 3,
 |ammo: 6,               |    ammo: 5,
 |***wobject***
+|detectDistance: 2,     |    detectDistance: 1,
 |blowAway: 0.15,        |    blowAway: 0.3,
 |gravity: 0.04983642578125,| gravity: 0.01983642578125,
 |bounce: 0.5,           |    bounce: 0.4,
@@ -91,6 +92,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |***wobject***
+|hitDamage: 15,         |    hitDamage: 0,
 |timeToExplo: 120,      |    timeToExplo: 105,
 |partTrailDelay: 6,     |    partTrailDelay: 10,
 |***nobject***
