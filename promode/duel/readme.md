@@ -156,6 +156,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
 |***nobject***
+|hitDamage: 5,          |    hitDamage: 4,
 |bloodOnHit: 8,         |    bloodOnHit: 6,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
@@ -165,6 +166,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
 |loadingTime: 360,      |    loadingTime: 400,
+|name: "MISSILE"        |    name: "MISSILE"
+|loadingTime: 460,      |    loadingTime: 480,
 
 Special thanks to worms kami and Piotr for their ideas, insight and contributions in creating this version of the mod (some changes were directly taken or inspired by kami's version of Promode ReRevisited mod duel edition). Cheers guys! ;)
 
