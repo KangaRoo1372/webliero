@@ -155,6 +155,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
+|loadingTime: 540,      |    loadingTime: 510,
 |***nobject***
 |hitDamage: 5,          |    hitDamage: 4,
 |bloodOnHit: 8,         |    bloodOnHit: 6,
