@@ -28,12 +28,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |---------------------- | ------------------------
 |***weapon***
 |name: "PROXY MINE"     |    name: "PROXY MINE"
-|loadingTime: 450,      |    loadingTime: 400,
+|loadingTime: 430,      |    loadingTime: 400,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
 |timeToExplo: 350,      |    timeToExplo: 250,
-|timeToExploV: 0,       |    timeToExploV: 20,
 |blowAway: 0,           |    blowAway: 0.22,
 |***sobject***
 |damage: 45,            |    damage: 50,
@@ -89,10 +88,13 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |ammo: 2,               |    ammo: 1,
 |delay: 40,             |    delay: 0,
 |loadingTime: 440,      |    loadingTime: 400, 
+|***wobject***
+|timeToExplo: 20,       |    timeToExplo: 40,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
+|loadingTime: 450,      |    loadingTime: 400,
 |***wobject***
-|hitDamage: 15,         |    hitDamage: 0,
+|hitDamage: 10,         |    hitDamage: 0,
 |timeToExplo: 120,      |    timeToExplo: 105,
 |partTrailDelay: 6,     |    partTrailDelay: 10,
 |***nobject***
@@ -157,8 +159,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
 |loadingTime: 540,      |    loadingTime: 510,
 |***nobject***
-|hitDamage: 5,          |    hitDamage: 4,
-|bloodOnHit: 8,         |    bloodOnHit: 6,
+|hitDamage: 3,          |    hitDamage: 4,
 |***weapon***
 |name: "THROW KNIFE"    |    name: "THROW KNIFE"
 |playReloadSound: false,|    playReloadSound: true,
