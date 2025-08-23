@@ -1741,7 +1741,7 @@
       bulletSpeed: 2,
       bulletSpeedInherit: 0.15,
       distribution: 0.08,
-      recoil: 1,
+      recoil: 0.7,
       ammo: 7,
       delay: 25,
       loadingTime: 580,
@@ -2780,7 +2780,7 @@
       affectByExplosions: true,
       bounce: 0.2,
       bounceFriction: 0.8,
-      timeToExplo: 40,
+      timeToExplo: 20,
       timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 0,
@@ -9253,3 +9253,4 @@
   author: "roo, dsds, Ophi, Larcelo",
   version: "2.8.2"
 }
+
