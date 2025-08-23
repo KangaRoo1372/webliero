@@ -98,7 +98,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timeToExplo: 120,      |    timeToExplo: 105,
 |partTrailDelay: 6,     |    partTrailDelay: 10,
 |***nobject***
-|damage: 5,             |    damage: 3,
 |gravity: 0.080517578125, |  gravity: 0.030517578125,
 |***weapon***
 |name: "ACID FAN"       |    name: "ACID FAN"

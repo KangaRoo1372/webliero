@@ -2444,7 +2444,7 @@
       distribution: 0.10517578125,
       blowAway: 0.15,
       bounce: 0,
-      hitDamage: 5,
+      hitDamage: 3,
       wormExplode: true,
       explGround: true,
       wormDestroy: true,
