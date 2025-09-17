@@ -165,8 +165,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***wobject***
 |hitDamage: 25,         |    hitDamage: 24,
 |***weapon***
-|name: "SOLAR SCORCH"   |    name: "SOLAR SCORCH"
+|name: "GAUSS GUN"      |    name: "GAUSS GUN"
 |loadingTime: 360,      |    loadingTime: 400,
+|***weapon***
 |name: "MISSILE"        |    name: "MISSILE"
 |loadingTime: 460,      |    loadingTime: 480,
 
