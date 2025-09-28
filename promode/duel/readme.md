@@ -29,6 +29,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "PROXY MINE"     |    name: "PROXY MINE"
 |loadingTime: 430,      |    loadingTime: 400,
+|delay: 50,             |    delay: 20,
+|ammo: 2,               |    ammo: 1,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
@@ -82,14 +84,14 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "AUTO SHOTGUN"   |    name: "AUTO SHOTGUN"
 |ammo: 4,               |    ammo: 8,
 |delay: 25,             |    delay: 28,
-|loadingTime: 250,      |    loadingTime: 400,
+|loadingTime: 200,      |    loadingTime: 400,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |ammo: 2,               |    ammo: 1,
 |delay: 40,             |    delay: 0,
 |loadingTime: 440,      |    loadingTime: 400, 
 |***wobject***
-|timeToExplo: 20,       |    timeToExplo: 40,
+|timeToExplo: 30,       |    timeToExplo: 40,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |loadingTime: 450,      |    loadingTime: 400,
