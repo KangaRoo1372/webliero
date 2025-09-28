@@ -2076,7 +2076,7 @@
       objTrailDelay: 0,
       partTrailType: 1,
       partTrailObj: 11,
-      partTrailDelay: 1,
+      partTrailDelay: 2,
       speed: 188
     },
     { // grenade wid5
@@ -2780,7 +2780,7 @@
       affectByExplosions: true,
       bounce: 0.2,
       bounceFriction: 0.8,
-      timeToExplo: 20,
+      timeToExplo: 30,
       timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 0,
@@ -5327,7 +5327,7 @@
       splinterColour: 0,
       splinterType: 13,
       splinterScatter: 0,
-      objTrailType: 6,
+      objTrailType: 13,
       objTrailDelay: 1,
       partTrailType: 1,
       partTrailObj: 79,
@@ -5569,7 +5569,7 @@
       gravity: 0.075,
       exploSound: 59,
       addSpeed: 0,
-      distribution: 0.6,
+      distribution: 0.45,
       multSpeed: 1,
       createOnExp: 58,
       dirtEffect: 1,
@@ -9251,6 +9251,7 @@
   crossHairSprite: 153,
   name: "Wurmz of Tech & Magic (DTF)",
   author: "roo, dsds, Ophi, Larcelo",
-  version: "2.8.2"
+  version: "2.8.2.1"
 }
+
 
