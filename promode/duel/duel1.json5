@@ -89,7 +89,7 @@
       recoil: 0.8,
       ammo: 1,
       delay: 5,
-      loadingTime: 250,
+      loadingTime: 280,
       leaveShells: 1,
       leaveShellDelay: 1,
       fireCone: 8,
@@ -178,7 +178,7 @@
     {
       parts: 2,
       bulletType: 8,
-      bulletSpeed: 3.1,
+      bulletSpeed: 3.5,
       bulletSpeedInherit: 0.47619047619047616,
       distribution: 0.030517578125,
       recoil: 0.15,
@@ -309,7 +309,7 @@
       name: "CLUSTER POD"
     },
     {
-      parts: 48,
+      parts: 50,
       bulletType: 16,
       bulletSpeed: 3,
       bulletSpeedInherit: 0.2225,
@@ -431,7 +431,7 @@
       recoil: 0.6,
       ammo: 8,
       delay: 20,
-      loadingTime: 540,
+      loadingTime: 530,
       leaveShells: 0,
       leaveShellDelay: 1,
       fireCone: 4,
@@ -924,7 +924,7 @@
       gravity: 0,
       exploSound: -1,
       addSpeed: 4,
-      distribution: 0.030517578125,
+      distribution: 0.050517578125,
       multSpeed: 1,
       createOnExp: 1,
       dirtEffect: -1,
@@ -3048,7 +3048,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // sid5
+    { // nuke smoke sid5
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3076,7 +3076,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // sid7
+    { // teleport flash sid7
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3090,7 +3090,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // sid8
+    { // incendiator flame sid8
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3104,7 +3104,7 @@
       flash: 0,
       dirtEffect: 2
     },
-    { // sid9
+    { // proxy mine & tupolev trail sid9
       startSound: -1,
       numSounds: 0,
       animDelay: 2,
@@ -3118,7 +3118,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // sid10
+    { // medium explosion smaller sid10
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3132,7 +3132,7 @@
       flash: 3,
       dirtEffect: 8
     },
-    { // sid11
+    { // unused sid11
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3146,7 +3146,7 @@
       flash: 6,
       dirtEffect: 1
     },
-    { // sid12
+    { // unused sid12
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3160,7 +3160,7 @@
       flash: 5,
       dirtEffect: 1
     },
-    { // sid13
+    { // unused sid13
       startSound: -1,
       numSounds: 0,
       animDelay: 0,
@@ -3342,7 +3342,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // sid26 solar burn
+    { // solar burn sid26
       startSound: -1,
       numSounds: 0,
       animDelay: 3,

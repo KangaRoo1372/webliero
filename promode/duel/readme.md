@@ -15,6 +15,7 @@ Unfortunately, most players did not like these changes, especially SUPER SHOTGUN
 |---------------------- | ------------------------  | ---------------------  |
 |***weapon***           |                           |                        |
 |name: "SUPER SHOTGUN"  | name: "SUPER SHOTGUN"     | name: "SUPER SHOTGUN"  |
+|parts: 50,             | parts: 45,                | parts: 48,
 |***wobject***          |                           |                        |
 |ammo: 1,               | ammo: 2,                  | ammo: 2,               |
 |delay: 0,              | delay: 60,                | delay: 20,             |
@@ -40,11 +41,12 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |damage: 45,            |    damage: 50,
 |***weapon***
 |name: "DOOMSDAY"       |    name: "DOOMSDAY"
-|bulletSpeed: 3.1,      |    bulletSpeed: 2.1,
+|bulletSpeed: 3.5,      |    bulletSpeed: 2.1,
 |ammo: 10,              |    ammo: 8,
 |delay: 8,              |    delay: 11,
 |fireCone: 4,           |    fireCone: 8,
 |***wobject***
+|distribution: 0.050517578125,| distribution: 0.030517578125,
 |blowAway: 0,           |   blowAway: 0.15,
 |***weapon***
 |name: "WINCHESTER"     |    name: "WINCHESTER"
@@ -158,7 +160,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
-|loadingTime: 540,      |    loadingTime: 510,
+|loadingTime: 530,      |    loadingTime: 510,
 |***nobject***
 |hitDamage: 3,          |    hitDamage: 4,
 |***weapon***
@@ -169,6 +171,9 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "GAUSS GUN"      |    name: "GAUSS GUN"
 |loadingTime: 360,      |    loadingTime: 400,
+|***weapon***
+|name: "RIFLE"          |    name: "RIFLE"
+|loadingTime: 280,      |    loadingTime: 250,
 |***weapon***
 |name: "MISSILE"        |    name: "MISSILE"
 |loadingTime: 460,      |    loadingTime: 480,
