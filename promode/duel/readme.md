@@ -126,9 +126,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 1.5,        |    hitDamage: 2,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
-|loadingTime: 280,      |    loadingTime: 217,
-|bulletSpeed: 3,        |    bulletSpeed: 2.75,
+|loadingTime: 320,      |    loadingTime: 217,
+|bulletSpeed: 2.8,      |    bulletSpeed: 2.75,
 |delay: 15,             |    delay: 18,
+|ammo: 7,               |    ammo: 6,
 |***wobject***
 |timetoExplo: 600,      |    timeToExplo: 300,
 |hitDamage: 10,         |    hitDamage: 9,
