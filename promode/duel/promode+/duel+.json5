@@ -89,7 +89,7 @@
       recoil: 0.8,
       ammo: 1,
       delay: 5,
-      loadingTime: 280,
+      loadingTime: 300,
       leaveShells: 1,
       leaveShellDelay: 1,
       fireCone: 8,
@@ -275,9 +275,9 @@
       bulletType: 14,
       bulletSpeed: 3,
       bulletSpeedInherit: 0.28169014084507044,
-      distribution: 0.091552734375,
-      recoil: 0.06,
-      ammo: 60,
+      distribution: 0.151552734375,
+      recoil: 0.05,
+      ammo: 70,
       delay: 0,
       loadingTime: 350,
       leaveShells: 4,
@@ -406,7 +406,7 @@
     {
       parts: 1,
       bulletType: 22,
-      bulletSpeed: 1.8,
+      bulletSpeed: 2.1,
       bulletSpeedInherit: 0.5555555555555556,
       distribution: 0.1983642578125,
       recoil: 0.2,
@@ -448,7 +448,7 @@
       bulletSpeedInherit: 0,
       distribution: 0.000152587890625,
       recoil: 0,
-      ammo: 150,
+      ammo: 180,
       delay: 0,
       loadingTime: 400,
       leaveShells: 0,
@@ -520,7 +520,7 @@
     {
       parts: 2,
       bulletType: 37,
-      bulletSpeed: 2.8,
+      bulletSpeed: 2.9,
       bulletSpeedInherit: 0.15,
       distribution: 0.04,
       recoil: 0,
@@ -543,7 +543,7 @@
       bulletSpeedInherit: 0.31746031746031744,
       distribution: 0.2,
       recoil: 0.06,
-      ammo: 35,
+      ammo: 30,
       delay: 5,
       loadingTime: 370,
       leaveShells: 2,
@@ -621,7 +621,7 @@
       recoil: 0,
       ammo: 2,
       delay: 30,
-      loadingTime: 450,
+      loadingTime: 420,
       leaveShells: 0,
       leaveShellDelay: 0,
       fireCone: 0,
@@ -1127,7 +1127,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // railgun wid11
+    { // unused wid11
       detectDistance: 1,
       blowAway: 0.25,
       gravity: 0,
@@ -1247,7 +1247,7 @@
       gravity: 0.00762939453125,
       exploSound: -1,
       addSpeed: 0,
-      distribution: 0.091552734375,
+      distribution: 0.151552734375,
       multSpeed: 1,
       createOnExp: 2,
       dirtEffect: -1,
@@ -1562,8 +1562,8 @@
       affectByExplosions: true,
       bounce: 0.75,
       bounceFriction: 0.8,
-      timeToExplo: 50,
-      timeToExploV: 4,
+      timeToExplo: 35,
+      timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 0,
       startFrame: 195,
@@ -1572,7 +1572,7 @@
       shotType: 0,
       repeat: 1,
       colorBullets: 0,
-      splinterAmount: 8,
+      splinterAmount: 9,
       splinterColour: 0,
       splinterType: 11,
       splinterScatter: 1,
@@ -1659,7 +1659,7 @@
       partTrailDelay: 0,
       speed: 300
     },
-    { // air strike wid25
+    { // unused wid25
       detectDistance: 65, // 70,
       blowAway: 0,
       gravity: 0,
@@ -1849,7 +1849,7 @@
       partTrailDelay: 0,
       speed: 110
     },
-    { // orb launcher wid30
+    { // unused wid30
       detectDistance: 2,
       blowAway: 0,
       gravity: 0,
@@ -1963,7 +1963,7 @@
       partTrailDelay: 0,
       speed: 230
     },
-    { // crackfield wid33
+    { // unused wid33
       detectDistance: 60,
       blowAway: 0,
       gravity: 0,
@@ -2621,7 +2621,7 @@
       timeToExplo: 40,
       timeToExploV: 10
     },
-    { // machine gun trail nid13
+    { // unused nid13
       detectDistance: 0,
       gravity: 0,
       speed: 0,
@@ -2801,7 +2801,7 @@
       timeToExplo: 0,
       timeToExploV: 0
     },
-    { // railgun delay nid19
+    { // unused nid19
       detectDistance: 0,
       gravity: 0,
       speed: 0,
@@ -2831,7 +2831,7 @@
       timeToExplo: 20,
       timeToExploV: 10
     },
-    { // railgun splinter nid20
+    { // unused nid20
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 2,
@@ -2921,7 +2921,7 @@
       timeToExplo: 30,
       timeToExploV: 15
     },
-    { // air strike splinter delayer nid23
+    { // unused nid23
        detectDistance: 0,
       gravity: 0,
       speed: 0,
@@ -2951,7 +2951,7 @@
       timeToExplo: 15,
       timeToExploV: 0
     },
-    { // air strike splinter nid24
+    { // unused nid24
       detectDistance: 3, // 2,
       gravity: 0.065, // 0.055,
       speed: 0,
@@ -3041,7 +3041,7 @@
       timeToExplo: 15,
       timeToExploV: 10
     },
-    { // orb launcher parttrail nid27
+    { // unused nid27
       detectDistance: 0,
       gravity: 0,
       speed: 0,
@@ -3071,7 +3071,7 @@
       timeToExplo: 4,
       timeToExploV: 2
     },
-    { // crackfield particle + marker nid28
+    { // unused nid28
       detectDistance: 4,
       gravity: 0,
       speed: 5,
@@ -3243,7 +3243,7 @@
       flash: 0,
       dirtEffect: 5
     },
-    { // medium explosion smaller sid10
+    { // unused sid10
       startSound: 9,
       numSounds: 4,
       animDelay: 2,
@@ -3271,7 +3271,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // air strike trail sid12
+    { // unused sid12
       startSound: -1,
       numSounds: 0,
       animDelay: 6, // 15,
@@ -3291,7 +3291,7 @@
       animDelay: 2,
       startFrame: 40,
       numFrames: 15,
-      detectRange: 45,
+      detectRange: 35,
       damage: 35,
       blowAway: 0.08,
       shadow: true,
@@ -3313,7 +3313,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // smoke sid15
+    { // unused sid15
       startSound: -1,
       numSounds: 0,
       animDelay: 4,
@@ -3355,7 +3355,7 @@
       flash: 4,
       dirtEffect: 1
     },
-    { // tiny long explosion sid18
+    { // unused sid18
       startSound: -1,
       numSounds: 0,
       animDelay: 10,
@@ -3383,7 +3383,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // orb launcher explosion sid20
+    { // unused sid20
       startSound: -1,
       numSounds: 0,
       animDelay: 5,
@@ -3411,7 +3411,7 @@
       flash: 0,
       dirtEffect: -1
     },
-    { // railgun objtrail sid22
+    { // unused sid22
       startSound: -1,
       numSounds: 0,
       animDelay: 3,
@@ -3453,7 +3453,7 @@
       flash: 8,
       dirtEffect: 0
     },
-    { // shining pixel sid25
+    { // unused sid25
       startSound: -1,
       numSounds: 0,
       animDelay: 1,
@@ -3566,3 +3566,4 @@
   crossHairSprite: 153,
   name: "Promode ReRevisited"
 }
+
