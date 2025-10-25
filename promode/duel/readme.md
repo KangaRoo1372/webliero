@@ -118,11 +118,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***wobject***
 |hitDamage: 4,          |    hitDamage: 3,
 |***weapon***
-|name: "MINIGUN"        |    name: "MINIGUM"
+|name: "MINIGUN"        |    name: "MINIGUN"
 |loadingTime: 350,      |    loadingTime: 360,
 |parts: 2,              |    parts: 1,
 |ammo: 70,              |    ammo: 80,
-|recoil: 0.05,          |    recoil" 0.06,
+|recoil: 0.05,          |    recoil: 0.06,
 |***wobject***
 |hitDamage: 1.5,        |    hitDamage: 2,
 |***weapon***
