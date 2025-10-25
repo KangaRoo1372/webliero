@@ -94,6 +94,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 440,      |    loadingTime: 400, 
 |***wobject***
 |timeToExplo: 30,       |    timeToExplo: 40,
+|***nobject***
+|bounce: 0.15,          |    bounce: 0,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |loadingTime: 450,      |    loadingTime: 400,
