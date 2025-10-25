@@ -114,31 +114,38 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "SCATTERGUN"     |    name: "SCATTERGUN"
 |loadingTime: 370,      |    loadingTime: 375,
 |fireCone: 2,           |    fireCone: 6,
-|ammo: 35,              |    ammo: 36,
+|ammo: 30,              |    ammo: 36,
 |***wobject***
 |hitDamage: 4,          |    hitDamage: 3,
 |***weapon***
 |name: "MINIGUN"        |    name: "MINIGUM"
 |loadingTime: 350,      |    loadingTime: 360,
 |parts: 2,              |    parts: 1,
-|ammo: 60,              |    ammo: 80,
+|ammo: 70,              |    ammo: 80,
+|recoil: 0.05,          |    recoil" 0.06,
 |***wobject***
 |hitDamage: 1.5,        |    hitDamage: 2,
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
 |loadingTime: 320,      |    loadingTime: 217,
-|bulletSpeed: 2.8,      |    bulletSpeed: 2.75,
+|bulletSpeed: 2.9,      |    bulletSpeed: 2.75,
 |delay: 15,             |    delay: 18,
 |ammo: 7,               |    ammo: 6,
 |***wobject***
 |timetoExplo: 600,      |    timeToExplo: 300,
 |hitDamage: 10,         |    hitDamage: 9,
+|distribution: 0.03288818359375,| distribution: 0.02288818359375,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
-|ammo: 150,             |    ammo: 140,
+|ammo: 180,             |    ammo: 140,
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |loadingTime: 420,      |    loadingTime: 450,
+|bulletSpeed: 2.1,      |    bulletSpeed: 1.8,
+|***wobject***
+|timeToEplo: 35,        |    timeToExplo: 50,
+|timeToExploV: 0,       |    timeToExplo: 4,
+|splinterAmount: 9,     |    splinterAmount: 8,
 |***nobject***
 |TimeToExplo: 140,      |    TimeToExplo: 80,
 |***weapon***
@@ -174,7 +181,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 360,      |    loadingTime: 400,
 |***weapon***
 |name: "RIFLE"          |    name: "RIFLE"
-|loadingTime: 280,      |    loadingTime: 250,
+|loadingTime: 300,      |    loadingTime: 250,
 |***weapon***
 |name: "MISSILE"        |    name: "MISSILE"
 |loadingTime: 460,      |    loadingTime: 480,

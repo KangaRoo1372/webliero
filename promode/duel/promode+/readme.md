@@ -16,5 +16,6 @@ List of new weapons:
 4. FIRECRACKER
 5. NAPALM
 6. PANZERFAUST
+7. BANANA BOMB
 
 ***roo***
