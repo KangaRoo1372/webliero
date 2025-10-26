@@ -32,6 +32,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 430,      |    loadingTime: 400,
 |delay: 50,             |    delay: 20,
 |ammo: 2,               |    ammo: 1,
+|bulletSpeedInherit: 0.65, | bulletSpeedInherit: 0.5,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
@@ -130,7 +131,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "DARTGUN"        |    name: "DARTGUN"
 |loadingTime: 320,      |    loadingTime: 217,
-|bulletSpeed: 2.9,      |    bulletSpeed: 2.75,
+|bulletSpeed: 3,        |    bulletSpeed: 2.75,
 |delay: 15,             |    delay: 18,
 |ammo: 7,               |    ammo: 6,
 |***wobject***

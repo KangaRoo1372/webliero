@@ -961,7 +961,7 @@
       timeToExplo: 8000,
       timeToExploV: 2000
     },
-    { // non-damaging bullet splinter nid2
+    { // disappearing particle nid2
       detectDistance: 0,
       gravity: 0.01068115234375,
       speed: 2,
@@ -988,7 +988,7 @@
       bloodTrailDelay: 0,
       leaveObj: -1,
       leaveObjDelay: 0,
-      timeToExplo: 30,
+      timeToExplo: 20,
       timeToExploV: 15
     },
     { // small damage bullet splinter nid3
@@ -1951,7 +1951,7 @@
       shadow: true,
       shake: 0,
       flash: 0,
-      dirtEffect: -1
+      dirtEffect: 1
     },
     { // smoke sid15
       startSound: -1,
