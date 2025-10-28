@@ -32,7 +32,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |loadingTime: 430,      |    loadingTime: 400,
 |delay: 50,             |    delay: 20,
 |ammo: 2,               |    ammo: 1,
-|bulletSpeedInherit: 0.65, | bulletSpeedInherit: 0.5,
+|bulletSpeedInherit: 0.6, | bulletSpeedInherit: 0.5,
 |***wobject***
 |multSpeed: 0.95,       |    multSpeed: 0.98,
 |detectDistance: 6,     |    detectDistance: 8,
@@ -96,7 +96,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***wobject***
 |timeToExplo: 30,       |    timeToExplo: 40,
 |***nobject***
-|bounce: 0.15,          |    bounce: 0,
+|bounce: 0.1,           |    bounce: 0,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |loadingTime: 450,      |    loadingTime: 400,
