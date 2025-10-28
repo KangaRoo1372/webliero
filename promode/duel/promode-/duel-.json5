@@ -2217,6 +2217,8 @@
     171
   ],
   textSpritesStartIdx: 240,
-  crossHairSprite: 153
+  crossHairSprite: 153,
+  name: "Promode ReRevisited"
 }
+
 
