@@ -143,12 +143,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |ammo: 180,             |    ammo: 140,
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
-|loadingTime: 420,      |    loadingTime: 450,
 |bulletSpeed: 2.1,      |    bulletSpeed: 1.8,
 |***wobject***
 |timeToEplo: 35,        |    timeToExplo: 50,
 |timeToExploV: 0,       |    timeToExplo: 4,
-|splinterAmount: 9,     |    splinterAmount: 8,
 |***nobject***
 |TimeToExplo: 140,      |    TimeToExplo: 80,
 |***weapon***
