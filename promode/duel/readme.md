@@ -140,7 +140,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |distribution: 0.03288818359375,| distribution: 0.02288818359375,
 |***weapon***
 |name: "LASER"          |    name: "LASER"
-|ammo: 180,             |    ammo: 140,
+|ammo: 160,             |    ammo: 140,
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |bulletSpeed: 2.1,      |    bulletSpeed: 1.8,
@@ -153,12 +153,13 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "ZIMM"           |    name: "ZIMM"
 |loadingTime: 500,      |    loadingTime: 540,
 |delay: 60,             |    delay: 90,
+|bulletSpeed: 3.3,      |    bulletSpeed: 3,
 |***wobject***
 |timeToExplo: 270,      |    timeToExplo: 140,
 |hitDamage: 50,         |    hitDamage: 49,
 |***weapon***
 |name: "LIGHTNING GUN"  |    name: "LIGHTNING GUN"
-|ammo: 120,             |    ammo: 60,
+|ammo: 100,             |    ammo: 60,
 |***wobject***
 |hitDamage: 2,          |    hitDamage: 1.8,
 |***weapon***
