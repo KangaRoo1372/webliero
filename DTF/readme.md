@@ -1,10 +1,10 @@
 # DTF (Defend The Flag) Mod by Kangur
 
-A Webliero mod created specifically to play [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) game modes, in particular defend the flag & capture the flag.
+A WebLiero mod created specifically to play [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) game modes, in particular defend the flag & capture the flag.
 
 Some weapons are my own original ideas but some were inspired by or taken from many other mods created by different ppl, so big thanks to all those fantastic modders and game devs! (Daro, Radon, Kami, Jerac, foobaz, Larcelo and more).
 
-Big thanks to worm Ophi for his extended hacks (which allowed me to make many epic and cool weapons that won't work in non-extended webliero) and to worms dsds & Larcelo for their contribution, ideas and help with making some weapons. Cheers!
+Big thanks to worm Ophi for his extended hacks (which allowed me to make many epic and cool weapons that won't work in non-extended WebLiero) and to worms dsds & Larcelo for their contribution, ideas and help with making some weapons. Cheers!
 
 Note: this mod will not work properly in non-extended WebLiero, i.e. some weapons might work not as intended and also you will not hear any game sounds (due to custom soundpack used).
 
