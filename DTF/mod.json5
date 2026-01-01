@@ -578,7 +578,7 @@
     {
       parts: 1,
       bulletType: 28,
-      bulletSpeed: 1.8,
+      bulletSpeed: 2.1,
       bulletSpeedInherit: 0.5555555555555556,
       distribution: 0.1983642578125,
       recoil: 0.2,
@@ -2970,8 +2970,8 @@
       affectByExplosions: true,
       bounce: 0.75,
       bounceFriction: 0.8,
-      timeToExplo: 50,
-      timeToExploV: 4,
+      timeToExplo: 35,
+      timeToExploV: 0,
       hitDamage: 0,
       bloodOnHit: 0,
       startFrame: 195,
@@ -9246,6 +9246,7 @@
   author: "roo, dsds, Ophi, Larcelo",
   version: "2.8.5"
 }
+
 
 
 
