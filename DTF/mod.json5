@@ -2457,7 +2457,7 @@
       partTrailType: 0,
       partTrailObj: -1,
       partTrailDelay: 0,
-      speed: 210
+      speed: 350
     },
     { // tupolev wid15
       detectDistance: 1,
@@ -9246,6 +9246,7 @@
   author: "roo, dsds, Ophi, Larcelo",
   version: "2.8.5"
 }
+
 
 
 
