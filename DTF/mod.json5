@@ -1742,7 +1742,7 @@
       bulletSpeedInherit: 0.15,
       distribution: 0.08,
       recoil: 0.7,
-      ammo: 7,
+      ammo: 8,
       delay: 25,
       loadingTime: 580,
       leaveShells: 0,
@@ -9246,6 +9246,7 @@
   author: "roo, dsds, Ophi, Larcelo",
   version: "2.8.5"
 }
+
 
 
 
