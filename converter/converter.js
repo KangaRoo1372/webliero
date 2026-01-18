@@ -604,14 +604,14 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             let paramValue = wObject[paramName];
 
             if (lwpParamName === "SHOTTYPE") {
+				if(paramValue<0 || paramValue>4) {
+					console.log("adjusting shottype value in wobject wid" + i);
+					warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : (paramValue > 4 ? 4 : Math.floor(paramValue));
             }
  
             if (lwpParamName === "SPLINTERTYPE") {
-                if(paramValue>4) {
-                    console.log("adjusting shottype value in wobject wid" + i);
-                    warningAdjustValue.style.display = "block";
-                }
                 paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
             }
   
@@ -869,12 +869,12 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
                         warningAdjustValue.style.display = "block";
                     }
                 } else {
+					paramValue = Math.floor(Math.abs(paramValue * 100));
                     if (paramValue>255) {
                         paramValue=255;
                         console.log("adjusting blow value in wobject wid" + i);
                         warningAdjustValue.style.display = "block";
                     }
-                    paramValue = Math.floor(Math.abs(paramValue * 100));
 	            }
             }
   
@@ -896,3 +896,4 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
           lwpParams.push(`WEAPON:${weaponIndex}\r\nORDER:${weaponOrder}\r\n${weaponParams.join("\r\n")}\r\n${wObjectParams.join("\r\n")}\r\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
         } 
 }
+
