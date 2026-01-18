@@ -1,4 +1,4 @@
-**JSON to LWP Converter by KangaRoo (current version: 0.61)**
+**JSON to LWP Converter by KangaRoo (current version: 0.62)**
 ---------------------------------------------------
 
 0. [LICENCE](#0-licence)
@@ -133,6 +133,11 @@ Big thanks also goes to:
 - TimV (for code review, testing, finding some bugs to fix and creating simple but great Liero Stuff Activator)
 
 ## *5. CHANGELOG*
+
+18.01.2026 - version 0.62
+
+- add another warning message displayed when values in some properties were automatically adjusted in order to keep compatibility with Liero 1.33 logic (sanity check)
+- small fixes & amendments
 
 21.03.2024 - version 0.61
 

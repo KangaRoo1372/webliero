@@ -51,6 +51,7 @@ function convertToJsonString(data, orderByWeaponName) {
   const warningSpritesheet = document.getElementById("warningsprites");
   const warningTextures = document.getElementById("warningtextures");
   const warningNegativeValue = document.getElementById("warningnegative");
+  const warningAdjustValue = document.getElementById("warningadjust");
   let ObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let SObjectOrder = lieroM8Plugin.checked ? -1 : 0;
   let weaponIndex = 0;
@@ -65,13 +66,14 @@ warningExtended.style.display = "none";
 warningSpritesheet.style.display = "none";
 warningTextures.style.display = "none";
 warningNegativeValue.style.display = "none";
+warningAdjustValue.style.display = "none";
 
   for (let i = 0; i < data.weapons.length; i++) {
     const weapon = data.weapons[i];
     const ignoredWeaponProperties = ["bulletType","laserBeam","distribution","id","reloadSound","$$hashKey"];
     weaponIndex++;
     const weaponParams = [];
-    if (weapon.recoil<0) {
+    if (weapon.recoil<0 && !signedHack.checked) {
         warningNegativeValue.style.display = "block";
         console.log("negative recoil detected in weapon " + weapon.name);
         }
@@ -82,43 +84,71 @@ warningNegativeValue.style.display = "none";
         let paramValue = weapon[paramName];
 
         if (lwpParamName === "BULLETSPEEDINHERIT") {
-            lwpParamName = "WORMAFFECT"
+            lwpParamName = "WORMAFFECT";
             paramValue = paramValue != 0 ? 1 : 0;
         }
 
         if (lwpParamName === "BULLETSPEED") {
-            lwpParamName = "SPEED"
+            lwpParamName = "SPEED";
+            if(paramValue<-327.68 || paramValue>327.67) {
+                console.log("adjusting speed value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
         }
 
         if (lwpParamName === "RECOIL") {
             if(signedHack.checked) {
 	        paramValue = Math.floor(paramValue * 100);
-	        if (paramValue>127) paramValue=127;
+	        if (paramValue>127) {
+                paramValue=127;
+                console.log("adjusting recoil value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
 	        if (paramValue<0) paramValue+=256;
-	        if (paramValue<-128) paramValue=128;
+	        if (paramValue<-128) {
+                paramValue=128;
+                console.log("adjusting recoil value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             } else {
 	        paramValue = Math.floor(Math.abs(paramValue * 100));
-            if (paramValue>255) paramValue=255;
+            if (paramValue>255) {
+                paramValue=255;
+                console.log("adjusting recoil value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
 	    }
         }
 
         if (lwpParamName === "LAUNCHSOUND") {
-            lwpParamName = "SOUNDLAUNCH"
+            lwpParamName = "SOUNDLAUNCH";
             paramValue =  paramValue < 0 ? 0 : Math.floor(paramValue + 1);
         }
 
         if (lwpParamName === "PARTS") {
-            lwpParamName = "NUMOBJECTS"
+            lwpParamName = "NUMOBJECTS";
+            if(paramValue<0 || paramValue>255) {
+                console.log("adjusting numobjects value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue =  paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "AMMO") {
+            if(paramValue<0 || paramValue>255) {
+                console.log("adjusting ammo value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue =  paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "DELAY") {
-            lwpParamName = "SHOTDELAY"
+            lwpParamName = "SHOTDELAY";
+            if(paramValue<-32768 || paramValue>32767) {
+                console.log("adjusting shotdelay value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
         }
 
@@ -127,19 +157,35 @@ warningNegativeValue.style.display = "none";
         }
 
          if (lwpParamName === "LOADINGTIME") {
+            if(paramValue<-32768 || paramValue>32767) {
+                console.log("adjusting loadingtime value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "FIRECONE") {
+            if(paramValue<0 || paramValue>255) {
+                console.log("adjusting firecone value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
       
         if (lwpParamName === "LEAVESHELLDELAY") {
-            lwpParamName = "SHELLDELAY"
+            lwpParamName = "SHELLDELAY";
+            if(paramValue<0 || paramValue>255) {
+                console.log("adjusting shelldelay value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
         }
 
         if (lwpParamName === "LEAVESHELLS") {
+            if(paramValue<0 || paramValue>4) {
+                console.log("adjusting leaveshells value in weapon " + weapon.name);
+                warningAdjustValue.style.display = "block";
+            }
             paramValue = paramValue < 0 ? 0 : (paramValue > 4 ? 4 : Math.floor(paramValue));
         }
 
@@ -153,7 +199,7 @@ warningNegativeValue.style.display = "none";
         weaponParams.push(`${lwpParamName}:${paramValue}`);
     }
 
-doTheWobject(weaponIndex, data, weapon.bulletType, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, warningNegativeValue, lwpParams)
+doTheWobject(weaponIndex, data, weapon.bulletType, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, warningNegativeValue, warningAdjustValue, lwpParams)
     }
 
 for (let i = 0; i < data.nObjects.length; i++) {
@@ -173,7 +219,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
 	      warningTextures.style.display = "block";
 	      console.log("textures array limit exceeded in nObject nid" + i);
       }
-      if (nObject.hitDamage<0) {
+      if (nObject.hitDamage<0 && !signedHack.checked) {
         	warningNegativeValue.style.display = "block";
         	console.log("negative hitDamage detected in nObject nid" + i);
       }
@@ -194,30 +240,54 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
           if (lwpParamName === "DIRTEFFECT") {
               lwpParamName = "MAPCHANGE";
+              if(paramValue>8) {
+                console.log("adjusting mapchange value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
           }
 
           if (lwpParamName === "STARTFRAME") {
-              lwpParamName = "ANIMSFRAME"
+              lwpParamName = "ANIMSFRAME";
+              if(paramValue>239) {
+                console.log("adjusting animsframe value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue < 110 ? 0 : (paramValue > 239 ? 0 : Math.floor(paramValue - 110)));
           }
 
           if (lwpParamName === "DETECTDISTANCE") {
-              lwpParamName = "WORMDETECTRANGE"
+              lwpParamName = "WORMDETECTRANGE";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting wormdetectrange value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "BLOODONHIT") {
-              lwpParamName = "BLOOD"
+              lwpParamName = "BLOOD";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting blood value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "COLORBULLETS") {
               lwpParamName = "BULLETCOLOR";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting bulletcolor in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
           }
 
           if (lwpParamName === "SPLINTERCOLOUR") {
               lwpParamName = "SPLINTERCOLOR";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting splintercolor value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
           }
 
           if (lwpParamName === "DRAWONMAP") {
@@ -238,25 +308,45 @@ for (let i = 0; i < data.nObjects.length; i++) {
 
           if (lwpParamName === "NUMFRAMES") {
               lwpParamName = "ANIMFRAMES";
-	      paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting animframes value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
+	          paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "SPLINTERAMOUNT") {
+            if(paramValue<0 || paramValue>255) {
+                console.log("adjusting splinteramount value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "TIMETOEXPLO") {
-              lwpParamName = "TIMETOEXPLODE"
+              lwpParamName = "TIMETOEXPLODE";
+              if(paramValue<-32768 || paramValue>32767) {
+                console.log("adjusting timetoexplode value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "TIMETOEXPLOV") {
-              lwpParamName = "TIMETOEXPLODEV"
+              lwpParamName = "TIMETOEXPLODEV";
+              if(paramValue<-32768 || paramValue>32767) {
+                console.log("adjusting timetoexplodev value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "BLOODTRAILDELAY") {
-              lwpParamName = "BTRAILDELAY"
+              lwpParamName = "BTRAILDELAY";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting btraildelay value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
@@ -270,37 +360,69 @@ for (let i = 0; i < data.nObjects.length; i++) {
           }
 
           if (lwpParamName === "LEAVEOBJDELAY") {
-              lwpParamName = "OTRAILDELAY"
+              lwpParamName = "OTRAILDELAY";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting otraildelay value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "BOUNCE") {
+              if(paramValue<0 || paramValue>2.55) {
+                console.log("adjusting bounce value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
           }
 
           if (lwpParamName === "SPEED") {
+              if(paramValue<-327.68 || paramValue>327.67) {
+                console.log("adjusting speed value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
           }
 
           if (lwpParamName === "SPEEDV") {
+              if(paramValue<-327.68 || paramValue>327.67) {
+                console.log("adjusting speedv value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
           }
 
           if (lwpParamName === "DISTRIBUTION") {
+              if(paramValue<=-0.5 || paramValue>=0.5) {
+                console.log("adjusting distribution value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
           }
 
           if (lwpParamName === "GRAVITY") {
+              if(paramValue<=-0.5 || paramValue>=0.5) {
+                console.log("adjusting gravity value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
           }
 
           if (lwpParamName === "BLOWAWAY") {
-              lwpParamName = "BLOW"
+              lwpParamName = "BLOW";
               paramValue = Math.floor(Math.abs(paramValue * 100));
-              if (paramValue>255) paramValue=255;
+              if (paramValue>255) {
+                paramValue=255;
+                console.log("adjusting blow value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
           }
 
           if (lwpParamName === "HITDAMAGE") {
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting bounce value in nobject nid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
@@ -331,7 +453,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
       warningSpritesheet.style.display = "block";
       console.log("spritesheet limit exceeded in sObject sid" + i);
       }
-      if (sObject.hitDamage<0) {
+      if (sObject.hitDamage<0 && !signedHack.checked) {
       warningNegativeValue.style.display = "block";
       console.log("negative hitDamage detected in sObject sid" + i);
       }
@@ -343,44 +465,80 @@ for (let i = 0; i < data.sObjects.length; i++) {
 
           if (lwpParamName === "DIRTEFFECT") {
               lwpParamName = "MAPCHANGE";
+              if(paramValue>8) {
+                console.log("adjusting mapchange value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
           }
 
           if (lwpParamName === "STARTFRAME") {
-              lwpParamName = "ANIMSFRAME"
+              lwpParamName = "ANIMSFRAME";
+              if(paramValue>109) {
+                console.log("adjusting animsframe value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 109 ? 0 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "DETECTRANGE") {
-              lwpParamName = "WORMDETECTRANGE"
+              lwpParamName = "WORMDETECTRANGE";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting wormdetectrange value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "NUMFRAMES") {
-              lwpParamName = "ANIMFRAMES"
+              lwpParamName = "ANIMFRAMES";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting animframes value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "ANIMDELAY") {
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting animdelay value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "DAMAGE") {
-              lwpParamName = "HITDAMAGE"
+              lwpParamName = "HITDAMAGE";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting hitdamage value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "SHAKE") {
-              lwpParamName = "EARTHQUAKE"
+              lwpParamName = "EARTHQUAKE";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting earthquake value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "FLASH") {
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting flash value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "NUMSOUNDS") {
-              lwpParamName = "NUMOFSOUNDS"
+              lwpParamName = "NUMOFSOUNDS";
+              if(paramValue<0 || paramValue>255) {
+                console.log("adjusting numofsounds value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
@@ -390,7 +548,11 @@ for (let i = 0; i < data.sObjects.length; i++) {
           }
 
           if (lwpParamName === "BLOWAWAY") {
-              lwpParamName = "BLOW"
+              lwpParamName = "BLOW";
+              if(paramValue<-30517 || paramValue>30517) {
+                console.log("adjusting blow value in sobject sid" + i);
+                warningAdjustValue.style.display = "block";
+            }
               paramValue = paramValue < -30517 ? -1999999999 : (paramValue > 30517 ? 1999999999 : Math.floor(paramValue * 65536));
           }
 
@@ -410,7 +572,7 @@ for (let i = 0; i < data.sObjects.length; i++) {
    return `LIEROKIT:WEAPONPLUGIN\r\nPROMPT:This will activate the whole weapon list. Do you want to continue?\r\nOVERWRITE:1\r\n\r\n${lwpParams.join("\r\n")}\r\n${lwpOParams.join("\r\n")}\r\n${lwpSParams.join("\r\n")}`;
 }
 
-function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, warningNegativeValue, lwpParams) {
+function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, orderByWeaponName, warningExtended, warningSpritesheet, warningTextures, warningNegativeValue, warningAdjustValue, lwpParams) {
         const i = wobjectId;
         const wObject = data.wObjects[i];
         const ignoredWObjectProperties = ["id","name","speed","bounceFriction","repeat","immutable","fixed","behavior","platform","detonable","teamImmunity","removeOnSObject","platformWidth","platformHeight","platformVelocityAuto","$$hashKey","removeonsobject","overlay===undefined ? 0 : a","underlay===undefined ? 0 : a","overlay","underlay","beacon","behavior===undefined ? -1 : a"];
@@ -427,11 +589,11 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
         warningTextures.style.display = "block";
         console.log("textures array limit exceeded in wObject wid" + i);
         }
-        if (wObject.hitDamage<0) {
+        if (wObject.hitDamage<0 && !signedHack.checked) {
         warningNegativeValue.style.display = "block";
         console.log("negative hitDamage detected in wObject wid" + i);
         }
-        if (wObject.bounce<0) {
+        if (wObject.bounce<0 && !signedHack.checked) {
         warningNegativeValue.style.display = "block";
         console.log("negative bounce detected in wObject wid" + i);
         }
@@ -446,6 +608,10 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             }
  
             if (lwpParamName === "SPLINTERTYPE") {
+                if(paramValue>4) {
+                    console.log("adjusting shottype value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : Math.floor(paramValue + 1);
             }
   
@@ -461,6 +627,10 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
   
             if (lwpParamName === "DIRTEFFECT") {
                 lwpParamName = "MAPCHANGE";
+                if(paramValue>8) {
+                    console.log("adjusting mapchange value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : (paramValue > 8 ? 0 : Math.floor(paramValue + 1));
             }
   
@@ -470,27 +640,49 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             }
   
             if (lwpParamName === "STARTFRAME") {
-                lwpParamName = "ANIMSFRAME"
+                lwpParamName = "ANIMSFRAME";
+                if(paramValue<110 || paramValue>239) {
+                    if(paramValue>0) {
+                        console.log("adjusting animsframe value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                }
                 paramValue = paramValue < 0 ? -1 : (paramValue < 110 ? 0 : (paramValue > 239 ? 0 : Math.floor(paramValue - 110)));
             }
   
             if (lwpParamName === "DETECTDISTANCE") {
-                lwpParamName = "WORMDETECTRANGE"
+                lwpParamName = "WORMDETECTRANGE";
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting wormdetectrange value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
 
             if (lwpParamName === "BLOODONHIT") {
-                lwpParamName = "BLOOD"
+                lwpParamName = "BLOOD";
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting blood value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
 
             if (lwpParamName === "ADDSPEED") {
-                lwpParamName = "ACCADD"
+                lwpParamName = "ACCADD";
+                if(paramValue<-32768 || paramValue>32767) {
+                    console.log("adjusting accadd value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
             }
 
             if (lwpParamName === "SPLINTERCOLOUR") {
                 lwpParamName = "SPLINTERCOLOR";
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting splintercolor value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
             }
 
             if (lwpParamName === "EXPLGROUND") {
@@ -507,6 +699,10 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
   
             if (lwpParamName === "COLORBULLETS") {
                 lwpParamName = "BULLETCOLOR";
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting bulletcolor value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
             }
   
             if (lwpParamName === "EXPLOSOUND") {
@@ -515,7 +711,11 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             }
   
             if (lwpParamName === "PARTTRAILDELAY") {
-                lwpParamName = "PTRAILDELAY"
+                lwpParamName = "PTRAILDELAY";
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting ptraildelay value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
   
@@ -535,6 +735,10 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
   
             if (lwpParamName === "NUMFRAMES") {
                 lwpParamName = "ANIMFRAMES";
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting animframes value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
       		    paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
           
@@ -543,66 +747,134 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
             }
   
             if (lwpParamName === "SPLINTERAMOUNT") {
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting splinteramount value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
   
             if (lwpParamName === "TIMETOEXPLO") {
-                lwpParamName = "TIMETOEXPLODE"
+                lwpParamName = "TIMETOEXPLODE";
+                if(paramValue<-32768 || paramValue>32767) {
+                    console.log("adjusting timetoexplode value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
             }
   
             if (lwpParamName === "TIMETOEXPLOV") {
-                lwpParamName = "TIMETOEXPLODEV"
+                lwpParamName = "TIMETOEXPLODEV";
+                if(paramValue<-32768 || paramValue>32767) {
+                    console.log("adjusting timetoexplodev value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < -32768 ? -32768 : (paramValue > 32767 ? 32767 : Math.floor(paramValue));
             }
   
             if (lwpParamName === "OBJTRAILDELAY") {
-                lwpParamName = "OTRAILDELAY"
+                lwpParamName = "OTRAILDELAY";
+                if(paramValue<0 || paramValue>255) {
+                    console.log("adjusting otraildelay value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
   
             if (lwpParamName === "MULTSPEED") {
-                lwpParamName = "ACCMULTIPLY"
+                lwpParamName = "ACCMULTIPLY";
+                if(paramValue<-327.68 || paramValue>327.67) {
+                    console.log("adjusting accmultiply value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue < -327.68 ? -32768 : (paramValue > 327.67 ? 32767 : Math.floor(paramValue * 100));
             }
   
             if (lwpParamName === "BOUNCE") {
                 if(signedHack.checked) {
-                paramValue = Math.floor(paramValue * 100);
-                if (paramValue>127) paramValue=127;
-                if (paramValue<0) paramValue+=256;
-	        if (paramValue<-128) paramValue=128;
-                } else paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
+                    paramValue = Math.floor(paramValue * 100);
+                    if (paramValue>127) {
+                        paramValue=127;
+                        console.log("adjusting bounce value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                    if (paramValue<0) paramValue+=256;
+                    if (paramValue<-128) {
+                        paramValue=128;
+                        console.log("adjusting bounce value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                } else {
+                    if (paramValue>2.55 || paramValue<0) {
+                        console.log("adjusting bounce value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    } 
+                    paramValue = paramValue < 0 ? 0 : (paramValue > 2.55 ? 255 : Math.floor(paramValue * 100));
+                }
             }
   
             if (lwpParamName === "HITDAMAGE") {
                 if(signedHack.checked) {
-                paramValue = Math.floor(paramValue);
-                if (paramValue>127) paramValue=127;
-                if (paramValue<0) paramValue+=256;
-                if (paramValue<-128) paramValue=128;
-                } else paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+                    paramValue = Math.floor(paramValue);
+                    if (paramValue>127) {
+                        paramValue=127;
+                        console.log("adjusting hitdamage value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                    if (paramValue<0) paramValue+=256;
+                    if (paramValue<-128) {
+                        paramValue=128;
+                        console.log("adjusting hitdamage value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                } else {
+                    if (paramValue>255 || paramValue<0) {
+                        console.log("adjusting hitdamage value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                    paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
+                }
             }
   
             if (lwpParamName === "DISTRIBUTION") {
+                if(paramValue<=-0.5 || paramValue>=0.5) {
+                    console.log("adjusting distribution value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
   
             }
   
             if (lwpParamName === "GRAVITY") {
+                if(paramValue<=-0.5 || paramValue>=0.5) {
+                    console.log("adjusting gravity value in wobject wid" + i);
+                    warningAdjustValue.style.display = "block";
+                }
                 paramValue = paramValue >= 0.5 ? 32767 : (paramValue <= -0.5 ? -32768 : Math.floor(paramValue * 65536));
             }
   
             if (lwpParamName === "BLOWAWAY") {
-                lwpParamName = "BLOW"
+                lwpParamName = "BLOW";
                 if(signedHack.checked) {
-	            paramValue = Math.floor(paramValue * 100);
-	            if (paramValue>127) paramValue=127;
-	            if (paramValue<0) paramValue+=256;
-	            if (paramValue<-128) paramValue=128;
+                    paramValue = Math.floor(paramValue * 100);
+                    if (paramValue>127) {
+                        paramValue=127;
+                        console.log("adjusting blow value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                    if (paramValue<0) paramValue+=256;
+                    if (paramValue<-128) {
+                        paramValue=128;
+                        console.log("adjusting blow value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
                 } else {
-	            paramValue = Math.floor(Math.abs(paramValue * 100));
-            	if (paramValue>255) paramValue=255;
+                    if (paramValue>255) {
+                        paramValue=255;
+                        console.log("adjusting blow value in wobject wid" + i);
+                        warningAdjustValue.style.display = "block";
+                    }
+                    paramValue = Math.floor(Math.abs(paramValue * 100));
 	            }
             }
   
