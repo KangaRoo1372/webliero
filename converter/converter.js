@@ -280,6 +280,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
                 console.log("adjusting bulletcolor in nobject nid" + i);
                 warningAdjustValue.style.display = "block";
             }
+			  paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "SPLINTERCOLOUR") {
@@ -288,6 +289,7 @@ for (let i = 0; i < data.nObjects.length; i++) {
                 console.log("adjusting splintercolor value in nobject nid" + i);
                 warningAdjustValue.style.display = "block";
             }
+			  paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
           }
 
           if (lwpParamName === "DRAWONMAP") {
@@ -683,6 +685,7 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
                     console.log("adjusting splintercolor value in wobject wid" + i);
                     warningAdjustValue.style.display = "block";
                 }
+				paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
 
             if (lwpParamName === "EXPLGROUND") {
@@ -703,6 +706,7 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
                     console.log("adjusting bulletcolor value in wobject wid" + i);
                     warningAdjustValue.style.display = "block";
                 }
+				paramValue = paramValue < 0 ? 0 : (paramValue > 255 ? 255 : Math.floor(paramValue));
             }
   
             if (lwpParamName === "EXPLOSOUND") {
@@ -896,4 +900,5 @@ function doTheWobject(weaponIndex, data, wobjectId, weaponParams, weaponSorted, 
           lwpParams.push(`WEAPON:${weaponIndex}\r\nORDER:${weaponOrder}\r\n${weaponParams.join("\r\n")}\r\n${wObjectParams.join("\r\n")}\r\nSHADOW:1\r\nSOUNDLOOP:0\r\n`);
         } 
 }
+
 
