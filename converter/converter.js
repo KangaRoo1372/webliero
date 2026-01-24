@@ -73,6 +73,9 @@ warningAdjustValue.style.display = "none";
     const ignoredWeaponProperties = ["bulletType","laserBeam","distribution","id","reloadSound","$$hashKey"];
     weaponIndex++;
     const weaponParams = [];
+    if(weapon.name.length>13) {
+        console.log("weapon name maximum length exceeded in weapon " + weapon.name);
+    }
     if (weapon.recoil<0 && !signedHack.checked) {
         warningNegativeValue.style.display = "block";
         console.log("negative recoil detected in weapon " + weapon.name);

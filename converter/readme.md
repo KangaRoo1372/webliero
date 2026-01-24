@@ -99,6 +99,7 @@ Also, if you checked the "Include signed recoil/blowAway/hitDamage/bounce hack" 
 - some object parameters in Liero are hardcoded and cannot be modified using even dedicated tools, i.e. they have either fixed values (e.g. repeat) or are assigned to only specific objects (e.g. laserBeam). In WebLiero though, all object parameters are fully moddable. This means that some WebLiero weapons / objects would work differently after conversion to Liero
 - unlike in classic Liero, in WebLiero you can edit or modify dirt effects ("textures" array) in any way you want. This is another reason why some WebLiero weapons / objects would work differently after conversion to Liero
 - in classic Liero, sprites were split into 3 categories: big sprites (16x16 size), small sprites (7x7 size) and font sprites (4x4 size), whereas only "small sprites" could be used as startFrame for weapon objects and non-weapon objects (and only "big sprites" could be used as startFrame for special objects). In WebLiero though, you can choose any sprite you want as a startFrame for all types of objects. That's why some weapons / objects would look and work differently after conversion to Liero
+- in classic Liero, each weapon name can be max 13 characters long. There is no such limit in WebLiero. Therefore, if a weapon in your WebLiero mod has a name consisting of more than 13 characters, an appropriate message will be displayed in the console after conversion. This is not a big issue though, because when activating the converted LWP file - either with Liero Stuff Activator or LieroM8 - the weapon name will be shortened to 13 characters automatically
 - the program also converts [WebLiero Extended](https://www.vgm-quiz.com/dev/webliero/extended) mods, however be aware that in WebLiero Extended there are some special parameters & new features which change the game & weapons logic significantly. That's why WebLiero Extended mods would not work properly after conversion to Liero
 - there are few issues with some properties in special objects during activating converted LWP file with LieroM8 (propably due to some bugs in LieroM8). Currently known bugs: wrong values of blowAway parameter in sobject1 (Large explosion) and sobject2 (medium explosion). It is recommended to change those values manually in [LieroKit](https://liero.nl/download/295/lierokit16b2.zip) after activating your converted file with LieroM8 (it is weird but you will have some issues if you try to change it manually in LieroM8)
 
@@ -117,7 +118,9 @@ Also, if you checked the "Include signed recoil/blowAway/hitDamage/bounce hack" 
 - use original spritesheet (or at least do not add more sprites to the spritesheet or make sprites bigger than their fixed size);
 - set only "medium sprites" (110-239) as startFrame for wObjects and nObjects;
 - set only "big sprites" (0-109) as startFrame for sObjects;
-- do not add any WebLiero Extended properties.
+- do not add any WebLiero Extended properties;
+- do not set weapon names longer than 13 characters;
+- remove all dummy (unused) wObjects/nObjects/sObjects from JSON file.
 
 ## *4. CREDITS*
 
@@ -137,7 +140,7 @@ Big thanks also goes to:
 18.01.2026 - version 0.62
 
 - add another warning message displayed when values in some properties were automatically adjusted in order to keep compatibility with Liero 1.33 logic (sanity check)
-- small fixes & amendments
+- small fixes & improvements
 
 21.03.2024 - version 0.61
 
