@@ -87,12 +87,12 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |name: "AUTO SHOTGUN"   |    name: "AUTO SHOTGUN"
 |ammo: 4,               |    ammo: 8,
 |delay: 25,             |    delay: 28,
-|loadingTime: 200,      |    loadingTime: 400,
+|loadingTime: 220,      |    loadingTime: 400,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |ammo: 2,               |    ammo: 1,
-|delay: 40,             |    delay: 0,
-|loadingTime: 440,      |    loadingTime: 400, 
+|delay: 50,             |    delay: 0,
+|loadingTime: 450,      |    loadingTime: 400, 
 |***wobject***
 |timeToExplo: 30,       |    timeToExplo: 40,
 |***nobject***
@@ -144,6 +144,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |bulletSpeed: 2.1,      |    bulletSpeed: 1.8,
+|loadingTime: 440,      |    loadingTime: 450,
 |***wobject***
 |timeToEplo: 35,        |    timeToExplo: 50,
 |timeToExploV: 0,       |    timeToExplo: 4,
@@ -170,7 +171,6 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |hitDamage: 10,         |    hitDamage: 9,
 |***weapon***
 |name: "FLAK CANNON"    |    name: "FLAK CANNON"
-|loadingTime: 530,      |    loadingTime: 510,
 |***nobject***
 |hitDamage: 3,          |    hitDamage: 4,
 |***weapon***
