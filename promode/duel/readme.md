@@ -81,6 +81,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |ammo: 60,              |    ammo: 50,
 |fireCone: 4,           |    fireCone: 20,
 |launchSound: 12,       |    launchSound: -1,
+|loadingTime: 360,      |    loadingTime: 300,
 |***wobject***
 |timetoExplo: 35,       |    timeToExplo: 25,
 |***weapon***

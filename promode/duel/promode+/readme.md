@@ -4,6 +4,8 @@ Hello my fellow Lieros!
 
 In this directory you can find my another version of Webliero Promode ReRevisited Mod, reworked to make it suitable for duels. Generally, it is based on my Promode (Re)ReReVisited 1v1 (duel) edition (which you can find in the previous folder). The main difference between those two mods is that I added some new weapons, a list of which you can find below. What is more, I also tweaked PROXY MINE a little bit experimentally (if no worm collides with it, it falls to the ground after some time, where it will remain for some time).
 
+Note: some new weapons use custom sprites, so make sure you're using the correct WLSPRT file (located in this repository) when playing this version of the mod.
+
 List of new weapons:
 
 1. BLASTER
