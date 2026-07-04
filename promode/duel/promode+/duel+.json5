@@ -613,14 +613,14 @@
       name: "ACID FAN"
     },
     {
-      parts: 3,
+      parts: 4,
       bulletType: 35,
       bulletSpeed: 3.5,
       bulletSpeedInherit: 0.4,
       distribution: 0,
       recoil: 0,
       ammo: 2,
-      delay: 30,
+      delay: 40,
       loadingTime: 420,
       leaveShells: 0,
       leaveShellDelay: 0,
@@ -653,7 +653,7 @@
     {
       parts: 1,
       bulletType: 27,
-      bulletSpeed: 2,
+      bulletSpeed: 2.3,
       bulletSpeedInherit: 0,
       distribution: 0,
       recoil: 1,
@@ -2094,7 +2094,7 @@
       affectByExplosions: true,
       bounce: 1.005,
       bounceFriction: 1,
-      timeToExplo: 500, // 360,
+      timeToExplo: 520, // 360,
       timeToExploV: 0,
       hitDamage: 5,
       bloodOnHit: 5,
@@ -2132,9 +2132,9 @@
       affectByExplosions: true,
       bounce: 0,
       bounceFriction: 0.8,
-      timeToExplo: 140,
-      timeToExploV: 50,
-      hitDamage: 0,
+      timeToExplo: 0,  // 140,
+      timeToExploV: 0,  // 50,
+      hitDamage: 1,
       bloodOnHit: 5,
       startFrame: 196,
       numFrames: 0,
@@ -2142,7 +2142,7 @@
       shotType: 0,
       repeat: 1,
       colorBullets: 0,
-      splinterAmount: 10,
+      splinterAmount: 5,
       splinterColour: 75,
       splinterType: 5,
       splinterScatter: 0,
@@ -3309,7 +3309,7 @@
       numFrames: 15,
       detectRange: 40,
       damage: 40,
-      blowAway: 0.08,
+      blowAway: 0.085,
       shadow: true,
       shake: 2,
       flash: 4,
@@ -3580,6 +3580,6 @@
   ],
   textSpritesStartIdx: 240,
   crossHairSprite: 153,
-  name: "Promode ReRevisited"
+  name: "Promode RooVisited"
 }
 
