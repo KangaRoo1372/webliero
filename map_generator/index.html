@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<title>WebLiero Procedural Map Generator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>WebLiero Procedural Map Generator</h1>
+
+</header>
+
+<div id="controls">
+
+<label>
+
+Width
+
+<input
+id="mapWidth"
+type="number"
+value="504"
+min="64"
+max="4096">
+
+</label>
+
+<label>
+
+Height
+
+<input
+id="mapHeight"
+type="number"
+value="350"
+min="64"
+max="4096">
+
+</label>
+
+<label>
+
+Seed
+
+<input
+id="seed"
+type="number"
+value="1">
+
+</label>
+
+<button id="generate">
+
+Generate map
+
+</button>
+
+<button id="save">
+
+Save PNG
+
+</button>
+
+</div>
+
+<canvas
+id="canvas"
+width="504"
+height="350">
+
+</canvas>
+
+<script src="js/rng.js"></script>
+<script src="js/map.js"></script>
+<script src="js/palette.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
