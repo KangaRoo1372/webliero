@@ -2574,8 +2574,8 @@
       bloodTrailDelay: 0,
       leaveObj: -1,
       leaveObjDelay: 0,
-      timeToExplo: 0,
-      timeToExploV: 0
+      timeToExplo: 200,
+      timeToExploV: 50
     },
     { // proxy mine second stage nid9
       detectDistance: 6,
@@ -2724,7 +2724,7 @@
       bloodTrailDelay: 0,
       leaveObj: -1, // 5,
       leaveObjDelay: 0, // 4,
-      timeToExplo: 150,
+      timeToExplo: 180,
       timeToExploV: 50
     },
     { // panzerfaust explosion delayer nid14

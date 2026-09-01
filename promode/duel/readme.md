@@ -98,6 +98,8 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timeToExplo: 30,       |    timeToExplo: 40,
 |***nobject***
 |bounce: 0.1,           |    bounce: 0,
+|timetoExplo: 200,      |    timeToExplo: 0,
+|timetoExploV: 50,      |    timeToExploV: 0,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"
 |loadingTime: 450,      |    loadingTime: 400,
