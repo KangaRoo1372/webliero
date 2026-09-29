@@ -83,7 +83,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |launchSound: 12,       |    launchSound: -1,
 |loadingTime: 360,      |    loadingTime: 300,
 |***wobject***
-|timetoExplo: 35,       |    timeToExplo: 25,
+|timetoExplo: 30,       |    timeToExplo: 25,
 |***weapon***
 |name: "AUTO SHOTGUN"   |    name: "AUTO SHOTGUN"
 |ammo: 4,               |    ammo: 8,
@@ -98,7 +98,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |timeToExplo: 30,       |    timeToExplo: 40,
 |***nobject***
 |bounce: 0.1,           |    bounce: 0,
-|timetoExplo: 200,      |    timeToExplo: 0,
+|timetoExplo: 180,      |    timeToExplo: 0,
 |timetoExploV: 50,      |    timeToExploV: 0,
 |***weapon***
 |name: "TUPOLEV"        |    name: "TUPOLEV"

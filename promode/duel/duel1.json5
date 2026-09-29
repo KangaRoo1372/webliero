@@ -973,7 +973,7 @@
       affectByExplosions: true,
       bounce: 0.01,
       bounceFriction: 0.8,
-      timeToExplo: 35,
+      timeToExplo: 30,
       timeToExploV: 5,
       hitDamage: 1,
       bloodOnHit: 0,
@@ -2403,7 +2403,7 @@
       bloodTrailDelay: 0,
       leaveObj: -1,
       leaveObjDelay: 0,
-      timeToExplo: 200,
+      timeToExplo: 180,
       timeToExploV: 50
     },
     { // tupolev bomb nid9 (unused)
