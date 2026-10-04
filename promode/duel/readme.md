@@ -1,4 +1,4 @@
-# PROMODE (Re)ReReVisited 1v1 (duel) edition
+# ProMode RooVisited 1v1 (duel edition) 
 
 Hi guys!
 

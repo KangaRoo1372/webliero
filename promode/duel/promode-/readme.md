@@ -1,4 +1,4 @@
-# PROMODE- (Re)ReReVisited (duel edition)
+# ProMode RooVisited 1v1 (duel edition) - 15 weapons
 
 Hello my fellow Lieros!
 
