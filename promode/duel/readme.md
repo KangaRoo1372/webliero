@@ -38,6 +38,11 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |detectDistance: 6,     |    detectDistance: 8,
 |timeToExplo: 350,      |    timeToExplo: 250,
 |blowAway: 0,           |    blowAway: 0.22,
+|createOnExp: -1,       |    createOnExp: 23,
+|dirtEffect: -1,        |    dirtEffect: 0,
+|bloodOnHit: 0,         |    bloodOnHit: 18,
+|splinterAmount: 1,     |    splinterAmount: 20,
+|splinterType: 9,       |    splinterType: 15,
 |***sobject***
 |damage: 45,            |    damage: 50,
 |***weapon***
