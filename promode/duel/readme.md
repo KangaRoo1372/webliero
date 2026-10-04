@@ -89,6 +89,7 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |ammo: 4,               |    ammo: 8,
 |delay: 25,             |    delay: 28,
 |loadingTime: 220,      |    loadingTime: 400,
+|parts: 30,             |    parts: 25,
 |***weapon***
 |name: "CLUSTER POD"    |    name: "CLUSTER POD"
 |ammo: 2,               |    ammo: 1,
@@ -144,6 +145,10 @@ Lately, I made also further changes to many other weapons. Here you can find the
 |***weapon***
 |name: "LASER"          |    name: "LASER"
 |ammo: 160,             |    ammo: 140,
+|***wobject***
+|splinterAmount: 2,     |    splinterAmount: 0,
+|splinterColour: 240,   |    splinterColour: 0,
+|splinterType: 3,       |    splinterType: -1,
 |***weapon***
 |"MINI NUKE"            |    name: "MINI NUKE"
 |bulletSpeed: 2.1,      |    bulletSpeed: 1.8,
