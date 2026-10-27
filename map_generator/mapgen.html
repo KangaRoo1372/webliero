@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>WebLiero Map Generator</title>
+<style>
+  body { font-family: sans-serif; background:#111; color:#eee; padding:20px; padding-top:6px; }
+  h2 { margin-top:0; }
+  canvas { border:1px solid #444; display:block; margin-top:10px; image-rendering:pixelated; }
+  input, button { margin:5px 0; }
+  fieldset { border:1px solid #444; margin:8px 0; padding:4px 10px; display:block; width:max-content; max-width:100%; box-sizing:border-box; }
+  fieldset label { margin-right:12px; }
+  #status { margin:10px 0; color:#bbb; }
+  #layout { display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; }
+  #main { flex:0 1 auto; min-width:0; }
+  #side { flex:0 0 auto; width:340px; }
+  #side h3 { margin:6px 0; }
+  #paletteGrid { display:grid; grid-template-columns:repeat(16, 20px); gap:1px; width:max-content; background:#444; border:1px solid #444; }
+  #paletteGrid div { width:20px; height:20px; cursor:pointer; box-sizing:border-box; }
+  #paletteGrid div.sel { outline:2px solid #fff; outline-offset:-2px; box-shadow:inset 0 0 0 4px #000; }
+  #colorInfo { margin:6px 0 12px; color:#bbb; min-height:1.2em; }
+  #side .row { margin:6px 0; }
+  #side button.active { background:#4a7; color:#fff; }
+  #side button { margin-right:4px; }
+  canvas.editing { cursor:crosshair; touch-action:none; }
+</style>
+</head>
+<body>
+
+<div id="layout">
+<div id="main">
+
+<label>Map width:</label>
+<input id="w" type="number" value="504" min="1" />
+
+<label>Map height:</label>
+<input id="h" type="number" value="350" min="1" />
+
+<br/>
+
+<fieldset id="shapes">
+  <legend>Shapes</legend>
+  <label><input type="checkbox" name="shape" value="rect" checked /> Rectangles</label>
+  <label><input type="checkbox" name="shape" value="square" checked /> Squares</label>
+  <label><input type="checkbox" name="shape" value="triangle" checked /> Triangles</label>
+  <label><input type="checkbox" name="shape" value="trapezoid" checked /> Trapezoids</label>
+  <label><input type="checkbox" name="shape" value="circle" checked /> Circles</label>
+</fieldset>
+
+<fieldset id="effects">
+  <legend>Effects</legend>
+  <label><input type="checkbox" id="dirtOnly" /> Dirt only</label>
+  <label><input type="checkbox" id="levelBorders" /> Level borders</label>
+  <label><input type="checkbox" id="plainShapes" /> Plain shapes</label>
+  <label><input type="checkbox" id="uniColor" /> Uni color</label>
+</fieldset>
+
+<label>Palette (.gpl / .lpl / .json / .png):</label>
+<input id="paletteFile" type="file" accept=".gpl,.lpl,.json,.png,text/plain,image/png" />
+
+<div id="status">Default Liero palette loaded (256 colors).</div>
+
+<button id="gen">Generate map</button>
+<button id="save">Save indexed PNG</button>
+<button id="saveLev">Save LEV map</button>
+<button id="savePowerlevel">Save as powerlevel</button>
+
+<canvas id="c"></canvas>
+
+</div>
+
+<div id="side">
+  <h3>Palette</h3>
+  <div id="paletteGrid"></div>
+  <div id="colorInfo"></div>
+
+  <h3>Tools</h3>
+  <div class="row" id="toolButtons">
+    <button data-tool="brush" class="active">Brush</button>
+    <button data-tool="eraser">Eraser</button>
+    <button data-tool="picker">Pick color</button>
+  </div>
+  <div class="row">Brush size:</div>
+  <div class="row" id="sizeButtons">
+    <button data-size="1">1</button>
+    <button data-size="2">2</button>
+    <button data-size="4" class="active">4</button>
+    <button data-size="8">8</button>
+    <button data-size="12">12</button>
+  </div>
+  <div class="row">
+    <button id="undo" disabled>Undo</button>
+    <button id="redo" disabled>Redo</button>
+  </div>
+</div>
+</div>
+
+<script>
+// --- DEFAULT LIERO PALETTE (256 colors, flat R,G,B,... triples) ---
+// Used automatically until the user loads a custom palette file.
+const DEFAULT_PALETTE_FLAT = [0,0,0,108,56,0,108,80,0,164,148,128,0,144,0,60,172,60,252,84,84,168,168,168,84,84,84,84,84,252,84,216,84,84,252,252,120,64,8,128,68,8,136,72,12,144,80,16,152,84,20,160,88,24,172,96,28,76,76,76,84,84,84,92,92,92,100,100,100,108,108,108,116,116,116,124,124,124,132,132,132,140,140,140,148,148,148,156,156,156,56,56,136,80,80,192,104,104,248,144,144,244,184,184,244,108,108,108,144,144,144,180,180,180,216,216,216,32,96,32,44,132,44,60,172,60,112,188,112,164,212,164,108,108,108,144,144,144,180,180,180,216,216,216,168,168,248,208,208,244,252,252,244,60,80,0,88,112,0,116,144,0,148,176,0,120,72,52,156,120,88,196,168,124,236,216,160,156,120,88,196,168,124,236,216,160,200,100,0,160,80,0,72,72,72,108,108,108,144,144,144,180,180,180,216,216,216,252,252,252,196,196,196,144,144,144,152,60,0,180,100,0,208,140,0,236,180,0,168,84,0,216,0,0,188,0,0,164,0,0,200,0,0,172,0,0,216,0,0,188,0,0,164,0,0,216,0,0,188,0,0,164,0,0,80,80,192,104,104,248,144,144,244,80,80,192,104,104,248,144,144,244,148,136,0,136,124,0,124,112,0,116,100,0,132,92,40,160,132,72,188,176,104,216,220,136,248,248,188,244,244,252,252,0,0,248,24,4,248,52,8,248,80,16,248,108,20,248,136,24,248,164,32,248,192,36,248,220,40,244,232,60,244,244,80,244,244,112,244,244,148,240,240,180,240,240,212,240,240,248,44,132,44,60,172,60,112,188,112,44,132,44,60,172,60,112,188,112,248,60,60,244,124,124,244,188,188,104,104,248,144,144,244,184,184,244,144,144,244,60,172,60,112,188,112,164,212,164,112,188,112,148,136,0,136,116,0,124,96,0,112,76,0,100,56,0,88,40,0,104,104,136,144,144,192,188,188,248,200,200,244,220,220,244,40,112,40,44,132,44,52,152,52,60,172,60,252,200,200,244,164,164,248,92,92,244,76,76,244,60,60,244,76,76,244,92,92,244,164,164,84,40,0,88,40,0,92,44,0,96,48,0,60,28,0,64,28,0,68,32,0,72,36,0,252,252,252,220,220,220,188,188,188,156,156,156,124,124,124,156,156,156,188,188,188,220,220,220,108,76,44,124,84,48,140,96,56,156,108,64,172,120,72,0,0,0,40,36,8,80,76,20,120,116,28,160,152,40,200,192,48,244,232,60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,252,0,0,252,36,0,252,72,0,252,108,0,252,144,0,252,180,0,252,216,0,252,252,0,168,240,0,84,232,0,0,224,0,252,0,0,232,4,20,216,12,44,196,20,68,180,24,88,160,32,112,144,40,136,124,44,156,108,52,180,88,60,204,72,68,228];
+
+function flatToTriples(flat) {
+  const out = [];
+  for (let i = 0; i < flat.length; i += 3) {
+    out.push([flat[i], flat[i + 1], flat[i + 2]]);
+  }
+  return out;
+}
+
+const DEFAULT_PALETTE = flatToTriples(DEFAULT_PALETTE_FLAT);
+
+// `palette` starts out as the built-in default and is replaced whenever the
+// user loads their own palette file.
+let palette = DEFAULT_PALETTE;
+let usingDefaultPalette = true;
+let mapIndices = null;
+let mapWidth = 0;
+let mapHeight = 0;
+let currentBgBase = 160;
+
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+const status = document.getElementById("status");
+
+document.getElementById("paletteFile").addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  try {
+    const parsed = await parsePaletteFile(file);
+
+    if (parsed.length !== 256) {
+      throw new Error(`Palette contains ${parsed.length} colors; WebLiero requires exactly 256.`);
+    }
+
+    palette = parsed;
+    usingDefaultPalette = false;
+    status.textContent = `Loaded palette: ${file.name} (256 colors)`;
+    updatePaletteUI();
+    renderMap();
+    alert("Palette loaded: 256 colors");
+  } catch (err) {
+    palette = DEFAULT_PALETTE;
+    usingDefaultPalette = true;
+    status.textContent = `Palette error: ${err.message} | Falling back to default Liero palette.`;
+    updatePaletteUI();
+    renderMap();
+    alert(err.message);
+  }
+});
+
+// Dispatches to the right parser based on the file's extension.
+async function parsePaletteFile(file) {
+  const name = file.name.toLowerCase();
+
+  if (name.endsWith(".gpl")) {
+    return parseGPL(await file.text());
+  }
+  if (name.endsWith(".lpl")) {
+    return parseLPL(await file.arrayBuffer());
+  }
+  if (name.endsWith(".json")) {
+    return parseJSONPalette(await file.text());
+  }
+  if (name.endsWith(".png")) {
+    return parsePNGPalette(file);
+  }
+
+  throw new Error(`Unrecognized palette file type: ${file.name}. Use .gpl, .lpl, .json or .png.`);
+}
+
+// --- .LPL PARSER (raw binary: 256 * 3 bytes of R,G,B) ---
+function parseLPL(buffer) {
+  const bytes = new Uint8Array(buffer);
+
+  if (bytes.length !== 768) {
+    throw new Error(`.lpl file must be exactly 768 bytes (256 colors * 3); got ${bytes.length}.`);
+  }
+
+  const result = [];
+  for (let i = 0; i < 768; i += 3) {
+    result.push([bytes[i], bytes[i + 1], bytes[i + 2]]);
+  }
+  return result;
+}
+
+// --- .JSON PALETTE PARSER ---
+// Accepts: a flat array of 768 numbers [r,g,b,r,g,b,...], an array of 256
+// [r,g,b] triples, or an object with a "colors" or "palette" key holding
+// either of those shapes.
+function parseJSONPalette(text) {
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch (err) {
+    throw new Error(`Invalid JSON palette: ${err.message}`);
+  }
+
+  if (!Array.isArray(data)) {
+    if (data && Array.isArray(data.colors)) data = data.colors;
+    else if (data && Array.isArray(data.palette)) data = data.palette;
+    else throw new Error("JSON palette must be an array, or an object with a 'colors'/'palette' array.");
+  }
+
+  if (data.length === 768 && typeof data[0] === "number") {
+    return flatToTriples(data);
+  }
+
+  if (data.length === 256 && Array.isArray(data[0])) {
+    return data.map((c) => [c[0], c[1], c[2]]);
+  }
+
+  throw new Error(`Unrecognized JSON palette shape (expected 768 flat numbers or 256 [r,g,b] triples); got length ${data.length}.`);
+}
+
+// --- .PNG PALETTE PARSER ---
+// Reads the first 256 pixels (row-major) of the image as the palette, which
+// matches common "palette strip" PNGs (e.g. a 256x1 or 16x16 swatch grid).
+function parsePNGPalette(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+
+    img.onload = () => {
+      try {
+        if (img.width * img.height < 256) {
+          throw new Error(`PNG palette image only has ${img.width * img.height} pixels; need at least 256.`);
+        }
+
+        const off = document.createElement("canvas");
+        off.width = img.width;
+        off.height = img.height;
+        const offCtx = off.getContext("2d");
+        offCtx.drawImage(img, 0, 0);
+
+        const { data } = offCtx.getImageData(0, 0, img.width, img.height);
+        const result = [];
+        for (let i = 0; i < 256; i++) {
+          const p = i * 4;
+          result.push([data[p], data[p + 1], data[p + 2]]);
+        }
+        resolve(result);
+      } catch (err) {
+        reject(err);
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    };
+
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("Could not decode PNG palette image."));
+    };
+
+    img.src = url;
+  });
+}
+
+document.getElementById("gen").onclick = () => {
+  const w = Math.floor(Number(document.getElementById("w").value));
+  const h = Math.floor(Number(document.getElementById("h").value));
+
+  if (!Number.isInteger(w) || !Number.isInteger(h) || w < 1 || h < 1) {
+    alert("Width and height must be positive integers.");
+    return;
+  }
+
+  const shapeTypes = Array.from(document.querySelectorAll('input[name="shape"]:checked'))
+    .map((el) => el.value);
+  if (shapeTypes.length === 0) {
+    alert("Select at least one shape.");
+    return;
+  }
+  const dirtOnly = document.getElementById("dirtOnly").checked;
+
+  canvas.width = w;
+  canvas.height = h;
+  generateMap(w, h, shapeTypes, dirtOnly, {
+    levelBorders: document.getElementById("levelBorders").checked,
+    plainShapes: document.getElementById("plainShapes").checked,
+    uniColor: document.getElementById("uniColor").checked,
+  });
+};
+
+document.getElementById("save").onclick = async () => {
+  if (!mapIndices || !mapWidth || !mapHeight) {
+    alert("Generate a map first.");
+    return;
+  }
+
+  const saveBtn = document.getElementById("save");
+  const activePalette = getActivePalette();
+
+  saveBtn.disabled = true;
+  const prevStatus = status.textContent;
+  status.textContent = "Encoding PNG...";
+
+  try {
+    const pngBytes = await encodeIndexedPNG(mapWidth, mapHeight, mapIndices, activePalette);
+    const blob = new Blob([pngBytes], { type: "image/png" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.download = "webliero_map.png";
+    link.href = url;
+    link.click();
+
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+    const kb = (pngBytes.length / 1024).toFixed(1);
+    status.textContent = `${prevStatus} | PNG saved (${kb} KB).`;
+  } catch (err) {
+    status.textContent = `PNG export error: ${err.message}`;
+    alert(`PNG export error: ${err.message}`);
+  } finally {
+    saveBtn.disabled = false;
+  }
+};
+
+document.getElementById("saveLev").onclick = () => {
+  if (!mapIndices || !mapWidth || !mapHeight) {
+    alert("Generate a map first.");
+    return;
+  }
+
+  if (mapWidth !== 504 || mapHeight !== 350) {
+    const proceed = confirm(
+      `Liero .LEV maps are normally exactly 504x350 pixels; this map is ${mapWidth}x${mapHeight}. ` +
+      `Save anyway?`
+    );
+    if (!proceed) return;
+  }
+
+  // A .LEV file is just the raw palette-index bytes, row-major, with no header.
+  const blob = new Blob([mapIndices], { type: "application/octet-stream" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.download = "webliero_map.lev";
+  link.href = url;
+  link.click();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+  status.textContent += " | LEV map saved.";
+};
+
+document.getElementById("savePowerlevel").onclick = () => {
+  if (!mapIndices || !mapWidth || !mapHeight) {
+    alert("Generate a map first.");
+    return;
+  }
+
+  if (mapWidth !== 504 || mapHeight !== 350) {
+    const proceed = confirm(
+      `Liero .LEV maps are normally exactly 504x350 pixels; this map is ${mapWidth}x${mapHeight}. ` +
+      `Save anyway?`
+    );
+    if (!proceed) return;
+  }
+
+  const lev = buildPowerlevel(mapIndices, getActivePalette());
+  const blob = new Blob([lev], { type: "application/octet-stream" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.download = "webliero_powerlevel.lev";
+  link.href = url;
+  link.click();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+  status.textContent += " | Powerlevel saved.";
+};
+
+// Powerlevel = raw map indices (width*height bytes), then the ASCII marker
+// "POWERLEVEL", then the 256-color palette as 768 bytes of 6-bit (0-63)
+// R,G,B values (VGA style). Our palettes are 8-bit, so each channel is
+// divided by 4 (the default Liero palette is exactly 6-bit * 4).
+function buildPowerlevel(indices, palette256) {
+  if (palette256.length !== 256) {
+    throw new Error("Powerlevel palette must contain exactly 256 colors.");
+  }
+
+  const marker = new TextEncoder().encode("POWERLEVEL");
+  const out = new Uint8Array(indices.length + marker.length + 768);
+
+  out.set(indices, 0);
+  out.set(marker, indices.length);
+
+  let o = indices.length + marker.length;
+  for (let i = 0; i < 256; i++) {
+    for (let c = 0; c < 3; c++) {
+      out[o++] = Math.min(63, palette256[i][c] >> 2);
+    }
+  }
+
+  return out;
+}
+
+
+// --- RENDERING ---
+function renderMap() {
+  if (!mapIndices) return;
+  const activePalette = getActivePalette();
+  const img = ctx.createImageData(mapWidth, mapHeight);
+  const data = img.data;
+
+  for (let p = 0; p < mapIndices.length; p++) {
+    const [r, g, b] = activePalette[mapIndices[p]];
+    const i = p * 4;
+    data[i] = r;
+    data[i + 1] = g;
+    data[i + 2] = b;
+    data[i + 3] = 255;
+  }
+
+  ctx.putImageData(img, 0, 0);
+}
+
+// --- PALETTE GRID (16x16) ---
+const paletteGrid = document.getElementById("paletteGrid");
+const colorInfo = document.getElementById("colorInfo");
+let selectedColor = 19;
+
+for (let i = 0; i < 256; i++) {
+  const cell = document.createElement("div");
+  cell.dataset.index = i;
+  cell.onclick = () => selectColor(i);
+  paletteGrid.appendChild(cell);
+}
+
+function updatePaletteUI() {
+  const pal = getActivePalette();
+  for (let i = 0; i < 256; i++) {
+    const [r, g, b] = pal[i];
+    paletteGrid.children[i].style.background = `rgb(${r},${g},${b})`;
+    paletteGrid.children[i].title = `Index ${i}: rgb(${r}, ${g}, ${b})`;
+  }
+  selectColor(selectedColor);
+}
+
+// Color kinds by palette index (ranges are inclusive; single numbers allowed).
+const COLOR_KINDS = {
+  "rock": [[19, 29], [59, 61], [85, 87], [91, 93], [123, 125]],
+  "background": [130, [164, 167]],
+  "see shadow": [[160, 163]],
+  "worm": [[30, 38]],
+  "undefined": [0, [3, 11], [39, 54], [62, 76], [80, 81], [104, 119], [126, 129], [131, 159], [168, 175], [181, 255]],
+  "dirt": [[94, 97], [12, 18], [55, 58], [82, 84], [88, 90], [98, 103], [120, 122], [176, 180], [1, 2], [77, 79]],
+};
+
+function getColorKind(i) {
+  for (const [kind, ranges] of Object.entries(COLOR_KINDS)) {
+    for (const r of ranges) {
+      const [a, b] = Array.isArray(r) ? r : [r, r];
+      if (i >= a && i <= b) return kind;
+    }
+  }
+  return "UNDEFINED";
+}
+
+function selectColor(i) {
+  selectedColor = i;
+  for (let k = 0; k < 256; k++) {
+    paletteGrid.children[k].classList.toggle("sel", k === i);
+  }
+  const [r, g, b] = getActivePalette()[i];
+  colorInfo.textContent = `Selected: ${i} (${getColorKind(i)}) - rgb(${r},${g},${b})`;
+}
+
+// --- MANUAL EDITING TOOLS ---
+const HISTORY_LIMIT = 50; // max undo steps (each keeps a copy of the map)
+let undoStack = [];
+let redoStack = [];
+let tool = "brush";
+let brushSize = 4;
+let drawing = false;
+let lastPos = null;
+
+canvas.classList.add("editing");
+
+function clearHistory() {
+  undoStack = [];
+  redoStack = [];
+  updateHistoryButtons();
+}
+
+function updateHistoryButtons() {
+  document.getElementById("undo").disabled = undoStack.length === 0;
+  document.getElementById("redo").disabled = redoStack.length === 0;
+}
+
+function pushUndoSnapshot() {
+  undoStack.push(mapIndices.slice());
+  if (undoStack.length > HISTORY_LIMIT) undoStack.shift();
+  redoStack = [];
+  updateHistoryButtons();
+}
+
+function undo() {
+  if (!undoStack.length || !mapIndices) return;
+  redoStack.push(mapIndices.slice());
+  mapIndices.set(undoStack.pop());
+  renderMap();
+  updateHistoryButtons();
+}
+
+function redo() {
+  if (!redoStack.length || !mapIndices) return;
+  undoStack.push(mapIndices.slice());
+  mapIndices.set(redoStack.pop());
+  renderMap();
+  updateHistoryButtons();
+}
+
+document.getElementById("undo").onclick = undo;
+document.getElementById("redo").onclick = redo;
+
+document.addEventListener("keydown", (e) => {
+  if (!(e.ctrlKey || e.metaKey)) return;
+  if (e.target && e.target.tagName === "INPUT" && e.target.type === "number") return;
+  const k = e.key.toLowerCase();
+  if (k === "z" && !e.shiftKey) { e.preventDefault(); undo(); }
+  else if (k === "y" || (k === "z" && e.shiftKey)) { e.preventDefault(); redo(); }
+});
+
+document.querySelectorAll("#toolButtons button").forEach((btn) => {
+  btn.onclick = () => {
+    tool = btn.dataset.tool;
+    document.querySelectorAll("#toolButtons button").forEach((b) => b.classList.toggle("active", b === btn));
+  };
+});
+
+document.querySelectorAll("#sizeButtons button").forEach((btn) => {
+  btn.onclick = () => {
+    brushSize = Number(btn.dataset.size);
+    document.querySelectorAll("#sizeButtons button").forEach((b) => b.classList.toggle("active", b === btn));
+  };
+});
+
+function canvasPos(e) {
+  const rect = canvas.getBoundingClientRect();
+  const x = Math.floor((e.clientX - rect.left - canvas.clientLeft) * canvas.width / canvas.clientWidth);
+  const y = Math.floor((e.clientY - rect.top - canvas.clientTop) * canvas.height / canvas.clientHeight);
+  return [x, y];
+}
+
+// Round brush: pixels whose centre lies within size/2 of the stamp centre.
+function stamp(cx, cy) {
+  const size = brushSize;
+  const x0 = cx - Math.floor((size - 1) / 2);
+  const y0 = cy - Math.floor((size - 1) / 2);
+  const mid = (size - 1) / 2;
+  const pal = getActivePalette();
+
+  for (let dy = 0; dy < size; dy++) {
+    for (let dx = 0; dx < size; dx++) {
+      const ddx = dx - mid;
+      const ddy = dy - mid;
+      if (ddx * ddx + ddy * ddy > (size / 2) * (size / 2)) continue;
+
+      const x = x0 + dx;
+      const y = y0 + dy;
+      if (x < 0 || y < 0 || x >= mapWidth || y >= mapHeight) continue;
+
+      let idx = selectedColor;
+      if (tool === "eraser") {
+        idx = Math.random() < DITHER_PROB
+          ? randInt(BACKGROUND_RANGE[0], BACKGROUND_RANGE[1])
+          : currentBgBase;
+      }
+
+      mapIndices[y * mapWidth + x] = idx;
+      const [r, g, b] = pal[idx];
+      ctx.fillStyle = `rgb(${r},${g},${b})`;
+      ctx.fillRect(x, y, 1, 1);
+    }
+  }
+}
+
+function strokeTo(x, y) {
+  if (!lastPos) {
+    stamp(x, y);
+  } else {
+    const [lx, ly] = lastPos;
+    const steps = Math.max(Math.abs(x - lx), Math.abs(y - ly));
+    for (let i = 1; i <= steps; i++) {
+      stamp(
+        Math.round(lx + ((x - lx) * i) / steps),
+        Math.round(ly + ((y - ly) * i) / steps)
+      );
+    }
+  }
+  lastPos = [x, y];
+}
+
+canvas.addEventListener("pointerdown", (e) => {
+  if (!mapIndices || e.button !== 0) return;
+  const [x, y] = canvasPos(e);
+
+  if (tool === "picker") {
+    if (x >= 0 && y >= 0 && x < mapWidth && y < mapHeight) {
+      selectColor(mapIndices[y * mapWidth + x]);
+    }
+    return;
+  }
+
+  e.preventDefault();
+  canvas.setPointerCapture(e.pointerId);
+  pushUndoSnapshot();
+  drawing = true;
+  lastPos = null;
+  strokeTo(x, y);
+});
+
+canvas.addEventListener("pointermove", (e) => {
+  if (!drawing) return;
+  const [x, y] = canvasPos(e);
+  strokeTo(x, y);
+});
+
+function endStroke() {
+  drawing = false;
+  lastPos = null;
+}
+canvas.addEventListener("pointerup", endStroke);
+canvas.addEventListener("pointercancel", endStroke);
+
+updatePaletteUI();
+
+// --- MAP GENERATION ---
+
+// Index ranges allowed for "terrain" (filled geometric shapes).
+const TERRAIN_RANGES = [
+  [19, 29],
+  [59, 61],
+  [85, 87],
+  [91, 93],
+  [123, 125],
+];
+
+// Index ranges used instead of TERRAIN_RANGES when "Dirt only" is checked.
+const DIRT_RANGES = [
+  [94, 97],
+  [12, 18],
+  [55, 58],
+  [82, 84],
+  [88, 90],
+  [98, 103],
+  [120, 122],
+  [176, 180],
+];
+
+// Index range used for the background.
+const BACKGROUND_RANGE = [160, 163];
+
+// Each shape/the background gets one base color index; this is the chance
+// per pixel of using a different random index from the same allowed range
+// instead, for a bit of texture. Keeping this low (rather than randomizing
+// every pixel independently) is what keeps the saved PNG small: long runs
+// of identical bytes are what the compressor can actually shrink.
+const DITHER_PROB = 0.1;
+
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randFloat(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+// Color index used for the 1-pixel "Level borders" frame.
+const BORDER_INDEX = 19;
+
+// Random terrain coverage target range (fraction of the map). There is no
+// 10-40% cap anymore; 90% is simply the practical maximum the generator can
+// reach with overlapping shapes.
+const MIN_COVERAGE = 0.05;
+const MAX_COVERAGE = 0.90;
+
+function generateMap(
+  w,
+  h,
+  shapeTypes = ["rect", "square", "triangle", "trapezoid", "circle"],
+  dirtOnly = false,
+  opts = {}
+) {
+  const { levelBorders = false, plainShapes = false, uniColor = false } = opts;
+  mapWidth = w;
+  mapHeight = h;
+
+  // Terrain (background + random shapes).
+  const result = buildTerrain(w, h, shapeTypes, dirtOnly, plainShapes, uniColor);
+
+  mapIndices = result.indices;
+  currentBgBase = result.bgBase;
+  const terrainMask = result.mask;
+
+  // Level borders: 1-pixel frame around the whole map, always color 19.
+  if (levelBorders) {
+    for (let x = 0; x < w; x++) {
+      mapIndices[x] = BORDER_INDEX;
+      mapIndices[(h - 1) * w + x] = BORDER_INDEX;
+      terrainMask[x] = 1;
+      terrainMask[(h - 1) * w + x] = 1;
+    }
+    for (let y = 0; y < h; y++) {
+      mapIndices[y * w] = BORDER_INDEX;
+      mapIndices[y * w + w - 1] = BORDER_INDEX;
+      terrainMask[y * w] = 1;
+      terrainMask[y * w + w - 1] = 1;
+    }
+  }
+
+  clearHistory();
+  renderMap();
+
+  let covered = 0;
+  for (let p = 0; p < terrainMask.length; p++) covered += terrainMask[p];
+
+  const effects = [
+    dirtOnly && "Dirt only",
+    levelBorders && "Level borders",
+    plainShapes && "Plain shapes",
+    uniColor && "Uni color",
+  ].filter(Boolean);
+  const paletteInfo = (effects.length ? effects.join(", ") + " | " : "") + (usingDefaultPalette
+    ? `Default Liero palette (256 colors)`
+    : `Custom palette (256 colors)`);
+  const actualCoverage = ((covered / (w * h)) * 100).toFixed(1);
+  status.textContent = `${paletteInfo} | Map generated (terrain ~${actualCoverage}%).`;
+}
+
+// Builds background + random shapes. Returns the index buffer, the terrain
+// mask, the background base index and the terrain coverage (0..1).
+function buildTerrain(w, h, shapeTypes, dirtOnly, plainShapes, uniColor) {
+  const indices = new Uint8Array(w * h);
+
+  // 1) Background: one base index from 160-163, lightly dithered.
+  const bgBase = randInt(BACKGROUND_RANGE[0], BACKGROUND_RANGE[1]);
+  for (let p = 0; p < indices.length; p++) {
+    indices[p] = Math.random() < DITHER_PROB
+      ? randInt(BACKGROUND_RANGE[0], BACKGROUND_RANGE[1])
+      : bgBase;
+  }
+
+  // 2) Terrain: fill a random share of the map with random shapes.
+  const mask = new Uint8Array(w * h); // 1 = terrain
+  const targetPixels = Math.floor(w * h * randFloat(MIN_COVERAGE, MAX_COVERAGE));
+  const ranges = dirtOnly ? DIRT_RANGES : TERRAIN_RANGES;
+
+  // Uni color: one range + one base index shared by every shape.
+  const uniRange = ranges[randInt(0, ranges.length - 1)];
+  const uniBase = randInt(uniRange[0], uniRange[1]);
+
+  let coveredPixels = 0;
+  let attempts = 0;
+  const maxAttempts = 20000; // safety net so we never loop forever
+
+  while (coveredPixels < targetPixels && attempts < maxAttempts) {
+    attempts++;
+    const range = uniColor ? uniRange : ranges[randInt(0, ranges.length - 1)];
+    const verts = randomShapePolygon(w, h, shapeTypes);
+    coveredPixels += fillPolygon(
+      indices, mask, w, h, verts, range, plainShapes, uniColor ? uniBase : null
+    );
+  }
+
+  return { indices, mask, bgBase, coverage: coveredPixels / (w * h) };
+}
+
+// Builds the vertex list (in absolute canvas coordinates) for one randomly
+// sized/rotated/placed shape: rectangle, square, triangle or trapezoid.
+function randomShapePolygon(w, h, shapeTypes) {
+  const type = shapeTypes[randInt(0, shapeTypes.length - 1)];
+  const maxDim = Math.min(w, h);
+  const minSize = Math.max(4, maxDim * 0.04);
+  const maxSize = Math.max(minSize + 1, maxDim * 0.28);
+
+  let localVerts;
+
+  switch (type) {
+    case "square": {
+      const s = randFloat(minSize, maxSize);
+      localVerts = [
+        [-s / 2, -s / 2],
+        [s / 2, -s / 2],
+        [s / 2, s / 2],
+        [-s / 2, s / 2],
+      ];
+      break;
+    }
+    case "rect": {
+      const sx = randFloat(minSize, maxSize);
+      const sy = randFloat(minSize, maxSize);
+      localVerts = [
+        [-sx / 2, -sy / 2],
+        [sx / 2, -sy / 2],
+        [sx / 2, sy / 2],
+        [-sx / 2, sy / 2],
+      ];
+      break;
+    }
+    case "triangle": {
+      const sx = randFloat(minSize, maxSize);
+      const sy = randFloat(minSize, maxSize);
+      localVerts = [
+        [randFloat(-sx / 2, sx / 2), -sy / 2],
+        [sx / 2, randFloat(-sy / 2, sy / 2)],
+        [randFloat(-sx / 2, sx / 2), sy / 2],
+      ];
+      break;
+    }
+    case "circle": {
+      // Approximated by a regular polygon with enough vertices to look round.
+      const r = randFloat(minSize, maxSize) / 2;
+      const n = Math.max(16, Math.ceil(r * 2));
+      localVerts = [];
+      for (let i = 0; i < n; i++) {
+        const a = (i / n) * Math.PI * 2;
+        localVerts.push([Math.cos(a) * r, Math.sin(a) * r]);
+      }
+      break;
+    }
+    case "trapezoid":
+    default: {
+      const sx = randFloat(minSize, maxSize);
+      const sy = randFloat(minSize, maxSize);
+      const topW = sx * randFloat(0.3, 0.85);
+      localVerts = [
+        [-topW / 2, -sy / 2],
+        [topW / 2, -sy / 2],
+        [sx / 2, sy / 2],
+        [-sx / 2, sy / 2],
+      ];
+      break;
+    }
+  }
+
+  // Random rotation and placement anywhere on (or slightly overlapping) the map.
+  const angle = randFloat(0, Math.PI * 2);
+  const cos = Math.cos(angle);
+  const sin = Math.sin(angle);
+  const cx = randFloat(0, w);
+  const cy = randFloat(0, h);
+
+  return localVerts.map(([x, y]) => [
+    cx + x * cos - y * sin,
+    cy + x * sin + y * cos,
+  ]);
+}
+
+// Scanline polygon fill (even-odd rule). Fills mapIndices in-place with one
+// random base index from `range` for the whole shape (lightly dithered per
+// pixel for texture), for every pixel inside `verts`, clipped to the canvas
+// bounds. Returns the number of previously-non-terrain pixels newly
+// covered, so the caller can track total terrain coverage.
+function fillPolygon(indices, terrainMask, w, h, verts, range, plain = false, fixedBase = null) {
+  const ys = verts.map((v) => v[1]);
+  const minY = Math.max(0, Math.floor(Math.min(...ys)));
+  const maxY = Math.min(h - 1, Math.ceil(Math.max(...ys)));
+
+  const baseValue = fixedBase !== null ? fixedBase : randInt(range[0], range[1]);
+  let newPixels = 0;
+
+  for (let y = minY; y <= maxY; y++) {
+    const xs = [];
+    for (let i = 0; i < verts.length; i++) {
+      const [x1, y1] = verts[i];
+      const [x2, y2] = verts[(i + 1) % verts.length];
+      if ((y1 <= y && y2 > y) || (y2 <= y && y1 > y)) {
+        const t = (y - y1) / (y2 - y1);
+        xs.push(x1 + t * (x2 - x1));
+      }
+    }
+    xs.sort((a, b) => a - b);
+
+    for (let i = 0; i + 1 < xs.length; i += 2) {
+      const xStart = Math.max(0, Math.round(xs[i]));
+      const xEnd = Math.min(w - 1, Math.round(xs[i + 1]));
+
+      for (let x = xStart; x <= xEnd; x++) {
+        const p = y * w + x;
+        if (!terrainMask[p]) {
+          terrainMask[p] = 1;
+          newPixels++;
+        }
+        indices[p] = !plain && Math.random() < DITHER_PROB
+          ? randInt(range[0], range[1])
+          : baseValue;
+      }
+    }
+  }
+
+  return newPixels;
+}
+
+function getActivePalette() {
+  return palette;
+}
+
+// --- ROBUST GIMP GPL PARSER ---
+function parseGPL(text) {
+  const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/);
+  const result = [];
+
+  let headerFound = false;
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line) continue;
+
+    if (!headerFound) {
+      if (line.toLowerCase() === "gimp palette") {
+        headerFound = true;
+      }
+      continue;
+    }
+
+    if (
+      line.startsWith("#") ||
+      /^name\s*:/i.test(line) ||
+      /^columns\s*:/i.test(line)
+    ) {
+      continue;
+    }
+
+    const match = line.match(/^(\d+)\s+(\d+)\s+(\d+)(?:\s+.*)?$/);
+    if (!match) continue;
+
+    const r = Number(match[1]);
+    const g = Number(match[2]);
+    const b = Number(match[3]);
+
+    if ([r, g, b].some(v => !Number.isInteger(v) || v < 0 || v > 255)) {
+      throw new Error(`Invalid RGB value in line: ${rawLine}`);
+    }
+
+    result.push([r, g, b]);
+  }
+
+  if (!headerFound) {
+    throw new Error("This is not a valid GIMP .gpl palette (missing 'GIMP Palette' header).");
+  }
+
+  return result;
+}
+
+// --- INDEXED PNG ENCODER (8-bit, color type 3, 256-entry PLTE) ---
+async function encodeIndexedPNG(width, height, indices, palette256) {
+  if (palette256.length !== 256) {
+    throw new Error("PNG palette must contain exactly 256 colors.");
+  }
+
+  if (indices.length !== width * height) {
+    throw new Error("Invalid indexed image data size.");
+  }
+
+  const signature = new Uint8Array([137, 80, 78, 71, 13, 10, 26, 10]);
+
+  const ihdr = new Uint8Array(13);
+  writeU32BE(ihdr, 0, width);
+  writeU32BE(ihdr, 4, height);
+  ihdr[8] = 8;  // bit depth
+  ihdr[9] = 3;  // color type: indexed color
+  ihdr[10] = 0; // compression
+  ihdr[11] = 0; // filter
+  ihdr[12] = 0; // interlace
+
+  const plte = new Uint8Array(256 * 3);
+  for (let i = 0; i < 256; i++) {
+    plte[i * 3] = palette256[i][0];
+    plte[i * 3 + 1] = palette256[i][1];
+    plte[i * 3 + 2] = palette256[i][2];
+  }
+
+  // One filter byte (0 = None) before each scanline.
+  const raw = new Uint8Array(height * (width + 1));
+  for (let y = 0; y < height; y++) {
+    const rowStart = y * (width + 1);
+    raw[rowStart] = 0;
+    raw.set(indices.subarray(y * width, (y + 1) * width), rowStart + 1);
+  }
+
+  const idat = await deflateZlib(raw);
+
+  return concatBytes(
+    signature,
+    pngChunk("IHDR", ihdr),
+    pngChunk("PLTE", plte),
+    pngChunk("IDAT", idat),
+    pngChunk("IEND", new Uint8Array(0))
+  );
+}
+
+// Real DEFLATE compression (RFC 1950 zlib-wrapped, exactly what PNG's IDAT
+// chunk requires) using the browser's built-in CompressionStream. This is
+// why saved PNGs are now tens of KB instead of ~170 KB: the old version
+// wrote the scanline bytes uncompressed ("stored" deflate blocks).
+async function deflateZlib(data) {
+  const cs = new CompressionStream("deflate");
+  const writer = cs.writable.getWriter();
+  writer.write(data);
+  writer.close();
+
+  const chunks = [];
+  const reader = cs.readable.getReader();
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+  }
+
+  return concatBytes(...chunks);
+}
+
+function pngChunk(type, data) {
+  const typeBytes = new TextEncoder().encode(type);
+  const out = new Uint8Array(12 + data.length);
+
+  writeU32BE(out, 0, data.length);
+  out.set(typeBytes, 4);
+  out.set(data, 8);
+
+  const crcInput = concatBytes(typeBytes, data);
+  writeU32BE(out, 8 + data.length, crc32(crcInput));
+
+  return out;
+}
+
+function writeU32BE(bytes, offset, value) {
+  bytes[offset] = (value >>> 24) & 255;
+  bytes[offset + 1] = (value >>> 16) & 255;
+  bytes[offset + 2] = (value >>> 8) & 255;
+  bytes[offset + 3] = value & 255;
+}
+
+function concatBytes(...arrays) {
+  const length = arrays.reduce((sum, a) => sum + a.length, 0);
+  const out = new Uint8Array(length);
+
+  let offset = 0;
+  for (const a of arrays) {
+    out.set(a, offset);
+    offset += a.length;
+  }
+
+  return out;
+}
+
+function crc32(data) {
+  let crc = 0xFFFFFFFF;
+
+  for (let i = 0; i < data.length; i++) {
+    crc ^= data[i];
+
+    for (let bit = 0; bit < 8; bit++) {
+      crc = (crc >>> 1) ^ ((crc & 1) ? 0xEDB88320 : 0);
+    }
+  }
+
+  return (crc ^ 0xFFFFFFFF) >>> 0;
+}
+</script>
+
+</body>
+</html>
