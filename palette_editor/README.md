@@ -1,6 +1,8 @@
 # (Web)Liero Palette Editor
 
-A simple, browser-based tool for viewing, editing and converting WebLiero palette files. It runs entirely in your browser: no installation, no server, and your files never leave your computer.
+A simple, browser-based tool for viewing, editing and converting palette files for [Liero](https://liero.nl/) and [WebLiero](https://www.webliero.com/). It runs entirely in your browser: no installation, no server, and your files never leave your computer.
+
+The program was created with [Claude AI](https://claude.ai), which generated 100% of the code.
 
 **Usage**
 
