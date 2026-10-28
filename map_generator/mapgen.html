@@ -63,7 +63,7 @@
 <button id="gen">Generate map</button>
 <button id="save">Save indexed PNG</button>
 <button id="saveLev">Save LEV map</button>
-<button id="savePowerlevel">Save as powerlevel</button>
+<button id="savePowerlevel">Save as powerlevel (.lev)</button>
 
 <canvas id="c"></canvas>
 
@@ -78,7 +78,8 @@
   <div class="row" id="toolButtons">
     <button data-tool="brush" class="active">Brush</button>
     <button data-tool="eraser">Eraser</button>
-    <button data-tool="picker">Pick color</button>
+    <button data-tool="bucket">Color filler</button>
+    <button data-tool="picker">Color picker</button>
   </div>
   <div class="row">Brush size:</div>
   <div class="row" id="sizeButtons">
@@ -596,9 +597,63 @@ function strokeTo(x, y) {
   lastPos = [x, y];
 }
 
+// Region identity for the Fill tool: the whole background (160-163) counts
+// as one colour; any other index only matches itself.
+function fillClass(idx) {
+  return idx >= BACKGROUND_RANGE[0] && idx <= BACKGROUND_RANGE[1] ? BACKGROUND_RANGE[0] : idx;
+}
+
+// Paint bucket: replaces the 4-connected region under (x, y) with the
+// selected colour (one flat index, no shading).
+function floodFill(x, y) {
+  const w = mapWidth;
+  const h = mapHeight;
+  const startIdx = mapIndices[y * w + x];
+  const target = fillClass(startIdx);
+
+  // Nothing to do when the region is already exactly the selected colour.
+  if (target === startIdx && startIdx === selectedColor && target !== BACKGROUND_RANGE[0]) return;
+
+  const visited = new Uint8Array(w * h);
+  const stack = new Int32Array(w * h);
+  let sp = 0;
+  const changed = [];
+
+  const push = (p) => {
+    if (!visited[p] && fillClass(mapIndices[p]) === target) {
+      visited[p] = 1;
+      stack[sp++] = p;
+    }
+  };
+
+  push(y * w + x);
+  while (sp > 0) {
+    const p = stack[--sp];
+    changed.push(p);
+    const px = p % w;
+    const py = (p - px) / w;
+    if (px > 0) push(p - 1);
+    if (px < w - 1) push(p + 1);
+    if (py > 0) push(p - w);
+    if (py < h - 1) push(p + w);
+  }
+
+  // Skip the undo entry if the fill would not change a single pixel.
+  if (changed.every((p) => mapIndices[p] === selectedColor)) return;
+  
+  pushUndoSnapshot();
+  for (const p of changed) mapIndices[p] = selectedColor;
+  renderMap();
+}
+
 canvas.addEventListener("pointerdown", (e) => {
   if (!mapIndices || e.button !== 0) return;
   const [x, y] = canvasPos(e);
+
+  if (tool === "bucket") {
+    if (x >= 0 && y >= 0 && x < mapWidth && y < mapHeight) floodFill(x, y);
+    return;
+  }
 
   if (tool === "picker") {
     if (x >= 0 && y >= 0 && x < mapWidth && y < mapHeight) {

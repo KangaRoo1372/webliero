@@ -2,7 +2,7 @@
 
 A single-file, offline procedural map generator for [WebLiero](https://www.webliero.com/) and [Liero](https://liero.be/). Open the HTML file in a modern browser (Chrome, Edge, Firefox or Safari) and click Generate map. Every click produces a completely new random map.
 
-The program was created with help of [Claude AI](https://claude.ai/new), which generated 100% of the code.
+The program was created with [Claude AI](https://claude.ai/new), which generated 100% of the code.
 
 **How it works**
 
@@ -23,7 +23,7 @@ Shapes: choose any combination of rectangles, squares, triangles, trapezoids and
 
 **Palette**
 
-The default Liero palette is built in. You can load your own palette in .gpl, .lpl, .json or .png format. It must contain exactly 256 colors.
+The default Liero palette is built in. You can load your own indexed palette in .gpl, .lpl, .json or .png format. It must contain exactly 256 colors.
 
 **Palette and editing tools (right side)**
 
@@ -31,7 +31,8 @@ The 16×16 grid shows the current palette. Click a color to select it. The info 
 
 - Brush: draws with the selected color. Sizes are 1, 2, 4, 8 and 12 px.
 - Eraser: restores the background.
-- Pick color: click the map to select the color under the cursor.
+- Color picker: click the map to select the color under the cursor.
+- Color filler: fills a whole closed area with a selected color.
 - Undo / Redo: Ctrl+Z / Ctrl+Y, up to 50 steps. History resets when a new map is generated.
 
 **Saving**
