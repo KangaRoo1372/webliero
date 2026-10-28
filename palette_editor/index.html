@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>(Web)Liero Palette Editor</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            background: #111;
+            color: #dcdde1;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .hint {
+            color: #9a9ca5;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        #palettes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .panel {
+            padding: 15px;
+            border: 2px solid #3a3c44;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background: #222;
+        }
+
+        .panel h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(16, 24px);
+            grid-template-rows: repeat(16, 24px);
+            gap: 2px;
+            margin-top: 15px;
+            min-height: 100px;
+        }
+
+        .color-cell {
+            width: 24px;
+            height: 24px;
+            cursor: grab;
+            border: 1px solid #555;
+            box-sizing: border-box;
+        }
+
+        .color-cell:active {
+            cursor: grabbing;
+        }
+
+        .selected {
+            outline: 3px solid red;
+        }
+
+        .drop-target {
+            outline: 3px dashed #1e78ff;
+        }
+
+        #editor {
+            margin-top: 20px;
+        }
+
+        input[type="number"] {
+            width: 70px;
+        }
+
+        input[type="color"] {
+            width: 60px;
+            height: 30px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        input[type="number"] {
+            background: #1e1f24;
+            color: #dcdde1;
+            border: 1px solid #555;
+            border-radius: 3px;
+            padding: 3px 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            background: #3a3d48;
+            color: #dcdde1;
+            border: 1px solid #555;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover:not(:disabled) {
+            background: #4a4e5c;
+        }
+
+        button:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hint">
+    Load palette (.json, .lpl, .gpl, .png) into up to two files. You can copy a colour from one palette to the
+    other by dragging it with the left mouse button onto the chosen cell. You can save edited file(s) on your HDD.
+</div>
+
+<div id="palettes">
+    <section class="panel" data-slot="0">
+        <h2>Palette 1</h2>
+        <input type="file" class="file-input" accept=".json,.lpl,.gpl,.png"><br>
+        <button class="save-json" disabled>Save palette (.json)</button>
+        <button class="save-lpl" disabled>Save palette (.lpl)</button>
+        <button class="save-gpl" disabled>Save palette (.gpl)</button>
+        <button class="save-png" disabled>Save palette (.png)</button>
+        <div class="palette"></div>
+    </section>
+
+    <section class="panel" data-slot="1">
+        <h2>Palette 2</h2>
+        <input type="file" class="file-input" accept=".json,.lpl,.gpl,.png"><br>
+        <button class="save-json" disabled>Save palette (.json)</button>
+        <button class="save-lpl" disabled>Save palette (.lpl)</button>
+        <button class="save-gpl" disabled>Save palette (.gpl)</button>
+        <button class="save-png" disabled>Save palette (.png)</button>
+        <div class="palette"></div>
+    </section>
+</div>
+
+<div id="editor" style="display:none;">
+    <h3>Chosen colour: <span id="colorIndex"></span></h3>
+    R: <input type="number" id="r" min="0" max="255"><br>
+    G: <input type="number" id="g" min="0" max="255"><br>
+    B: <input type="number" id="b" min="0" max="255"><br>
+    <br>
+    Color picker: <input type="color" id="colorPicker"><br>
+</div>
+
+<script src="palette-editor.js"></script>
+</body>
+</html>
