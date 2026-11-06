@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WLSPRT → CHR</title>
+<style>
+  :root {
+    --bg: #14161a; --panel: #1c1f25; --panel2: #23272f; --line: #323843;
+    --text: #e4e6ea; --muted: #8b93a1; --accent: #e8b04a; --accent-ink: #1a1405;
+    --ok: #5fbf7a; --info: #6fa8dc; --warn: #e8b04a; --err: #e2615a;
+    --checker-a: #2a2e36; --checker-b: #22252c;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 20px 24px 8px; }
+  h1 { margin: 0; font-size: 20px; letter-spacing: .02em; }
+  h1 span { color: var(--accent); font-family: ui-monospace, Consolas, monospace; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  main { padding: 12px 24px 40px; display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr) 380px; }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; padding: 12px 16px 40px; } header { padding: 16px 16px 4px; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-width: 0; }
+  .panel h2 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+  .drops { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 600px) { .drops { grid-template-columns: 1fr; } }
+  .drop { border: 1.5px dashed var(--line); border-radius: 8px; padding: 14px; cursor: pointer; transition: border-color .15s, background .15s; position: relative; }
+  .drop:hover, .drop.over { border-color: var(--accent); background: var(--panel2); }
+  .drop b { display: block; font-size: 14px; }
+  .drop small { color: var(--muted); display: block; margin-top: 2px; }
+  .drop .fname { margin-top: 8px; font-family: ui-monospace, Consolas, monospace; font-size: 12px; color: var(--accent); word-break: break-all; }
+  .drop input { display: none; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-top: 14px; }
+  label.chk { display: flex; gap: 8px; align-items: center; color: var(--text); cursor: pointer; font-size: 13px; }
+  button { font: inherit; border-radius: 6px; border: 1px solid var(--line); background: var(--panel2); color: var(--text); padding: 8px 14px; cursor: pointer; }
+  button:hover:not(:disabled) { border-color: var(--muted); }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  button:disabled { opacity: .4; cursor: not-allowed; }
+  select { font: inherit; background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; }
+  .status { margin-top: 12px; padding: 10px 12px; border-radius: 6px; font-weight: 600; display: none; }
+  .status.ok { display: block; background: color-mix(in srgb, var(--ok) 15%, transparent); color: var(--ok); }
+  .status.err { display: block; background: color-mix(in srgb, var(--err) 15%, transparent); color: var(--err); }
+  .status.info { display: block; background: color-mix(in srgb, var(--info) 15%, transparent); color: var(--info); font-weight: 500; }
+  .editbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px; margin-bottom: 10px; background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; }
+  .editbar button { padding: 6px 10px; font-size: 13px; }
+  .editbar .sep { width: 1px; align-self: stretch; background: var(--line); margin: 0 2px; }
+  .editbar input[type=number] { width: 64px; font: inherit; font-size: 13px; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 5px 6px; }
+  .editbar .muted { color: var(--muted); font-size: 12.5px; }
+  .edit-hint { color: var(--muted); font-size: 12px; margin: -4px 0 10px; }
+  .edit-hint kbd { font: 11px ui-monospace, Consolas, monospace; background: var(--panel2); border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; }
+  .tile[data-uid] { cursor: grab; user-select: none; }
+  .tile.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--panel2)); }
+  .tile.ghost { opacity: .35; }
+  .tile.drop-before { box-shadow: -4px 0 0 0 var(--accent); }
+  .tile.drop-after { box-shadow: 4px 0 0 0 var(--accent); }
+  .tile .orig { color: var(--accent); }
+  body.dragging .tile * { pointer-events: none; }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 0 -14px 12px; padding: 0 14px; overflow-x: auto; }
+  .tab { background: none; border: none; border-bottom: 2px solid transparent; border-radius: 0; padding: 8px 10px; color: var(--muted); white-space: nowrap; }
+  .tab.active { color: var(--text); border-bottom-color: var(--accent); }
+  .tab .badge { font-size: 11px; color: var(--muted); margin-left: 4px; }
+  .viewbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 10px; color: var(--muted); font-size: 13px; }
+  .block-title { font-size: 12px; color: var(--muted); margin: 14px 0 6px; font-family: ui-monospace, Consolas, monospace; }
+  .grid { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tile { position: relative; background: var(--panel2); border: 1px solid var(--line); border-radius: 4px; padding: 3px; display: flex; flex-direction: column; align-items: center; cursor: default; }
+  .tile canvas { image-rendering: pixelated; display: block; background-image: conic-gradient(var(--checker-a) 25%, var(--checker-b) 0 50%, var(--checker-a) 0 75%, var(--checker-b) 0); background-size: 8px 8px; }
+  .tile .n { font: 10px ui-monospace, Consolas, monospace; color: var(--muted); margin-top: 2px; }
+  .tile.err { border-color: var(--err); box-shadow: 0 0 0 1px var(--err); }
+  .tile.warn { border-color: var(--warn); }
+  .tile.diff { border-color: var(--info); box-shadow: 0 0 0 1px var(--info); }
+  .tile.unused { opacity: .45; }
+  .empty-state { color: var(--muted); padding: 30px 0; text-align: center; }
+  .palette { display: grid; grid-template-columns: repeat(16, 1fr); gap: 1px; border: 1px solid var(--line); }
+  .palette div { aspect-ratio: 1; }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 13px; margin-bottom: 12px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; font-family: ui-monospace, Consolas, monospace; }
+  .log { max-height: 520px; overflow: auto; font-size: 12.5px; }
+  .log-filter { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; font-size: 12px; }
+  .log-entry { padding: 5px 8px 5px 10px; border-left: 3px solid var(--line); margin-bottom: 3px; background: var(--panel2); border-radius: 0 4px 4px 0; }
+  .log-entry .src { color: var(--muted); font-size: 11px; margin-right: 6px; font-family: ui-monospace, Consolas, monospace; }
+  .log-entry.ok { border-left-color: var(--ok); } .log-entry.info { border-left-color: var(--info); }
+  .log-entry.warn { border-left-color: var(--warn); } .log-entry.error { border-left-color: var(--err); color: #f3c2bf; }
+  .log-entry.clickable { cursor: pointer; } .log-entry.clickable:hover { background: var(--line); }
+  #tip { position: fixed; pointer-events: none; background: #0d0f12; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font: 12px ui-monospace, Consolas, monospace; display: none; z-index: 10; white-space: pre; }
+  .side { display: grid; gap: 16px; align-content: start; }
+  .downloads { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .flash { animation: flash 1.2s ease-out; }
+  @keyframes flash { 0% { box-shadow: 0 0 0 3px var(--accent); } 100% { box-shadow: 0 0 0 0 transparent; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sprite converter <span>.wlsprt → LIERO.CHR</span></h1>
+  <p>Loads WebLiero sprites, checks them against the limits of Liero 1.33 and writes a LIERO.CHR file. Everything runs locally in your browser.</p>
+</header>
+
+<main>
+  <div style="display:grid;gap:16px;align-content:start;min-width:0">
+    <section class="panel">
+      <h2>Files</h2>
+      <div class="drops">
+        <label class="drop" id="dropWl">
+          <b>.wlsprt file</b>
+          <small>WebLiero sprites (conversion source)</small>
+          <div class="fname" id="nameWl"></div>
+          <input type="file" id="fileWl" accept=".wlsprt">
+        </label>
+        <label class="drop" id="dropChr">
+          <b>LIERO.CHR file <span style="color:var(--muted);font-weight:400">(optional)</span></b>
+          <small>For preview or comparison with the result</small>
+          <div class="fname" id="nameChr"></div>
+          <input type="file" id="fileChr" accept=".chr,.CHR">
+        </label>
+      </div>
+      <div class="controls">
+        <label class="chk"><input type="checkbox" id="autoFit"> Auto-fit: shift sprites that stick out of their slot</label>
+        <button class="primary" id="btnConvert" disabled>Convert to CHR</button>
+      </div>
+      <div class="status" id="status"></div>
+      <div class="downloads" id="downloads"></div>
+    </section>
+
+    <section class="panel">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-view="wl">WLSPRT<span class="badge" id="bWl"></span></button>
+        <button class="tab" data-view="out">Result CHR<span class="badge" id="bOut"></span></button>
+        <button class="tab" data-view="chr">Loaded CHR<span class="badge" id="bChr"></span></button>
+      </div>
+      <div class="viewbar">
+        <label>Zoom
+          <select id="zoom"><option>2</option><option selected>3</option><option>4</option><option>6</option></select>
+        </label>
+        <label class="chk"><input type="checkbox" id="onlyProblems"> only sprites with problems/differences</label>
+        <span id="viewInfo"></span>
+      </div>
+      <div id="editBar" style="display:none">
+        <div class="editbar">
+          <span id="selInfo" class="muted" style="min-width:96px">Nothing selected</span>
+          <button id="btnDelete" title="Delete the selected sprites (Del)">Delete</button>
+          <button id="btnInsert" title="Insert an empty sprite before the selection (or at the end)">Insert empty</button>
+          <span class="muted">Move to #</span><input type="number" id="moveTo" min="0" value="0"><button id="btnMove" title="Move the selected sprites so the first one lands at this position">Move</button>
+          <button id="btnSelNone" title="Clear selection (Esc)">Deselect</button>
+          <span class="sep"></span>
+          <button id="btnUndo" title="Undo (Ctrl+Z)">Undo</button>
+          <button id="btnRedo" title="Redo (Ctrl+Y)">Redo</button>
+          <button id="btnReset" title="Restore the sprite list from the file">Reset</button>
+          <span class="sep"></span>
+          <button id="btnSaveWl" title="Save the current sprite list as a new .wlsprt file">Save edited .wlsprt</button>
+          <span id="editCount" class="muted" style="margin-left:auto"></span>
+        </div>
+        <div class="edit-hint">Click a sprite to select it (<kbd>Ctrl</kbd>+click adds, <kbd>Shift</kbd>+click selects a range, <kbd>Ctrl</kbd>+<kbd>A</kbd> selects all). Drag selected sprites to a new place, or press <kbd>Del</kbd> to delete them. Sprites after a deleted or moved one shift their numbers.</div>
+      </div>
+      <div id="view"><div class="empty-state">Load a .wlsprt file to see its sprites.</div></div>
+    </section>
+  </div>
+
+  <div class="side">
+    <section class="panel">
+      <h2>Information</h2>
+      <dl class="kv" id="info"><dt>File</dt><dd>—</dd></dl>
+      <div class="palette" id="palette" title="Palette"></div>
+      <div style="color:var(--muted);font-size:12px;margin-top:6px" id="palNote"></div>
+    </section>
+    <section class="panel">
+      <h2>Sanity checks</h2>
+      <div class="log-filter">
+        <label class="chk"><input type="checkbox" data-lvl="ok" checked> OK</label>
+        <label class="chk"><input type="checkbox" data-lvl="info" checked> info</label>
+        <label class="chk"><input type="checkbox" data-lvl="warn" checked> warnings</label>
+        <label class="chk"><input type="checkbox" data-lvl="error" checked> errors</label>
+      </div>
+      <div class="log" id="log"></div>
+    </section>
+  </div>
+</main>
+<div id="tip"></div>
+
+<script src="formats.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
