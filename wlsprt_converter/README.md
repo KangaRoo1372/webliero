@@ -2,6 +2,8 @@
 
 A small browser tool that converts WebLiero sprite files (`.wlsprt`) into the classic Liero 1.33 format (`LIERO.CHR`). It also lets you preview sprites and export the palette.
 
+The program was created with [Claude](https://claude.ai/), which generated 100% of the code.
+
 ## Requirements
 
 None. Keep `index.html`, `app.js` and `formats.js` in the same folder and open `index.html` in any modern browser. Everything runs locally: no installation, no server, no internet connection, and no files are uploaded anywhere.
@@ -69,3 +71,5 @@ Hover over a sprite to see its size, offset and any issues. Red frames mark erro
 
 - The last 4 slots of the 4×4 block in `LIERO.CHR` (#266–#269) are not used by WebLiero, so they are filled with zeros.
 - The converter places each sprite in its slot using a table of anchor points worked out from a matching CHR/WLSPRT pair. Mods whose `.wlsprt` files use unusual offsets may need a quick visual check in the **Result CHR** tab.
+
+***roo***
